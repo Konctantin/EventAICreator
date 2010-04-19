@@ -1,0 +1,9 @@
+
+*.suo
+*.user
+EventAI/obj/*
+EventAI/bin/*
+*.orig
+*.rej
+*.patch
+*.log
