@@ -1,6 +1,6 @@
 ﻿namespace EventAI
 {
-    partial class EventAI
+    partial class MainForm
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventAI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйСкриптToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -351,7 +351,6 @@
             resources.ApplyResources(this._tbShance, "_tbShance");
             this._tbShance.Name = "_tbShance";
             this.HelpEntry.SetToolTip(this._tbShance, resources.GetString("_tbShance.ToolTip"));
-            this._tbShance.TextChanged += new System.EventHandler(this.Shance_TextChanged);
             this._tbShance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // tContentDefault
@@ -585,7 +584,6 @@
             resources.ApplyResources(this._bFindParam, "_bFindParam");
             this._bFindParam.Name = "_bFindParam";
             this._bFindParam.UseVisualStyleBackColor = true;
-            this._bFindParam.Click += new System.EventHandler(this._bFindParam_Click);
             // 
             // _bFind
             // 
@@ -786,7 +784,6 @@
             resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // WriteFiles
             // 
@@ -819,7 +816,6 @@
             resources.ApplyResources(this._bEventParam1, "_bEventParam1");
             this._bEventParam1.Name = "_bEventParam1";
             this._bEventParam1.UseVisualStyleBackColor = true;
-            this._bEventParam1.Click += new System.EventHandler(this.bSelectEventParam1_Click);
             // 
             // _bEventParam2
             // 
@@ -1118,7 +1114,6 @@
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // lDateTime
             // 

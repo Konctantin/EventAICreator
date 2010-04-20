@@ -9,11 +9,11 @@ using System.Data;
 
 namespace EventAI
 {
-    public partial class EventAI : Form
+    public partial class MainForm : Form
     {
         private DataTable Scripts { get; set; }
 
-        public EventAI()
+        public MainForm()
         {
             InitializeComponent();
             EAI.SetEnumValues(_cbEventType, typeof(EventType));
@@ -32,20 +32,10 @@ namespace EventAI
             rtbScriptOut.Clear();
             CreateQueryScripts();
         }
-        // Очистим поле с запросом для скриптов
-        private void button2_Click(object sender, EventArgs e)
-        {
-            rtbScriptOut.Clear();
-            Point p = ((Button)sender).Location;
-            Point tp = ((Button)sender).PointToScreen(((Button)sender).Location);
-            //MessageBox.Show("" + tp.X + " " + tp.Y);
-            CalculateData c = new CalculateData(p, this);
-            c.ShowDialog();
-        }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dialog = new AboutBox1();
+            var dialog = new AboutBox();
             dialog.ShowDialog(this);
             dialog.Dispose();
         }
@@ -57,7 +47,7 @@ namespace EventAI
         // Откроем окно настроек
         private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
          {
-             var dialog = new AboutBox1();
+             var dialog = new AboutBox();
              dialog.ShowDialog(this);
              dialog.Dispose();
          }
@@ -141,10 +131,10 @@ namespace EventAI
             err = false;
             rtbScriptOut.ForeColor = Color.Blue;
             // Номер скрипта
-            int nNumberScripts = TBValue(NumberScripts);
+            int nNumberScripts = NumberScripts.Text.ToInt32();
             // Номер существа
-            int nIDCreature = TBValue(EntryNpc);
-            int nEventChance = TBValue(_tbShance);
+            int nIDCreature = EntryNpc.Text.ToInt32();
+            int nEventChance = _tbShance.Text.ToInt32();
             int nEventType = 0;
             int[] arr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12 };
             int ncEventParamCondition = (_cbEventParametr2.Visible) ? arr[_cbEventParametr2.SelectedIndex] : 0;
@@ -233,9 +223,9 @@ namespace EventAI
         /// </summary>
         public void CreateQueryTetxs()
         {
-            int ntNumberAITexts = TBValue(tNumberAITexts);
-            int ntNumberAISound = TBValue(tNumberAISound);
-            int ntNumberAIEmote = TBValue(tNumberAIEmote);
+            int ntNumberAITexts = tNumberAITexts.Text.ToInt32();
+            int ntNumberAISound = tNumberAISound.Text.ToInt32();
+            int ntNumberAIEmote = tNumberAIEmote.Text.ToInt32();
 
             var sCommentsAITexts = EAI.RegexReplace(tCommentAITexts);
             var stContentDefault = EAI.RegexReplace(tContentDefault);
@@ -259,53 +249,7 @@ namespace EventAI
             
             rtbTextOut.Text = text;
         }
-        /// <summary>
-        /// Функция делает исключение при получении значения с TextBox
-        /// </summary>
-        /// <param name="tb">Имя TextBox </param>
-        /// <returns></returns>
-        public static int TBValue(TextBox tb)
-        {
-            return (tb.Text == "" || !tb.Visible) ? 0 : Convert.ToInt32(tb.Text);
-        }
-        /// <summary>
-        /// Функция делает исключение при получении значения с RadioButton
-        /// </summary>
-        /// <param name="rb">Имя RadioButton</param>
-        /// <returns></returns>
-        public static int RBValue(RadioButton rb)
-        {
-            return (rb.Checked && rb.Visible) ? 1 : 0;
-        }
 
-        /// <summary>
-        /// Функция делает исключение при получении значения с CheckBox
-        /// </summary>
-        /// <param name="cb">Имя CheckBox</param>
-        /// <returns></returns>
-        public static int CBValue(CheckBox cb)
-        {
-            return (cb.Checked && cb.Visible) ? 1 : 0;
-        }
-
-        /// <summary>
-        /// Получает значение с елемента управления, используя метод 2 в степени
-        /// </summary>
-        /// <param name="name">Указываем CheckedListBox в котором надо подсчитать значения</param>
-        /// <returns></returns>
-        public static int CLBValue(CheckedListBox CLB)
-        {
-            int val = 0;
-            for (int i = 0; i < CLB.CheckedIndices.Count; i++)
-               val += (int)(Math.Pow(2, CLB.CheckedIndices[i]));
-
-            return val;
-        }
-
-        private void bSelectEventParam1_Click(object sender, EventArgs e)
-        {
-            //Finder.DataFind("quest_template", EventParam1);
-        }
         private void ConsoleScritpOut(string text, MsgStatus status)
         {
             switch (status)
@@ -325,16 +269,6 @@ namespace EventAI
                 _clbEventFlag.SetItemChecked(6, false);
                 MessageBox.Show("Нельзя использовать зарезирвированые флаги!");
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Shance_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void _bFind_Click(object sender, EventArgs e)
@@ -371,12 +305,6 @@ namespace EventAI
                         _clbPhase.SetItemChecked(i, !_clbPhase.GetItemChecked(i));
                     break;
             }
-        }
-
-        private void _bFindParam_Click(object sender, EventArgs e)
-        {
-            FilterParametr fp = new FilterParametr();
-            fp.ShowDialog(this);
         }
 
         private void _lvScripts_SelectedIndexChanged(object sender, EventArgs e)
