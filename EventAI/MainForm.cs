@@ -16,11 +16,10 @@ namespace EventAI
         public MainForm()
         {
             InitializeComponent();
-            EAI.SetEnumValues(_cbEventType, typeof(EventType));
-
-            EAI.SetEnumValues(_cbActionType1, typeof(ActionType));
-            EAI.SetEnumValues(_cbActionType2, typeof(ActionType));
-            EAI.SetEnumValues(_cbActionType3, typeof(ActionType));
+            _cbEventType.SetEnumValues(typeof(EventType), "");
+            _cbActionType1.SetEnumValues(typeof(ActionType), "");
+            _cbActionType2.SetEnumValues(typeof(ActionType), "");
+            _cbActionType3.SetEnumValues(typeof(ActionType), "");
 
             _cbEventType.SelectedValue = 1;
         }
@@ -39,11 +38,7 @@ namespace EventAI
             dialog.ShowDialog(this);
             dialog.Dispose();
         }
-        // Запишем полученый запрос в файл
-        private void WriteFiles_Click(object sender, EventArgs e)
-        {
-            EAI.WriteToFiles(rtbScriptOut, "creature_ai_scripts.sql");
-        }
+
         // Откроем окно настроек
         private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
          {
@@ -70,11 +65,6 @@ namespace EventAI
                 e.Handled = true;
         }
 
-        // Запишем в файл полученый запрос "creature_ai_texts"
-        private void button5_Click(object sender, EventArgs e)
-        {
-            EAI.WriteToFiles(rtbTextOut, "creature_ai_texts.sql");
-        }
         // Создадим запрос и выведем в текстовое поле для текста
         private void bCreateTextQuery_Click(object sender, EventArgs e)
         {
@@ -208,13 +198,13 @@ namespace EventAI
                 ConsoleScritpOut("Операция не выполнена", MsgStatus.ERROR);
                 return;
             }
-            //Сформируем строку запроса
-            var sQuery = (rbReplaceScript.Checked) ? "REPLACE INTO" : "INSERT IGNORE INTO";
-            var scriptUpdate = String.Format("UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE `entry` = '{0}';");
-            var script = String.Format("{0} `creature_ai_scripts` VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}');",
-                EAI.RegexReplace(_tbComment));
+            ////Сформируем строку запроса
+            //var sQuery = (rbReplaceScript.Checked) ? "REPLACE INTO" : "INSERT IGNORE INTO";
+            //var scriptUpdate = String.Format("UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE `entry` = '{0}';");
+            //var script = String.Format("{0} `creature_ai_scripts` VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}');",
+            //    EAI.RegexReplace(_tbComment));
 
-            rtbScriptOut.Text = script +"\r\n"+ scriptUpdate;
+            //rtbScriptOut.Text = script +"\r\n"+ scriptUpdate;
 
         }
         
@@ -227,9 +217,9 @@ namespace EventAI
             int ntNumberAISound = tNumberAISound.Text.ToInt32();
             int ntNumberAIEmote = tNumberAIEmote.Text.ToInt32();
 
-            var sCommentsAITexts = EAI.RegexReplace(tCommentAITexts);
-            var stContentDefault = EAI.RegexReplace(tContentDefault);
-            var sContentLocales  = EAI.RegexReplace(tContentLocales);
+            var sCommentsAITexts = tCommentAITexts.Text.RemExc();
+            var stContentDefault = tContentDefault.Text.RemExc();
+            var sContentLocales = tContentLocales.Text.RemExc();
 
             var loc = new string[cLocalisationText.Items.Count];
             loc[cLocalisationText.SelectedIndex] = sContentLocales;
@@ -328,8 +318,8 @@ namespace EventAI
             EntryNpc.Text      = row[1].ToString();
             _tbShance.Text     = row[4].ToString();
 
-            EAI.GetCheckedItem(_clbEventFlag, int.Parse(row[5].ToString()));
-            EAI.GetCheckedItem(_clbPhase,     int.Parse(row[3].ToString()));
+            _clbEventFlag.SetCheckedItemFromFlag(row[5].ToUInt32());
+            _clbPhase.SetCheckedItemFromFlag(row[3].ToUInt32());
             
             _cbEventType.SelectedValue = row[2];
             _cbEventParametr1.Text = row[6].ToString();

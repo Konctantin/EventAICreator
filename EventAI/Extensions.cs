@@ -245,17 +245,19 @@ namespace EventAI
             }
         }
 
-        public static void SetEnumValues(this ComboBox cb, Type enums, string NoValue)
+        public static void SetEnumValues(this ComboBox cb, Type enums, string remove)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("NAME");
 
-            dt.Rows.Add(new Object[] { -1, NoValue });
-
             foreach (var str in Enum.GetValues(enums))
             {
-                dt.Rows.Add(new Object[] { (int)str, "(" + ((int)str).ToString("000") + ") " + str });
+                dt.Rows.Add(new Object[] 
+                { 
+                    (int)str, 
+                    "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
+                });
             }
 
             cb.DataSource = dt;
@@ -276,7 +278,7 @@ namespace EventAI
                 dt.Rows.Add(new Object[] 
                 { 
                     (int)str, 
-                    "(" + ((int)str).ToString("000") + ") " + str.ToString().NormaliseString(remove) 
+                    "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
                 });
             }
 

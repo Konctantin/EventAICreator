@@ -790,7 +790,6 @@
             resources.ApplyResources(this.WriteFiles, "WriteFiles");
             this.WriteFiles.Name = "WriteFiles";
             this.WriteFiles.UseVisualStyleBackColor = true;
-            this.WriteFiles.Click += new System.EventHandler(this.WriteFiles_Click);
             // 
             // groupBox5
             // 
@@ -1215,7 +1214,6 @@
             resources.ApplyResources(this.button5, "button5");
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label12
             // 
