@@ -265,17 +265,17 @@ namespace EventAI
         {
             _lvScripts.Items.Clear();
 
-            MySQLClass mysql = new MySQLClass(EntryNpc.Text);
-            Scripts = mysql.AI;
-            var dat = mysql.AI.Select();
-            foreach (var row in dat)
-            {
-                List<string> items = new List<string>();
-                for (int i = 0; i < row.ItemArray.Length; i++)
-                    items.Add(row[i].ToString());
+            //MySQLClass mysql = new MySQLClass(EntryNpc.Text);
+            //Scripts = mysql.AI;
+            //var dat = mysql.AI.Select();
+            //foreach (var row in dat)
+            //{
+            //    List<string> items = new List<string>();
+            //    for (int i = 0; i < row.ItemArray.Length; i++)
+            //        items.Add(row[i].ToString());
 
-                _lvScripts.Items.Add(new ListViewItem(items.ToArray()));
-            }
+            //    _lvScripts.Items.Add(new ListViewItem(items.ToArray()));
+            //}
         }
 
         private void UnselectALL_Click(object sender, EventArgs e)
@@ -302,7 +302,6 @@ namespace EventAI
             if (_lvScripts.SelectedItems.Count > 0)
             {
                 ParseScriptsData(_lvScripts.SelectedItems[0].SubItems[0].Text);
-                _lInfo.Text = "";
             }
         }
 

@@ -56,12 +56,16 @@
             this.tCommentAITexts = new System.Windows.Forms.TextBox();
             this.tContentLocales = new System.Windows.Forms.TextBox();
             this._clbEventFlag = new System.Windows.Forms.CheckedListBox();
+            this._cmFlag = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.UnselectALL1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SelectAll1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Revert1 = new System.Windows.Forms.ToolStripMenuItem();
             this._clbPhase = new System.Windows.Forms.CheckedListBox();
             this._cmPhase = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UnselectALL = new System.Windows.Forms.ToolStripMenuItem();
             this.SelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.Revert = new System.Windows.Forms.ToolStripMenuItem();
-            this.Konstruktor = new System.Windows.Forms.TabPage();
+            this._tpScript = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._bFindParam = new System.Windows.Forms.Button();
             this._bFind = new System.Windows.Forms.Button();
@@ -147,7 +151,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lDateTime = new System.Windows.Forms.Label();
             this.Panel = new System.Windows.Forms.TabControl();
-            this.tabTextDesinger = new System.Windows.Forms.TabPage();
+            this._tpText = new System.Windows.Forms.TabPage();
             this.rtbTextOut = new System.Windows.Forms.RichTextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -169,14 +173,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this._cmFlag = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.UnselectALL1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.SelectAll1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.Revert1 = new System.Windows.Forms.ToolStripMenuItem();
-            this._lInfo = new System.Windows.Forms.Label();
+            this._tpSummon = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
+            this._cmFlag.SuspendLayout();
             this._cmPhase.SuspendLayout();
-            this.Konstruktor.SuspendLayout();
+            this._tpScript.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -188,10 +189,9 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.Panel.SuspendLayout();
-            this.tabTextDesinger.SuspendLayout();
+            this._tpText.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this._cmFlag.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -464,6 +464,33 @@
             this.HelpEntry.SetToolTip(this._clbEventFlag, resources.GetString("_clbEventFlag.ToolTip"));
             this._clbEventFlag.SelectedIndexChanged += new System.EventHandler(this.clbEventFlag_SelectedIndexChanged);
             // 
+            // _cmFlag
+            // 
+            this._cmFlag.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UnselectALL1,
+            this.SelectAll1,
+            this.Revert1});
+            this._cmFlag.Name = "_cmFlag";
+            resources.ApplyResources(this._cmFlag, "_cmFlag");
+            // 
+            // UnselectALL1
+            // 
+            this.UnselectALL1.Name = "UnselectALL1";
+            resources.ApplyResources(this.UnselectALL1, "UnselectALL1");
+            this.UnselectALL1.Click += new System.EventHandler(this.Revert1_Click);
+            // 
+            // SelectAll1
+            // 
+            this.SelectAll1.Name = "SelectAll1";
+            resources.ApplyResources(this.SelectAll1, "SelectAll1");
+            this.SelectAll1.Click += new System.EventHandler(this.Revert1_Click);
+            // 
+            // Revert1
+            // 
+            this.Revert1.Name = "Revert1";
+            resources.ApplyResources(this.Revert1, "Revert1");
+            this.Revert1.Click += new System.EventHandler(this.Revert1_Click);
+            // 
             // _clbPhase
             // 
             this._clbPhase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -534,13 +561,13 @@
             resources.ApplyResources(this.Revert, "Revert");
             this.Revert.Click += new System.EventHandler(this.UnselectALL_Click);
             // 
-            // Konstruktor
+            // _tpScript
             // 
-            this.Konstruktor.Controls.Add(this.splitContainer1);
-            this.Konstruktor.Controls.Add(this.lDateTime);
-            resources.ApplyResources(this.Konstruktor, "Konstruktor");
-            this.Konstruktor.Name = "Konstruktor";
-            this.Konstruktor.UseVisualStyleBackColor = true;
+            this._tpScript.Controls.Add(this.splitContainer1);
+            this._tpScript.Controls.Add(this.lDateTime);
+            resources.ApplyResources(this._tpScript, "_tpScript");
+            this._tpScript.Name = "_tpScript";
+            this._tpScript.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -562,7 +589,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitContainer1.Panel2.Controls.Add(this._lInfo);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox6);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.rtbScriptOut);
@@ -1121,35 +1147,36 @@
             // 
             // Panel
             // 
-            this.Panel.Controls.Add(this.Konstruktor);
-            this.Panel.Controls.Add(this.tabTextDesinger);
+            this.Panel.Controls.Add(this._tpScript);
+            this.Panel.Controls.Add(this._tpText);
+            this.Panel.Controls.Add(this._tpSummon);
             resources.ApplyResources(this.Panel, "Panel");
             this.Panel.Name = "Panel";
             this.Panel.SelectedIndex = 0;
             // 
-            // tabTextDesinger
+            // _tpText
             // 
-            this.tabTextDesinger.Controls.Add(this.rtbTextOut);
-            this.tabTextDesinger.Controls.Add(this.groupBox11);
-            this.tabTextDesinger.Controls.Add(this.lDateTime2);
-            this.tabTextDesinger.Controls.Add(this.bExitText);
-            this.tabTextDesinger.Controls.Add(this.bClearTextQuery);
-            this.tabTextDesinger.Controls.Add(this.bCreateTextQuery);
-            this.tabTextDesinger.Controls.Add(this.button5);
-            this.tabTextDesinger.Controls.Add(this.label12);
-            this.tabTextDesinger.Controls.Add(this.label11);
-            this.tabTextDesinger.Controls.Add(this.label8);
-            this.tabTextDesinger.Controls.Add(this.label10);
-            this.tabTextDesinger.Controls.Add(this.tNumberAIEmote);
-            this.tabTextDesinger.Controls.Add(this.label9);
-            this.tabTextDesinger.Controls.Add(this.cLenguageText);
-            this.tabTextDesinger.Controls.Add(this.cTypeText);
-            this.tabTextDesinger.Controls.Add(this.tNumberAISound);
-            this.tabTextDesinger.Controls.Add(this.tNumberAITexts);
-            this.tabTextDesinger.Controls.Add(this.groupBox9);
-            resources.ApplyResources(this.tabTextDesinger, "tabTextDesinger");
-            this.tabTextDesinger.Name = "tabTextDesinger";
-            this.tabTextDesinger.UseVisualStyleBackColor = true;
+            this._tpText.Controls.Add(this.rtbTextOut);
+            this._tpText.Controls.Add(this.groupBox11);
+            this._tpText.Controls.Add(this.lDateTime2);
+            this._tpText.Controls.Add(this.bExitText);
+            this._tpText.Controls.Add(this.bClearTextQuery);
+            this._tpText.Controls.Add(this.bCreateTextQuery);
+            this._tpText.Controls.Add(this.button5);
+            this._tpText.Controls.Add(this.label12);
+            this._tpText.Controls.Add(this.label11);
+            this._tpText.Controls.Add(this.label8);
+            this._tpText.Controls.Add(this.label10);
+            this._tpText.Controls.Add(this.tNumberAIEmote);
+            this._tpText.Controls.Add(this.label9);
+            this._tpText.Controls.Add(this.cLenguageText);
+            this._tpText.Controls.Add(this.cTypeText);
+            this._tpText.Controls.Add(this.tNumberAISound);
+            this._tpText.Controls.Add(this.tNumberAITexts);
+            this._tpText.Controls.Add(this.groupBox9);
+            resources.ApplyResources(this._tpText, "_tpText");
+            this._tpText.Name = "_tpText";
+            this._tpText.UseVisualStyleBackColor = true;
             // 
             // rtbTextOut
             // 
@@ -1281,39 +1308,13 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
-            // _cmFlag
+            // _tpSummon
             // 
-            this._cmFlag.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.UnselectALL1,
-            this.SelectAll1,
-            this.Revert1});
-            this._cmFlag.Name = "_cmFlag";
-            resources.ApplyResources(this._cmFlag, "_cmFlag");
+            resources.ApplyResources(this._tpSummon, "_tpSummon");
+            this._tpSummon.Name = "_tpSummon";
+            this._tpSummon.UseVisualStyleBackColor = true;
             // 
-            // UnselectALL1
-            // 
-            this.UnselectALL1.Name = "UnselectALL1";
-            resources.ApplyResources(this.UnselectALL1, "UnselectALL1");
-            this.UnselectALL1.Click += new System.EventHandler(this.Revert1_Click);
-            // 
-            // SelectAll1
-            // 
-            this.SelectAll1.Name = "SelectAll1";
-            resources.ApplyResources(this.SelectAll1, "SelectAll1");
-            this.SelectAll1.Click += new System.EventHandler(this.Revert1_Click);
-            // 
-            // Revert1
-            // 
-            this.Revert1.Name = "Revert1";
-            resources.ApplyResources(this.Revert1, "Revert1");
-            this.Revert1.Click += new System.EventHandler(this.Revert1_Click);
-            // 
-            // _lInfo
-            // 
-            resources.ApplyResources(this._lInfo, "_lInfo");
-            this._lInfo.Name = "_lInfo";
-            // 
-            // EventAI
+            // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1323,13 +1324,14 @@
             this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "EventAI";
+            this.Name = "MainForm";
             this.ShowIcon = false;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this._cmFlag.ResumeLayout(false);
             this._cmPhase.ResumeLayout(false);
-            this.Konstruktor.ResumeLayout(false);
-            this.Konstruktor.PerformLayout();
+            this._tpScript.ResumeLayout(false);
+            this._tpScript.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1348,13 +1350,12 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.Panel.ResumeLayout(false);
-            this.tabTextDesinger.ResumeLayout(false);
-            this.tabTextDesinger.PerformLayout();
+            this._tpText.ResumeLayout(false);
+            this._tpText.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this._cmFlag.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1371,7 +1372,7 @@
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolTip HelpEntry;
-        private System.Windows.Forms.TabPage Konstruktor;
+        private System.Windows.Forms.TabPage _tpScript;
         private System.Windows.Forms.Button WriteFiles;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox _tbShance;
@@ -1413,7 +1414,7 @@
         private System.Windows.Forms.Label lActionParam3_3;
         private System.Windows.Forms.Label lActionParam3_2;
         private System.Windows.Forms.Label lDateTime;
-        private System.Windows.Forms.TabPage tabTextDesinger;
+        private System.Windows.Forms.TabPage _tpText;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TextBox tContentDefault;
         private System.Windows.Forms.ComboBox cLocalisationText;
@@ -1505,7 +1506,7 @@
         private System.Windows.Forms.ToolStripMenuItem UnselectALL1;
         private System.Windows.Forms.ToolStripMenuItem SelectAll1;
         private System.Windows.Forms.ToolStripMenuItem Revert1;
-        private System.Windows.Forms.Label _lInfo;
+        private System.Windows.Forms.TabPage _tpSummon;
     }
 }
 
