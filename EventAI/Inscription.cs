@@ -13,7 +13,7 @@ namespace EventAI
             lActionParam3.Text = "";
             try
             {
-                switch ((ActionType)cb.SelectedValue)
+                switch ((ActionType)cb.SelectedValue.ToUInt32())
                 {
                     case ActionType.ТЕКСТ:
                         {
@@ -198,7 +198,7 @@ namespace EventAI
 
             try
             {
-                switch ((EventType)comboEventType.SelectedValue)
+                switch ((EventType)comboEventType.SelectedValue.ToUInt32())
                 {
                     case EventType.ПО_ТАЙМЕРУ_В_БОЮ:
                     case EventType.ПО_ТАЙМЕРУ_В_НЕ_БОЯ:
@@ -317,7 +317,7 @@ namespace EventAI
             lEventType3.Text = "";
             lEventType4.Text = "";
 
-            switch ((ConditionType)cEventParamCondition.SelectedIndex)
+            switch ((ConditionType)cEventParamCondition.SelectedValue.ToUInt32())
             {
                 case ConditionType.ПРИ_НАЛИЧИИ_АУРЫ:
                     lEventType3.Text = "ID спелла";

@@ -80,8 +80,11 @@
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="AIEnums.cs" />
+    <Compile Include="AIStruct.cs" />
     <Compile Include="CreatureInfo.cs" />
+    <Compile Include="DBC.cs" />
     <Compile Include="DbcReader.cs" />
+    <Compile Include="DbcStruct.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -132,6 +135,7 @@
     <Compile Include="Propertis.Designer.cs">
       <DependentUpon>Propertis.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpellEnums.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="solar-eclipse.ico" />
