@@ -11,6 +11,7 @@ namespace EventAI
             lActionParam3.Text = "";
             lActionParam2.Text = "";
             lActionParam3.Text = "";
+
             try
             {
                 switch ((ActionType)cb.SelectedValue.ToUInt32())

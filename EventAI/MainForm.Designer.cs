@@ -232,7 +232,6 @@
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
             resources.ApplyResources(this.настройкиToolStripMenuItem, "настройкиToolStripMenuItem");
-            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
             // помощьToolStripMenuItem
             // 

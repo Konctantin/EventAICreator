@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
+using System.Text;
 
 
 namespace EventAI
@@ -34,18 +35,9 @@ namespace EventAI
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dialog = new AboutBox();
-            dialog.ShowDialog(this);
-            dialog.Dispose();
+            new AboutBox().ShowDialog();
         }
 
-        // Откроем окно настроек
-        private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
-         {
-             var dialog = new AboutBox();
-             dialog.ShowDialog(this);
-             dialog.Dispose();
-         }
         // Проверка для текстовых полей 1
         private void ActionParam1_1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -126,21 +118,18 @@ namespace EventAI
             int nIDCreature = EntryNpc.Text.ToInt32();
             int nEventChance = _tbShance.Text.ToInt32();
             int nEventType = 0;
-            int[] arr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12 };
-            int ncEventParamCondition = (_cbEventParametr2.Visible) ? arr[_cbEventParametr2.SelectedIndex] : 0;
-            
 
             // Установим формулу для образования ИД скрипта
             int nId = (nIDCreature * 100) + (50 + nNumberScripts);
 
-            if (nNumberScripts<1)
-                 ConsoleScritpOut("Номен скрипта должен быть больше 0!", MsgStatus.ERROR);
+            //if (nNumberScripts<1)
+                 //ConsoleScritpOut("Номен скрипта должен быть больше 0!", MsgStatus.ERROR);
 
-            if (nEventChance == 0 || nEventChance > 100)
-                ConsoleScritpOut("Шанс срабатывания должен быть 0 и не больше 100%!", MsgStatus.ERROR);
+            //if (nEventChance == 0 || nEventChance > 100)
+                //ConsoleScritpOut("Шанс срабатывания должен быть 0 и не больше 100%!", MsgStatus.ERROR);
 
-            if (_clbEventFlag.SelectedIndex == 5 || _clbEventFlag.SelectedIndex == 6)
-                ConsoleScritpOut("Вы питаетесь использовать зарезервированый флаг события!", MsgStatus.ERROR);
+            //if (_clbEventFlag.SelectedIndex == 5 || _clbEventFlag.SelectedIndex == 6)
+                //ConsoleScritpOut("Вы питаетесь использовать зарезервированый флаг события!", MsgStatus.ERROR);
 
             switch ((EventType)nEventType)
             {
@@ -195,7 +184,7 @@ namespace EventAI
 
             if (err)
             {
-                ConsoleScritpOut("Операция не выполнена", MsgStatus.ERROR);
+                //ConsoleScritpOut("Операция не выполнена", MsgStatus.ERROR);
                 return;
             }
             ////Сформируем строку запроса
@@ -227,30 +216,17 @@ namespace EventAI
             int[] arr = { 0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 33, 35, 36, 37, 38 };
             int ncLenguageText = arr[cLenguageText.SelectedIndex];
 
-            var sQueryText = (rbReplaceText.Checked) ? "REPLACE INTO" : "INSERT IGNORE INTO"; 
-
             if (tContentDefault.Text == "" && tContentLocales.Text == "") 
                 return;
-
-            var text = String.Format("{0} `creature_ai_texts` VALUES ('-{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}');",
-                sQueryText, ntNumberAITexts, stContentDefault,
-                loc[0], loc[1], loc[2], loc[3], loc[4], loc[5], loc[6], loc[7],
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormatLine("DELETE FROM `creature_ai_texts` WHERE entry IN (-{0});", ntNumberAITexts);
+            sb.AppendFormatLine("INSERT INTO `creature_ai_texts` VALUES ('-{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}');",
+                ntNumberAITexts, stContentDefault, loc[0], loc[1], loc[2], loc[3], loc[4], loc[5], loc[6], loc[7],
                 ntNumberAISound, cTypeText.SelectedIndex, ncLenguageText, ntNumberAIEmote, sCommentsAITexts);
-            
-            rtbTextOut.Text = text;
+
+            rtbTextOut.Text = sb.ToString();
         }
 
-        private void ConsoleScritpOut(string text, MsgStatus status)
-        {
-            switch (status)
-            {
-                case MsgStatus.INFO: rtbScriptOut.ForeColor = Color.Black; break;
-                case MsgStatus.ERROR: rtbScriptOut.ForeColor = Color.Red; break;
-            }
-
-            rtbScriptOut.AppendText("!! "+text + "\r\n");
-            err = true;
-        }
         private void clbEventFlag_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_clbEventFlag.SelectedIndex == 5 || _clbEventFlag.SelectedIndex == 6)
