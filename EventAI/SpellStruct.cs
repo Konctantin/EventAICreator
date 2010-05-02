@@ -481,31 +481,45 @@ namespace EventAI
         public int   MinCastTime;
     };
 
+    public struct EmotesEntry
+    {
+        public uint ID;
+        private uint _name;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
+        private uint[] field;
+        
+        public string Name
+        {
+            get
+            {
+                string s;
+                DBC._EmotesStrings.TryGetValue(_name, out s);
+                return s;
+            }
+        }
+    }
+
+    public struct FactionEntry
+    {
+        public uint ID;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 22)]
+        private uint[] fields1;
+        private uint _name;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+        private uint[] fields2;
+
+        public string Name
+        {
+            get
+            {
+                string s;
+                DBC._FactionStrings.TryGetValue(_name, out s);
+                return s;
+            }
+        }
+    }
+
     //=============== DateBase =================\\
-
-    public struct SpellProcEvent
-    {
-        public uint     ID;
-        public ushort   SchoolMask;
-        public uint     SpellFamilyName;
-        public uint     SpellFamilyMask0;
-        public uint     SpellFamilyMask1;
-        public uint     SpellFamilyMask2;
-        public uint     ProcFlags;
-        public uint     ProcEx;
-        public float    PpmRate;
-        public float    CustomChance;
-        public uint     Cooldown;
-    };
-
-    public struct SpellChain
-    {
-        public int ID;
-        public int PrevSpell;
-        public int FirstSpell;
-        public int Rank;
-        public int ReqSpell;
-    };
 
     public struct Item
     {
