@@ -67,7 +67,6 @@
             this.Revert = new System.Windows.Forms.ToolStripMenuItem();
             this._tpScript = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
             this._lvScripts = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -92,9 +91,10 @@
             this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader23 = new System.Windows.Forms.ColumnHeader();
+            this._gbPhase = new System.Windows.Forms.GroupBox();
+            this._gbEventFlag = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbScriptOut = new System.Windows.Forms.RichTextBox();
             this.Create = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -176,8 +176,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this._gbPhase.SuspendLayout();
+            this._gbEventFlag.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -456,6 +456,7 @@
             this._clbEventFlag.Name = "_clbEventFlag";
             this.HelpEntry.SetToolTip(this._clbEventFlag, resources.GetString("_clbEventFlag.ToolTip"));
             this._clbEventFlag.SelectedIndexChanged += new System.EventHandler(this.clbEventFlag_SelectedIndexChanged);
+            this._clbEventFlag.SelectedValueChanged += new System.EventHandler(this._clbEventFlag_SelectedValueChanged);
             // 
             // _cmFlag
             // 
@@ -526,6 +527,7 @@
             this._clbPhase.MultiColumn = true;
             this._clbPhase.Name = "_clbPhase";
             this._clbPhase.SelectedIndexChanged += new System.EventHandler(this.clbEventFlag_SelectedIndexChanged);
+            this._clbPhase.SelectedValueChanged += new System.EventHandler(this._clbPhase_SelectedValueChanged);
             // 
             // _cmPhase
             // 
@@ -576,8 +578,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox6);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Controls.Add(this._gbPhase);
+            this.splitContainer1.Panel2.Controls.Add(this._gbEventFlag);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.rtbScriptOut);
@@ -594,12 +596,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this._tbShance);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Name = "label1";
             // 
             // _lvScripts
             // 
@@ -728,24 +724,30 @@
             // 
             resources.ApplyResources(this.columnHeader23, "columnHeader23");
             // 
+            // _gbPhase
+            // 
+            this._gbPhase.Controls.Add(this._clbPhase);
+            resources.ApplyResources(this._gbPhase, "_gbPhase");
+            this._gbPhase.Name = "_gbPhase";
+            this._gbPhase.TabStop = false;
+            // 
+            // _gbEventFlag
+            // 
+            this._gbEventFlag.Controls.Add(this._clbEventFlag);
+            resources.ApplyResources(this._gbEventFlag, "_gbEventFlag");
+            this._gbEventFlag.Name = "_gbEventFlag";
+            this._gbEventFlag.TabStop = false;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Name = "label1";
+            // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this._clbPhase);
-            resources.ApplyResources(this.groupBox6, "groupBox6");
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this._clbEventFlag);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
             // 
             // rtbScriptOut
             // 
@@ -1291,8 +1293,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this._gbPhase.ResumeLayout(false);
+            this._gbEventFlag.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1429,8 +1431,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox _gbEventFlag;
+        private System.Windows.Forms.GroupBox _gbPhase;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button _bEventParam4;
         private System.Windows.Forms.ComboBox _cbEventParametr4;

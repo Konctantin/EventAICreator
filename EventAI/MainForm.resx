@@ -874,7 +874,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_clbEventFlag.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>_gbEventFlag</value>
   </data>
   <data name="&gt;&gt;_clbEventFlag.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1027,7 +1027,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_clbPhase.Parent" xml:space="preserve">
-    <value>groupBox6</value>
+    <value>_gbPhase</value>
   </data>
   <data name="&gt;&gt;_clbPhase.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1062,84 +1062,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Creature_ID</value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>Phase</value>
-  </data>
-  <data name="columnHeader5.Text" xml:space="preserve">
-    <value>Chanse</value>
-  </data>
-  <data name="columnHeader5.Width" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="columnHeader6.Text" xml:space="preserve">
-    <value>Flag</value>
-  </data>
-  <data name="columnHeader6.Width" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="columnHeader7.Text" xml:space="preserve">
-    <value>E_param1</value>
-  </data>
-  <data name="columnHeader8.Text" xml:space="preserve">
-    <value>E_param2</value>
-  </data>
-  <data name="columnHeader9.Text" xml:space="preserve">
-    <value>E_param3</value>
-  </data>
-  <data name="columnHeader10.Text" xml:space="preserve">
-    <value>E_param4</value>
-  </data>
-  <data name="columnHeader11.Text" xml:space="preserve">
-    <value>Action_type1</value>
-  </data>
-  <data name="columnHeader12.Text" xml:space="preserve">
-    <value>A_param1_1</value>
-  </data>
-  <data name="columnHeader13.Text" xml:space="preserve">
-    <value>A_param1_2</value>
-  </data>
-  <data name="columnHeader14.Text" xml:space="preserve">
-    <value>A_param1_3</value>
-  </data>
-  <data name="columnHeader15.Text" xml:space="preserve">
-    <value>Action_type2</value>
-  </data>
-  <data name="columnHeader16.Text" xml:space="preserve">
-    <value>A_param2_1</value>
-  </data>
-  <data name="columnHeader17.Text" xml:space="preserve">
-    <value>A_param2_2</value>
-  </data>
-  <data name="columnHeader18.Text" xml:space="preserve">
-    <value>A_param2_3</value>
-  </data>
-  <data name="columnHeader19.Text" xml:space="preserve">
-    <value>Action_type3</value>
-  </data>
-  <data name="columnHeader20.Text" xml:space="preserve">
-    <value>A_param3_1</value>
-  </data>
-  <data name="columnHeader21.Text" xml:space="preserve">
-    <value>A_param3_2</value>
-  </data>
-  <data name="columnHeader22.Text" xml:space="preserve">
-    <value>A_param3_3</value>
-  </data>
-  <data name="columnHeader23.Text" xml:space="preserve">
-    <value>Comment</value>
-  </data>
   <data name="_lvScripts.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1173,52 +1095,52 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="_gbPhase.Location" type="System.Drawing.Point, System.Drawing">
     <value>276, 193</value>
   </data>
-  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="_gbPhase.Size" type="System.Drawing.Size, System.Drawing">
     <value>508, 143</value>
   </data>
-  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
+  <data name="_gbPhase.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
+  <data name="_gbPhase.Text" xml:space="preserve">
     <value>Фаза</value>
   </data>
-  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
-    <value>groupBox6</value>
+  <data name="&gt;&gt;_gbPhase.Name" xml:space="preserve">
+    <value>_gbPhase</value>
   </data>
-  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+  <data name="&gt;&gt;_gbPhase.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;_gbPhase.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
   </data>
-  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;_gbPhase.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="_gbEventFlag.Location" type="System.Drawing.Point, System.Drawing">
     <value>787, 193</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="_gbEventFlag.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 143</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="_gbEventFlag.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
+  <data name="_gbEventFlag.Text" xml:space="preserve">
     <value>Флаг события</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;_gbEventFlag.Name" xml:space="preserve">
+    <value>_gbEventFlag</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;_gbEventFlag.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;_gbEventFlag.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;_gbEventFlag.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
@@ -2075,6 +1997,84 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_tpScript.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Creature_ID</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="columnHeader4.Text" xml:space="preserve">
+    <value>Phase</value>
+  </data>
+  <data name="columnHeader5.Text" xml:space="preserve">
+    <value>Chanse</value>
+  </data>
+  <data name="columnHeader5.Width" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="columnHeader6.Text" xml:space="preserve">
+    <value>Flag</value>
+  </data>
+  <data name="columnHeader6.Width" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="columnHeader7.Text" xml:space="preserve">
+    <value>E_param1</value>
+  </data>
+  <data name="columnHeader8.Text" xml:space="preserve">
+    <value>E_param2</value>
+  </data>
+  <data name="columnHeader9.Text" xml:space="preserve">
+    <value>E_param3</value>
+  </data>
+  <data name="columnHeader10.Text" xml:space="preserve">
+    <value>E_param4</value>
+  </data>
+  <data name="columnHeader11.Text" xml:space="preserve">
+    <value>Action_type1</value>
+  </data>
+  <data name="columnHeader12.Text" xml:space="preserve">
+    <value>A_param1_1</value>
+  </data>
+  <data name="columnHeader13.Text" xml:space="preserve">
+    <value>A_param1_2</value>
+  </data>
+  <data name="columnHeader14.Text" xml:space="preserve">
+    <value>A_param1_3</value>
+  </data>
+  <data name="columnHeader15.Text" xml:space="preserve">
+    <value>Action_type2</value>
+  </data>
+  <data name="columnHeader16.Text" xml:space="preserve">
+    <value>A_param2_1</value>
+  </data>
+  <data name="columnHeader17.Text" xml:space="preserve">
+    <value>A_param2_2</value>
+  </data>
+  <data name="columnHeader18.Text" xml:space="preserve">
+    <value>A_param2_3</value>
+  </data>
+  <data name="columnHeader19.Text" xml:space="preserve">
+    <value>Action_type3</value>
+  </data>
+  <data name="columnHeader20.Text" xml:space="preserve">
+    <value>A_param3_1</value>
+  </data>
+  <data name="columnHeader21.Text" xml:space="preserve">
+    <value>A_param3_2</value>
+  </data>
+  <data name="columnHeader22.Text" xml:space="preserve">
+    <value>A_param3_3</value>
+  </data>
+  <data name="columnHeader23.Text" xml:space="preserve">
+    <value>Comment</value>
   </data>
   <data name="_bEventParam1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

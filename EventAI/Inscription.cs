@@ -4,14 +4,16 @@ namespace EventAI
 {
     public static class Inscription
     {
+        static Button bb;
         public static void ShowActionParametrInscription(ComboBox cb, Label lActionParam1, Label lActionParam2, Label lActionParam3,
             Button bSelectActionParam1, Button bSelectActionParam2, Button bSelectActionParam3,
-            ComboBox cbActionParam1, ComboBox cbActionParam2, ComboBox cbActionParam3)
+            ComboBox cbActionParam1, ComboBox cbActionParam2, ComboBox cbActionParam3, GroupBox gr)
         {
             lActionParam3.Text = "";
             lActionParam2.Text = "";
             lActionParam3.Text = "";
-
+            if (bb != null)
+                bb.Dispose();
             try
             {
                 switch ((ActionType)cb.SelectedValue.ToUInt32())
@@ -37,6 +39,13 @@ namespace EventAI
                     case ActionType.ЗВУК:
                         {
                             lActionParam1.Text = "ID звука";
+                            bb = new Button();
+                            bb.Name = "buttonTest";
+                            bb.UseVisualStyleBackColor = true;
+                            bb.Text = "Test";
+                            bb.Location = new System.Drawing.Point(100, 100);
+                            gr.Controls.Add(bb);
+                            bb.Click += new System.EventHandler(bb_Click);
                         }
                         break;
                     case ActionType.ЭМОЦИЯ:
@@ -187,6 +196,11 @@ namespace EventAI
             cbActionParam2.Visible = lActionParam2.Text != "";
             cbActionParam3.Visible = lActionParam3.Text != "";
          }
+
+        static void bb_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("");
+        }
 
         public static void ShowEventTypeInscription(ComboBox comboEventType, 
             Label lEventType1, Label lEventType2, Label lEventType3, Label lEventType4,
