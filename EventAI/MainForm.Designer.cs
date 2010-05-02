@@ -194,50 +194,62 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.помощьToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1056, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.новыйСкриптToolStripMenuItem,
             this.сохранитьСкриптToolStripMenuItem});
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.toolStripMenuItem1.Enabled = false;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(56, 20);
+            this.toolStripMenuItem1.Text = "Скрипт";
             // 
             // новыйСкриптToolStripMenuItem
             // 
             this.новыйСкриптToolStripMenuItem.Name = "новыйСкриптToolStripMenuItem";
-            resources.ApplyResources(this.новыйСкриптToolStripMenuItem, "новыйСкриптToolStripMenuItem");
+            this.новыйСкриптToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.новыйСкриптToolStripMenuItem.Text = "Открыть скрипт";
             // 
             // сохранитьСкриптToolStripMenuItem
             // 
             this.сохранитьСкриптToolStripMenuItem.Name = "сохранитьСкриптToolStripMenuItem";
-            resources.ApplyResources(this.сохранитьСкриптToolStripMenuItem, "сохранитьСкриптToolStripMenuItem");
+            this.сохранитьСкриптToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.сохранитьСкриптToolStripMenuItem.Text = "Сохранить скрипт";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиToolStripMenuItem});
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            this.toolStripMenuItem2.Enabled = false;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(73, 20);
+            this.toolStripMenuItem2.Text = "Настройки";
             // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            resources.ApplyResources(this.настройкиToolStripMenuItem, "настройкиToolStripMenuItem");
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.настройкиToolStripMenuItem.Text = "Параметры";
             // 
             // помощьToolStripMenuItem
             // 
             this.помощьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оПрограммеToolStripMenuItem});
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            resources.ApplyResources(this.помощьToolStripMenuItem, "помощьToolStripMenuItem");
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.помощьToolStripMenuItem.Text = "Помощь";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            resources.ApplyResources(this.оПрограммеToolStripMenuItem, "оПрограммеToolStripMenuItem");
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // HelpEntry
@@ -252,18 +264,24 @@
             // _tbComment
             // 
             this._tbComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this._tbComment, "_tbComment");
+            this._tbComment.Location = new System.Drawing.Point(91, 347);
+            this._tbComment.MaxLength = 150;
             this._tbComment.Name = "_tbComment";
-            this.HelpEntry.SetToolTip(this._tbComment, resources.GetString("_tbComment.ToolTip"));
+            this._tbComment.Size = new System.Drawing.Size(833, 20);
+            this._tbComment.TabIndex = 26;
+            this._tbComment.Text = "ytdb";
+            this.HelpEntry.SetToolTip(this._tbComment, "Всегда оставляйте коментарий\r\nВам же проще будет и других\r\nне запутаете");
             // 
             // _cbActionType2
             // 
             this._cbActionType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbActionType2.ForeColor = System.Drawing.Color.Blue;
             this._cbActionType2.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionType2, "_cbActionType2");
+            this._cbActionType2.Location = new System.Drawing.Point(6, 19);
             this._cbActionType2.Name = "_cbActionType2";
-            this.HelpEntry.SetToolTip(this._cbActionType2, resources.GetString("_cbActionType2.ToolTip"));
+            this._cbActionType2.Size = new System.Drawing.Size(238, 21);
+            this._cbActionType2.TabIndex = 18;
+            this.HelpEntry.SetToolTip(this._cbActionType2, "Выбирите тип действия");
             this._cbActionType2.SelectedIndexChanged += new System.EventHandler(this.ActionType2_SelectedIndexChanged);
             // 
             // _cbActionType3
@@ -271,9 +289,11 @@
             this._cbActionType3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbActionType3.ForeColor = System.Drawing.Color.Blue;
             this._cbActionType3.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionType3, "_cbActionType3");
+            this._cbActionType3.Location = new System.Drawing.Point(6, 18);
             this._cbActionType3.Name = "_cbActionType3";
-            this.HelpEntry.SetToolTip(this._cbActionType3, resources.GetString("_cbActionType3.ToolTip"));
+            this._cbActionType3.Size = new System.Drawing.Size(238, 21);
+            this._cbActionType3.TabIndex = 22;
+            this.HelpEntry.SetToolTip(this._cbActionType3, "Выбирите тип действия");
             this._cbActionType3.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_2);
             // 
             // _cbActionType1
@@ -281,9 +301,11 @@
             this._cbActionType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbActionType1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionType1.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionType1, "_cbActionType1");
+            this._cbActionType1.Location = new System.Drawing.Point(6, 19);
             this._cbActionType1.Name = "_cbActionType1";
-            this.HelpEntry.SetToolTip(this._cbActionType1, resources.GetString("_cbActionType1.ToolTip"));
+            this._cbActionType1.Size = new System.Drawing.Size(238, 21);
+            this._cbActionType1.TabIndex = 14;
+            this.HelpEntry.SetToolTip(this._cbActionType1, "Выбирите тип действия");
             this._cbActionType1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // _cbEventType
@@ -292,66 +314,60 @@
             this._cbEventType.DropDownWidth = 200;
             this._cbEventType.ForeColor = System.Drawing.Color.Blue;
             this._cbEventType.FormattingEnabled = true;
-            this._cbEventType.Items.AddRange(new object[] {
-            resources.GetString("_cbEventType.Items"),
-            resources.GetString("_cbEventType.Items1"),
-            resources.GetString("_cbEventType.Items2"),
-            resources.GetString("_cbEventType.Items3"),
-            resources.GetString("_cbEventType.Items4"),
-            resources.GetString("_cbEventType.Items5"),
-            resources.GetString("_cbEventType.Items6"),
-            resources.GetString("_cbEventType.Items7"),
-            resources.GetString("_cbEventType.Items8"),
-            resources.GetString("_cbEventType.Items9"),
-            resources.GetString("_cbEventType.Items10"),
-            resources.GetString("_cbEventType.Items11"),
-            resources.GetString("_cbEventType.Items12"),
-            resources.GetString("_cbEventType.Items13"),
-            resources.GetString("_cbEventType.Items14"),
-            resources.GetString("_cbEventType.Items15"),
-            resources.GetString("_cbEventType.Items16"),
-            resources.GetString("_cbEventType.Items17"),
-            resources.GetString("_cbEventType.Items18"),
-            resources.GetString("_cbEventType.Items19"),
-            resources.GetString("_cbEventType.Items20"),
-            resources.GetString("_cbEventType.Items21"),
-            resources.GetString("_cbEventType.Items22"),
-            resources.GetString("_cbEventType.Items23"),
-            resources.GetString("_cbEventType.Items24")});
-            resources.ApplyResources(this._cbEventType, "_cbEventType");
+            this._cbEventType.Location = new System.Drawing.Point(6, 18);
             this._cbEventType.Name = "_cbEventType";
+            this._cbEventType.Size = new System.Drawing.Size(251, 21);
+            this._cbEventType.TabIndex = 9;
             this._cbEventType.Tag = "0-TIMER";
-            this.HelpEntry.SetToolTip(this._cbEventType, resources.GetString("_cbEventType.ToolTip"));
+            this.HelpEntry.SetToolTip(this._cbEventType, "Укажите тип события");
             this._cbEventType.SelectedIndexChanged += new System.EventHandler(this.comboEventType_SelectedIndexChanged);
             // 
             // NumberScripts
             // 
             this.NumberScripts.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.NumberScripts, "NumberScripts");
+            this.NumberScripts.Location = new System.Drawing.Point(151, 265);
+            this.NumberScripts.MaxLength = 5;
             this.NumberScripts.Name = "NumberScripts";
-            this.HelpEntry.SetToolTip(this.NumberScripts, resources.GetString("NumberScripts.ToolTip"));
+            this.NumberScripts.Size = new System.Drawing.Size(114, 20);
+            this.NumberScripts.TabIndex = 1;
+            this.NumberScripts.Text = "1";
+            this.HelpEntry.SetToolTip(this.NumberScripts, "Введите номер скрипта \r\nВ запросе ID сформируеться исходя из\r\nID существа * 100 +" +
+                    " 50 + номер скрипта");
             this.NumberScripts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // EntryNpc
             // 
-            resources.ApplyResources(this.EntryNpc, "EntryNpc");
+            this.EntryNpc.Location = new System.Drawing.Point(151, 291);
+            this.EntryNpc.MaxLength = 10;
             this.EntryNpc.Name = "EntryNpc";
-            this.HelpEntry.SetToolTip(this.EntryNpc, resources.GetString("EntryNpc.ToolTip"));
+            this.EntryNpc.Size = new System.Drawing.Size(114, 20);
+            this.EntryNpc.TabIndex = 2;
+            this.EntryNpc.Text = "1";
+            this.HelpEntry.SetToolTip(this.EntryNpc, "Введите ID существа используя \r\nтаблицу creature_template");
             this.EntryNpc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // _tbShance
             // 
-            resources.ApplyResources(this._tbShance, "_tbShance");
+            this._tbShance.Location = new System.Drawing.Point(151, 316);
+            this._tbShance.MaxLength = 3;
             this._tbShance.Name = "_tbShance";
-            this.HelpEntry.SetToolTip(this._tbShance, resources.GetString("_tbShance.ToolTip"));
+            this._tbShance.Size = new System.Drawing.Size(114, 20);
+            this._tbShance.TabIndex = 4;
+            this._tbShance.Text = "100";
+            this.HelpEntry.SetToolTip(this._tbShance, "Укажите шанс срабатывания");
             this._tbShance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // tContentDefault
             // 
-            resources.ApplyResources(this.tContentDefault, "tContentDefault");
+            this.tContentDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tContentDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tContentDefault.Location = new System.Drawing.Point(4, 39);
+            this.tContentDefault.Multiline = true;
             this.tContentDefault.Name = "tContentDefault";
-            this.HelpEntry.SetToolTip(this.tContentDefault, resources.GetString("tContentDefault.ToolTip"));
+            this.tContentDefault.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tContentDefault.Size = new System.Drawing.Size(959, 79);
+            this.tContentDefault.TabIndex = 3;
+            this.HelpEntry.SetToolTip(this.tContentDefault, "Здесь надо вводить\r\nоригинальный текст сообщения\r\nна английском");
             // 
             // cLocalisationText
             // 
@@ -359,32 +375,42 @@
             this.cLocalisationText.ForeColor = System.Drawing.Color.Navy;
             this.cLocalisationText.FormattingEnabled = true;
             this.cLocalisationText.Items.AddRange(new object[] {
-            resources.GetString("cLocalisationText.Items"),
-            resources.GetString("cLocalisationText.Items1"),
-            resources.GetString("cLocalisationText.Items2"),
-            resources.GetString("cLocalisationText.Items3"),
-            resources.GetString("cLocalisationText.Items4"),
-            resources.GetString("cLocalisationText.Items5"),
-            resources.GetString("cLocalisationText.Items6"),
-            resources.GetString("cLocalisationText.Items7")});
-            resources.ApplyResources(this.cLocalisationText, "cLocalisationText");
+            "1-Корейский",
+            "2-Французкий",
+            "3-Немецкий",
+            "4-Китайский",
+            "5-Тайванский",
+            "6-Испанский",
+            "7-Испанский (Мексика)",
+            "8-Русский"});
+            this.cLocalisationText.Location = new System.Drawing.Point(167, 127);
             this.cLocalisationText.Name = "cLocalisationText";
-            this.HelpEntry.SetToolTip(this.cLocalisationText, resources.GetString("cLocalisationText.ToolTip"));
+            this.cLocalisationText.Size = new System.Drawing.Size(216, 21);
+            this.cLocalisationText.TabIndex = 6;
+            this.HelpEntry.SetToolTip(this.cLocalisationText, "Укажите язык локализации,\r\nпо умолчанию русский (8)");
             // 
             // tNumberAITexts
             // 
             this.tNumberAITexts.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.tNumberAITexts, "tNumberAITexts");
+            this.tNumberAITexts.Location = new System.Drawing.Point(26, 31);
+            this.tNumberAITexts.MaxLength = 6;
             this.tNumberAITexts.Name = "tNumberAITexts";
-            this.HelpEntry.SetToolTip(this.tNumberAITexts, resources.GetString("tNumberAITexts.ToolTip"));
+            this.tNumberAITexts.Size = new System.Drawing.Size(99, 20);
+            this.tNumberAITexts.TabIndex = 4;
+            this.tNumberAITexts.Text = "1";
+            this.HelpEntry.SetToolTip(this.tNumberAITexts, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
             this.tNumberAITexts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // tNumberAISound
             // 
             this.tNumberAISound.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            resources.ApplyResources(this.tNumberAISound, "tNumberAISound");
+            this.tNumberAISound.Location = new System.Drawing.Point(150, 31);
+            this.tNumberAISound.MaxLength = 5;
             this.tNumberAISound.Name = "tNumberAISound";
-            this.HelpEntry.SetToolTip(this.tNumberAISound, resources.GetString("tNumberAISound.ToolTip"));
+            this.tNumberAISound.Size = new System.Drawing.Size(99, 20);
+            this.tNumberAISound.TabIndex = 5;
+            this.tNumberAISound.Text = "0";
+            this.HelpEntry.SetToolTip(this.tNumberAISound, "Данные из DBC\r\n");
             this.tNumberAISound.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // cLenguageText
@@ -393,67 +419,84 @@
             this.cLenguageText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.cLenguageText.FormattingEnabled = true;
             this.cLenguageText.Items.AddRange(new object[] {
-            resources.GetString("cLenguageText.Items"),
-            resources.GetString("cLenguageText.Items1"),
-            resources.GetString("cLenguageText.Items2"),
-            resources.GetString("cLenguageText.Items3"),
-            resources.GetString("cLenguageText.Items4"),
-            resources.GetString("cLenguageText.Items5"),
-            resources.GetString("cLenguageText.Items6"),
-            resources.GetString("cLenguageText.Items7"),
-            resources.GetString("cLenguageText.Items8"),
-            resources.GetString("cLenguageText.Items9"),
-            resources.GetString("cLenguageText.Items10"),
-            resources.GetString("cLenguageText.Items11"),
-            resources.GetString("cLenguageText.Items12"),
-            resources.GetString("cLenguageText.Items13"),
-            resources.GetString("cLenguageText.Items14"),
-            resources.GetString("cLenguageText.Items15"),
-            resources.GetString("cLenguageText.Items16"),
-            resources.GetString("cLenguageText.Items17")});
-            resources.ApplyResources(this.cLenguageText, "cLenguageText");
+            "0-Универсальный",
+            "1-Язык Орков (для всей Орды)",
+            "2-Язык Ночных Эльфов",
+            "3-Язык Тауренов",
+            "6-Язык Дворфов",
+            "7-Язык Людей (для всего Альянса)",
+            "8-Язык Демонов",
+            "9-Язык Титанов",
+            "10-Язык Кровавых Эльфов",
+            "11-Язык Драконов",
+            "12-Язык Элементалов",
+            "13-Язык Гномов",
+            "14-Язык Тролей",
+            "33-Язык Нежити",
+            "35-Язык Дреней",
+            "36-Язык Зомби",
+            "37-Язык Гномов (Бинарный)",
+            "38-Язык Гоблинов (Бинарный)"});
+            this.cLenguageText.Location = new System.Drawing.Point(706, 31);
             this.cLenguageText.Name = "cLenguageText";
-            this.HelpEntry.SetToolTip(this.cLenguageText, resources.GetString("cLenguageText.ToolTip"));
+            this.cLenguageText.Size = new System.Drawing.Size(253, 21);
+            this.cLenguageText.TabIndex = 7;
+            this.HelpEntry.SetToolTip(this.cLenguageText, "Укажите на каком языке \r\nбудет понятно сообщение");
             // 
             // tNumberAIEmote
             // 
             this.tNumberAIEmote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            resources.ApplyResources(this.tNumberAIEmote, "tNumberAIEmote");
+            this.tNumberAIEmote.Location = new System.Drawing.Point(279, 31);
+            this.tNumberAIEmote.MaxLength = 3;
             this.tNumberAIEmote.Name = "tNumberAIEmote";
-            this.HelpEntry.SetToolTip(this.tNumberAIEmote, resources.GetString("tNumberAIEmote.ToolTip"));
+            this.tNumberAIEmote.Size = new System.Drawing.Size(99, 20);
+            this.tNumberAIEmote.TabIndex = 8;
+            this.tNumberAIEmote.Text = "0";
+            this.HelpEntry.SetToolTip(this.tNumberAIEmote, "Данные из DBC");
             this.tNumberAIEmote.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // tCommentAITexts
             // 
             this.tCommentAITexts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.tCommentAITexts, "tCommentAITexts");
+            this.tCommentAITexts.Location = new System.Drawing.Point(4, 255);
             this.tCommentAITexts.Name = "tCommentAITexts";
-            this.HelpEntry.SetToolTip(this.tCommentAITexts, resources.GetString("tCommentAITexts.ToolTip"));
+            this.tCommentAITexts.Size = new System.Drawing.Size(959, 20);
+            this.tCommentAITexts.TabIndex = 13;
+            this.tCommentAITexts.Text = "ytdb";
+            this.HelpEntry.SetToolTip(this.tCommentAITexts, "Не забываем про комментарий");
             // 
             // tContentLocales
             // 
-            resources.ApplyResources(this.tContentLocales, "tContentLocales");
+            this.tContentLocales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tContentLocales.ForeColor = System.Drawing.Color.Navy;
+            this.tContentLocales.Location = new System.Drawing.Point(4, 152);
+            this.tContentLocales.Multiline = true;
             this.tContentLocales.Name = "tContentLocales";
-            this.HelpEntry.SetToolTip(this.tContentLocales, resources.GetString("tContentLocales.ToolTip"));
+            this.tContentLocales.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tContentLocales.Size = new System.Drawing.Size(959, 79);
+            this.tContentLocales.TabIndex = 14;
+            this.HelpEntry.SetToolTip(this.tContentLocales, "Тут вводим локализирований текст");
             // 
             // _clbEventFlag
             // 
             this._clbEventFlag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this._clbEventFlag.CheckOnClick = true;
             this._clbEventFlag.ContextMenuStrip = this._cmFlag;
-            resources.ApplyResources(this._clbEventFlag, "_clbEventFlag");
+            this._clbEventFlag.Dock = System.Windows.Forms.DockStyle.Fill;
             this._clbEventFlag.FormattingEnabled = true;
             this._clbEventFlag.Items.AddRange(new object[] {
-            resources.GetString("_clbEventFlag.Items"),
-            resources.GetString("_clbEventFlag.Items1"),
-            resources.GetString("_clbEventFlag.Items2"),
-            resources.GetString("_clbEventFlag.Items3"),
-            resources.GetString("_clbEventFlag.Items4"),
-            resources.GetString("_clbEventFlag.Items5"),
-            resources.GetString("_clbEventFlag.Items6"),
-            resources.GetString("_clbEventFlag.Items7")});
+            "1-Повторяемость",
+            "2-Инстанс(Нормальный режим 10)",
+            "4-Инстанс(Нормальный режим 25)",
+            "8-Инстанс(Героический режим 10)",
+            "16-Инстанс(Героический режим 25)",
+            "32-Зарезервировано(Не используется)",
+            "64-Зарезервировано(Не используется)",
+            "128-Отладка(Debug)"});
+            this._clbEventFlag.Location = new System.Drawing.Point(3, 16);
             this._clbEventFlag.Name = "_clbEventFlag";
+            this._clbEventFlag.Size = new System.Drawing.Size(244, 124);
+            this._clbEventFlag.TabIndex = 33;
             this.HelpEntry.SetToolTip(this._clbEventFlag, resources.GetString("_clbEventFlag.ToolTip"));
             this._clbEventFlag.SelectedIndexChanged += new System.EventHandler(this.clbEventFlag_SelectedIndexChanged);
             this._clbEventFlag.SelectedValueChanged += new System.EventHandler(this._clbEventFlag_SelectedValueChanged);
@@ -465,67 +508,75 @@
             this.SelectAll1,
             this.Revert1});
             this._cmFlag.Name = "_cmFlag";
-            resources.ApplyResources(this._cmFlag, "_cmFlag");
+            this._cmFlag.Size = new System.Drawing.Size(209, 70);
             // 
             // UnselectALL1
             // 
             this.UnselectALL1.Name = "UnselectALL1";
-            resources.ApplyResources(this.UnselectALL1, "UnselectALL1");
+            this.UnselectALL1.Size = new System.Drawing.Size(208, 22);
+            this.UnselectALL1.Text = "Снять все флажки";
             this.UnselectALL1.Click += new System.EventHandler(this.Revert1_Click);
             // 
             // SelectAll1
             // 
             this.SelectAll1.Name = "SelectAll1";
-            resources.ApplyResources(this.SelectAll1, "SelectAll1");
+            this.SelectAll1.Size = new System.Drawing.Size(208, 22);
+            this.SelectAll1.Text = "Установить все флажки";
             this.SelectAll1.Click += new System.EventHandler(this.Revert1_Click);
             // 
             // Revert1
             // 
             this.Revert1.Name = "Revert1";
-            resources.ApplyResources(this.Revert1, "Revert1");
+            this.Revert1.Size = new System.Drawing.Size(208, 22);
+            this.Revert1.Text = "Инвертировать";
             this.Revert1.Click += new System.EventHandler(this.Revert1_Click);
             // 
             // _clbPhase
             // 
             this._clbPhase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this._clbPhase.CheckOnClick = true;
-            resources.ApplyResources(this._clbPhase, "_clbPhase");
+            this._clbPhase.ColumnWidth = 50;
             this._clbPhase.ContextMenuStrip = this._cmPhase;
+            this._clbPhase.Dock = System.Windows.Forms.DockStyle.Fill;
             this._clbPhase.FormattingEnabled = true;
+            this._clbPhase.IntegralHeight = false;
             this._clbPhase.Items.AddRange(new object[] {
-            resources.GetString("_clbPhase.Items"),
-            resources.GetString("_clbPhase.Items1"),
-            resources.GetString("_clbPhase.Items2"),
-            resources.GetString("_clbPhase.Items3"),
-            resources.GetString("_clbPhase.Items4"),
-            resources.GetString("_clbPhase.Items5"),
-            resources.GetString("_clbPhase.Items6"),
-            resources.GetString("_clbPhase.Items7"),
-            resources.GetString("_clbPhase.Items8"),
-            resources.GetString("_clbPhase.Items9"),
-            resources.GetString("_clbPhase.Items10"),
-            resources.GetString("_clbPhase.Items11"),
-            resources.GetString("_clbPhase.Items12"),
-            resources.GetString("_clbPhase.Items13"),
-            resources.GetString("_clbPhase.Items14"),
-            resources.GetString("_clbPhase.Items15"),
-            resources.GetString("_clbPhase.Items16"),
-            resources.GetString("_clbPhase.Items17"),
-            resources.GetString("_clbPhase.Items18"),
-            resources.GetString("_clbPhase.Items19"),
-            resources.GetString("_clbPhase.Items20"),
-            resources.GetString("_clbPhase.Items21"),
-            resources.GetString("_clbPhase.Items22"),
-            resources.GetString("_clbPhase.Items23"),
-            resources.GetString("_clbPhase.Items24"),
-            resources.GetString("_clbPhase.Items25"),
-            resources.GetString("_clbPhase.Items26"),
-            resources.GetString("_clbPhase.Items27"),
-            resources.GetString("_clbPhase.Items28"),
-            resources.GetString("_clbPhase.Items29"),
-            resources.GetString("_clbPhase.Items30")});
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this._clbPhase.Location = new System.Drawing.Point(3, 16);
             this._clbPhase.MultiColumn = true;
             this._clbPhase.Name = "_clbPhase";
+            this._clbPhase.Size = new System.Drawing.Size(502, 124);
+            this._clbPhase.TabIndex = 33;
             this._clbPhase.SelectedIndexChanged += new System.EventHandler(this.clbEventFlag_SelectedIndexChanged);
             this._clbPhase.SelectedValueChanged += new System.EventHandler(this._clbPhase_SelectedValueChanged);
             // 
@@ -536,39 +587,49 @@
             this.SelectAll,
             this.Revert});
             this._cmPhase.Name = "_cmPhase";
-            resources.ApplyResources(this._cmPhase, "_cmPhase");
+            this._cmPhase.Size = new System.Drawing.Size(200, 70);
             // 
             // UnselectALL
             // 
             this.UnselectALL.Name = "UnselectALL";
-            resources.ApplyResources(this.UnselectALL, "UnselectALL");
+            this.UnselectALL.Size = new System.Drawing.Size(199, 22);
+            this.UnselectALL.Text = "Снять все флажки";
             this.UnselectALL.Click += new System.EventHandler(this.UnselectALL_Click);
             // 
             // SelectAll
             // 
             this.SelectAll.Name = "SelectAll";
-            resources.ApplyResources(this.SelectAll, "SelectAll");
+            this.SelectAll.Size = new System.Drawing.Size(199, 22);
+            this.SelectAll.Text = "Выделить все флажки";
             this.SelectAll.Click += new System.EventHandler(this.UnselectALL_Click);
             // 
             // Revert
             // 
             this.Revert.Name = "Revert";
-            resources.ApplyResources(this.Revert, "Revert");
+            this.Revert.Size = new System.Drawing.Size(199, 22);
+            this.Revert.Text = "Инвертировать";
+            this.Revert.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.Revert.Click += new System.EventHandler(this.UnselectALL_Click);
             // 
             // _tpScript
             // 
             this._tpScript.Controls.Add(this.splitContainer1);
             this._tpScript.Controls.Add(this.lDateTime);
-            resources.ApplyResources(this._tpScript, "_tpScript");
+            this._tpScript.Location = new System.Drawing.Point(4, 22);
             this._tpScript.Name = "_tpScript";
+            this._tpScript.Padding = new System.Windows.Forms.Padding(3);
+            this._tpScript.Size = new System.Drawing.Size(1048, 604);
+            this._tpScript.TabIndex = 0;
+            this._tpScript.Text = "Скрипты";
             this._tpScript.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
@@ -596,6 +657,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this._tbShance);
+            this.splitContainer1.Size = new System.Drawing.Size(1042, 598);
+            this.splitContainer1.SplitterDistance = 124;
+            this.splitContainer1.TabIndex = 36;
             // 
             // _lvScripts
             // 
@@ -626,152 +690,184 @@
             this.columnHeader23});
             this._lvScripts.FullRowSelect = true;
             this._lvScripts.GridLines = true;
-            resources.ApplyResources(this._lvScripts, "_lvScripts");
+            this._lvScripts.Location = new System.Drawing.Point(0, 0);
             this._lvScripts.Name = "_lvScripts";
+            this._lvScripts.Size = new System.Drawing.Size(1042, 125);
+            this._lvScripts.TabIndex = 0;
             this._lvScripts.UseCompatibleStateImageBehavior = false;
             this._lvScripts.View = System.Windows.Forms.View.Details;
             this._lvScripts.SelectedIndexChanged += new System.EventHandler(this._lvScripts_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            this.columnHeader1.Text = "ID";
             // 
             // columnHeader2
             // 
-            resources.ApplyResources(this.columnHeader2, "columnHeader2");
+            this.columnHeader2.Text = "Creature_ID";
             // 
             // columnHeader3
             // 
-            resources.ApplyResources(this.columnHeader3, "columnHeader3");
+            this.columnHeader3.Text = "Type";
+            this.columnHeader3.Width = 42;
             // 
             // columnHeader4
             // 
-            resources.ApplyResources(this.columnHeader4, "columnHeader4");
+            this.columnHeader4.Text = "Phase";
             // 
             // columnHeader5
             // 
-            resources.ApplyResources(this.columnHeader5, "columnHeader5");
+            this.columnHeader5.Text = "Chanse";
+            this.columnHeader5.Width = 52;
             // 
             // columnHeader6
             // 
-            resources.ApplyResources(this.columnHeader6, "columnHeader6");
+            this.columnHeader6.Text = "Flag";
+            this.columnHeader6.Width = 44;
             // 
             // columnHeader7
             // 
-            resources.ApplyResources(this.columnHeader7, "columnHeader7");
+            this.columnHeader7.Text = "E_param1";
             // 
             // columnHeader8
             // 
-            resources.ApplyResources(this.columnHeader8, "columnHeader8");
+            this.columnHeader8.Text = "E_param2";
             // 
             // columnHeader9
             // 
-            resources.ApplyResources(this.columnHeader9, "columnHeader9");
+            this.columnHeader9.Text = "E_param3";
             // 
             // columnHeader10
             // 
-            resources.ApplyResources(this.columnHeader10, "columnHeader10");
+            this.columnHeader10.Text = "E_param4";
             // 
             // columnHeader11
             // 
-            resources.ApplyResources(this.columnHeader11, "columnHeader11");
+            this.columnHeader11.Text = "Action_type1";
             // 
             // columnHeader12
             // 
-            resources.ApplyResources(this.columnHeader12, "columnHeader12");
+            this.columnHeader12.Text = "A_param1_1";
             // 
             // columnHeader13
             // 
-            resources.ApplyResources(this.columnHeader13, "columnHeader13");
+            this.columnHeader13.Text = "A_param1_2";
             // 
             // columnHeader14
             // 
-            resources.ApplyResources(this.columnHeader14, "columnHeader14");
+            this.columnHeader14.Text = "A_param1_3";
             // 
             // columnHeader15
             // 
-            resources.ApplyResources(this.columnHeader15, "columnHeader15");
+            this.columnHeader15.Text = "Action_type2";
             // 
             // columnHeader16
             // 
-            resources.ApplyResources(this.columnHeader16, "columnHeader16");
+            this.columnHeader16.Text = "A_param2_1";
             // 
             // columnHeader17
             // 
-            resources.ApplyResources(this.columnHeader17, "columnHeader17");
+            this.columnHeader17.Text = "A_param2_2";
             // 
             // columnHeader18
             // 
-            resources.ApplyResources(this.columnHeader18, "columnHeader18");
+            this.columnHeader18.Text = "A_param2_3";
             // 
             // columnHeader19
             // 
-            resources.ApplyResources(this.columnHeader19, "columnHeader19");
+            this.columnHeader19.Text = "Action_type3";
             // 
             // columnHeader20
             // 
-            resources.ApplyResources(this.columnHeader20, "columnHeader20");
+            this.columnHeader20.Text = "A_param3_1";
             // 
             // columnHeader21
             // 
-            resources.ApplyResources(this.columnHeader21, "columnHeader21");
+            this.columnHeader21.Text = "A_param3_2";
             // 
             // columnHeader22
             // 
-            resources.ApplyResources(this.columnHeader22, "columnHeader22");
+            this.columnHeader22.Text = "A_param3_3";
             // 
             // columnHeader23
             // 
-            resources.ApplyResources(this.columnHeader23, "columnHeader23");
+            this.columnHeader23.Text = "Comment";
             // 
             // _gbPhase
             // 
             this._gbPhase.Controls.Add(this._clbPhase);
-            resources.ApplyResources(this._gbPhase, "_gbPhase");
+            this._gbPhase.Location = new System.Drawing.Point(276, 193);
             this._gbPhase.Name = "_gbPhase";
+            this._gbPhase.Size = new System.Drawing.Size(508, 143);
+            this._gbPhase.TabIndex = 36;
             this._gbPhase.TabStop = false;
+            this._gbPhase.Text = "Фаза";
             // 
             // _gbEventFlag
             // 
             this._gbEventFlag.Controls.Add(this._clbEventFlag);
-            resources.ApplyResources(this._gbEventFlag, "_gbEventFlag");
+            this._gbEventFlag.Location = new System.Drawing.Point(787, 193);
             this._gbEventFlag.Name = "_gbEventFlag";
+            this._gbEventFlag.Size = new System.Drawing.Size(250, 143);
+            this._gbEventFlag.TabIndex = 36;
             this._gbEventFlag.TabStop = false;
+            this._gbEventFlag.Text = "Флаг события";
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(9, 268);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Номер скрипта";
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 294);
             this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "ID существа";
             // 
             // rtbScriptOut
             // 
-            resources.ApplyResources(this.rtbScriptOut, "rtbScriptOut");
+            this.rtbScriptOut.Location = new System.Drawing.Point(7, 375);
             this.rtbScriptOut.Name = "rtbScriptOut";
+            this.rtbScriptOut.Size = new System.Drawing.Size(917, 87);
+            this.rtbScriptOut.TabIndex = 35;
+            this.rtbScriptOut.Text = "";
             // 
             // Create
             // 
             this.Create.AutoEllipsis = true;
-            resources.ApplyResources(this.Create, "Create");
+            this.Create.Location = new System.Drawing.Point(930, 374);
             this.Create.Name = "Create";
+            this.Create.Size = new System.Drawing.Size(107, 25);
+            this.Create.TabIndex = 27;
+            this.Create.Text = "Создать";
             this.Create.UseVisualStyleBackColor = true;
             this.Create.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            resources.ApplyResources(this.button2, "button2");
+            this.button2.Location = new System.Drawing.Point(930, 434);
             this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 25);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "Очистить";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // WriteFiles
             // 
-            resources.ApplyResources(this.WriteFiles, "WriteFiles");
+            this.WriteFiles.Location = new System.Drawing.Point(930, 405);
             this.WriteFiles.Name = "WriteFiles";
+            this.WriteFiles.Size = new System.Drawing.Size(107, 25);
+            this.WriteFiles.TabIndex = 28;
+            this.WriteFiles.Text = "Записать в файл";
             this.WriteFiles.UseVisualStyleBackColor = true;
             // 
             // groupBox5
@@ -789,84 +885,126 @@
             this.groupBox5.Controls.Add(this._cbEventParametr1);
             this.groupBox5.Controls.Add(this._cbEventParametr2);
             this.groupBox5.Controls.Add(this._cbEventType);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Location = new System.Drawing.Point(7, 5);
             this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(263, 245);
+            this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Тип события";
             // 
             // _bEventParam1
             // 
-            resources.ApplyResources(this._bEventParam1, "_bEventParam1");
+            this._bEventParam1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bEventParam1.Location = new System.Drawing.Point(231, 67);
             this._bEventParam1.Name = "_bEventParam1";
+            this._bEventParam1.Size = new System.Drawing.Size(26, 23);
+            this._bEventParam1.TabIndex = 59;
+            this._bEventParam1.Text = "...";
             this._bEventParam1.UseVisualStyleBackColor = true;
+            this._bEventParam1.Visible = false;
             // 
             // _bEventParam2
             // 
-            resources.ApplyResources(this._bEventParam2, "_bEventParam2");
+            this._bEventParam2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bEventParam2.Location = new System.Drawing.Point(231, 114);
             this._bEventParam2.Name = "_bEventParam2";
+            this._bEventParam2.Size = new System.Drawing.Size(26, 23);
+            this._bEventParam2.TabIndex = 57;
+            this._bEventParam2.Text = "...";
             this._bEventParam2.UseVisualStyleBackColor = true;
+            this._bEventParam2.Visible = false;
             // 
             // _bEventParam4
             // 
-            resources.ApplyResources(this._bEventParam4, "_bEventParam4");
+            this._bEventParam4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bEventParam4.Location = new System.Drawing.Point(232, 209);
             this._bEventParam4.Name = "_bEventParam4";
+            this._bEventParam4.Size = new System.Drawing.Size(26, 23);
+            this._bEventParam4.TabIndex = 33;
+            this._bEventParam4.Text = "...";
             this._bEventParam4.UseVisualStyleBackColor = true;
+            this._bEventParam4.Visible = false;
             // 
             // _bEventParam3
             // 
-            resources.ApplyResources(this._bEventParam3, "_bEventParam3");
+            this._bEventParam3.Location = new System.Drawing.Point(232, 159);
             this._bEventParam3.Name = "_bEventParam3";
+            this._bEventParam3.Size = new System.Drawing.Size(26, 23);
+            this._bEventParam3.TabIndex = 33;
+            this._bEventParam3.Text = "...";
             this._bEventParam3.UseVisualStyleBackColor = true;
+            this._bEventParam3.Visible = false;
             // 
             // lEventType4
             // 
-            resources.ApplyResources(this.lEventType4, "lEventType4");
+            this.lEventType4.AutoSize = true;
+            this.lEventType4.Location = new System.Drawing.Point(10, 192);
             this.lEventType4.Name = "lEventType4";
+            this.lEventType4.Size = new System.Drawing.Size(0, 13);
+            this.lEventType4.TabIndex = 55;
             // 
             // lEventType3
             // 
-            resources.ApplyResources(this.lEventType3, "lEventType3");
+            this.lEventType3.AutoSize = true;
+            this.lEventType3.Location = new System.Drawing.Point(8, 144);
             this.lEventType3.Name = "lEventType3";
+            this.lEventType3.Size = new System.Drawing.Size(0, 13);
+            this.lEventType3.TabIndex = 54;
             // 
             // lEventType2
             // 
-            resources.ApplyResources(this.lEventType2, "lEventType2");
+            this.lEventType2.AutoSize = true;
+            this.lEventType2.Location = new System.Drawing.Point(9, 97);
             this.lEventType2.Name = "lEventType2";
+            this.lEventType2.Size = new System.Drawing.Size(0, 13);
+            this.lEventType2.TabIndex = 53;
             // 
             // lEventType1
             // 
-            resources.ApplyResources(this.lEventType1, "lEventType1");
+            this.lEventType1.AutoSize = true;
+            this.lEventType1.Location = new System.Drawing.Point(11, 50);
             this.lEventType1.Name = "lEventType1";
+            this.lEventType1.Size = new System.Drawing.Size(0, 13);
+            this.lEventType1.TabIndex = 52;
             // 
             // _cbEventParametr4
             // 
             this._cbEventParametr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr4.FormattingEnabled = true;
-            resources.ApplyResources(this._cbEventParametr4, "_cbEventParametr4");
+            this._cbEventParametr4.Location = new System.Drawing.Point(6, 210);
             this._cbEventParametr4.Name = "_cbEventParametr4";
+            this._cbEventParametr4.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr4.TabIndex = 23;
             this._cbEventParametr4.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
             // _cbEventParametr3
             // 
             this._cbEventParametr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr3.FormattingEnabled = true;
-            resources.ApplyResources(this._cbEventParametr3, "_cbEventParametr3");
+            this._cbEventParametr3.Location = new System.Drawing.Point(5, 161);
             this._cbEventParametr3.Name = "_cbEventParametr3";
+            this._cbEventParametr3.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr3.TabIndex = 23;
             this._cbEventParametr3.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
             // _cbEventParametr1
             // 
             this._cbEventParametr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr1.FormattingEnabled = true;
-            resources.ApplyResources(this._cbEventParametr1, "_cbEventParametr1");
+            this._cbEventParametr1.Location = new System.Drawing.Point(5, 68);
             this._cbEventParametr1.Name = "_cbEventParametr1";
+            this._cbEventParametr1.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr1.TabIndex = 23;
             this._cbEventParametr1.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
             // _cbEventParametr2
             // 
             this._cbEventParametr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr2.FormattingEnabled = true;
-            resources.ApplyResources(this._cbEventParametr2, "_cbEventParametr2");
+            this._cbEventParametr2.Location = new System.Drawing.Point(5, 115);
             this._cbEventParametr2.Name = "_cbEventParametr2";
+            this._cbEventParametr2.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr2.TabIndex = 23;
             this._cbEventParametr2.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
             // groupBox2
@@ -881,70 +1019,110 @@
             this.groupBox2.Controls.Add(this._cbActionParam2_2);
             this.groupBox2.Controls.Add(this._cbActionParam2_3);
             this.groupBox2.Controls.Add(this._cbActionType2);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Location = new System.Drawing.Point(532, 5);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(250, 182);
+            this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Тип действия 2 при событии";
             // 
             // bSelectActionParam2_3
             // 
-            resources.ApplyResources(this.bSelectActionParam2_3, "bSelectActionParam2_3");
+            this.bSelectActionParam2_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam2_3.Location = new System.Drawing.Point(230, 146);
             this.bSelectActionParam2_3.Name = "bSelectActionParam2_3";
+            this.bSelectActionParam2_3.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam2_3.TabIndex = 58;
+            this.bSelectActionParam2_3.Text = ".";
             this.bSelectActionParam2_3.UseVisualStyleBackColor = true;
+            this.bSelectActionParam2_3.Visible = false;
             // 
             // bSelectActionParam2_2
             // 
-            resources.ApplyResources(this.bSelectActionParam2_2, "bSelectActionParam2_2");
+            this.bSelectActionParam2_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam2_2.Location = new System.Drawing.Point(230, 102);
             this.bSelectActionParam2_2.Name = "bSelectActionParam2_2";
+            this.bSelectActionParam2_2.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam2_2.TabIndex = 57;
+            this.bSelectActionParam2_2.Text = ".";
             this.bSelectActionParam2_2.UseVisualStyleBackColor = true;
+            this.bSelectActionParam2_2.Visible = false;
             // 
             // bSelectActionParam2_1
             // 
-            resources.ApplyResources(this.bSelectActionParam2_1, "bSelectActionParam2_1");
+            this.bSelectActionParam2_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam2_1.Location = new System.Drawing.Point(230, 58);
             this.bSelectActionParam2_1.Name = "bSelectActionParam2_1";
+            this.bSelectActionParam2_1.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam2_1.TabIndex = 56;
+            this.bSelectActionParam2_1.Text = ".";
             this.bSelectActionParam2_1.UseVisualStyleBackColor = true;
+            this.bSelectActionParam2_1.Visible = false;
             // 
             // _cbActionParam2_1
             // 
             this._cbActionParam2_1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionParam2_1.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam2_1, "_cbActionParam2_1");
+            this._cbActionParam2_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam2_1.Name = "_cbActionParam2_1";
+            this._cbActionParam2_1.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam2_1.TabIndex = 51;
+            this._cbActionParam2_1.Visible = false;
             // 
             // lActionParam2_1
             // 
-            resources.ApplyResources(this.lActionParam2_1, "lActionParam2_1");
+            this.lActionParam2_1.AutoSize = true;
+            this.lActionParam2_1.Location = new System.Drawing.Point(11, 44);
             this.lActionParam2_1.Name = "lActionParam2_1";
+            this.lActionParam2_1.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam2_1.TabIndex = 50;
             // 
             // lActionParam2_3
             // 
-            resources.ApplyResources(this.lActionParam2_3, "lActionParam2_3");
+            this.lActionParam2_3.AutoSize = true;
+            this.lActionParam2_3.Location = new System.Drawing.Point(10, 133);
             this.lActionParam2_3.Name = "lActionParam2_3";
+            this.lActionParam2_3.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam2_3.TabIndex = 52;
             // 
             // lActionParam2_2
             // 
-            resources.ApplyResources(this.lActionParam2_2, "lActionParam2_2");
+            this.lActionParam2_2.AutoSize = true;
+            this.lActionParam2_2.Location = new System.Drawing.Point(11, 86);
             this.lActionParam2_2.Name = "lActionParam2_2";
+            this.lActionParam2_2.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam2_2.TabIndex = 51;
             // 
             // _cbActionParam2_2
             // 
             this._cbActionParam2_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam2_2.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam2_2, "_cbActionParam2_2");
+            this._cbActionParam2_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam2_2.Name = "_cbActionParam2_2";
+            this._cbActionParam2_2.Size = new System.Drawing.Size(225, 21);
+            this._cbActionParam2_2.TabIndex = 34;
+            this._cbActionParam2_2.Visible = false;
             this._cbActionParam2_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
             // 
             // _cbActionParam2_3
             // 
             this._cbActionParam2_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam2_3.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam2_3, "_cbActionParam2_3");
+            this._cbActionParam2_3.Location = new System.Drawing.Point(5, 148);
             this._cbActionParam2_3.Name = "_cbActionParam2_3";
+            this._cbActionParam2_3.Size = new System.Drawing.Size(225, 21);
+            this._cbActionParam2_3.TabIndex = 33;
+            this._cbActionParam2_3.Visible = false;
             this._cbActionParam2_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 350);
             this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Комментарий:";
             // 
             // groupBox3
             // 
@@ -958,67 +1136,103 @@
             this.groupBox3.Controls.Add(this._cbActionParam1_3);
             this.groupBox3.Controls.Add(this._cbActionParam1_2);
             this.groupBox3.Controls.Add(this._cbActionType1);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Location = new System.Drawing.Point(276, 5);
             this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(250, 182);
+            this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Тип действия 1 при событии";
             // 
             // bSelectActionParam1_3
             // 
-            resources.ApplyResources(this.bSelectActionParam1_3, "bSelectActionParam1_3");
+            this.bSelectActionParam1_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam1_3.Location = new System.Drawing.Point(230, 148);
             this.bSelectActionParam1_3.Name = "bSelectActionParam1_3";
+            this.bSelectActionParam1_3.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam1_3.TabIndex = 58;
+            this.bSelectActionParam1_3.Text = ".";
             this.bSelectActionParam1_3.UseVisualStyleBackColor = true;
+            this.bSelectActionParam1_3.Visible = false;
             // 
             // bSelectActionParam1_2
             // 
-            resources.ApplyResources(this.bSelectActionParam1_2, "bSelectActionParam1_2");
+            this.bSelectActionParam1_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam1_2.Location = new System.Drawing.Point(230, 102);
             this.bSelectActionParam1_2.Name = "bSelectActionParam1_2";
+            this.bSelectActionParam1_2.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam1_2.TabIndex = 57;
+            this.bSelectActionParam1_2.Text = ".";
             this.bSelectActionParam1_2.UseVisualStyleBackColor = true;
+            this.bSelectActionParam1_2.Visible = false;
             // 
             // bSelectActionParam1_1
             // 
-            resources.ApplyResources(this.bSelectActionParam1_1, "bSelectActionParam1_1");
+            this.bSelectActionParam1_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam1_1.Location = new System.Drawing.Point(230, 58);
             this.bSelectActionParam1_1.Name = "bSelectActionParam1_1";
+            this.bSelectActionParam1_1.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam1_1.TabIndex = 56;
+            this.bSelectActionParam1_1.Text = ".";
             this.bSelectActionParam1_1.UseVisualStyleBackColor = true;
+            this.bSelectActionParam1_1.Visible = false;
             // 
             // _cbActionParam1_1
             // 
             this._cbActionParam1_1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionParam1_1.FormatString = "N0";
             this._cbActionParam1_1.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam1_1, "_cbActionParam1_1");
+            this._cbActionParam1_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam1_1.Name = "_cbActionParam1_1";
+            this._cbActionParam1_1.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam1_1.TabIndex = 50;
+            this._cbActionParam1_1.Visible = false;
             // 
             // lActionParam1_3
             // 
-            resources.ApplyResources(this.lActionParam1_3, "lActionParam1_3");
+            this.lActionParam1_3.AutoSize = true;
+            this.lActionParam1_3.Location = new System.Drawing.Point(10, 131);
             this.lActionParam1_3.Name = "lActionParam1_3";
+            this.lActionParam1_3.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam1_3.TabIndex = 49;
             // 
             // lActionParam1_2
             // 
-            resources.ApplyResources(this.lActionParam1_2, "lActionParam1_2");
+            this.lActionParam1_2.AutoSize = true;
+            this.lActionParam1_2.Location = new System.Drawing.Point(9, 87);
             this.lActionParam1_2.Name = "lActionParam1_2";
+            this.lActionParam1_2.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam1_2.TabIndex = 48;
             // 
             // lActionParam1_1
             // 
-            resources.ApplyResources(this.lActionParam1_1, "lActionParam1_1");
+            this.lActionParam1_1.AutoSize = true;
+            this.lActionParam1_1.Location = new System.Drawing.Point(9, 46);
             this.lActionParam1_1.Name = "lActionParam1_1";
+            this.lActionParam1_1.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam1_1.TabIndex = 47;
             // 
             // _cbActionParam1_3
             // 
             this._cbActionParam1_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam1_3.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam1_3, "_cbActionParam1_3");
+            this._cbActionParam1_3.Location = new System.Drawing.Point(6, 148);
             this._cbActionParam1_3.MaximumSize = new System.Drawing.Size(224, 0);
             this._cbActionParam1_3.MinimumSize = new System.Drawing.Size(224, 0);
             this._cbActionParam1_3.Name = "_cbActionParam1_3";
+            this._cbActionParam1_3.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam1_3.TabIndex = 42;
+            this._cbActionParam1_3.Visible = false;
             this._cbActionParam1_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
             // 
             // _cbActionParam1_2
             // 
             this._cbActionParam1_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam1_2.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam1_2, "_cbActionParam1_2");
+            this._cbActionParam1_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam1_2.Name = "_cbActionParam1_2";
+            this._cbActionParam1_2.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam1_2.TabIndex = 37;
+            this._cbActionParam1_2.Visible = false;
             // 
             // groupBox4
             // 
@@ -1032,84 +1246,129 @@
             this.groupBox4.Controls.Add(this._cbActionParam3_3);
             this.groupBox4.Controls.Add(this._cbActionParam3_2);
             this.groupBox4.Controls.Add(this._cbActionType3);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Location = new System.Drawing.Point(787, 5);
             this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(250, 182);
+            this.groupBox4.TabIndex = 27;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Тип действия 3 при событии";
             // 
             // bSelectActionParam3_3
             // 
-            resources.ApplyResources(this.bSelectActionParam3_3, "bSelectActionParam3_3");
+            this.bSelectActionParam3_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam3_3.Location = new System.Drawing.Point(229, 146);
             this.bSelectActionParam3_3.Name = "bSelectActionParam3_3";
+            this.bSelectActionParam3_3.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam3_3.TabIndex = 57;
+            this.bSelectActionParam3_3.Text = ".";
             this.bSelectActionParam3_3.UseVisualStyleBackColor = true;
+            this.bSelectActionParam3_3.Visible = false;
             // 
             // bSelectActionParam3_2
             // 
-            resources.ApplyResources(this.bSelectActionParam3_2, "bSelectActionParam3_2");
+            this.bSelectActionParam3_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bSelectActionParam3_2.Location = new System.Drawing.Point(229, 102);
             this.bSelectActionParam3_2.Name = "bSelectActionParam3_2";
+            this.bSelectActionParam3_2.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam3_2.TabIndex = 56;
+            this.bSelectActionParam3_2.Text = ".";
             this.bSelectActionParam3_2.UseVisualStyleBackColor = true;
+            this.bSelectActionParam3_2.Visible = false;
             // 
             // bSelectActionParam3_1
             // 
-            resources.ApplyResources(this.bSelectActionParam3_1, "bSelectActionParam3_1");
+            this.bSelectActionParam3_1.Location = new System.Drawing.Point(229, 60);
             this.bSelectActionParam3_1.Name = "bSelectActionParam3_1";
+            this.bSelectActionParam3_1.Size = new System.Drawing.Size(14, 23);
+            this.bSelectActionParam3_1.TabIndex = 55;
+            this.bSelectActionParam3_1.Text = ".";
             this.bSelectActionParam3_1.UseVisualStyleBackColor = true;
+            this.bSelectActionParam3_1.Visible = false;
             // 
             // _cbActionParam3_1
             // 
             this._cbActionParam3_1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionParam3_1.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam3_1, "_cbActionParam3_1");
+            this._cbActionParam3_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam3_1.Name = "_cbActionParam3_1";
+            this._cbActionParam3_1.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam3_1.TabIndex = 53;
+            this._cbActionParam3_1.Visible = false;
             // 
             // lActionParam3_3
             // 
-            resources.ApplyResources(this.lActionParam3_3, "lActionParam3_3");
+            this.lActionParam3_3.AutoSize = true;
+            this.lActionParam3_3.Location = new System.Drawing.Point(10, 132);
             this.lActionParam3_3.Name = "lActionParam3_3";
+            this.lActionParam3_3.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam3_3.TabIndex = 47;
             // 
             // lActionParam3_2
             // 
-            resources.ApplyResources(this.lActionParam3_2, "lActionParam3_2");
+            this.lActionParam3_2.AutoSize = true;
+            this.lActionParam3_2.Location = new System.Drawing.Point(10, 86);
             this.lActionParam3_2.Name = "lActionParam3_2";
+            this.lActionParam3_2.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam3_2.TabIndex = 46;
             // 
             // lActionParam3_1
             // 
-            resources.ApplyResources(this.lActionParam3_1, "lActionParam3_1");
+            this.lActionParam3_1.AutoSize = true;
+            this.lActionParam3_1.Location = new System.Drawing.Point(10, 44);
             this.lActionParam3_1.Name = "lActionParam3_1";
+            this.lActionParam3_1.Size = new System.Drawing.Size(0, 13);
+            this.lActionParam3_1.TabIndex = 45;
             // 
             // _cbActionParam3_3
             // 
             this._cbActionParam3_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam3_3.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam3_3, "_cbActionParam3_3");
+            this._cbActionParam3_3.Location = new System.Drawing.Point(6, 148);
             this._cbActionParam3_3.Name = "_cbActionParam3_3";
+            this._cbActionParam3_3.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam3_3.TabIndex = 38;
+            this._cbActionParam3_3.Visible = false;
             this._cbActionParam3_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
             // 
             // _cbActionParam3_2
             // 
             this._cbActionParam3_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam3_2.FormattingEnabled = true;
-            resources.ApplyResources(this._cbActionParam3_2, "_cbActionParam3_2");
+            this._cbActionParam3_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam3_2.Name = "_cbActionParam3_2";
+            this._cbActionParam3_2.Size = new System.Drawing.Size(223, 21);
+            this._cbActionParam3_2.TabIndex = 37;
+            this._cbActionParam3_2.Visible = false;
             this._cbActionParam3_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 319);
             this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Шанс срабатывания";
             // 
             // lDateTime
             // 
-            resources.ApplyResources(this.lDateTime, "lDateTime");
+            this.lDateTime.AutoSize = true;
+            this.lDateTime.Location = new System.Drawing.Point(850, 6);
             this.lDateTime.Name = "lDateTime";
+            this.lDateTime.Size = new System.Drawing.Size(0, 13);
+            this.lDateTime.TabIndex = 3;
             // 
             // Panel
             // 
             this.Panel.Controls.Add(this._tpScript);
             this.Panel.Controls.Add(this._tpText);
             this.Panel.Controls.Add(this._tpSummon);
-            resources.ApplyResources(this.Panel, "Panel");
+            this.Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel.Location = new System.Drawing.Point(0, 24);
             this.Panel.Name = "Panel";
             this.Panel.SelectedIndex = 0;
+            this.Panel.Size = new System.Drawing.Size(1056, 630);
+            this.Panel.TabIndex = 0;
             // 
             // _tpText
             // 
@@ -1131,99 +1390,157 @@
             this._tpText.Controls.Add(this.tNumberAISound);
             this._tpText.Controls.Add(this.tNumberAITexts);
             this._tpText.Controls.Add(this.groupBox9);
-            resources.ApplyResources(this._tpText, "_tpText");
+            this._tpText.Location = new System.Drawing.Point(4, 22);
             this._tpText.Name = "_tpText";
+            this._tpText.Padding = new System.Windows.Forms.Padding(3);
+            this._tpText.Size = new System.Drawing.Size(1048, 604);
+            this._tpText.TabIndex = 1;
+            this._tpText.Text = "Тексты";
             this._tpText.UseVisualStyleBackColor = true;
             // 
             // rtbTextOut
             // 
-            resources.ApplyResources(this.rtbTextOut, "rtbTextOut");
+            this.rtbTextOut.Location = new System.Drawing.Point(7, 382);
             this.rtbTextOut.Name = "rtbTextOut";
+            this.rtbTextOut.Size = new System.Drawing.Size(959, 141);
+            this.rtbTextOut.TabIndex = 34;
+            this.rtbTextOut.Text = "";
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.label15);
             this.groupBox11.Controls.Add(this.rbInsertText);
             this.groupBox11.Controls.Add(this.rbReplaceText);
-            resources.ApplyResources(this.groupBox11, "groupBox11");
+            this.groupBox11.Location = new System.Drawing.Point(320, 342);
             this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(292, 34);
+            this.groupBox11.TabIndex = 33;
             this.groupBox11.TabStop = false;
             // 
             // label15
             // 
-            resources.ApplyResources(this.label15, "label15");
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(11, 14);
             this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(94, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Формат запроса";
             // 
             // rbInsertText
             // 
-            resources.ApplyResources(this.rbInsertText, "rbInsertText");
+            this.rbInsertText.AutoSize = true;
+            this.rbInsertText.Location = new System.Drawing.Point(218, 11);
             this.rbInsertText.Name = "rbInsertText";
+            this.rbInsertText.Size = new System.Drawing.Size(65, 17);
+            this.rbInsertText.TabIndex = 1;
+            this.rbInsertText.Text = "INSERT";
             this.rbInsertText.UseVisualStyleBackColor = true;
             // 
             // rbReplaceText
             // 
-            resources.ApplyResources(this.rbReplaceText, "rbReplaceText");
+            this.rbReplaceText.AutoSize = true;
             this.rbReplaceText.Checked = true;
+            this.rbReplaceText.Location = new System.Drawing.Point(121, 11);
             this.rbReplaceText.Name = "rbReplaceText";
+            this.rbReplaceText.Size = new System.Drawing.Size(74, 17);
+            this.rbReplaceText.TabIndex = 0;
             this.rbReplaceText.TabStop = true;
+            this.rbReplaceText.Text = "REPLACE";
             this.rbReplaceText.UseVisualStyleBackColor = true;
             // 
             // lDateTime2
             // 
-            resources.ApplyResources(this.lDateTime2, "lDateTime2");
+            this.lDateTime2.AutoSize = true;
+            this.lDateTime2.Location = new System.Drawing.Point(850, 6);
             this.lDateTime2.Name = "lDateTime2";
+            this.lDateTime2.Size = new System.Drawing.Size(0, 13);
+            this.lDateTime2.TabIndex = 19;
             // 
             // bExitText
             // 
-            resources.ApplyResources(this.bExitText, "bExitText");
+            this.bExitText.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bExitText.Location = new System.Drawing.Point(847, 529);
             this.bExitText.Name = "bExitText";
+            this.bExitText.Size = new System.Drawing.Size(119, 23);
+            this.bExitText.TabIndex = 18;
+            this.bExitText.Text = "Выход";
             this.bExitText.UseVisualStyleBackColor = true;
             // 
             // bClearTextQuery
             // 
-            resources.ApplyResources(this.bClearTextQuery, "bClearTextQuery");
+            this.bClearTextQuery.Location = new System.Drawing.Point(551, 529);
             this.bClearTextQuery.Name = "bClearTextQuery";
+            this.bClearTextQuery.Size = new System.Drawing.Size(119, 23);
+            this.bClearTextQuery.TabIndex = 17;
+            this.bClearTextQuery.Text = "Очистить";
             this.bClearTextQuery.UseVisualStyleBackColor = true;
             this.bClearTextQuery.Click += new System.EventHandler(this.bClearTextQuery_Click);
             // 
             // bCreateTextQuery
             // 
-            resources.ApplyResources(this.bCreateTextQuery, "bCreateTextQuery");
+            this.bCreateTextQuery.Location = new System.Drawing.Point(414, 529);
             this.bCreateTextQuery.Name = "bCreateTextQuery";
+            this.bCreateTextQuery.Size = new System.Drawing.Size(119, 23);
+            this.bCreateTextQuery.TabIndex = 16;
+            this.bCreateTextQuery.Text = "Создать";
             this.bCreateTextQuery.UseVisualStyleBackColor = true;
             this.bCreateTextQuery.Click += new System.EventHandler(this.bCreateTextQuery_Click);
             // 
             // button5
             // 
-            resources.ApplyResources(this.button5, "button5");
+            this.button5.Location = new System.Drawing.Point(279, 529);
             this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(119, 23);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Записать в файл";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
-            resources.ApplyResources(this.label12, "label12");
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label12.Location = new System.Drawing.Point(35, 12);
             this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "ID текста";
             // 
             // label11
             // 
-            resources.ApplyResources(this.label11, "label11");
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(166, 12);
             this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "ID звука";
             // 
             // label8
             // 
-            resources.ApplyResources(this.label8, "label8");
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(288, 12);
             this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "ID эмоции";
             // 
             // label10
             // 
-            resources.ApplyResources(this.label10, "label10");
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(449, 12);
             this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "От какого лица:";
             // 
             // label9
             // 
-            resources.ApplyResources(this.label9, "label9");
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(723, 12);
             this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Язык";
             // 
             // cTypeText
             // 
@@ -1231,11 +1548,13 @@
             this.cTypeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.cTypeText.FormattingEnabled = true;
             this.cTypeText.Items.AddRange(new object[] {
-            resources.GetString("cTypeText.Items"),
-            resources.GetString("cTypeText.Items1"),
-            resources.GetString("cTypeText.Items2")});
-            resources.ApplyResources(this.cTypeText, "cTypeText");
+            "0-Фраза от первого лица",
+            "1-Фраза от второго лица",
+            "2-Фраза от третьего лица"});
+            this.cTypeText.Location = new System.Drawing.Point(434, 31);
             this.cTypeText.Name = "cTypeText";
+            this.cTypeText.Size = new System.Drawing.Size(254, 21);
+            this.cTypeText.TabIndex = 6;
             // 
             // groupBox9
             // 
@@ -1246,43 +1565,66 @@
             this.groupBox9.Controls.Add(this.label7);
             this.groupBox9.Controls.Add(this.label6);
             this.groupBox9.Controls.Add(this.tContentDefault);
-            resources.ApplyResources(this.groupBox9, "groupBox9");
+            this.groupBox9.Location = new System.Drawing.Point(3, 61);
             this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(969, 278);
+            this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Текст";
             // 
             // label13
             // 
-            resources.ApplyResources(this.label13, "label13");
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(32, 239);
             this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 13);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Комментарий";
             // 
             // label7
             // 
-            resources.ApplyResources(this.label7, "label7");
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 131);
             this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Локализированый текст:";
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 20);
             this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(179, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Оригинальный текст: Английский";
             // 
             // _tpSummon
             // 
-            resources.ApplyResources(this._tpSummon, "_tpSummon");
+            this._tpSummon.Location = new System.Drawing.Point(4, 22);
             this._tpSummon.Name = "_tpSummon";
+            this._tpSummon.Padding = new System.Windows.Forms.Padding(3);
+            this._tpSummon.Size = new System.Drawing.Size(1048, 604);
+            this._tpSummon.TabIndex = 2;
+            this._tpSummon.Text = "Призыв";
             this._tpSummon.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.bExitText;
+            this.ClientSize = new System.Drawing.Size(1056, 654);
             this.Controls.Add(this.Panel);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
+            this.Text = "EventAI Конструктор";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this._cmFlag.ResumeLayout(false);
