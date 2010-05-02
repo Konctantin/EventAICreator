@@ -204,7 +204,7 @@
     <value>150</value>
   </data>
   <data name="_tbComment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 20</value>
+    <value>833, 20</value>
   </data>
   <data name="_tbComment.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -227,7 +227,7 @@
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;_tbComment.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="_cbActionType2.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
@@ -401,7 +401,7 @@
     <value>12</value>
   </data>
   <data name="NumberScripts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 19</value>
+    <value>151, 265</value>
   </data>
   <data name="NumberScripts.MaxLength" type="System.Int32, mscorlib">
     <value>5</value>
@@ -427,13 +427,13 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;NumberScripts.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;NumberScripts.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="EntryNpc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 58</value>
+    <value>151, 291</value>
   </data>
   <data name="EntryNpc.MaxLength" type="System.Int32, mscorlib">
     <value>10</value>
@@ -458,19 +458,19 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EntryNpc.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;EntryNpc.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="_tbShance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>924, 271</value>
+    <value>151, 316</value>
   </data>
   <data name="_tbShance.MaxLength" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="_tbShance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
+    <value>114, 20</value>
   </data>
   <data name="_tbShance.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -491,7 +491,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;_tbShance.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="tContentDefault.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
@@ -852,7 +852,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>3, 16</value>
   </data>
   <data name="_clbEventFlag.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 64</value>
+    <value>244, 124</value>
   </data>
   <data name="_clbEventFlag.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -1015,7 +1015,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>3, 16</value>
   </data>
   <data name="_clbPhase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 68</value>
+    <value>502, 124</value>
   </data>
   <data name="_clbPhase.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -1062,89 +1062,89 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="_bFindParam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 84</value>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>ID</value>
   </data>
-  <data name="_bFindParam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 23</value>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Creature_ID</value>
   </data>
-  <data name="_bFindParam.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>Type</value>
   </data>
-  <data name="_bFindParam.Text" xml:space="preserve">
-    <value>.</value>
+  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
+    <value>42</value>
   </data>
-  <data name="&gt;&gt;_bFindParam.Name" xml:space="preserve">
-    <value>_bFindParam</value>
+  <data name="columnHeader4.Text" xml:space="preserve">
+    <value>Phase</value>
   </data>
-  <data name="&gt;&gt;_bFindParam.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="columnHeader5.Text" xml:space="preserve">
+    <value>Chanse</value>
   </data>
-  <data name="&gt;&gt;_bFindParam.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+  <data name="columnHeader5.Width" type="System.Int32, mscorlib">
+    <value>52</value>
   </data>
-  <data name="&gt;&gt;_bFindParam.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="columnHeader6.Text" xml:space="preserve">
+    <value>Flag</value>
   </data>
-  <data name="_bFind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 84</value>
+  <data name="columnHeader6.Width" type="System.Int32, mscorlib">
+    <value>44</value>
   </data>
-  <data name="_bFind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 23</value>
+  <data name="columnHeader7.Text" xml:space="preserve">
+    <value>E_param1</value>
   </data>
-  <data name="_bFind.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="columnHeader8.Text" xml:space="preserve">
+    <value>E_param2</value>
   </data>
-  <data name="_bFind.Text" xml:space="preserve">
-    <value>Найти</value>
+  <data name="columnHeader9.Text" xml:space="preserve">
+    <value>E_param3</value>
   </data>
-  <data name="&gt;&gt;_bFind.Name" xml:space="preserve">
-    <value>_bFind</value>
+  <data name="columnHeader10.Text" xml:space="preserve">
+    <value>E_param4</value>
   </data>
-  <data name="&gt;&gt;_bFind.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="columnHeader11.Text" xml:space="preserve">
+    <value>Action_type1</value>
   </data>
-  <data name="&gt;&gt;_bFind.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+  <data name="columnHeader12.Text" xml:space="preserve">
+    <value>A_param1_1</value>
   </data>
-  <data name="&gt;&gt;_bFind.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="columnHeader13.Text" xml:space="preserve">
+    <value>A_param1_2</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="columnHeader14.Text" xml:space="preserve">
+    <value>A_param1_3</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="columnHeader15.Text" xml:space="preserve">
+    <value>Action_type2</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 3</value>
+  <data name="columnHeader16.Text" xml:space="preserve">
+    <value>A_param2_1</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+  <data name="columnHeader17.Text" xml:space="preserve">
+    <value>A_param2_2</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="columnHeader18.Text" xml:space="preserve">
+    <value>A_param2_3</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Номер скрипта</value>
+  <data name="columnHeader19.Text" xml:space="preserve">
+    <value>Action_type3</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="columnHeader20.Text" xml:space="preserve">
+    <value>A_param3_1</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="columnHeader21.Text" xml:space="preserve">
+    <value>A_param3_2</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+  <data name="columnHeader22.Text" xml:space="preserve">
+    <value>A_param3_3</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="columnHeader23.Text" xml:space="preserve">
+    <value>Comment</value>
   </data>
   <data name="_lvScripts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 0</value>
+    <value>0, 0</value>
   </data>
   <data name="_lvScripts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>898, 125</value>
+    <value>1042, 125</value>
   </data>
   <data name="_lvScripts.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1159,34 +1159,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;_lvScripts.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 42</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ID существа</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -1201,10 +1174,10 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>0</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>276, 256</value>
+    <value>276, 193</value>
   </data>
   <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 87</value>
+    <value>508, 143</value>
   </data>
   <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -1225,10 +1198,10 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>0</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 256</value>
+    <value>787, 193</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 87</value>
+    <value>250, 143</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -1248,11 +1221,68 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 268</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Номер скрипта</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 294</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ID существа</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="rtbScriptOut.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 375</value>
   </data>
   <data name="rtbScriptOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>759, 87</value>
+    <value>917, 87</value>
   </data>
   <data name="rtbScriptOut.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -1270,58 +1300,10 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;rtbScriptOut.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.Name" xml:space="preserve">
-    <value>rbInsertScript</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.Name" xml:space="preserve">
-    <value>rbReplaceScript</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>885, 374</value>
-  </data>
-  <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 56</value>
-  </data>
-  <data name="groupBox10.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Формат запроса</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.Name" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;groupBox10.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="Create.Location" type="System.Drawing.Point, System.Drawing">
-    <value>772, 374</value>
+    <value>930, 374</value>
   </data>
   <data name="Create.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 25</value>
@@ -1342,10 +1324,10 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;Create.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>772, 434</value>
+    <value>930, 434</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 25</value>
@@ -1366,10 +1348,10 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="WriteFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>772, 405</value>
+    <value>930, 405</value>
   </data>
   <data name="WriteFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 25</value>
@@ -1390,7 +1372,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;WriteFiles.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;_bEventParam1.Name" xml:space="preserve">
     <value>_bEventParam1</value>
@@ -1558,25 +1540,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="bSelectActionParam2_3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam2_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 146</value>
-  </data>
-  <data name="bSelectActionParam2_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam2_3.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="bSelectActionParam2_3.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam2_3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam2_3.Name" xml:space="preserve">
     <value>bSelectActionParam2_3</value>
@@ -1590,24 +1554,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;bSelectActionParam2_3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="bSelectActionParam2_2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam2_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 102</value>
-  </data>
-  <data name="bSelectActionParam2_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam2_2.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
-  </data>
-  <data name="bSelectActionParam2_2.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam2_2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;bSelectActionParam2_2.Name" xml:space="preserve">
     <value>bSelectActionParam2_2</value>
   </data>
@@ -1619,24 +1565,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam2_2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="bSelectActionParam2_1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam2_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 58</value>
-  </data>
-  <data name="bSelectActionParam2_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam2_1.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="bSelectActionParam2_1.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam2_1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam2_1.Name" xml:space="preserve">
     <value>bSelectActionParam2_1</value>
@@ -1650,18 +1578,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;bSelectActionParam2_1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="_cbActionParam2_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 60</value>
-  </data>
-  <data name="_cbActionParam2_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="_cbActionParam2_1.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="_cbActionParam2_1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;_cbActionParam2_1.Name" xml:space="preserve">
     <value>_cbActionParam2_1</value>
   </data>
@@ -1673,18 +1589,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_cbActionParam2_1.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="lActionParam2_1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam2_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 44</value>
-  </data>
-  <data name="lActionParam2_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam2_1.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <data name="&gt;&gt;lActionParam2_1.Name" xml:space="preserve">
     <value>lActionParam2_1</value>
@@ -1698,18 +1602,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;lActionParam2_1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lActionParam2_3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam2_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 133</value>
-  </data>
-  <data name="lActionParam2_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam2_3.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
   <data name="&gt;&gt;lActionParam2_3.Name" xml:space="preserve">
     <value>lActionParam2_3</value>
   </data>
@@ -1721,18 +1613,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;lActionParam2_3.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="lActionParam2_2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam2_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 86</value>
-  </data>
-  <data name="lActionParam2_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam2_2.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
   </data>
   <data name="&gt;&gt;lActionParam2_2.Name" xml:space="preserve">
     <value>lActionParam2_2</value>
@@ -1746,18 +1626,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;lActionParam2_2.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="_cbActionParam2_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 104</value>
-  </data>
-  <data name="_cbActionParam2_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 21</value>
-  </data>
-  <data name="_cbActionParam2_2.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="_cbActionParam2_2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;_cbActionParam2_2.Name" xml:space="preserve">
     <value>_cbActionParam2_2</value>
   </data>
@@ -1769,18 +1637,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_cbActionParam2_2.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="_cbActionParam2_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 148</value>
-  </data>
-  <data name="_cbActionParam2_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 21</value>
-  </data>
-  <data name="_cbActionParam2_3.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="_cbActionParam2_3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;_cbActionParam2_3.Name" xml:space="preserve">
     <value>_cbActionParam2_3</value>
@@ -1816,7 +1672,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1843,25 +1699,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="bSelectActionParam1_3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam1_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 148</value>
-  </data>
-  <data name="bSelectActionParam1_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam1_3.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="bSelectActionParam1_3.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam1_3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam1_3.Name" xml:space="preserve">
     <value>bSelectActionParam1_3</value>
@@ -1875,24 +1713,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;bSelectActionParam1_3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="bSelectActionParam1_2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam1_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 102</value>
-  </data>
-  <data name="bSelectActionParam1_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam1_2.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
-  </data>
-  <data name="bSelectActionParam1_2.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam1_2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;bSelectActionParam1_2.Name" xml:space="preserve">
     <value>bSelectActionParam1_2</value>
   </data>
@@ -1904,24 +1724,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam1_2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="bSelectActionParam1_1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam1_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 58</value>
-  </data>
-  <data name="bSelectActionParam1_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam1_1.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="bSelectActionParam1_1.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam1_1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam1_1.Name" xml:space="preserve">
     <value>bSelectActionParam1_1</value>
@@ -1935,18 +1737,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;bSelectActionParam1_1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="_cbActionParam1_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 60</value>
-  </data>
-  <data name="_cbActionParam1_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="_cbActionParam1_1.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="_cbActionParam1_1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;_cbActionParam1_1.Name" xml:space="preserve">
     <value>_cbActionParam1_1</value>
   </data>
@@ -1958,18 +1748,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_cbActionParam1_1.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="lActionParam1_3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam1_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 131</value>
-  </data>
-  <data name="lActionParam1_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam1_3.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
   </data>
   <data name="&gt;&gt;lActionParam1_3.Name" xml:space="preserve">
     <value>lActionParam1_3</value>
@@ -1983,18 +1761,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;lActionParam1_3.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lActionParam1_2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam1_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 87</value>
-  </data>
-  <data name="lActionParam1_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam1_2.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
-  </data>
   <data name="&gt;&gt;lActionParam1_2.Name" xml:space="preserve">
     <value>lActionParam1_2</value>
   </data>
@@ -2006,18 +1772,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;lActionParam1_2.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="lActionParam1_1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam1_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 46</value>
-  </data>
-  <data name="lActionParam1_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam1_1.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
   </data>
   <data name="&gt;&gt;lActionParam1_1.Name" xml:space="preserve">
     <value>lActionParam1_1</value>
@@ -2031,18 +1785,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;lActionParam1_1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="_cbActionParam1_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 148</value>
-  </data>
-  <data name="_cbActionParam1_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="_cbActionParam1_3.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="_cbActionParam1_3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;_cbActionParam1_3.Name" xml:space="preserve">
     <value>_cbActionParam1_3</value>
   </data>
@@ -2054,18 +1796,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_cbActionParam1_3.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="_cbActionParam1_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 104</value>
-  </data>
-  <data name="_cbActionParam1_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="_cbActionParam1_2.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="_cbActionParam1_2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;_cbActionParam1_2.Name" xml:space="preserve">
     <value>_cbActionParam1_2</value>
@@ -2101,25 +1831,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="bSelectActionParam3_3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam3_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 146</value>
-  </data>
-  <data name="bSelectActionParam3_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam3_3.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
-  </data>
-  <data name="bSelectActionParam3_3.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam3_3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam3_3.Name" xml:space="preserve">
     <value>bSelectActionParam3_3</value>
@@ -2133,24 +1845,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;bSelectActionParam3_3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="bSelectActionParam3_2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bSelectActionParam3_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 102</value>
-  </data>
-  <data name="bSelectActionParam3_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam3_2.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="bSelectActionParam3_2.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam3_2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;bSelectActionParam3_2.Name" xml:space="preserve">
     <value>bSelectActionParam3_2</value>
   </data>
@@ -2162,21 +1856,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam3_2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="bSelectActionParam3_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 60</value>
-  </data>
-  <data name="bSelectActionParam3_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 23</value>
-  </data>
-  <data name="bSelectActionParam3_1.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
-  <data name="bSelectActionParam3_1.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="bSelectActionParam3_1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;bSelectActionParam3_1.Name" xml:space="preserve">
     <value>bSelectActionParam3_1</value>
@@ -2190,18 +1869,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;bSelectActionParam3_1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="_cbActionParam3_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 60</value>
-  </data>
-  <data name="_cbActionParam3_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="_cbActionParam3_1.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="_cbActionParam3_1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;_cbActionParam3_1.Name" xml:space="preserve">
     <value>_cbActionParam3_1</value>
   </data>
@@ -2213,18 +1880,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_cbActionParam3_1.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="lActionParam3_3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam3_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 132</value>
-  </data>
-  <data name="lActionParam3_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam3_3.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
   </data>
   <data name="&gt;&gt;lActionParam3_3.Name" xml:space="preserve">
     <value>lActionParam3_3</value>
@@ -2238,18 +1893,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;lActionParam3_3.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lActionParam3_2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam3_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 86</value>
-  </data>
-  <data name="lActionParam3_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam3_2.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
-  </data>
   <data name="&gt;&gt;lActionParam3_2.Name" xml:space="preserve">
     <value>lActionParam3_2</value>
   </data>
@@ -2261,18 +1904,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;lActionParam3_2.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="lActionParam3_1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lActionParam3_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 44</value>
-  </data>
-  <data name="lActionParam3_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lActionParam3_1.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
   </data>
   <data name="&gt;&gt;lActionParam3_1.Name" xml:space="preserve">
     <value>lActionParam3_1</value>
@@ -2286,18 +1917,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   <data name="&gt;&gt;lActionParam3_1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="_cbActionParam3_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 148</value>
-  </data>
-  <data name="_cbActionParam3_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="_cbActionParam3_3.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="_cbActionParam3_3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;_cbActionParam3_3.Name" xml:space="preserve">
     <value>_cbActionParam3_3</value>
   </data>
@@ -2309,18 +1928,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_cbActionParam3_3.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="_cbActionParam3_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 104</value>
-  </data>
-  <data name="_cbActionParam3_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 21</value>
-  </data>
-  <data name="_cbActionParam3_2.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="_cbActionParam3_2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;_cbActionParam3_2.Name" xml:space="preserve">
     <value>_cbActionParam3_2</value>
@@ -2356,13 +1963,13 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>797, 274</value>
+    <value>9, 319</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 13</value>
@@ -2383,7 +1990,7 @@ ID существа * 100 + 50 + номер скрипта</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2468,138 +2075,6 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_tpScript.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Creature_ID</value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>Phase</value>
-  </data>
-  <data name="columnHeader5.Text" xml:space="preserve">
-    <value>Chanse</value>
-  </data>
-  <data name="columnHeader5.Width" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="columnHeader6.Text" xml:space="preserve">
-    <value>Flag</value>
-  </data>
-  <data name="columnHeader6.Width" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="columnHeader7.Text" xml:space="preserve">
-    <value>E_param1</value>
-  </data>
-  <data name="columnHeader8.Text" xml:space="preserve">
-    <value>E_param2</value>
-  </data>
-  <data name="columnHeader9.Text" xml:space="preserve">
-    <value>E_param3</value>
-  </data>
-  <data name="columnHeader10.Text" xml:space="preserve">
-    <value>E_param4</value>
-  </data>
-  <data name="columnHeader11.Text" xml:space="preserve">
-    <value>Action_type1</value>
-  </data>
-  <data name="columnHeader12.Text" xml:space="preserve">
-    <value>A_param1_1</value>
-  </data>
-  <data name="columnHeader13.Text" xml:space="preserve">
-    <value>A_param1_2</value>
-  </data>
-  <data name="columnHeader14.Text" xml:space="preserve">
-    <value>A_param1_3</value>
-  </data>
-  <data name="columnHeader15.Text" xml:space="preserve">
-    <value>Action_type2</value>
-  </data>
-  <data name="columnHeader16.Text" xml:space="preserve">
-    <value>A_param2_1</value>
-  </data>
-  <data name="columnHeader17.Text" xml:space="preserve">
-    <value>A_param2_2</value>
-  </data>
-  <data name="columnHeader18.Text" xml:space="preserve">
-    <value>A_param2_3</value>
-  </data>
-  <data name="columnHeader19.Text" xml:space="preserve">
-    <value>Action_type3</value>
-  </data>
-  <data name="columnHeader20.Text" xml:space="preserve">
-    <value>A_param3_1</value>
-  </data>
-  <data name="columnHeader21.Text" xml:space="preserve">
-    <value>A_param3_2</value>
-  </data>
-  <data name="columnHeader22.Text" xml:space="preserve">
-    <value>A_param3_3</value>
-  </data>
-  <data name="columnHeader23.Text" xml:space="preserve">
-    <value>Comment</value>
-  </data>
-  <data name="rbInsertScript.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbInsertScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
-  </data>
-  <data name="rbInsertScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 17</value>
-  </data>
-  <data name="rbInsertScript.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="rbInsertScript.Text" xml:space="preserve">
-    <value>INSERT</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.Name" xml:space="preserve">
-    <value>rbInsertScript</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;rbInsertScript.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbReplaceScript.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbReplaceScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="rbReplaceScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 17</value>
-  </data>
-  <data name="rbReplaceScript.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbReplaceScript.Text" xml:space="preserve">
-    <value>REPLACE</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.Name" xml:space="preserve">
-    <value>rbReplaceScript</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;rbReplaceScript.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="_bEventParam1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2897,6 +2372,705 @@ ID существа * 100 + 50 + номер скрипта</value>
   </data>
   <data name="&gt;&gt;_cbEventParametr2.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="bSelectActionParam2_3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam2_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 146</value>
+  </data>
+  <data name="bSelectActionParam2_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam2_3.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="bSelectActionParam2_3.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam2_3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_3.Name" xml:space="preserve">
+    <value>bSelectActionParam2_3</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_3.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bSelectActionParam2_2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam2_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 102</value>
+  </data>
+  <data name="bSelectActionParam2_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam2_2.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="bSelectActionParam2_2.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam2_2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_2.Name" xml:space="preserve">
+    <value>bSelectActionParam2_2</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_2.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bSelectActionParam2_1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam2_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 58</value>
+  </data>
+  <data name="bSelectActionParam2_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam2_1.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="bSelectActionParam2_1.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam2_1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_1.Name" xml:space="preserve">
+    <value>bSelectActionParam2_1</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam2_1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="_cbActionParam2_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 60</value>
+  </data>
+  <data name="_cbActionParam2_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="_cbActionParam2_1.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="_cbActionParam2_1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_1.Name" xml:space="preserve">
+    <value>_cbActionParam2_1</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lActionParam2_1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam2_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 44</value>
+  </data>
+  <data name="lActionParam2_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam2_1.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_1.Name" xml:space="preserve">
+    <value>lActionParam2_1</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lActionParam2_3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam2_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 133</value>
+  </data>
+  <data name="lActionParam2_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam2_3.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_3.Name" xml:space="preserve">
+    <value>lActionParam2_3</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_3.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lActionParam2_2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam2_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 86</value>
+  </data>
+  <data name="lActionParam2_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam2_2.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_2.Name" xml:space="preserve">
+    <value>lActionParam2_2</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_2.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lActionParam2_2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="_cbActionParam2_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 104</value>
+  </data>
+  <data name="_cbActionParam2_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 21</value>
+  </data>
+  <data name="_cbActionParam2_2.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="_cbActionParam2_2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_2.Name" xml:space="preserve">
+    <value>_cbActionParam2_2</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_2.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="_cbActionParam2_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 148</value>
+  </data>
+  <data name="_cbActionParam2_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 21</value>
+  </data>
+  <data name="_cbActionParam2_3.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="_cbActionParam2_3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_3.Name" xml:space="preserve">
+    <value>_cbActionParam2_3</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_3.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam2_3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="bSelectActionParam1_3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam1_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 148</value>
+  </data>
+  <data name="bSelectActionParam1_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam1_3.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="bSelectActionParam1_3.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam1_3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_3.Name" xml:space="preserve">
+    <value>bSelectActionParam1_3</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_3.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bSelectActionParam1_2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam1_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 102</value>
+  </data>
+  <data name="bSelectActionParam1_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam1_2.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="bSelectActionParam1_2.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam1_2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_2.Name" xml:space="preserve">
+    <value>bSelectActionParam1_2</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_2.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bSelectActionParam1_1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam1_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 58</value>
+  </data>
+  <data name="bSelectActionParam1_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam1_1.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="bSelectActionParam1_1.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam1_1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_1.Name" xml:space="preserve">
+    <value>bSelectActionParam1_1</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_1.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam1_1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="_cbActionParam1_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 60</value>
+  </data>
+  <data name="_cbActionParam1_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="_cbActionParam1_1.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="_cbActionParam1_1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_1.Name" xml:space="preserve">
+    <value>_cbActionParam1_1</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_1.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lActionParam1_3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam1_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 131</value>
+  </data>
+  <data name="lActionParam1_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam1_3.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_3.Name" xml:space="preserve">
+    <value>lActionParam1_3</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_3.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lActionParam1_2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam1_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 87</value>
+  </data>
+  <data name="lActionParam1_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam1_2.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_2.Name" xml:space="preserve">
+    <value>lActionParam1_2</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_2.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lActionParam1_1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam1_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 46</value>
+  </data>
+  <data name="lActionParam1_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam1_1.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_1.Name" xml:space="preserve">
+    <value>lActionParam1_1</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_1.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;lActionParam1_1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="_cbActionParam1_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 148</value>
+  </data>
+  <data name="_cbActionParam1_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="_cbActionParam1_3.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="_cbActionParam1_3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_3.Name" xml:space="preserve">
+    <value>_cbActionParam1_3</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_3.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="_cbActionParam1_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 104</value>
+  </data>
+  <data name="_cbActionParam1_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="_cbActionParam1_2.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="_cbActionParam1_2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_2.Name" xml:space="preserve">
+    <value>_cbActionParam1_2</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_2.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam1_2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="bSelectActionParam3_3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam3_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 146</value>
+  </data>
+  <data name="bSelectActionParam3_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam3_3.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="bSelectActionParam3_3.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam3_3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_3.Name" xml:space="preserve">
+    <value>bSelectActionParam3_3</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_3.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bSelectActionParam3_2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bSelectActionParam3_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 102</value>
+  </data>
+  <data name="bSelectActionParam3_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam3_2.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="bSelectActionParam3_2.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam3_2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_2.Name" xml:space="preserve">
+    <value>bSelectActionParam3_2</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_2.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bSelectActionParam3_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 60</value>
+  </data>
+  <data name="bSelectActionParam3_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bSelectActionParam3_1.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="bSelectActionParam3_1.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="bSelectActionParam3_1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_1.Name" xml:space="preserve">
+    <value>bSelectActionParam3_1</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_1.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;bSelectActionParam3_1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="_cbActionParam3_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 60</value>
+  </data>
+  <data name="_cbActionParam3_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="_cbActionParam3_1.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="_cbActionParam3_1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_1.Name" xml:space="preserve">
+    <value>_cbActionParam3_1</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_1.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lActionParam3_3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam3_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 132</value>
+  </data>
+  <data name="lActionParam3_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam3_3.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_3.Name" xml:space="preserve">
+    <value>lActionParam3_3</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_3.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lActionParam3_2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam3_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 86</value>
+  </data>
+  <data name="lActionParam3_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam3_2.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_2.Name" xml:space="preserve">
+    <value>lActionParam3_2</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_2.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lActionParam3_1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lActionParam3_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 44</value>
+  </data>
+  <data name="lActionParam3_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lActionParam3_1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_1.Name" xml:space="preserve">
+    <value>lActionParam3_1</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_1.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;lActionParam3_1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="_cbActionParam3_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 148</value>
+  </data>
+  <data name="_cbActionParam3_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="_cbActionParam3_3.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="_cbActionParam3_3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_3.Name" xml:space="preserve">
+    <value>_cbActionParam3_3</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_3.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="_cbActionParam3_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 104</value>
+  </data>
+  <data name="_cbActionParam3_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 21</value>
+  </data>
+  <data name="_cbActionParam3_2.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="_cbActionParam3_2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_2.Name" xml:space="preserve">
+    <value>_cbActionParam3_2</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_2.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;_cbActionParam3_2.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;rtbTextOut.Name" xml:space="preserve">
     <value>rtbTextOut</value>

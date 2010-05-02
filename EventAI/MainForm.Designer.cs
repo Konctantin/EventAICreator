@@ -67,8 +67,6 @@
             this.Revert = new System.Windows.Forms.ToolStripMenuItem();
             this._tpScript = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this._bFindParam = new System.Windows.Forms.Button();
-            this._bFind = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this._lvScripts = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -98,9 +96,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbScriptOut = new System.Windows.Forms.RichTextBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.rbInsertScript = new System.Windows.Forms.RadioButton();
-            this.rbReplaceScript = new System.Windows.Forms.RadioButton();
             this.Create = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.WriteFiles = new System.Windows.Forms.Button();
@@ -183,7 +178,6 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -577,22 +571,19 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitContainer1.Panel1.Controls.Add(this._bFindParam);
-            this.splitContainer1.Panel1.Controls.Add(this._bFind);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this._lvScripts);
-            this.splitContainer1.Panel1.Controls.Add(this.NumberScripts);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.EntryNpc);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel2.Controls.Add(this.groupBox6);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.rtbScriptOut);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox10);
+            this.splitContainer1.Panel2.Controls.Add(this.EntryNpc);
             this.splitContainer1.Panel2.Controls.Add(this.Create);
+            this.splitContainer1.Panel2.Controls.Add(this.NumberScripts);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.WriteFiles);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
@@ -603,19 +594,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this._tbShance);
-            // 
-            // _bFindParam
-            // 
-            resources.ApplyResources(this._bFindParam, "_bFindParam");
-            this._bFindParam.Name = "_bFindParam";
-            this._bFindParam.UseVisualStyleBackColor = true;
-            // 
-            // _bFind
-            // 
-            resources.ApplyResources(this._bFind, "_bFind");
-            this._bFind.Name = "_bFind";
-            this._bFind.UseVisualStyleBackColor = true;
-            this._bFind.Click += new System.EventHandler(this._bFind_Click);
             // 
             // label1
             // 
@@ -773,28 +751,6 @@
             // 
             resources.ApplyResources(this.rtbScriptOut, "rtbScriptOut");
             this.rtbScriptOut.Name = "rtbScriptOut";
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.rbInsertScript);
-            this.groupBox10.Controls.Add(this.rbReplaceScript);
-            resources.ApplyResources(this.groupBox10, "groupBox10");
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.TabStop = false;
-            // 
-            // rbInsertScript
-            // 
-            resources.ApplyResources(this.rbInsertScript, "rbInsertScript");
-            this.rbInsertScript.Name = "rbInsertScript";
-            this.rbInsertScript.UseVisualStyleBackColor = true;
-            // 
-            // rbReplaceScript
-            // 
-            resources.ApplyResources(this.rbReplaceScript, "rbReplaceScript");
-            this.rbReplaceScript.Checked = true;
-            this.rbReplaceScript.Name = "rbReplaceScript";
-            this.rbReplaceScript.TabStop = true;
-            this.rbReplaceScript.UseVisualStyleBackColor = true;
             // 
             // Create
             // 
@@ -1332,14 +1288,11 @@
             this._tpScript.ResumeLayout(false);
             this._tpScript.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1437,9 +1390,6 @@
         private System.Windows.Forms.Button bCreateTextQuery;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lDateTime2;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.RadioButton rbInsertScript;
-        private System.Windows.Forms.RadioButton rbReplaceScript;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RadioButton rbInsertText;
@@ -1495,12 +1445,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.CheckedListBox _clbPhase;
-        private System.Windows.Forms.Button _bFind;
         private System.Windows.Forms.ContextMenuStrip _cmPhase;
         private System.Windows.Forms.ToolStripMenuItem UnselectALL;
         private System.Windows.Forms.ToolStripMenuItem SelectAll;
         private System.Windows.Forms.ToolStripMenuItem Revert;
-        private System.Windows.Forms.Button _bFindParam;
         private System.Windows.Forms.ContextMenuStrip _cmFlag;
         private System.Windows.Forms.ToolStripMenuItem UnselectALL1;
         private System.Windows.Forms.ToolStripMenuItem SelectAll1;
