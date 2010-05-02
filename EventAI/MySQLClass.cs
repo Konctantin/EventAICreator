@@ -46,7 +46,7 @@ namespace EventAI
                 list.Add(new ListViewItem(new[]
                 {
                     reader[0].ToString(),                   // 0  Entry 
-                    //GetSpellName(reader[0]),                // 1  Name
+                    //GetSpellName(reader[0]),              // 1  Name
                     reader[1].ToString(),                   // 2  School Mask
                     reader[2].ToString(),                   // 3  Spell Family Name
                     reader[3].ToString(),                   // 4  Spell Family Mask 0

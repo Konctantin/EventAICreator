@@ -1,9 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 
 namespace EventAI
 {
+    public struct DbcHeader
+    {
+        public int Signature;
+        public int RecordsCount;
+        public int FieldsCount;
+        public int RecordSize;
+        public int StringTableSize;
+        
+        public bool IsDBC
+        {
+            get { return Signature == 0x43424457; }
+        }
+        
+        public long DataSize
+        {
+            get { return (long)(RecordsCount * RecordSize); }
+        }
+
+        public long StartStringPosition
+        {
+            get { return DataSize + (long)Marshal.SizeOf(typeof(DbcHeader)); }
+        }
+    };
+
     [StructLayout(LayoutKind.Sequential)]
     public struct SpellEntry
     {
@@ -140,7 +166,7 @@ namespace EventAI
         public uint RequiredAuraVision;                           // 221      m_requiredAuraVision not used
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         public uint[] TotemCategory;                              // 222-223  m_requiredTotemCategoryID
-        public int AreaGroupId;                                  // 224      m_requiredAreaGroupId
+        public int  AreaGroupId;                                  // 224      m_requiredAreaGroupId
         public uint SchoolMask;                                   // 225      m_schoolMask
         public uint RuneCostID;                                   // 226      m_runeCostID
         public uint SpellMissileID;                               // 227      m_spellMissileID not used
@@ -189,7 +215,7 @@ namespace EventAI
 
                 DBC._SpellStrings.TryGetValue(offsetname, out name);
                 DBC._SpellStrings.TryGetValue(offsetrank, out rank);
-
+                
                 return rank == String.Empty ? name : String.Format("{0} ({1})", name, rank);
             }
         }
@@ -240,7 +266,9 @@ namespace EventAI
                 while (proc != 0)
                 {
                     if ((proc & 1) != 0)
+                    {
                         str += String.Format("  {0}{1}", SpellEnums.ProcFlagDesc[i], Environment.NewLine);
+                    }
                     i++;
                     proc >>= 1;
                 }
@@ -321,43 +349,12 @@ namespace EventAI
                 return (SpellSchoolMask)SchoolMask;
             }
         }
-
-        public string GetTriggerSpellInfo(int index)
-        {
-            StringBuilder sb = new StringBuilder();
-            var tsId = EffectTriggerSpell[index];
-            if (tsId != 0)
-            {
-                if (DBC.Spell.ContainsKey(tsId))
-                {
-                    var trigger = DBC.Spell[tsId];
-                    sb.AppendFormatLine("Trigger spell ({0}) {1}. Chance = {2}", tsId, trigger.SpellNameRank, ProcChance);
-
-                    sb.AppendFormatLineIfNotNull("Description: {0}", trigger.Description);
-                    sb.AppendFormatLineIfNotNull("ToolTip: {0}", trigger.ToolTip);
-
-                    if (trigger.ProcFlags != 0)
-                    {
-                        sb.AppendFormatLine("Charges - {0}", trigger.ProcCharges);
-                        sb.AppendLine("=================================================");
-                        sb.Append(trigger.ProcInfo);
-                        sb.AppendLine("=================================================");
-                    }
-                }
-                else
-                {
-                    sb.AppendFormatLine("Trigger spell ({0}) Not found, Chance = {1}", tsId, ProcChance);
-                }
-            }
-
-            return sb.ToString();
-        }
     };
 
     public struct SkillLineEntry
     {
         public uint ID;                                            // 0        m_ID
-        public int CategoryId;                                     // 1        m_categoryID
+        public int  CategoryId;                                    // 1        m_categoryID
         public uint SkillCostID;                                   // 2        m_skillCostsID
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public uint[] _Name;                                       // 3-18     m_displayName_lang
@@ -425,26 +422,26 @@ namespace EventAI
 
     public struct SpellRadiusEntry
     {
-        public uint ID;
+        public uint  ID;
         public float Radius;
-        public int Zero;
+        public int   Zero;
         public float Radius2;
     };
 
     public struct SpellRangeEntry
     {
-        public uint ID;
+        public uint  ID;
         public float MinRange;
         public float MinRangeFriendly;
         public float MaxRange;
         public float MaxRangeFriendly;
-        public uint Field5;
+        public uint  Field5;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public uint[] _Desc1;
-        public uint Desc1Flags;
+        public uint  Desc1Flags;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public uint[] _Desc2;
-        public uint Desc2Flags;
+        public uint  Desc2Flags;
 
         public string Description1
         {
@@ -478,27 +475,27 @@ namespace EventAI
 
     public struct SpellCastTimesEntry
     {
-        public uint ID;
-        public int CastTime;
+        public uint  ID;
+        public int   CastTime;   
         public float CastTimePerLevel;
-        public int MinCastTime;
+        public int   MinCastTime;
     };
 
     //=============== DateBase =================\\
 
     public struct SpellProcEvent
     {
-        public uint ID;
-        public ushort SchoolMask;
-        public uint SpellFamilyName;
-        public uint SpellFamilyMask0;
-        public uint SpellFamilyMask1;
-        public uint SpellFamilyMask2;
-        public uint ProcFlags;
-        public uint ProcEx;
-        public float PpmRate;
-        public float CustomChance;
-        public uint Cooldown;
+        public uint     ID;
+        public ushort   SchoolMask;
+        public uint     SpellFamilyName;
+        public uint     SpellFamilyMask0;
+        public uint     SpellFamilyMask1;
+        public uint     SpellFamilyMask2;
+        public uint     ProcFlags;
+        public uint     ProcEx;
+        public float    PpmRate;
+        public float    CustomChance;
+        public uint     Cooldown;
     };
 
     public struct SpellChain
@@ -508,5 +505,19 @@ namespace EventAI
         public int FirstSpell;
         public int Rank;
         public int ReqSpell;
+    };
+
+    public struct Item
+    {
+        public uint     Entry;
+        public String   Name;
+        public String   Description;
+        public String   LocalesName;
+        public String   LocalesDescription;
+        public uint     SpellID1;
+        public uint     SpellID2;
+        public uint     SpellID3;
+        public uint     SpellID4;
+        public uint     SpellID5;
     };
 }

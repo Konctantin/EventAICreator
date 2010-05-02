@@ -5,24 +5,29 @@ using System.Text;
 
 namespace EventAI
 {
-    class DBC
+    static class DBC
     {
-        public static Dictionary<uint, SpellEntry> Spell = new Dictionary<uint, SpellEntry>();
+        public const string VERSION = "SpellWork 3.3.3a (11723)";
+        public const int MAX_DBC_LOCALE = 16;
+        public const string DBC_PATH = @"dbc\";
+
+        public static Dictionary<uint, SpellEntry> Spell;
+        public static Dictionary<uint, SpellRadiusEntry> SpellRadius;
+        public static Dictionary<uint, SpellCastTimesEntry> SpellCastTimes;
+        public static Dictionary<uint, SpellRangeEntry> SpellRange;
+        public static Dictionary<uint, SpellDurationEntry> SpellDuration;
+        public static Dictionary<uint, SkillLineAbilityEntry> SkillLineAbility;
+        public static Dictionary<uint, SkillLineEntry> SkillLine;
+
         public static Dictionary<uint, string> _SpellStrings = new Dictionary<uint, string>();
-
-        public static Dictionary<uint, SpellRadiusEntry> SpellRadius = new Dictionary<uint, SpellRadiusEntry>();
-        public static Dictionary<uint, SpellCastTimesEntry> SpellCastTimes = new Dictionary<uint, SpellCastTimesEntry>();
-
-        public static Dictionary<uint, SpellRangeEntry> SpellRange = new Dictionary<uint, SpellRangeEntry>();
+        public static Dictionary<uint, string> _SkillLineStrings = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _SpellRangeStrings = new Dictionary<uint, string>();
 
-        public static Dictionary<uint, SpellDurationEntry> SpellDuration = new Dictionary<uint, SpellDurationEntry>();
-        public static Dictionary<uint, SkillLineAbilityEntry> SkillLineAbility = new Dictionary<uint, SkillLineAbilityEntry>();
+        // DB 
+       // public static List<Item> ItemTemplate = new List<Item>();
 
-        public static Dictionary<uint, SkillLineEntry> SkillLine = new Dictionary<uint, SkillLineEntry>();
-        public static Dictionary<uint, string> _SkillLineStrings = new Dictionary<uint, string>();
-
-        public static LocalesDBC Locale;
+        // Locale
+        public static LocalesDBC Locale { get; set; }
     }
 
     public enum LocalesDBC

@@ -216,12 +216,12 @@ namespace EventAI
             }
         }
 
-        public static int GetFlagsValue(this CheckedListBox _name)
+        public static int GetFlagsValue(this CheckedListBox clb)
         {
             int val = 0;
-            for (int i = 0; i < _name.CheckedIndices.Count; i++)
+            foreach (int elem in clb.CheckedIndices)
             {
-                val += (int)(Math.Pow(2, _name.CheckedIndices[i]));
+                val += Math.Pow(2, elem).ToInt32();
             }
 
             return val;
