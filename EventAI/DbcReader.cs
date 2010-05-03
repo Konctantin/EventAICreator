@@ -22,7 +22,7 @@ namespace EventAI
                 if (!header.IsDBC)
                     throw new AIException("{0} is not DBC files", fileName);
                 if (header.RecordSize != size)
-                    throw new AIException("Size of row in DBC file ({0}) != size of DBC struct ({1}) in DBC: {3}", header.RecordSize, size, fileName);
+                    throw new AIException("Size of row in DBC file ({0}) != size of DBC struct ({1}) in DBC: {2}", header.RecordSize, size, fileName);
 
                 // read dbc data
                 for (int r = 0; r < header.RecordsCount; ++r)
@@ -40,8 +40,8 @@ namespace EventAI
                 {
                     while (reader.BaseStream.Position != reader.BaseStream.Length)
                     {
-                        var offset = (uint)(reader.BaseStream.Position - header.StartStringPosition);
-                        var str = reader.ReadCString();
+                        uint offset = (uint)(reader.BaseStream.Position - header.StartStringPosition);
+                        string str  = reader.ReadCString();
                         strDict.Add(offset, str);
                     }
                 }

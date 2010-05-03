@@ -505,7 +505,7 @@ namespace EventAI
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 22)]
         private uint[] fields1;
         private uint _name;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 33)]
         private uint[] fields2;
 
         public string Name

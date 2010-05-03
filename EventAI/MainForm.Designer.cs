@@ -112,10 +112,10 @@
             this._cbEventParametr3 = new System.Windows.Forms.ComboBox();
             this._cbEventParametr1 = new System.Windows.Forms.ComboBox();
             this._cbEventParametr2 = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.bSelectActionParam2_3 = new System.Windows.Forms.Button();
-            this.bSelectActionParam2_2 = new System.Windows.Forms.Button();
-            this.bSelectActionParam2_1 = new System.Windows.Forms.Button();
+            this._gbAction2 = new System.Windows.Forms.GroupBox();
+            this._bSow2_3 = new System.Windows.Forms.Button();
+            this._bSow2_2 = new System.Windows.Forms.Button();
+            this._bSow2_1 = new System.Windows.Forms.Button();
             this._cbActionParam2_1 = new System.Windows.Forms.ComboBox();
             this.lActionParam2_1 = new System.Windows.Forms.Label();
             this.lActionParam2_3 = new System.Windows.Forms.Label();
@@ -123,20 +123,20 @@
             this._cbActionParam2_2 = new System.Windows.Forms.ComboBox();
             this._cbActionParam2_3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.bSelectActionParam1_3 = new System.Windows.Forms.Button();
-            this.bSelectActionParam1_2 = new System.Windows.Forms.Button();
-            this.bSelectActionParam1_1 = new System.Windows.Forms.Button();
+            this._gbAction1 = new System.Windows.Forms.GroupBox();
+            this._bSow1_3 = new System.Windows.Forms.Button();
+            this._bSow1_2 = new System.Windows.Forms.Button();
+            this._bSow1_1 = new System.Windows.Forms.Button();
             this._cbActionParam1_1 = new System.Windows.Forms.ComboBox();
             this.lActionParam1_3 = new System.Windows.Forms.Label();
             this.lActionParam1_2 = new System.Windows.Forms.Label();
             this.lActionParam1_1 = new System.Windows.Forms.Label();
             this._cbActionParam1_3 = new System.Windows.Forms.ComboBox();
             this._cbActionParam1_2 = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.bSelectActionParam3_3 = new System.Windows.Forms.Button();
-            this.bSelectActionParam3_2 = new System.Windows.Forms.Button();
-            this.bSelectActionParam3_1 = new System.Windows.Forms.Button();
+            this._gbAction3 = new System.Windows.Forms.GroupBox();
+            this._bSow3_3 = new System.Windows.Forms.Button();
+            this._bSow3_2 = new System.Windows.Forms.Button();
+            this._bSow3_1 = new System.Windows.Forms.Button();
             this._cbActionParam3_1 = new System.Windows.Forms.ComboBox();
             this.lActionParam3_3 = new System.Windows.Forms.Label();
             this.lActionParam3_2 = new System.Windows.Forms.Label();
@@ -179,9 +179,9 @@
             this._gbPhase.SuspendLayout();
             this._gbEventFlag.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this._gbAction2.SuspendLayout();
+            this._gbAction1.SuspendLayout();
+            this._gbAction3.SuspendLayout();
             this.Panel.SuspendLayout();
             this._tpText.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -295,6 +295,7 @@
             this._cbActionType3.TabIndex = 22;
             this.HelpEntry.SetToolTip(this._cbActionType3, "Выбирите тип действия");
             this._cbActionType3.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_2);
+            this._cbActionType3.Click += new System.EventHandler(this.bActionParamClick3);
             // 
             // _cbActionType1
             // 
@@ -651,10 +652,10 @@
             this.splitContainer1.Panel2.Controls.Add(this.WriteFiles);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
             this.splitContainer1.Panel2.Controls.Add(this._tbComment);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer1.Panel2.Controls.Add(this._gbAction2);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
+            this.splitContainer1.Panel2.Controls.Add(this._gbAction1);
+            this.splitContainer1.Panel2.Controls.Add(this._gbAction3);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this._tbShance);
             this.splitContainer1.Size = new System.Drawing.Size(1042, 598);
@@ -1007,57 +1008,60 @@
             this._cbEventParametr2.TabIndex = 23;
             this._cbEventParametr2.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
-            // groupBox2
+            // _gbAction2
             // 
-            this.groupBox2.Controls.Add(this.bSelectActionParam2_3);
-            this.groupBox2.Controls.Add(this.bSelectActionParam2_2);
-            this.groupBox2.Controls.Add(this.bSelectActionParam2_1);
-            this.groupBox2.Controls.Add(this._cbActionParam2_1);
-            this.groupBox2.Controls.Add(this.lActionParam2_1);
-            this.groupBox2.Controls.Add(this.lActionParam2_3);
-            this.groupBox2.Controls.Add(this.lActionParam2_2);
-            this.groupBox2.Controls.Add(this._cbActionParam2_2);
-            this.groupBox2.Controls.Add(this._cbActionParam2_3);
-            this.groupBox2.Controls.Add(this._cbActionType2);
-            this.groupBox2.Location = new System.Drawing.Point(532, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(250, 182);
-            this.groupBox2.TabIndex = 27;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Тип действия 2 при событии";
+            this._gbAction2.Controls.Add(this._bSow2_3);
+            this._gbAction2.Controls.Add(this._bSow2_2);
+            this._gbAction2.Controls.Add(this._bSow2_1);
+            this._gbAction2.Controls.Add(this._cbActionParam2_1);
+            this._gbAction2.Controls.Add(this.lActionParam2_1);
+            this._gbAction2.Controls.Add(this.lActionParam2_3);
+            this._gbAction2.Controls.Add(this.lActionParam2_2);
+            this._gbAction2.Controls.Add(this._cbActionParam2_2);
+            this._gbAction2.Controls.Add(this._cbActionParam2_3);
+            this._gbAction2.Controls.Add(this._cbActionType2);
+            this._gbAction2.Location = new System.Drawing.Point(532, 5);
+            this._gbAction2.Name = "_gbAction2";
+            this._gbAction2.Size = new System.Drawing.Size(250, 182);
+            this._gbAction2.TabIndex = 27;
+            this._gbAction2.TabStop = false;
+            this._gbAction2.Text = "Тип действия 2 при событии";
             // 
-            // bSelectActionParam2_3
+            // _bSow2_3
             // 
-            this.bSelectActionParam2_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam2_3.Location = new System.Drawing.Point(230, 146);
-            this.bSelectActionParam2_3.Name = "bSelectActionParam2_3";
-            this.bSelectActionParam2_3.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam2_3.TabIndex = 58;
-            this.bSelectActionParam2_3.Text = ".";
-            this.bSelectActionParam2_3.UseVisualStyleBackColor = true;
-            this.bSelectActionParam2_3.Visible = false;
+            this._bSow2_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow2_3.Location = new System.Drawing.Point(230, 146);
+            this._bSow2_3.Name = "_bSow2_3";
+            this._bSow2_3.Size = new System.Drawing.Size(14, 23);
+            this._bSow2_3.TabIndex = 58;
+            this._bSow2_3.Text = ".";
+            this._bSow2_3.UseVisualStyleBackColor = true;
+            this._bSow2_3.Visible = false;
+            this._bSow2_3.Click += new System.EventHandler(this.bActionParamClick2);
             // 
-            // bSelectActionParam2_2
+            // _bSow2_2
             // 
-            this.bSelectActionParam2_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam2_2.Location = new System.Drawing.Point(230, 102);
-            this.bSelectActionParam2_2.Name = "bSelectActionParam2_2";
-            this.bSelectActionParam2_2.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam2_2.TabIndex = 57;
-            this.bSelectActionParam2_2.Text = ".";
-            this.bSelectActionParam2_2.UseVisualStyleBackColor = true;
-            this.bSelectActionParam2_2.Visible = false;
+            this._bSow2_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow2_2.Location = new System.Drawing.Point(230, 102);
+            this._bSow2_2.Name = "_bSow2_2";
+            this._bSow2_2.Size = new System.Drawing.Size(14, 23);
+            this._bSow2_2.TabIndex = 57;
+            this._bSow2_2.Text = ".";
+            this._bSow2_2.UseVisualStyleBackColor = true;
+            this._bSow2_2.Visible = false;
+            this._bSow2_2.Click += new System.EventHandler(this.bActionParamClick2);
             // 
-            // bSelectActionParam2_1
+            // _bSow2_1
             // 
-            this.bSelectActionParam2_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam2_1.Location = new System.Drawing.Point(230, 58);
-            this.bSelectActionParam2_1.Name = "bSelectActionParam2_1";
-            this.bSelectActionParam2_1.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam2_1.TabIndex = 56;
-            this.bSelectActionParam2_1.Text = ".";
-            this.bSelectActionParam2_1.UseVisualStyleBackColor = true;
-            this.bSelectActionParam2_1.Visible = false;
+            this._bSow2_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow2_1.Location = new System.Drawing.Point(230, 58);
+            this._bSow2_1.Name = "_bSow2_1";
+            this._bSow2_1.Size = new System.Drawing.Size(14, 23);
+            this._bSow2_1.TabIndex = 56;
+            this._bSow2_1.Text = ".";
+            this._bSow2_1.UseVisualStyleBackColor = true;
+            this._bSow2_1.Visible = false;
+            this._bSow2_1.Click += new System.EventHandler(this.bActionParamClick2);
             // 
             // _cbActionParam2_1
             // 
@@ -1124,57 +1128,60 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Комментарий:";
             // 
-            // groupBox3
+            // _gbAction1
             // 
-            this.groupBox3.Controls.Add(this.bSelectActionParam1_3);
-            this.groupBox3.Controls.Add(this.bSelectActionParam1_2);
-            this.groupBox3.Controls.Add(this.bSelectActionParam1_1);
-            this.groupBox3.Controls.Add(this._cbActionParam1_1);
-            this.groupBox3.Controls.Add(this.lActionParam1_3);
-            this.groupBox3.Controls.Add(this.lActionParam1_2);
-            this.groupBox3.Controls.Add(this.lActionParam1_1);
-            this.groupBox3.Controls.Add(this._cbActionParam1_3);
-            this.groupBox3.Controls.Add(this._cbActionParam1_2);
-            this.groupBox3.Controls.Add(this._cbActionType1);
-            this.groupBox3.Location = new System.Drawing.Point(276, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 182);
-            this.groupBox3.TabIndex = 27;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Тип действия 1 при событии";
+            this._gbAction1.Controls.Add(this._bSow1_3);
+            this._gbAction1.Controls.Add(this._bSow1_2);
+            this._gbAction1.Controls.Add(this._bSow1_1);
+            this._gbAction1.Controls.Add(this._cbActionParam1_1);
+            this._gbAction1.Controls.Add(this.lActionParam1_3);
+            this._gbAction1.Controls.Add(this.lActionParam1_2);
+            this._gbAction1.Controls.Add(this.lActionParam1_1);
+            this._gbAction1.Controls.Add(this._cbActionParam1_3);
+            this._gbAction1.Controls.Add(this._cbActionParam1_2);
+            this._gbAction1.Controls.Add(this._cbActionType1);
+            this._gbAction1.Location = new System.Drawing.Point(276, 5);
+            this._gbAction1.Name = "_gbAction1";
+            this._gbAction1.Size = new System.Drawing.Size(250, 182);
+            this._gbAction1.TabIndex = 27;
+            this._gbAction1.TabStop = false;
+            this._gbAction1.Text = "Тип действия 1 при событии";
             // 
-            // bSelectActionParam1_3
+            // _bSow1_3
             // 
-            this.bSelectActionParam1_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam1_3.Location = new System.Drawing.Point(230, 148);
-            this.bSelectActionParam1_3.Name = "bSelectActionParam1_3";
-            this.bSelectActionParam1_3.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam1_3.TabIndex = 58;
-            this.bSelectActionParam1_3.Text = ".";
-            this.bSelectActionParam1_3.UseVisualStyleBackColor = true;
-            this.bSelectActionParam1_3.Visible = false;
+            this._bSow1_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow1_3.Location = new System.Drawing.Point(230, 148);
+            this._bSow1_3.Name = "_bSow1_3";
+            this._bSow1_3.Size = new System.Drawing.Size(14, 23);
+            this._bSow1_3.TabIndex = 58;
+            this._bSow1_3.Text = ".";
+            this._bSow1_3.UseVisualStyleBackColor = true;
+            this._bSow1_3.Visible = false;
+            this._bSow1_3.Click += new System.EventHandler(this.bActionParamClick1);
             // 
-            // bSelectActionParam1_2
+            // _bSow1_2
             // 
-            this.bSelectActionParam1_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam1_2.Location = new System.Drawing.Point(230, 102);
-            this.bSelectActionParam1_2.Name = "bSelectActionParam1_2";
-            this.bSelectActionParam1_2.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam1_2.TabIndex = 57;
-            this.bSelectActionParam1_2.Text = ".";
-            this.bSelectActionParam1_2.UseVisualStyleBackColor = true;
-            this.bSelectActionParam1_2.Visible = false;
+            this._bSow1_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow1_2.Location = new System.Drawing.Point(230, 102);
+            this._bSow1_2.Name = "_bSow1_2";
+            this._bSow1_2.Size = new System.Drawing.Size(14, 23);
+            this._bSow1_2.TabIndex = 57;
+            this._bSow1_2.Text = ".";
+            this._bSow1_2.UseVisualStyleBackColor = true;
+            this._bSow1_2.Visible = false;
+            this._bSow1_2.Click += new System.EventHandler(this.bActionParamClick1);
             // 
-            // bSelectActionParam1_1
+            // _bSow1_1
             // 
-            this.bSelectActionParam1_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam1_1.Location = new System.Drawing.Point(230, 58);
-            this.bSelectActionParam1_1.Name = "bSelectActionParam1_1";
-            this.bSelectActionParam1_1.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam1_1.TabIndex = 56;
-            this.bSelectActionParam1_1.Text = ".";
-            this.bSelectActionParam1_1.UseVisualStyleBackColor = true;
-            this.bSelectActionParam1_1.Visible = false;
+            this._bSow1_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow1_1.Location = new System.Drawing.Point(230, 58);
+            this._bSow1_1.Name = "_bSow1_1";
+            this._bSow1_1.Size = new System.Drawing.Size(14, 23);
+            this._bSow1_1.TabIndex = 56;
+            this._bSow1_1.Text = ".";
+            this._bSow1_1.UseVisualStyleBackColor = true;
+            this._bSow1_1.Visible = false;
+            this._bSow1_1.Click += new System.EventHandler(this.bActionParamClick1);
             // 
             // _cbActionParam1_1
             // 
@@ -1234,56 +1241,58 @@
             this._cbActionParam1_2.TabIndex = 37;
             this._cbActionParam1_2.Visible = false;
             // 
-            // groupBox4
+            // _gbAction3
             // 
-            this.groupBox4.Controls.Add(this.bSelectActionParam3_3);
-            this.groupBox4.Controls.Add(this.bSelectActionParam3_2);
-            this.groupBox4.Controls.Add(this.bSelectActionParam3_1);
-            this.groupBox4.Controls.Add(this._cbActionParam3_1);
-            this.groupBox4.Controls.Add(this.lActionParam3_3);
-            this.groupBox4.Controls.Add(this.lActionParam3_2);
-            this.groupBox4.Controls.Add(this.lActionParam3_1);
-            this.groupBox4.Controls.Add(this._cbActionParam3_3);
-            this.groupBox4.Controls.Add(this._cbActionParam3_2);
-            this.groupBox4.Controls.Add(this._cbActionType3);
-            this.groupBox4.Location = new System.Drawing.Point(787, 5);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 182);
-            this.groupBox4.TabIndex = 27;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Тип действия 3 при событии";
+            this._gbAction3.Controls.Add(this._bSow3_3);
+            this._gbAction3.Controls.Add(this._bSow3_2);
+            this._gbAction3.Controls.Add(this._bSow3_1);
+            this._gbAction3.Controls.Add(this._cbActionParam3_1);
+            this._gbAction3.Controls.Add(this.lActionParam3_3);
+            this._gbAction3.Controls.Add(this.lActionParam3_2);
+            this._gbAction3.Controls.Add(this.lActionParam3_1);
+            this._gbAction3.Controls.Add(this._cbActionParam3_3);
+            this._gbAction3.Controls.Add(this._cbActionParam3_2);
+            this._gbAction3.Controls.Add(this._cbActionType3);
+            this._gbAction3.Location = new System.Drawing.Point(787, 5);
+            this._gbAction3.Name = "_gbAction3";
+            this._gbAction3.Size = new System.Drawing.Size(250, 182);
+            this._gbAction3.TabIndex = 27;
+            this._gbAction3.TabStop = false;
+            this._gbAction3.Text = "Тип действия 3 при событии";
             // 
-            // bSelectActionParam3_3
+            // _bSow3_3
             // 
-            this.bSelectActionParam3_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam3_3.Location = new System.Drawing.Point(229, 146);
-            this.bSelectActionParam3_3.Name = "bSelectActionParam3_3";
-            this.bSelectActionParam3_3.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam3_3.TabIndex = 57;
-            this.bSelectActionParam3_3.Text = ".";
-            this.bSelectActionParam3_3.UseVisualStyleBackColor = true;
-            this.bSelectActionParam3_3.Visible = false;
+            this._bSow3_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow3_3.Location = new System.Drawing.Point(229, 146);
+            this._bSow3_3.Name = "_bSow3_3";
+            this._bSow3_3.Size = new System.Drawing.Size(14, 23);
+            this._bSow3_3.TabIndex = 57;
+            this._bSow3_3.Text = ".";
+            this._bSow3_3.UseVisualStyleBackColor = true;
+            this._bSow3_3.Visible = false;
+            this._bSow3_3.Click += new System.EventHandler(this.bActionParamClick3);
             // 
-            // bSelectActionParam3_2
+            // _bSow3_2
             // 
-            this.bSelectActionParam3_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bSelectActionParam3_2.Location = new System.Drawing.Point(229, 102);
-            this.bSelectActionParam3_2.Name = "bSelectActionParam3_2";
-            this.bSelectActionParam3_2.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam3_2.TabIndex = 56;
-            this.bSelectActionParam3_2.Text = ".";
-            this.bSelectActionParam3_2.UseVisualStyleBackColor = true;
-            this.bSelectActionParam3_2.Visible = false;
+            this._bSow3_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bSow3_2.Location = new System.Drawing.Point(229, 102);
+            this._bSow3_2.Name = "_bSow3_2";
+            this._bSow3_2.Size = new System.Drawing.Size(14, 23);
+            this._bSow3_2.TabIndex = 56;
+            this._bSow3_2.Text = ".";
+            this._bSow3_2.UseVisualStyleBackColor = true;
+            this._bSow3_2.Visible = false;
+            this._bSow3_2.Click += new System.EventHandler(this.bActionParamClick3);
             // 
-            // bSelectActionParam3_1
+            // _bSow3_1
             // 
-            this.bSelectActionParam3_1.Location = new System.Drawing.Point(229, 60);
-            this.bSelectActionParam3_1.Name = "bSelectActionParam3_1";
-            this.bSelectActionParam3_1.Size = new System.Drawing.Size(14, 23);
-            this.bSelectActionParam3_1.TabIndex = 55;
-            this.bSelectActionParam3_1.Text = ".";
-            this.bSelectActionParam3_1.UseVisualStyleBackColor = true;
-            this.bSelectActionParam3_1.Visible = false;
+            this._bSow3_1.Location = new System.Drawing.Point(229, 60);
+            this._bSow3_1.Name = "_bSow3_1";
+            this._bSow3_1.Size = new System.Drawing.Size(14, 23);
+            this._bSow3_1.TabIndex = 55;
+            this._bSow3_1.Text = ".";
+            this._bSow3_1.UseVisualStyleBackColor = true;
+            this._bSow3_1.Visible = false;
             // 
             // _cbActionParam3_1
             // 
@@ -1639,12 +1648,12 @@
             this._gbEventFlag.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this._gbAction2.ResumeLayout(false);
+            this._gbAction2.PerformLayout();
+            this._gbAction1.ResumeLayout(false);
+            this._gbAction1.PerformLayout();
+            this._gbAction3.ResumeLayout(false);
+            this._gbAction3.PerformLayout();
             this.Panel.ResumeLayout(false);
             this._tpText.ResumeLayout(false);
             this._tpText.PerformLayout();
@@ -1678,11 +1687,11 @@
         private System.Windows.Forms.TextBox NumberScripts;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox _cbEventType;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox _gbAction1;
         private System.Windows.Forms.ComboBox _cbActionType1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox _gbAction3;
         private System.Windows.Forms.ComboBox _cbActionType3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox _gbAction2;
         private System.Windows.Forms.ComboBox _cbActionType2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox _tbComment;
@@ -1747,15 +1756,15 @@
         private System.Windows.Forms.CheckedListBox _clbEventFlag;
         private System.Windows.Forms.RichTextBox rtbScriptOut;
         private System.Windows.Forms.RichTextBox rtbTextOut;
-        private System.Windows.Forms.Button bSelectActionParam3_1;
-        private System.Windows.Forms.Button bSelectActionParam3_3;
-        private System.Windows.Forms.Button bSelectActionParam3_2;
-        private System.Windows.Forms.Button bSelectActionParam2_3;
-        private System.Windows.Forms.Button bSelectActionParam2_2;
-        private System.Windows.Forms.Button bSelectActionParam2_1;
-        private System.Windows.Forms.Button bSelectActionParam1_3;
-        private System.Windows.Forms.Button bSelectActionParam1_2;
-        private System.Windows.Forms.Button bSelectActionParam1_1;
+        private System.Windows.Forms.Button _bSow3_1;
+        private System.Windows.Forms.Button _bSow3_3;
+        private System.Windows.Forms.Button _bSow3_2;
+        private System.Windows.Forms.Button _bSow2_3;
+        private System.Windows.Forms.Button _bSow2_2;
+        private System.Windows.Forms.Button _bSow2_1;
+        private System.Windows.Forms.Button _bSow1_3;
+        private System.Windows.Forms.Button _bSow1_2;
+        private System.Windows.Forms.Button _bSow1_1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ListView _lvScripts;
         private System.Windows.Forms.ColumnHeader columnHeader1;

@@ -4,187 +4,179 @@ namespace EventAI
 {
     public static class Inscription
     {
-        static Button bb;
-        public static void ShowActionParametrInscription(ComboBox cb, Label lActionParam1, Label lActionParam2, Label lActionParam3,
-            Button bSelectActionParam1, Button bSelectActionParam2, Button bSelectActionParam3,
-            ComboBox cbActionParam1, ComboBox cbActionParam2, ComboBox cbActionParam3, GroupBox gr)
+        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3, GroupBox gr)
         {
-            lActionParam3.Text = "";
-            lActionParam2.Text = "";
-            lActionParam3.Text = "";
-            if (bb != null)
-                bb.Dispose();
+            Default.Reset(gr);
+
             try
             {
                 switch ((ActionType)cb.SelectedValue.ToUInt32())
                 {
                     case ActionType.ТЕКСТ:
                         {
-                            lActionParam1.Text = "ID текста 1";
-                            lActionParam2.Text = "ID текста 2";
-                            lActionParam3.Text = "ID текста 3";
+                            l1.Text = "ID текста 1";
+                            l2.Text = "ID текста 2";
+                            l3.Text = "ID текста 3";
                          }
                         break;
                     case ActionType.УСТАНОВИТЬ_ФРАКЦИЮ:
                         {
-                            lActionParam1.Text = "ID фракции";
+                            l1.Text = "ID фракции";
+                            cb1.SetDbcData(DataSet.Fraction);
                         }
                         break;
                     case ActionType.ИЗМЕНИТЬ_МОДЕЛЬ_СУЩЕСТВА:
                         {
-                            lActionParam1.Text = "ID существа";
-                            lActionParam3.Text = "ID модели";
+                            l1.Text = "ID существа";
+                            l3.Text = "ID модели";
                          }
                         break;
                     case ActionType.ЗВУК:
                         {
-                            lActionParam1.Text = "ID звука";
-                            bb = new Button();
-                            bb.Name = "buttonTest";
-                            bb.UseVisualStyleBackColor = true;
-                            bb.Text = "Test";
-                            bb.Location = new System.Drawing.Point(100, 100);
-                            gr.Controls.Add(bb);
-                            bb.Click += new System.EventHandler(bb_Click);
+                            l1.Text = "ID звука";
                         }
                         break;
                     case ActionType.ЭМОЦИЯ:
                         {
-                            lActionParam1.Text = "ID эмоции";
+                            l1.Text = "ID эмоции";
+                            cb1.SetDbcData(DataSet.Emote);
                         }
                         break;
                     case ActionType.СЛУЧАЙНЫЙ_ЗВУК:
                         {
-                            lActionParam1.Text = "ID звука 1";
-                            lActionParam2.Text = "ID звука 2";
-                            lActionParam3.Text = "ID звука 3";
+                            l1.Text = "ID звука 1";
+                            l2.Text = "ID звука 2";
+                            l3.Text = "ID звука 3";
                         }
                         break;
                     case ActionType.СЛУЧАЙНАЯ_ЭМОЦИЯ:
                         {
-                            lActionParam1.Text = "ID эмоции 1";
-                            lActionParam2.Text = "ID эмоции 2";
-                            lActionParam3.Text = "ID эмоции 3";
+                            l1.Text = "ID эмоции 1";
+                            l2.Text = "ID эмоции 2";
+                            l3.Text = "ID эмоции 3";
+                            cb1.SetDbcData(DataSet.Emote);
+                            cb2.SetDbcData(DataSet.Emote);
+                            cb3.SetDbcData(DataSet.Emote);
                         }
                         break;
                     case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
                         {
-                            lActionParam1.Text = "ID спелла";
-                            lActionParam2.Text = "Цель";
-                            lActionParam3.Text = "Флаг каста";
+                            l1.Text = "ID спелла";
+                            l2.Text = "Цель";
+                            l3.Text = "Флаг каста";
                         }
                         break;
                     case ActionType.ПРИЗЫВ:
                         {
-                            lActionParam1.Text = "ID существа";
-                            lActionParam2.Text = "Цель";
-                            lActionParam3.Text = "Продолжительность (мс)";
+                            l1.Text = "ID существа";
+                            l2.Text = "Цель";
+                            l3.Text = "Продолжительность (мс)";
                         }
                         break;
                     case ActionType.ИЗМЕНИТЬ_УГРОЗУ:
                         {
-                            lActionParam1.Text = "Угроза %";
-                            lActionParam2.Text = "Цель";
+                            l1.Text = "Угроза %";
+                            l2.Text = "Цель";
                         }
                         break;
                     case ActionType.ИЗМЕНИТЬ_УГРОЗУ_ДЛЯ_ВСЕХ:
                         {
-                            lActionParam1.Text = "Угроза %";
+                            l1.Text = "Угроза %";
                         }
                         break;
                     case ActionType.ВЫПОЛНИТЬ_УСЛОВИЕ_КВЕСТА:
                         {
-                            lActionParam1.Text = "ID квеста";
-                            lActionParam2.Text = "Цель";
+                            l1.Text = "ID квеста";
+                            l2.Text = "Цель";
                         } break;
                     case ActionType.ЗАСТАВИТЬ_ЧИТАТЬ_ЗАКЛИНАНИЕ:
                         {
-                            lActionParam1.Text = "ID существа";
-                            lActionParam2.Text = "ID спелла";
-                            lActionParam3.Text = "Цель";
+                            l1.Text = "ID существа";
+                            l2.Text = "ID спелла";
+                            l3.Text = "Цель";
                         }
                         break;
                     case ActionType.ИЗМЕНИТЬ_UNIT_FIELD:
-                        lActionParam1.Text = "Номер поля Data";
-                        lActionParam2.Text = "Значение";
-                        lActionParam3.Text = "Цель";
+                        l1.Text = "Номер поля Data";
+                        l2.Text = "Значение";
+                        l3.Text = "Цель";
                         break;
                     case ActionType.ИЗМЕНИТЬ_UNIT_FLAG:
-                        lActionParam1.Text = "Флаг существа";
-                        lActionParam2.Text = "Цель";
+                        l1.Text = "Флаг существа";
+                        l2.Text = "Цель";
                         break;
                     case ActionType.УБРАТЬ_UNIT_FLAG:
-                        lActionParam1.Text = "Флаг существа";
-                        lActionParam2.Text = "Цель";
+                        l1.Text = "Флаг существа";
+                        l2.Text = "Цель";
                         break;
                     case ActionType.АВТО_АТАКА_БЛИЖНЕГО_БОЯ:
-                        lActionParam1.Text = "Разрешить атаку в ближнем бою";
+                        l1.Text = "Разрешить атаку в ближнем бою";
                         break;
                     case ActionType.ДВИЖЕНИЕ_В_БОЮ:
-                        lActionParam1.Text = "Разрешить движение в бою";
-                        lActionParam2.Text = "Остановить, стартовать режим боя";
+                        l1.Text = "Разрешить движение в бою";
+                        l2.Text = "Остановить, стартовать режим боя";
                         break;
                     case ActionType.УСТАНОВИТЬ_ФАЗУ:
-                        lActionParam1.Text = "Фаза";
+                        l1.Text = "Фаза";
                          break;
                     case ActionType.ПОВЫСИТЬ_ФАЗУ:
-                        lActionParam1.Text = "Значение";
+                        l1.Text = "Значение";
                         break;
                     case ActionType.ЗАВЕРШИТЬ_КВЕСТ_ДЛЯ_ГРУППЫ:
-                        lActionParam1.Text = "ID квеста";
+                        l1.Text = "ID квеста";
                         break;
                     case ActionType.ЗАСЧИТАТЬ_ЧТЕНИЕ_ЗАКЛИНАНИЯ_ДЛЯ_ГРУППЫ:
-                        lActionParam1.Text = "ID квеста";
-                        lActionParam2.Text = "ID спелла";
+                        l1.Text = "ID квеста";
+                        l2.Text = "ID спелла";
                         break;
                     case ActionType.УБРАТЬ_С_ЦЕЛИ_АУРУ:
-                        lActionParam1.Text = "Цель";
-                        lActionParam2.Text = "ID спелла";
+                        l1.Text = "Цель";
+                        l2.Text = "ID спелла";
                          break;
                     case ActionType.УДАЛИТСЯ_ОТ_ЦЕЛИ:
-                        lActionParam1.Text = "Дистанция";
-                        lActionParam2.Text = "Под углом";
+                        l1.Text = "Дистанция";
+                        l2.Text = "Под углом";
                         break;
                     case ActionType.СЛУЧАЙНАЯ_ФРАЗА:
-                        lActionParam1.Text = "ID фазы 1";
-                        lActionParam2.Text = "ID фазы 2";
-                        lActionParam3.Text = "ID фазы 3";
+                        l1.Text = "ID фазы 1";
+                        l2.Text = "ID фазы 2";
+                        l3.Text = "ID фазы 3";
                         break;
                     case ActionType.СЛУЧАЙНАЯ_ФАЗА_С_ПАРАМЕТРОМ:
-                        lActionParam1.Text = "Минимальный номер фазы";
-                        lActionParam2.Text = "Максимальный номер фазы";
+                        l1.Text = "Минимальный номер фазы";
+                        l2.Text = "Максимальный номер фазы";
                         break;
                     case ActionType.ПРИЗЫВ_В_ОПРЕДЕЛЕННУЮ_ТОЧКУ:
-                        lActionParam1.Text = "ID существа";
-                        lActionParam2.Text = "Цель";
-                        lActionParam3.Text = "ID из creature_ai_summons";
+                        l1.Text = "ID существа";
+                        l2.Text = "Цель";
+                        l3.Text = "ID из creature_ai_summons";
                         break;
                     case ActionType.ЗАСЧИТАТЬ_УБИЙСТВО_СУЩЕСТВА:
-                        lActionParam1.Text = "ID существа";
-                        lActionParam2.Text = "Цель";
+                        l1.Text = "ID существа";
+                        l2.Text = "Цель";
                         break;
                     case ActionType.SET_INST_DATA:
-                        lActionParam1.Text = "Поле";
-                        lActionParam2.Text = "Значение";
+                        l1.Text = "Поле";
+                        l2.Text = "Значение";
                         break;
                     case ActionType.SET_INST_DATA64:
-                        lActionParam1.Text = "Поле";
-                        lActionParam2.Text = "Цель";
+                        l1.Text = "Поле";
+                        l2.Text = "Цель";
                         break;
                     case ActionType.ИЗМЕНИТЬ_ПАРАМЕТРЫ_СУЩЕСТВА:
-                        lActionParam1.Text = "Номер из creature_template";
-                        lActionParam2.Text = "Команда:";
+                        l1.Text = "Номер из creature_template";
+                        l2.Text = "Команда:";
                         break;
                     case ActionType.ОБРАТИТЬСЯ_ЗА_ПОМОЩЬЮ:
-                        lActionParam1.Text = "В радиусе:";
+                        l1.Text = "В радиусе:";
                         break;
                     case ActionType.ВИЗУАЛИЗАЦИЯ_ДЕЙСТВИЯ_С_ОРУЖИЕМ:
-                        lActionParam1.Text = "Действие";
+                        l1.Text = "Действие";
                          break;
                     case ActionType.ПРИНУДИТЕЛЬНО_ДЕСПАВНИТЬ:
                         break;
                     case ActionType.НЕВОЗМОЖНОСТЬ_АТАКОВАТЬ:
-                        lActionParam1.Text = "При значении жизни";
+                        l1.Text = "При значении жизни";
                         break;
                 }
             }
@@ -192,15 +184,11 @@ namespace EventAI
             {
                 return;
             }
-            cbActionParam1.Visible = lActionParam1.Text != "";
-            cbActionParam2.Visible = lActionParam2.Text != "";
-            cbActionParam3.Visible = lActionParam3.Text != "";
+            cb1.Visible = l1.Text != "";
+            cb2.Visible = l2.Text != "";
+            cb3.Visible = l3.Text != "";
          }
 
-        static void bb_Click(object sender, System.EventArgs e)
-        {
-            MessageBox.Show("");
-        }
 
         public static void ShowEventTypeInscription(ComboBox comboEventType, 
             Label lEventType1, Label lEventType2, Label lEventType3, Label lEventType4,
@@ -209,7 +197,6 @@ namespace EventAI
         {
             lEventType1.Text = lEventType2.Text = lEventType3.Text = lEventType4.Text = "";
             _bEventParam1.Visible = _bEventParam2.Visible = _bEventParam3.Visible = _bEventParam4.Visible = false;
-            //_bEventParam2.Dispose();
 
             try
             {
@@ -248,7 +235,6 @@ namespace EventAI
                             lEventType3.Text = "Минимальное время до повтора (мс)";
                             lEventType4.Text = "Максимальное время до повтора (мс)";
                             _bEventParam2.Visible = true;
-                            _bEventParam2.Click += new System.EventHandler(_bEventParam4_Click);
                         }
                         break;
                     case EventType.ПРИ_ДИСТАНЦИИ:
@@ -319,13 +305,6 @@ namespace EventAI
             _cbEventParametr4.Visible = lEventType4.Text != "";
          }
 
-        static void _bEventParam4_Click(object sender, System.EventArgs e)
-        {
-            //CalculateData dialog = new CalculateData();
-            //dialog.ShowDialog();
-            MessageBox.Show("");
-        }
-
         public static void ShowActionTyteCondition(ComboBox cEventParamCondition, Label lEventType3, Label lEventType4, 
             TextBox EventParam3, TextBox EventParam4)
         {
@@ -370,7 +349,6 @@ namespace EventAI
                     lEventType3.Text = "ID эвента";
                     break;
             }
-
         }
     }
 }

@@ -82,9 +82,12 @@
     <Compile Include="AIEnums.cs" />
     <Compile Include="AIException.cs" />
     <Compile Include="AIStruct.cs" />
+    <Compile Include="ButtonHandler.cs" />
+    <Compile Include="ComboBoxExtensions.cs" />
     <Compile Include="CreatureInfo.cs" />
     <Compile Include="DBC.cs" />
     <Compile Include="DbcReader.cs" />
+    <Compile Include="Default.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="MainForm.cs">
