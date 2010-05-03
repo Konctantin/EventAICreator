@@ -106,6 +106,12 @@ namespace EventAI
         ОРДА   =  67,
     };
 
+    public enum ValueType
+    {
+        ЗНАЧЕНИЕ = 0,
+        ПРОЦЕНТ  = 1,
+    };
+
     public enum SheathState
     {
         БЕЗ_ОРУЖИЯ      = 0,
@@ -156,6 +162,13 @@ namespace EventAI
 
     public enum MessageType
     { 
+        SAY             = 0,
+        YELL            = 1,
+        TEXT_EMOTE      = 2,
+        BOSS_EMOTE      = 3,
+        WHISPER         = 4,
+        BOSS_WHISPER    = 5,
+        ZONE_YELL       = 6,
     };
 
     public enum Lenguage

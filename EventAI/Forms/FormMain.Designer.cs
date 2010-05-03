@@ -124,9 +124,6 @@
             this._cbActionParam2_3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this._gbAction1 = new System.Windows.Forms.GroupBox();
-            this._bSow1_3 = new System.Windows.Forms.Button();
-            this._bSow1_2 = new System.Windows.Forms.Button();
-            this._bSow1_1 = new System.Windows.Forms.Button();
             this._cbActionParam1_1 = new System.Windows.Forms.ComboBox();
             this.lActionParam1_3 = new System.Windows.Forms.Label();
             this.lActionParam1_2 = new System.Windows.Forms.Label();
@@ -1130,9 +1127,6 @@
             // 
             // _gbAction1
             // 
-            this._gbAction1.Controls.Add(this._bSow1_3);
-            this._gbAction1.Controls.Add(this._bSow1_2);
-            this._gbAction1.Controls.Add(this._bSow1_1);
             this._gbAction1.Controls.Add(this._cbActionParam1_1);
             this._gbAction1.Controls.Add(this.lActionParam1_3);
             this._gbAction1.Controls.Add(this.lActionParam1_2);
@@ -1146,42 +1140,6 @@
             this._gbAction1.TabIndex = 27;
             this._gbAction1.TabStop = false;
             this._gbAction1.Text = "Тип действия 1 при событии";
-            // 
-            // _bSow1_3
-            // 
-            this._bSow1_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow1_3.Location = new System.Drawing.Point(187, 148);
-            this._bSow1_3.Name = "_bSow1_3";
-            this._bSow1_3.Size = new System.Drawing.Size(57, 23);
-            this._bSow1_3.TabIndex = 58;
-            this._bSow1_3.Text = ".";
-            this._bSow1_3.UseVisualStyleBackColor = true;
-            this._bSow1_3.Visible = false;
-            this._bSow1_3.Click += new System.EventHandler(this.bActionParamClick1);
-            // 
-            // _bSow1_2
-            // 
-            this._bSow1_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow1_2.Location = new System.Drawing.Point(187, 102);
-            this._bSow1_2.Name = "_bSow1_2";
-            this._bSow1_2.Size = new System.Drawing.Size(57, 23);
-            this._bSow1_2.TabIndex = 57;
-            this._bSow1_2.Text = ".";
-            this._bSow1_2.UseVisualStyleBackColor = true;
-            this._bSow1_2.Visible = false;
-            this._bSow1_2.Click += new System.EventHandler(this.bActionParamClick1);
-            // 
-            // _bSow1_1
-            // 
-            this._bSow1_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow1_1.Location = new System.Drawing.Point(187, 58);
-            this._bSow1_1.Name = "_bSow1_1";
-            this._bSow1_1.Size = new System.Drawing.Size(57, 23);
-            this._bSow1_1.TabIndex = 56;
-            this._bSow1_1.Text = ".";
-            this._bSow1_1.UseVisualStyleBackColor = true;
-            this._bSow1_1.Visible = false;
-            this._bSow1_1.Click += new System.EventHandler(this.bActionParamClick1);
             // 
             // _cbActionParam1_1
             // 
@@ -1554,10 +1512,6 @@
             this.cTypeText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cTypeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.cTypeText.FormattingEnabled = true;
-            this.cTypeText.Items.AddRange(new object[] {
-            "0-Фраза от первого лица",
-            "1-Фраза от второго лица",
-            "2-Фраза от третьего лица"});
             this.cTypeText.Location = new System.Drawing.Point(434, 31);
             this.cTypeText.Name = "cTypeText";
             this.cTypeText.Size = new System.Drawing.Size(254, 21);
@@ -1760,9 +1714,6 @@
         private System.Windows.Forms.Button _bSow2_3;
         private System.Windows.Forms.Button _bSow2_2;
         private System.Windows.Forms.Button _bSow2_1;
-        private System.Windows.Forms.Button _bSow1_3;
-        private System.Windows.Forms.Button _bSow1_2;
-        private System.Windows.Forms.Button _bSow1_1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ListView _lvScripts;
         private System.Windows.Forms.ColumnHeader columnHeader1;

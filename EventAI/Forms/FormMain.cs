@@ -79,19 +79,19 @@ namespace EventAI
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType1, lActionParam1_1, lActionParam1_2, lActionParam1_3,
-                _cbActionParam1_1, _cbActionParam1_2, _cbActionParam1_3, _bSow1_1, _bSow1_2, _bSow1_3, _gbAction1);
+                _cbActionParam1_1, _cbActionParam1_2, _cbActionParam1_3, _gbAction1);
         }
         // Подписи к полям тип действия 2
         private void ActionType2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType2, lActionParam2_1, lActionParam2_2, lActionParam2_3,
-                _cbActionParam2_1, _cbActionParam2_2, _cbActionParam2_3, _bSow2_1, _bSow2_2, _bSow2_3, _gbAction2);
+                _cbActionParam2_1, _cbActionParam2_2, _cbActionParam2_3, _gbAction2);
          }
         // Подписи к полям тип действия 3
         private void comboBox1_SelectedIndexChanged_2(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType3, lActionParam3_1, lActionParam3_2, lActionParam3_3,
-                _cbActionParam3_1, _cbActionParam3_2, _cbActionParam3_3, _bSow3_1, _bSow3_2, _bSow3_3, _gbAction3);
+                _cbActionParam3_1, _cbActionParam3_2, _cbActionParam3_3, _gbAction3);
         }
         // Подписи к полям комбосписка типа события 22
         private void ActionTyteCondition_SelectedIndexChanged(object sender, EventArgs e)

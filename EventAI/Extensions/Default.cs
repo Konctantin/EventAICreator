@@ -28,14 +28,11 @@ namespace EventAI
                 }
                 else if (ctrl is Button)
                 {
-                    Button b = (Button)ctrl;
-                    b.Text = String.Empty;
+                    Button b  = (Button)ctrl;
+                    b.Text    = String.Empty;
                     b.Visible = false;
                 }
             }
         }
-
-        //public static void GetControls(this GroupBox gb, out ComboBox cb, out ComboBox cb1, out ComboBox cb2, out ComboBox cb3)
-        //{ }
     }
 }

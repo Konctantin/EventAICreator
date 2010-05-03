@@ -8,6 +8,11 @@ namespace EventAI
 {
     class ButtonHandler
     {
+        private void ShowSpellDialog()
+        {
+ 
+        }
+
         public static void SetActionToButton(Form form, ComboBox cbAT, Button b, int index, ComboBox cb1, ComboBox cb2, ComboBox cb3)
         {
             int bindex = b.Name.Substring(b.Name.Length - 1, 1).ToInt32();

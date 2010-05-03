@@ -1,103 +1,80 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace EventAI
 {
     public static class Inscription
     {
-        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3, Button b1, Button b2, Button b3, GroupBox gr)
+        private static Point coord1 = new Point(187, 58);
+        private static Point coord2 = new Point(187, 102);
+        private static Point coord3 = new Point(187, 148);
+
+        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3, GroupBox gr)
         {
             gr.Reset();
-          
-            try
-            {
+            
+            //try
+            //{
                 switch ((ActionType)cb.SelectedValue.ToUInt32())
                 {
                     case ActionType.ТЕКСТ:
-                        {
-                            l1.Text = "ID текста 1";
-                            l2.Text = "ID текста 2";
-                            l3.Text = "ID текста 3";
-                         }
+                        l1.Text = "ID текста 1";
+                        l2.Text = "ID текста 2";
+                        l3.Text = "ID текста 3";
                         break;
                     case ActionType.УСТАНОВИТЬ_ФРАКЦИЮ:
-                        {
-                            l1.Text = "ID фракции";
-                            cb1.SetDbcData(DataSet.Fraction);
-                        }
+                        l1.Text = "ID фракции";
+                        cb1.SetDbcData(DataSet.Fraction);
                         break;
                     case ActionType.ИЗМЕНИТЬ_МОДЕЛЬ_СУЩЕСТВА:
-                        {
-                            l1.Text = "ID существа";
-                            l3.Text = "ID модели";
-                         }
+                        l1.Text = "ID существа";
+                        cb1.CreateSpellB(BType.CREATURE, Pos.POS1);
+                        l2.Text = "ID модели";
                         break;
                     case ActionType.ЗВУК:
-                        {
-                            l1.Text = "ID звука";
-                        }
+                        l1.Text = "ID звука";
                         break;
                     case ActionType.ЭМОЦИЯ:
-                        {
-                            l1.Text = "ID эмоции";
-                            cb1.SetDbcData(DataSet.Emote);
-                        }
-                        break;
-                    case ActionType.СЛУЧАЙНЫЙ_ЗВУК:
-                        {
-                            l1.Text = "ID звука 1";
-                            l2.Text = "ID звука 2";
-                            l3.Text = "ID звука 3";
-                        }
-                        break;
-                    case ActionType.СЛУЧАЙНАЯ_ЭМОЦИЯ:
-                        {
-                            l1.Text = "ID эмоции 1";
-                            l2.Text = "ID эмоции 2";
-                            l3.Text = "ID эмоции 3";
-                        }
+                        l1.Text = "ID эмоции";
+                        cb1.SetDbcData(DataSet.Emote);
                         break;
                     case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
-                        {
-                            l1.Text = "ID спелла";
-                            l2.Text = "Цель";
-                            l3.Text = "Флаг каста";
-                            b1.Visible = b3.Visible = true;
-                            cb2.SetEnumValues<CastTarget>();
-                        }
+                        l1.Text = "ID спелла";
+                        cb1.CreateSpellB(BType.SPELL, Pos.POS1);
+                        l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
+                        l3.Text = "Флаг каста";
+                        cb3.CreateFlags<CastFlags>(Pos.POS3);
                         break;
                     case ActionType.ПРИЗЫВ:
-                        {
-                            l1.Text = "ID существа";
-                            l2.Text = "Цель";
-                            l3.Text = "Продолжительность (мс)";
-                            cb2.SetEnumValues<CastTarget>();
-                        }
+                        l1.Text = "ID существа";
+                        cb1.CreateSpellB(BType.CREATURE, Pos.POS1);
+                        l2.Text = "Цель";
+                        l3.Text = "Продолжительность (мс)";
+                        cb2.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.ИЗМЕНИТЬ_УГРОЗУ:
-                        {
-                            l1.Text = "Угроза %";
-                            l2.Text = "Цель";
-                            cb2.SetEnumValues<CastTarget>();
-                        }
+                        l1.Text = "Угроза %";
+                        l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.ИЗМЕНИТЬ_УГРОЗУ_ДЛЯ_ВСЕХ:
-                        {
-                            l1.Text = "Угроза %";
-                        }
+                        l1.Text = "Угроза %";
                         break;
                     case ActionType.ВЫПОЛНИТЬ_УСЛОВИЕ_КВЕСТА:
-                        {
-                            l1.Text = "ID квеста";
-                            l2.Text = "Цель";
-                            cb2.SetEnumValues<CastTarget>();
-                        } break;
+                        l1.Text = "ID квеста";
+                        cb1.CreateSpellB(BType.QUEST, Pos.POS1);
+                        l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
+                        break;
                     case ActionType.ЗАСТАВИТЬ_ЧИТАТЬ_ЗАКЛИНАНИЕ:
-                        {
-                            l1.Text = "ID существа";
-                            l2.Text = "ID спелла";
-                            l3.Text = "Цель";
-                            cb3.SetEnumValues<CastTarget>();
-                        }
+                        l1.Text = "ID существа";
+                        cb1.CreateSpellB(BType.CREATURE, Pos.POS1);
+                        l2.Text = "ID спелла";
+                        cb1.CreateSpellB(BType.SPELL, Pos.POS2);
+                        l3.Text = "Цель";
+                        cb3.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.ИЗМЕНИТЬ_UNIT_FIELD:
                         l1.Text = "Номер поля Data";
@@ -123,6 +100,7 @@ namespace EventAI
                         l1.Text = "Разрешить движение в бою";
                         l2.Text = "Остановить, стартовать режим боя";
                         cb1.SetEnumValues<YesNO>();
+                        cb2.SetEnumValues<YesNO>();
                         break;
                     case ActionType.УСТАНОВИТЬ_ФАЗУ:
                         l1.Text = "Фаза";
@@ -132,16 +110,20 @@ namespace EventAI
                         break;
                     case ActionType.ЗАВЕРШИТЬ_КВЕСТ_ДЛЯ_ГРУППЫ:
                         l1.Text = "ID квеста";
+                        cb1.CreateSpellB(BType.QUEST, Pos.POS1);
                         break;
                     case ActionType.ЗАСЧИТАТЬ_ЧТЕНИЕ_ЗАКЛИНАНИЯ_ДЛЯ_ГРУППЫ:
                         l1.Text = "ID квеста";
+                        cb1.CreateSpellB(BType.QUEST, Pos.POS1);
                         l2.Text = "ID спелла";
+                        cb1.CreateSpellB(BType.SPELL, Pos.POS2);
                         break;
                     case ActionType.УБРАТЬ_С_ЦЕЛИ_АУРУ:
                         l1.Text = "Цель";
                         cb1.SetEnumValues<CastTarget>();
                         l2.Text = "ID спелла";
-                         break;
+                        cb1.CreateSpellB(BType.SPELL, Pos.POS2);
+                        break;
                     case ActionType.УДАЛИТСЯ_ОТ_ЦЕЛИ:
                         l1.Text = "Дистанция";
                         l2.Text = "Под углом";
@@ -157,12 +139,14 @@ namespace EventAI
                         break;
                     case ActionType.ПРИЗЫВ_В_ОПРЕДЕЛЕННУЮ_ТОЧКУ:
                         l1.Text = "ID существа";
+                        cb1.CreateSpellB(BType.CREATURE, Pos.POS1);
                         l2.Text = "Цель";
                         cb2.SetEnumValues<CastTarget>();
                         l3.Text = "ID из creature_ai_summons";
                         break;
                     case ActionType.ЗАСЧИТАТЬ_УБИЙСТВО_СУЩЕСТВА:
                         l1.Text = "ID существа";
+                        cb1.CreateSpellB(BType.CREATURE, Pos.POS1);
                         l2.Text = "Цель";
                         cb2.SetEnumValues<CastTarget>();
                         break;
@@ -176,31 +160,36 @@ namespace EventAI
                         cb2.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.ИЗМЕНИТЬ_ПАРАМЕТРЫ_СУЩЕСТВА:
-                        l1.Text = "Номер из creature_template";
+                        l1.Text = "Существо";
+                        cb1.CreateSpellB(BType.CREATURE, Pos.POS1);
                         l2.Text = "Команда:";
+                        cb2.SetEnumValues<Team>();
                         break;
                     case ActionType.ОБРАТИТЬСЯ_ЗА_ПОМОЩЬЮ:
                         l1.Text = "В радиусе:";
                         break;
                     case ActionType.ВИЗУАЛИЗАЦИЯ_ДЕЙСТВИЯ_С_ОРУЖИЕМ:
                         l1.Text = "Действие";
+                        cb1.SetEnumValues<SheathState>();
                          break;
                     case ActionType.ПРИНУДИТЕЛЬНО_ДЕСПАВНИТЬ:
                         break;
                     case ActionType.НЕВОЗМОЖНОСТЬ_АТАКОВАТЬ:
-                        l1.Text = "При значении жизни";
+                        l1.Text = "Тип значения";
+                        l2.Text = "При значении жизни";
+                        cb1.SetEnumValues<ValueType>();
                         break;
                 }
-            }
-            catch
-            {
-                return;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    return;
+            //}
             cb1.Visible = l1.Text != string.Empty;
             cb2.Visible = l2.Text != string.Empty;
             cb3.Visible = l3.Text != string.Empty;
          }
-
 
         public static void ShowEventTypeInscription(ComboBox cb, Label l1, Label l2, Label l3, Label l4,
             ComboBox cb1, ComboBox cb2, ComboBox cb3, ComboBox cb4, Button b1, Button b2, Button b3, Button b4, GroupBox gr)
@@ -238,13 +227,13 @@ namespace EventAI
                         l2.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_УРОНЕ_ЗАКЛИНАНИЕМ:
-                        {
-                            l1.Text = "Укажите ID спелла";
-                            l2.Text = "Школа спелов";
-                            l3.Text = "Минимальное время до повтора (мс)";
-                            l4.Text = "Максимальное время до повтора (мс)";
-                            b2.Visible = b1.Visible = true;
-                        }
+                        l1.Text = "Укажите ID спелла";
+                        l2.Text = "Школа спелов";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
+                        b2.Visible = b1.Visible = true;
+                        b1.Text = "Найти";
+                        b2.Text = "Флаг";
                         break;
                     case EventType.ПРИ_ДИСТАНЦИИ:
                         l1.Text = "Минимальная дистанция до цели";
@@ -265,48 +254,48 @@ namespace EventAI
                         l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ЕСЛИ_ДРУЖЕСТВЕННАЯ_ЦЕЛЬ_ПОД_КОНТРОЛЕМ:
-                        {
-                            l1.Text = "Тип диспелла";
-                            cb1.SetEnumValues<DispelType>("DISPEL_");
-                            l2.Text = "В радиусе";
-                            l3.Text = "Минимальное время до повтора (мс)";
-                            l4.Text = "Максимальное время до повтора (мс)";
-                        }
+                        l1.Text = "Тип диспелла";
+                        cb1.SetEnumValues<DispelType>("DISPEL_");
+                        l2.Text = "В радиусе";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ЕСЛИ_ТЕРЯЕТ_БАФФ:
-                        {
-                            l1.Text = "ID спелла (заклинания)";
-                            l2.Text = "В радиусе";
-                            l3.Text = "Минимальное время до повтора (мс)";
-                            l4.Text = "Максимальное время до повтора (мс)";
-                            b1.Visible = true;
-                        }
+                        l1.Text = "ID спелла (заклинания)";
+                        l2.Text = "В радиусе";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
+                        b1.Text = "Найти";
+                        b1.Visible = true;
                         break;
                     case EventType.ПРИ_СПАВНЕ_СУЩЕСТВА:
-                        {
-                            l1.Text = "ID существа";
-                            b1.Visible = true;
-                            l2.Text = "Минимальное время до повтора (мс)";
-                            l3.Text = "Максимальное время до повтора (мс)";
-                        }
+                        l1.Text = "ID существа";
+                        b1.Text = "Найти";
+                        b1.Visible = true;
+                        l2.Text = "Минимальное время до повтора (мс)";
+                        l3.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ:
-                        {
-                            l1.Text = "ID эмоции";
-                            l2.Text = "Условие";
-                            cb1.SetDbcData(DataSet.Emote);
-                            cb2.SetEnumValues<ConditionType>();
-                        }
+                        l1.Text = "ID эмоции";
+                        l2.Text = "Условие";
+                        cb1.SetDbcData(DataSet.Emote);
+                        cb2.SetEnumValues<ConditionType>();
                         break;
                     case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА:
                     case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА_ЦЕЛИ:
-                        {
-                            l1.Text = "ID спелла";
-                            b1.Visible = true;
-                            l2.Text = "Количество";
-                            l3.Text = "Минимальное время до повтора (мс)";
-                            l4.Text = "Максимальное время до повтора (мс)";
-                        }
+                        l1.Text = "ID спелла";
+                        b1.Text = "Найти";
+                        b1.Visible = true;
+                        l2.Text = "Количество";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
+                        break;
+                    case EventType.SUMMONED_JUST_DIED:
+                    case EventType.SUMMONED_JUST_DESPAWN:
+                        l1.Text = "Параметр 1";
+                        l2.Text = "Параметр 2";
+                        l3.Text = "Параметр 3";
+                        l4.Text = "Параметр 4";
                         break;
                 }
             }
