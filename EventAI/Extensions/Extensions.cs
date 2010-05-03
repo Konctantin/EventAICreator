@@ -46,7 +46,6 @@ namespace EventAI
             return returnObject;
         }
 
-        // Append Line
         public static StringBuilder AppendLineIfNotNull(this StringBuilder builder, string line)
         {
             if (!String.IsNullOrEmpty(line))
@@ -55,7 +54,6 @@ namespace EventAI
             return builder;
         }
 
-        // Append Format
         public static StringBuilder AppendFormatIfNotNull(this StringBuilder builder, string format, string arg)
         {
             if (!String.IsNullOrEmpty(arg))
@@ -96,7 +94,6 @@ namespace EventAI
             return builder;
         }
 
-        // Append Format Line
         public static StringBuilder AppendFormatLine(this StringBuilder builder, string format, params object[] arg0)
         {
             return builder.AppendFormat(format, arg0).AppendLine();
@@ -221,7 +218,7 @@ namespace EventAI
             int val = 0;
             foreach (int elem in clb.CheckedIndices)
             {
-                val += Math.Pow(2, elem).ToInt32();
+                val += (int)Math.Pow(2, elem);
             }
 
             return val;
@@ -259,6 +256,7 @@ namespace EventAI
                     "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(String.Empty) 
                 });
             }
+
             cb.Size = new System.Drawing.Size(238, 21);
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.DataSource = dt;
@@ -280,6 +278,7 @@ namespace EventAI
                     "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
                 });
             }
+
             cb.Size = new System.Drawing.Size(238, 21);
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.DataSource = dt;
@@ -303,6 +302,7 @@ namespace EventAI
                     "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
                 });
             }
+
             cb.Size = new System.Drawing.Size(238, 21);
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.DataSource    = dt;

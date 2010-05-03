@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
 using System.Text;
-
 
 namespace EventAI
 {
@@ -24,9 +21,9 @@ namespace EventAI
 
             _cbEventType.SelectedValue = 1;
         }
+
         private bool err = false;
 
-        // Создадим запрос и выведем в текстовое поле для скриптов
         private void button1_Click(object sender, EventArgs e)
         {
             rtbScriptOut.Clear();
@@ -38,7 +35,6 @@ namespace EventAI
             new FormAboutBox().ShowDialog();
         }
 
-        // Проверка для текстовых полей 1
         private void ActionParam1_1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (((ComboBox)sender).Text.Contains('-'))
@@ -50,69 +46,62 @@ namespace EventAI
                 if (!(Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || (e.KeyChar == '-' && ((ComboBox)sender).SelectionStart == 0)))
                     e.Handled = true;
         }
-        // Проверка для текстовых полей 2
+
         private void NumberScripts_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back) 
                 e.Handled = true;
         }
 
-        // Создадим запрос и выведем в текстовое поле для текста
         private void bCreateTextQuery_Click(object sender, EventArgs e)
         {
             rtbTextOut.Clear();
             CreateQueryTetxs();
         }
-        // Очистим поле с запросом для текста
+
         private void bClearTextQuery_Click(object sender, EventArgs e)
         {
             rtbTextOut.Clear();
         }
-        // Подписи к полям тип события
+
         private void comboEventType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Inscription.ShowEventTypeInscription(_cbEventType, lEventType1, lEventType2, lEventType3, lEventType4,
-                _cbEventParametr1, _cbEventParametr2, _cbEventParametr3, _cbEventParametr4,
-                _bParam1, _bParam2, _bParam3, _bParam4, _gbEventType);
+                _cbEventParametr1, _cbEventParametr2, _cbEventParametr3, _cbEventParametr4, _gbEventType);
         }       
-        // Подписи к полям тип действия 1
+
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType1, lActionParam1_1, lActionParam1_2, lActionParam1_3,
                 _cbActionParam1_1, _cbActionParam1_2, _cbActionParam1_3, _gbAction1);
         }
-        // Подписи к полям тип действия 2
+
         private void ActionType2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType2, lActionParam2_1, lActionParam2_2, lActionParam2_3,
                 _cbActionParam2_1, _cbActionParam2_2, _cbActionParam2_3, _gbAction2);
          }
-        // Подписи к полям тип действия 3
+
         private void comboBox1_SelectedIndexChanged_2(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType3, lActionParam3_1, lActionParam3_2, lActionParam3_3,
                 _cbActionParam3_1, _cbActionParam3_2, _cbActionParam3_3, _gbAction3);
         }
-        // Подписи к полям комбосписка типа события 22
+
         private void ActionTyteCondition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Inscription.ShowActionTyteCondition(_cbEventParametr2, lEventType3, lEventType4, _cbEventParametr3, _cbEventParametr4, _bParam3, _bParam4);
+            Inscription.ShowActionTyteCondition(_cbEventParametr2, lEventType3, lEventType4, _cbEventParametr3, _cbEventParametr4);
         }
-        /// <summary>
-        /// Формируем запрос для скриптов 
-        /// </summary>
+
         public void CreateQueryScripts()
         {
             err = false;
             rtbScriptOut.ForeColor = Color.Blue;
-            // Номер скрипта
             int nNumberScripts = NumberScripts.Text.ToInt32();
-            // Номер существа
             int nIDCreature = EntryNpc.Text.ToInt32();
             int nEventChance = _tbShance.Text.ToInt32();
             int nEventType = 0;
 
-            // Установим формулу для образования ИД скрипта
             int nId = (nIDCreature * 100) + (50 + nNumberScripts);
 
             //if (nNumberScripts<1)
@@ -190,9 +179,6 @@ namespace EventAI
 
         }
         
-        /// <summary>
-        ///  Формируем запрос для текстов
-        /// </summary>
         public void CreateQueryTetxs()
         {
             int ntNumberAITexts = tNumberAITexts.Text.ToInt32();
@@ -228,23 +214,6 @@ namespace EventAI
                 _clbEventFlag.SetItemChecked(6, false);
                 MessageBox.Show("Нельзя использовать зарезирвированые флаги!");
             }
-        }
-
-        private void _bFind_Click(object sender, EventArgs e)
-        {
-            _lvScripts.Items.Clear();
-
-            //MySQLClass mysql = new MySQLClass(EntryNpc.Text);
-            //Scripts = mysql.AI;
-            //var dat = mysql.AI.Select();
-            //foreach (var row in dat)
-            //{
-            //    List<string> items = new List<string>();
-            //    for (int i = 0; i < row.ItemArray.Length; i++)
-            //        items.Add(row[i].ToString());
-
-            //    _lvScripts.Items.Add(new ListViewItem(items.ToArray()));
-            //}
         }
 
         private void UnselectALL_Click(object sender, EventArgs e)
@@ -343,19 +312,6 @@ namespace EventAI
         private void _clbEventFlag_SelectedValueChanged(object sender, EventArgs e)
         {
             _gbEventFlag.Text = "Флаг события " + ((CheckedListBox)sender).GetFlagsValue();
-        }
-
-        private void bActionParamClick1(object sender, EventArgs e)
-        {
-            ButtonHandler.SetActionToButton(this, _cbActionType1, ((Button)sender), 1, _cbActionParam1_1, _cbActionParam1_2, _cbActionParam1_3);
-        }
-        private void bActionParamClick2(object sender, EventArgs e)
-        {
-            //ButtonHandler.SetActionToButton(_cbActionType2, ((Button)sender), 2);
-        }
-        private void bActionParamClick3(object sender, EventArgs e)
-        {
-            //ButtonHandler.SetActionToButton(_cbActionType3, ((Button)sender), 3);
         }
     }
 }

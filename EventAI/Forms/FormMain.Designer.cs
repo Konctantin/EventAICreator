@@ -113,9 +113,6 @@
             this._cbEventParametr1 = new System.Windows.Forms.ComboBox();
             this._cbEventParametr2 = new System.Windows.Forms.ComboBox();
             this._gbAction2 = new System.Windows.Forms.GroupBox();
-            this._bSow2_3 = new System.Windows.Forms.Button();
-            this._bSow2_2 = new System.Windows.Forms.Button();
-            this._bSow2_1 = new System.Windows.Forms.Button();
             this._cbActionParam2_1 = new System.Windows.Forms.ComboBox();
             this.lActionParam2_1 = new System.Windows.Forms.Label();
             this.lActionParam2_3 = new System.Windows.Forms.Label();
@@ -131,9 +128,6 @@
             this._cbActionParam1_3 = new System.Windows.Forms.ComboBox();
             this._cbActionParam1_2 = new System.Windows.Forms.ComboBox();
             this._gbAction3 = new System.Windows.Forms.GroupBox();
-            this._bSow3_3 = new System.Windows.Forms.Button();
-            this._bSow3_2 = new System.Windows.Forms.Button();
-            this._bSow3_1 = new System.Windows.Forms.Button();
             this._cbActionParam3_1 = new System.Windows.Forms.ComboBox();
             this.lActionParam3_3 = new System.Windows.Forms.Label();
             this.lActionParam3_2 = new System.Windows.Forms.Label();
@@ -292,7 +286,6 @@
             this._cbActionType3.TabIndex = 22;
             this.HelpEntry.SetToolTip(this._cbActionType3, "Выбирите тип действия");
             this._cbActionType3.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_2);
-            this._cbActionType3.Click += new System.EventHandler(this.bActionParamClick3);
             // 
             // _cbActionType1
             // 
@@ -1007,9 +1000,6 @@
             // 
             // _gbAction2
             // 
-            this._gbAction2.Controls.Add(this._bSow2_3);
-            this._gbAction2.Controls.Add(this._bSow2_2);
-            this._gbAction2.Controls.Add(this._bSow2_1);
             this._gbAction2.Controls.Add(this._cbActionParam2_1);
             this._gbAction2.Controls.Add(this.lActionParam2_1);
             this._gbAction2.Controls.Add(this.lActionParam2_3);
@@ -1023,42 +1013,6 @@
             this._gbAction2.TabIndex = 27;
             this._gbAction2.TabStop = false;
             this._gbAction2.Text = "Тип действия 2 при событии";
-            // 
-            // _bSow2_3
-            // 
-            this._bSow2_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow2_3.Location = new System.Drawing.Point(187, 146);
-            this._bSow2_3.Name = "_bSow2_3";
-            this._bSow2_3.Size = new System.Drawing.Size(57, 23);
-            this._bSow2_3.TabIndex = 58;
-            this._bSow2_3.Text = ".";
-            this._bSow2_3.UseVisualStyleBackColor = true;
-            this._bSow2_3.Visible = false;
-            this._bSow2_3.Click += new System.EventHandler(this.bActionParamClick2);
-            // 
-            // _bSow2_2
-            // 
-            this._bSow2_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow2_2.Location = new System.Drawing.Point(187, 102);
-            this._bSow2_2.Name = "_bSow2_2";
-            this._bSow2_2.Size = new System.Drawing.Size(57, 23);
-            this._bSow2_2.TabIndex = 57;
-            this._bSow2_2.Text = ".";
-            this._bSow2_2.UseVisualStyleBackColor = true;
-            this._bSow2_2.Visible = false;
-            this._bSow2_2.Click += new System.EventHandler(this.bActionParamClick2);
-            // 
-            // _bSow2_1
-            // 
-            this._bSow2_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow2_1.Location = new System.Drawing.Point(187, 58);
-            this._bSow2_1.Name = "_bSow2_1";
-            this._bSow2_1.Size = new System.Drawing.Size(57, 23);
-            this._bSow2_1.TabIndex = 56;
-            this._bSow2_1.Text = ".";
-            this._bSow2_1.UseVisualStyleBackColor = true;
-            this._bSow2_1.Visible = false;
-            this._bSow2_1.Click += new System.EventHandler(this.bActionParamClick2);
             // 
             // _cbActionParam2_1
             // 
@@ -1199,9 +1153,6 @@
             // 
             // _gbAction3
             // 
-            this._gbAction3.Controls.Add(this._bSow3_3);
-            this._gbAction3.Controls.Add(this._bSow3_2);
-            this._gbAction3.Controls.Add(this._bSow3_1);
             this._gbAction3.Controls.Add(this._cbActionParam3_1);
             this._gbAction3.Controls.Add(this.lActionParam3_3);
             this._gbAction3.Controls.Add(this.lActionParam3_2);
@@ -1215,40 +1166,6 @@
             this._gbAction3.TabIndex = 27;
             this._gbAction3.TabStop = false;
             this._gbAction3.Text = "Тип действия 3 при событии";
-            // 
-            // _bSow3_3
-            // 
-            this._bSow3_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow3_3.Location = new System.Drawing.Point(187, 146);
-            this._bSow3_3.Name = "_bSow3_3";
-            this._bSow3_3.Size = new System.Drawing.Size(56, 23);
-            this._bSow3_3.TabIndex = 57;
-            this._bSow3_3.Text = ".";
-            this._bSow3_3.UseVisualStyleBackColor = true;
-            this._bSow3_3.Visible = false;
-            this._bSow3_3.Click += new System.EventHandler(this.bActionParamClick3);
-            // 
-            // _bSow3_2
-            // 
-            this._bSow3_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow3_2.Location = new System.Drawing.Point(187, 102);
-            this._bSow3_2.Name = "_bSow3_2";
-            this._bSow3_2.Size = new System.Drawing.Size(56, 23);
-            this._bSow3_2.TabIndex = 56;
-            this._bSow3_2.Text = ".";
-            this._bSow3_2.UseVisualStyleBackColor = true;
-            this._bSow3_2.Visible = false;
-            this._bSow3_2.Click += new System.EventHandler(this.bActionParamClick3);
-            // 
-            // _bSow3_1
-            // 
-            this._bSow3_1.Location = new System.Drawing.Point(187, 60);
-            this._bSow3_1.Name = "_bSow3_1";
-            this._bSow3_1.Size = new System.Drawing.Size(56, 23);
-            this._bSow3_1.TabIndex = 55;
-            this._bSow3_1.Text = ".";
-            this._bSow3_1.UseVisualStyleBackColor = true;
-            this._bSow3_1.Visible = false;
             // 
             // _cbActionParam3_1
             // 
@@ -1708,12 +1625,6 @@
         private System.Windows.Forms.CheckedListBox _clbEventFlag;
         private System.Windows.Forms.RichTextBox rtbScriptOut;
         private System.Windows.Forms.RichTextBox rtbTextOut;
-        private System.Windows.Forms.Button _bSow3_1;
-        private System.Windows.Forms.Button _bSow3_3;
-        private System.Windows.Forms.Button _bSow3_2;
-        private System.Windows.Forms.Button _bSow2_3;
-        private System.Windows.Forms.Button _bSow2_2;
-        private System.Windows.Forms.Button _bSow2_1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ListView _lvScripts;
         private System.Windows.Forms.ColumnHeader columnHeader1;

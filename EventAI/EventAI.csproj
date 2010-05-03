@@ -83,7 +83,6 @@
     <Compile Include="Enums\AIEnums.cs" />
     <Compile Include="Extensions\AIException.cs" />
     <Compile Include="AI\AIStruct.cs" />
-    <Compile Include="ButtonHandler.cs" />
     <Compile Include="Extensions\ComboBoxExtensions.cs" />
     <Compile Include="Info\CreatureInfo.cs" />
     <Compile Include="DBC\DBC.cs" />
@@ -96,14 +95,13 @@
     <Compile Include="Forms\FormCalculateFlags.Designer.cs">
       <DependentUpon>FormCalculateFlags.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loader.cs" />
     <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inscription.cs">
+    <Compile Include="Info\Inscription.cs">
     </Compile>
     <Compile Include="DataBase\MySQLClass.cs" />
     <Compile Include="Program.cs" />

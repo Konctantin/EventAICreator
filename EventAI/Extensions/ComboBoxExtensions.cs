@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EventAI
@@ -99,6 +97,38 @@ namespace EventAI
             cb.DisplayMember = "NAME";
             cb.ValueMember = "ID";
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        public static void SetVal(this ComboBox cb, Object val)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+            dt.Rows.Add(new Object[] { val.ToInt32(), val.ToString() });
+            cb.DataSource = dt;
+            cb.DisplayMember = "NAME";
+            cb.ValueMember = "ID";
+        }
+
+        public static void SetVal(this ComboBox cb, Object menderval, Object visibleval)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+            dt.Rows.Add(new Object[] { menderval.ToInt32(), visibleval.ToString() });
+            cb.DataSource = dt;
+            cb.DisplayMember = "NAME";
+            cb.ValueMember = "ID";
+        }
+
+        public static int GetVal(this ComboBox cb)
+        {
+            return cb.ValueMember.ToInt32();
+        }
+
+        public static int GetVal(this TextBox tb)
+        {
+            return tb.Text.ToInt32();
         }
     }
 }
