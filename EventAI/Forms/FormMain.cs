@@ -10,11 +10,11 @@ using System.Text;
 
 namespace EventAI
 {
-    public partial class MainForm : Form
+    public partial class FormMain : Form
     {
         private DataTable Scripts { get; set; }
 
-        public MainForm()
+        public FormMain()
         {
             InitializeComponent();
             _cbEventType.SetEnumValues<EventType>();
@@ -35,7 +35,7 @@ namespace EventAI
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AboutBox().ShowDialog();
+            new FormAboutBox().ShowDialog();
         }
 
         // Проверка для текстовых полей 1

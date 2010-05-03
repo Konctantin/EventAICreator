@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace EventAI
 {
-    public partial class Propertis : Form
+    public partial class FormPropertis : Form
     {
-        public Propertis()
+        public FormPropertis()
         {
             InitializeComponent();
         }

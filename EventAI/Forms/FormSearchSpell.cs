@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace EventAI
 {
-    public partial class SearchSpell : Form
+    public partial class FormSearchSpell : Form
     {
-        public SearchSpell()
+        public FormSearchSpell()
         {
             InitializeComponent();
             // load items to control's

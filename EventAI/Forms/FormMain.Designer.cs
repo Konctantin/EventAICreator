@@ -1,6 +1,6 @@
 ﻿namespace EventAI
 {
-    partial class MainForm
+    partial class FormMain
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйСкриптToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

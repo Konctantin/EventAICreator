@@ -1,6 +1,6 @@
 ﻿namespace EventAI
 {
-    partial class SearchSpell
+    partial class FormSearchSpell
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchSpell));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearchSpell));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._rtbSpellInfo = new System.Windows.Forms.RichTextBox();
             this._bOk = new System.Windows.Forms.Button();

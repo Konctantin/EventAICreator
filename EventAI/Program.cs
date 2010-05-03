@@ -17,7 +17,7 @@ namespace EventAI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             new Loader();
-            Application.Run(new MainForm());
+            Application.Run(new FormMain());
         }
     }
 }

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace EventAI
 {
-    partial class AboutBox : Form
+    partial class FormAboutBox : Form
     {
-        public AboutBox()
+        public FormAboutBox()
         {
             InitializeComponent();
             this.Text = String.Format("О {0}", AssemblyTitle);

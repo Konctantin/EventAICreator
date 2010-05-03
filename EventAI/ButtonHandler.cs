@@ -57,7 +57,7 @@ namespace EventAI
                         break;
                     case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
                         {
-                            SearchSpell f = new SearchSpell();
+                            FormSearchSpell f = new FormSearchSpell();
                             f.ShowDialog(form);
                             cb1.Text = f.Spell.ID.ToString();
                             f.Dispose();
