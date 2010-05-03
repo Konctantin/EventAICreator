@@ -519,6 +519,26 @@ namespace EventAI
         }
     }
 
+    public struct AreaTableEntry
+    {
+        public uint ID;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
+        private uint[] fields1;
+        private uint _name;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 24)]
+        private uint[] fields2;
+
+        public string Name
+        {
+            get
+            {
+                string s;
+                DBC._AreaTableStrings.TryGetValue(_name, out s);
+                return s;
+            }
+        }
+    };
+
     //=============== DateBase =================\\
 
     public struct Item

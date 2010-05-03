@@ -19,13 +19,14 @@ namespace EventAI
         public static Dictionary<uint, SpellDurationEntry> SpellDuration;
         public static Dictionary<uint, SkillLineAbilityEntry> SkillLineAbility;
         public static Dictionary<uint, SkillLineEntry> SkillLine;
+        public static Dictionary<uint, AreaTableEntry> AreaTable;
 
         public static Dictionary<uint, string> _SpellStrings      = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _SkillLineStrings  = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _SpellRangeStrings = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _EmotesStrings     = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _FactionStrings    = new Dictionary<uint, string>();
-        
+        public static Dictionary<uint, string> _AreaTableStrings  = new Dictionary<uint, string>();
         // 
         public static Dictionary<uint, EmotesEntry> Emotes;
         public static Dictionary<uint, FactionEntry> Faction;

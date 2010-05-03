@@ -23,6 +23,7 @@ namespace EventAI
             DBC.SpellRange       = DBCReader.ReadDBC<SpellRangeEntry>(DBC._SpellRangeStrings);
             DBC.Emotes           = DBCReader.ReadDBC<EmotesEntry>(DBC._EmotesStrings);
             DBC.Faction          = DBCReader.ReadDBC<FactionEntry>(DBC._FactionStrings);
+            DBC.AreaTable        = DBCReader.ReadDBC<AreaTableEntry>(DBC._AreaTableStrings);
 
             DBC.SpellDuration    = DBCReader.ReadDBC<SpellDurationEntry>(null);
             DBC.SkillLineAbility = DBCReader.ReadDBC<SkillLineAbilityEntry>(null);

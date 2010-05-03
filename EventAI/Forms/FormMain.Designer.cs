@@ -100,10 +100,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.WriteFiles = new System.Windows.Forms.Button();
             this._gbEventType = new System.Windows.Forms.GroupBox();
-            this._bEventParam1 = new System.Windows.Forms.Button();
-            this._bEventParam2 = new System.Windows.Forms.Button();
-            this._bEventParam4 = new System.Windows.Forms.Button();
-            this._bEventParam3 = new System.Windows.Forms.Button();
+            this._bParam1 = new System.Windows.Forms.Button();
+            this._bParam2 = new System.Windows.Forms.Button();
+            this._bParam4 = new System.Windows.Forms.Button();
+            this._bParam3 = new System.Windows.Forms.Button();
             this.lEventType4 = new System.Windows.Forms.Label();
             this.lEventType3 = new System.Windows.Forms.Label();
             this.lEventType2 = new System.Windows.Forms.Label();
@@ -317,7 +317,7 @@
             this._cbEventType.FormattingEnabled = true;
             this._cbEventType.Location = new System.Drawing.Point(6, 18);
             this._cbEventType.Name = "_cbEventType";
-            this._cbEventType.Size = new System.Drawing.Size(251, 21);
+            this._cbEventType.Size = new System.Drawing.Size(238, 21);
             this._cbEventType.TabIndex = 9;
             this._cbEventType.Tag = "0-TIMER";
             this.HelpEntry.SetToolTip(this._cbEventType, "Укажите тип события");
@@ -873,10 +873,10 @@
             // 
             // _gbEventType
             // 
-            this._gbEventType.Controls.Add(this._bEventParam1);
-            this._gbEventType.Controls.Add(this._bEventParam2);
-            this._gbEventType.Controls.Add(this._bEventParam4);
-            this._gbEventType.Controls.Add(this._bEventParam3);
+            this._gbEventType.Controls.Add(this._bParam1);
+            this._gbEventType.Controls.Add(this._bParam2);
+            this._gbEventType.Controls.Add(this._bParam4);
+            this._gbEventType.Controls.Add(this._bParam3);
             this._gbEventType.Controls.Add(this.lEventType4);
             this._gbEventType.Controls.Add(this.lEventType3);
             this._gbEventType.Controls.Add(this.lEventType2);
@@ -888,53 +888,53 @@
             this._gbEventType.Controls.Add(this._cbEventType);
             this._gbEventType.Location = new System.Drawing.Point(7, 5);
             this._gbEventType.Name = "_gbEventType";
-            this._gbEventType.Size = new System.Drawing.Size(263, 245);
+            this._gbEventType.Size = new System.Drawing.Size(258, 245);
             this._gbEventType.TabIndex = 29;
             this._gbEventType.TabStop = false;
             this._gbEventType.Text = "Тип события";
             // 
-            // _bEventParam1
+            // _bParam1
             // 
-            this._bEventParam1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bEventParam1.Location = new System.Drawing.Point(231, 67);
-            this._bEventParam1.Name = "_bEventParam1";
-            this._bEventParam1.Size = new System.Drawing.Size(26, 23);
-            this._bEventParam1.TabIndex = 59;
-            this._bEventParam1.Text = "...";
-            this._bEventParam1.UseVisualStyleBackColor = true;
-            this._bEventParam1.Visible = false;
+            this._bParam1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bParam1.Location = new System.Drawing.Point(186, 67);
+            this._bParam1.Name = "_bParam1";
+            this._bParam1.Size = new System.Drawing.Size(58, 23);
+            this._bParam1.TabIndex = 59;
+            this._bParam1.Text = "...";
+            this._bParam1.UseVisualStyleBackColor = true;
+            this._bParam1.Visible = false;
             // 
-            // _bEventParam2
+            // _bParam2
             // 
-            this._bEventParam2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bEventParam2.Location = new System.Drawing.Point(231, 114);
-            this._bEventParam2.Name = "_bEventParam2";
-            this._bEventParam2.Size = new System.Drawing.Size(26, 23);
-            this._bEventParam2.TabIndex = 57;
-            this._bEventParam2.Text = "...";
-            this._bEventParam2.UseVisualStyleBackColor = true;
-            this._bEventParam2.Visible = false;
+            this._bParam2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bParam2.Location = new System.Drawing.Point(186, 114);
+            this._bParam2.Name = "_bParam2";
+            this._bParam2.Size = new System.Drawing.Size(58, 23);
+            this._bParam2.TabIndex = 57;
+            this._bParam2.Text = "...";
+            this._bParam2.UseVisualStyleBackColor = true;
+            this._bParam2.Visible = false;
             // 
-            // _bEventParam4
+            // _bParam4
             // 
-            this._bEventParam4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bEventParam4.Location = new System.Drawing.Point(232, 209);
-            this._bEventParam4.Name = "_bEventParam4";
-            this._bEventParam4.Size = new System.Drawing.Size(26, 23);
-            this._bEventParam4.TabIndex = 33;
-            this._bEventParam4.Text = "...";
-            this._bEventParam4.UseVisualStyleBackColor = true;
-            this._bEventParam4.Visible = false;
+            this._bParam4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._bParam4.Location = new System.Drawing.Point(187, 209);
+            this._bParam4.Name = "_bParam4";
+            this._bParam4.Size = new System.Drawing.Size(57, 23);
+            this._bParam4.TabIndex = 33;
+            this._bParam4.Text = "...";
+            this._bParam4.UseVisualStyleBackColor = true;
+            this._bParam4.Visible = false;
             // 
-            // _bEventParam3
+            // _bParam3
             // 
-            this._bEventParam3.Location = new System.Drawing.Point(232, 159);
-            this._bEventParam3.Name = "_bEventParam3";
-            this._bEventParam3.Size = new System.Drawing.Size(26, 23);
-            this._bEventParam3.TabIndex = 33;
-            this._bEventParam3.Text = "...";
-            this._bEventParam3.UseVisualStyleBackColor = true;
-            this._bEventParam3.Visible = false;
+            this._bParam3.Location = new System.Drawing.Point(186, 159);
+            this._bParam3.Name = "_bParam3";
+            this._bParam3.Size = new System.Drawing.Size(58, 23);
+            this._bParam3.TabIndex = 33;
+            this._bParam3.Text = "...";
+            this._bParam3.UseVisualStyleBackColor = true;
+            this._bParam3.Visible = false;
             // 
             // lEventType4
             // 
@@ -974,7 +974,7 @@
             this._cbEventParametr4.FormattingEnabled = true;
             this._cbEventParametr4.Location = new System.Drawing.Point(6, 210);
             this._cbEventParametr4.Name = "_cbEventParametr4";
-            this._cbEventParametr4.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr4.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr4.TabIndex = 23;
             this._cbEventParametr4.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
@@ -984,7 +984,7 @@
             this._cbEventParametr3.FormattingEnabled = true;
             this._cbEventParametr3.Location = new System.Drawing.Point(5, 161);
             this._cbEventParametr3.Name = "_cbEventParametr3";
-            this._cbEventParametr3.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr3.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr3.TabIndex = 23;
             this._cbEventParametr3.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
@@ -994,7 +994,7 @@
             this._cbEventParametr1.FormattingEnabled = true;
             this._cbEventParametr1.Location = new System.Drawing.Point(5, 68);
             this._cbEventParametr1.Name = "_cbEventParametr1";
-            this._cbEventParametr1.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr1.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr1.TabIndex = 23;
             this._cbEventParametr1.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
@@ -1004,7 +1004,7 @@
             this._cbEventParametr2.FormattingEnabled = true;
             this._cbEventParametr2.Location = new System.Drawing.Point(5, 115);
             this._cbEventParametr2.Name = "_cbEventParametr2";
-            this._cbEventParametr2.Size = new System.Drawing.Size(227, 21);
+            this._cbEventParametr2.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr2.TabIndex = 23;
             this._cbEventParametr2.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
             // 
@@ -1616,7 +1616,7 @@
             this._tpSummon.Text = "Призыв";
             this._tpSummon.UseVisualStyleBackColor = true;
             // 
-            // MainForm
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1629,7 +1629,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "FormMain";
             this.ShowIcon = false;
             this.Text = "EventAI Конструктор";
             this.menuStrip1.ResumeLayout(false);
@@ -1748,9 +1748,9 @@
         private System.Windows.Forms.ComboBox _cbActionParam1_1;
         private System.Windows.Forms.ComboBox _cbActionParam3_1;
         private System.Windows.Forms.ComboBox _cbActionParam2_1;
-        private System.Windows.Forms.Button _bEventParam2;
-        private System.Windows.Forms.Button _bEventParam3;
-        private System.Windows.Forms.Button _bEventParam1;
+        private System.Windows.Forms.Button _bParam2;
+        private System.Windows.Forms.Button _bParam3;
+        private System.Windows.Forms.Button _bParam1;
         private System.Windows.Forms.CheckedListBox _clbEventFlag;
         private System.Windows.Forms.RichTextBox rtbScriptOut;
         private System.Windows.Forms.RichTextBox rtbTextOut;
@@ -1783,7 +1783,7 @@
         private System.Windows.Forms.GroupBox _gbEventFlag;
         private System.Windows.Forms.GroupBox _gbPhase;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button _bEventParam4;
+        private System.Windows.Forms.Button _bParam4;
         private System.Windows.Forms.ComboBox _cbEventParametr4;
         private System.Windows.Forms.ComboBox _cbEventParametr3;
         private System.Windows.Forms.ComboBox _cbEventParametr1;

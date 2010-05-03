@@ -29,6 +29,7 @@ namespace EventAI
                 else if (ctrl is Button)
                 {
                     Button b = (Button)ctrl;
+                    b.Text = String.Empty;
                     b.Visible = false;
                 }
             }

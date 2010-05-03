@@ -100,6 +100,12 @@ namespace EventAI
         ПРИ_АКТИВНОМ_ЭВЕНТЕ         = 12
     };
 
+    public enum Team
+    {
+        АЛЬЯНС = 469,
+        ОРДА   =  67,
+    };
+
     public enum SheathState
     {
         БЕЗ_ОРУЖИЯ      = 0,

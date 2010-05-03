@@ -7,7 +7,7 @@ namespace EventAI
 {
     public struct CreatureInfo
     {
-        public static int Id;
+        public static int    Id;
         public static string Name;
         public static string Description;
         public static string Name_loc;

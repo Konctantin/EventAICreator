@@ -71,10 +71,9 @@ namespace EventAI
         // Подписи к полям тип события
         private void comboEventType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Inscription.ShowEventTypeInscription(_cbEventType, 
-                lEventType1, lEventType2, lEventType3, lEventType4,
+            Inscription.ShowEventTypeInscription(_cbEventType, lEventType1, lEventType2, lEventType3, lEventType4,
                 _cbEventParametr1, _cbEventParametr2, _cbEventParametr3, _cbEventParametr4,
-                _bEventParam1, _bEventParam2, _bEventParam3, _bEventParam4, _gbEventType);
+                _bParam1, _bParam2, _bParam3, _bParam4, _gbEventType);
         }       
         // Подписи к полям тип действия 1
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -97,7 +96,7 @@ namespace EventAI
         // Подписи к полям комбосписка типа события 22
         private void ActionTyteCondition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Inscription.ShowActionTyteCondition(cEventParamCondition, lEventType3, lEventType4, EventParam3, EventParam4, rConditionA, rConditionO);
+            Inscription.ShowActionTyteCondition(_cbEventParametr2, lEventType3, lEventType4, _cbEventParametr3, _cbEventParametr4, _bParam3, _bParam4);
         }
         /// <summary>
         /// Формируем запрос для скриптов 

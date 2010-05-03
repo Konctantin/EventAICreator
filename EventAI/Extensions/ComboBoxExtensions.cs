@@ -11,6 +11,8 @@ namespace EventAI
     {
         Emote,
         Fraction,
+        Area,
+        Skill,
     };
     public static class ComboBoxExtensions
     {
@@ -41,6 +43,30 @@ namespace EventAI
                             { 
                                 str.ID,
                                 "(" + (str.ID).ToString("0000") + ") " + str.Name
+                            });
+                        }
+                    }
+                    break;
+                case DataSet.Area:
+                    {
+                        foreach (var str in DBC.AreaTable.Values)
+                        {
+                            dt.Rows.Add(new Object[] 
+                            { 
+                                str.ID,
+                                "(" + (str.ID).ToString("0000") + ") " + str.Name
+                            });
+                        }
+                    }
+                    break;
+                case DataSet.Skill:
+                    {
+                        foreach (var str in DBC.SkillLine.Values)
+                        {
+                            dt.Rows.Add(new Object[] 
+                            { 
+                                str.ID,
+                                "(" + (str.ID).ToString("000") + ") " + str.Name
                             });
                         }
                     }

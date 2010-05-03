@@ -196,17 +196,16 @@ namespace EventAI
             {
                 return;
             }
-            cb1.Visible = l1.Text != "";
-            cb2.Visible = l2.Text != "";
-            cb3.Visible = l3.Text != "";
+            cb1.Visible = l1.Text != string.Empty;
+            cb2.Visible = l2.Text != string.Empty;
+            cb3.Visible = l3.Text != string.Empty;
          }
 
 
         public static void ShowEventTypeInscription(ComboBox cb, Label l1, Label l2, Label l3, Label l4,
             ComboBox cb1, ComboBox cb2, ComboBox cb3, ComboBox cb4, Button b1, Button b2, Button b3, Button b4, GroupBox gr)
         {
-            l1.Text = l2.Text = l3.Text = l4.Text = "";
-            b1.Visible = b2.Visible = b3.Visible = b4.Visible = false;
+            gr.Reset();
 
             try
             {
@@ -244,7 +243,7 @@ namespace EventAI
                             l2.Text = "Школа спелов";
                             l3.Text = "Минимальное время до повтора (мс)";
                             l4.Text = "Максимальное время до повтора (мс)";
-                            b2.Visible = true;
+                            b2.Visible = b1.Visible = true;
                         }
                         break;
                     case EventType.ПРИ_ДИСТАНЦИИ:
@@ -268,6 +267,7 @@ namespace EventAI
                     case EventType.ЕСЛИ_ДРУЖЕСТВЕННАЯ_ЦЕЛЬ_ПОД_КОНТРОЛЕМ:
                         {
                             l1.Text = "Тип диспелла";
+                            cb1.SetEnumValues<DispelType>("DISPEL_");
                             l2.Text = "В радиусе";
                             l3.Text = "Минимальное время до повтора (мс)";
                             l4.Text = "Максимальное время до повтора (мс)";
@@ -279,11 +279,13 @@ namespace EventAI
                             l2.Text = "В радиусе";
                             l3.Text = "Минимальное время до повтора (мс)";
                             l4.Text = "Максимальное время до повтора (мс)";
+                            b1.Visible = true;
                         }
                         break;
                     case EventType.ПРИ_СПАВНЕ_СУЩЕСТВА:
                         {
                             l1.Text = "ID существа";
+                            b1.Visible = true;
                             l2.Text = "Минимальное время до повтора (мс)";
                             l3.Text = "Максимальное время до повтора (мс)";
                         }
@@ -292,12 +294,15 @@ namespace EventAI
                         {
                             l1.Text = "ID эмоции";
                             l2.Text = "Условие";
+                            cb1.SetDbcData(DataSet.Emote);
+                            cb2.SetEnumValues<ConditionType>();
                         }
                         break;
                     case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА:
                     case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА_ЦЕЛИ:
                         {
                             l1.Text = "ID спелла";
+                            b1.Visible = true;
                             l2.Text = "Количество";
                             l3.Text = "Минимальное время до повтора (мс)";
                             l4.Text = "Максимальное время до повтора (мс)";
@@ -309,56 +314,67 @@ namespace EventAI
             {
                 return;
             }
-            cb1.Visible = l1.Text != "";
-            cb2.Visible = l2.Text != "";
-            cb3.Visible = l3.Text != "";
-            cb4.Visible = l4.Text != "";
+            cb1.Visible = l1.Text != string.Empty;
+            cb2.Visible = l2.Text != string.Empty;
+            cb3.Visible = l3.Text != string.Empty;
+            cb4.Visible = l4.Text != string.Empty;
          }
 
-        public static void ShowActionTyteCondition(ComboBox cEventParamCondition, Label lEventType3, Label lEventType4, 
-            TextBox EventParam3, TextBox EventParam4)
+        public static void ShowActionTyteCondition(ComboBox cb, Label l3, Label l4, ComboBox cb3, ComboBox cb4, Button b3, Button b4)
         {
-            lEventType3.Text = "";
-            lEventType4.Text = "";
+            l3.Text = l4.Text = string.Empty;
+            cb3.DataSource = cb4.DataSource = null;
+            b3.Visible = b4.Visible = false;
+            b3.Text = b4.Text = string.Empty;
 
-            switch ((ConditionType)cEventParamCondition.SelectedValue.ToUInt32())
+            switch ((ConditionType)cb.SelectedValue.ToUInt32())
             {
                 case ConditionType.ПРИ_НАЛИЧИИ_АУРЫ:
-                    lEventType3.Text = "ID спелла";
-                    lEventType4.Text = "Время до повтора (мс)";
+                    l3.Text = "ID спелла";
+                    b3.Visible = true;
+                    b3.Text = "Найти";
+                    l4.Text = "Время до повтора (мс)";
                     break;
                 case ConditionType.ПРИ_НАЛИЧИИ_ПРЕЕДМЕТА:
-                    lEventType3.Text = "ID предмета";
-                    lEventType4.Text = "Количество";
-                    break;
                 case ConditionType.ЕСЛИ_ПРЕДМЕТ_НА_ПЕРСОНАЖЕ:
-                    lEventType3.Text = "ID предмета";
-                    lEventType4.Text = "Количество";
+                    l3.Text = "ID предмета";
+                    b3.Visible = true;
+                    b3.Text = "Найти";
+                    l4.Text = "Количество";
                     break;
                 case ConditionType.ЕСЛИ_НАХОДИТСЯ_В_ЗОНЕ:
-                    lEventType3.Text = "ID зоны";
+                    l3.Text = "ID зоны";
+                    cb3.SetDbcData(DataSet.Area);
                     break;
                 case ConditionType.ПРИ_НАЛИЧИИ_РЕПУТАЦИИ:
-                    lEventType3.Text = "ID фракции";
-                    lEventType4.Text = "Минимальный ранг";
+                    l3.Text = "ID фракции";
+                    cb3.SetDbcData(DataSet.Fraction);
+                    l4.Text = "Минимальный ранг";
                     break;
                 case ConditionType.КОМАНДА:
-                    lEventType3.Text = "Укажите команду (Орда/Альянс):";
+                    l3.Text = "Команда";
+                    cb3.SetEnumValues<Team>();
                     break;
                 case ConditionType.ПРИ_НАЛИЧИИ_УМЕНИЯ:
-                    lEventType3.Text = "ID умения";
-                    lEventType4.Text = "Минимальный уровень прокачки";
+                    l3.Text = "ID умения";
+                    cb3.SetDbcData(DataSet.Skill);
+                    l4.Text = "Минимальный уровень прокачки";
                     break;
                 case ConditionType.ЕСЛИ_КВЕСТ_СДАН:
-                    lEventType3.Text = "ID квеста";
-                    break;
                 case ConditionType.ЕСЛИ_КВЕСТ_НЕ_СДАН:
-                    lEventType3.Text = "ID квеста";
+                    l3.Text = "ID квеста";
+                    b3.Visible = true;
+                    b3.Text = "Найти";
                     break;
                 case ConditionType.ПРИ_АКТИВНОМ_ЭВЕНТЕ:
-                    lEventType3.Text = "ID эвента";
+                    l3.Text = "ID эвента";
+                    b3.Visible = true;
+                    b3.Text = "Найти";
                     break;
             }
+
+            cb3.Visible = l3.Text != string.Empty;
+            cb4.Visible = l4.Text != string.Empty;
         }
     }
 }
