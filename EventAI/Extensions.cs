@@ -244,14 +244,35 @@ namespace EventAI
                 _clb.Items.Add(elem.ToString().NormaliseString(remove));
             }
         }
-
-        public static void SetEnumValues(this ComboBox cb, Type enums, string remove)
+        
+        public static void SetEnumValues<T>(this ComboBox cb) where T : struct
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("NAME");
 
-            foreach (var str in Enum.GetValues(enums))
+            foreach (var str in Enum.GetValues(typeof(T)))
+            {
+                dt.Rows.Add(new Object[] 
+                { 
+                    (int)str, 
+                    "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(String.Empty) 
+                });
+            }
+            cb.Size = new System.Drawing.Size(238, 21);
+            cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb.DataSource = dt;
+            cb.DisplayMember = "NAME";
+            cb.ValueMember = "ID";
+        }
+
+        public static void SetEnumValues<T>(this ComboBox cb, string remove) where T : struct
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+
+            foreach (var str in Enum.GetValues(typeof(T)))
             {
                 dt.Rows.Add(new Object[] 
                 { 
@@ -259,7 +280,8 @@ namespace EventAI
                     "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
                 });
             }
-
+            cb.Size = new System.Drawing.Size(238, 21);
+            cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.DataSource = dt;
             cb.DisplayMember = "NAME";
             cb.ValueMember = "ID";
@@ -281,7 +303,8 @@ namespace EventAI
                     "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
                 });
             }
-
+            cb.Size = new System.Drawing.Size(238, 21);
+            cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.DataSource    = dt;
             cb.DisplayMember = "NAME";
             cb.ValueMember   = "ID";
@@ -290,6 +313,11 @@ namespace EventAI
         public static string RemExc(this String str)
         {
             return str.Replace(@"'", @"\'").Replace("\"", "\\\"");
+        }
+
+        public static bool ContainText(String text, String str)
+        {
+            return (text.ToUpper().IndexOf(str.ToUpper(), StringComparison.CurrentCultureIgnoreCase) != -1);
         }
     }
 }

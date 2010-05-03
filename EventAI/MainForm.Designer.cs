@@ -99,7 +99,7 @@
             this.Create = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.WriteFiles = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this._gbEventType = new System.Windows.Forms.GroupBox();
             this._bEventParam1 = new System.Windows.Forms.Button();
             this._bEventParam2 = new System.Windows.Forms.Button();
             this._bEventParam4 = new System.Windows.Forms.Button();
@@ -178,7 +178,7 @@
             this.splitContainer1.SuspendLayout();
             this._gbPhase.SuspendLayout();
             this._gbEventFlag.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this._gbEventType.SuspendLayout();
             this._gbAction2.SuspendLayout();
             this._gbAction1.SuspendLayout();
             this._gbAction3.SuspendLayout();
@@ -650,7 +650,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.NumberScripts);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.WriteFiles);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
+            this.splitContainer1.Panel2.Controls.Add(this._gbEventType);
             this.splitContainer1.Panel2.Controls.Add(this._tbComment);
             this.splitContainer1.Panel2.Controls.Add(this._gbAction2);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
@@ -871,27 +871,27 @@
             this.WriteFiles.Text = "Записать в файл";
             this.WriteFiles.UseVisualStyleBackColor = true;
             // 
-            // groupBox5
+            // _gbEventType
             // 
-            this.groupBox5.Controls.Add(this._bEventParam1);
-            this.groupBox5.Controls.Add(this._bEventParam2);
-            this.groupBox5.Controls.Add(this._bEventParam4);
-            this.groupBox5.Controls.Add(this._bEventParam3);
-            this.groupBox5.Controls.Add(this.lEventType4);
-            this.groupBox5.Controls.Add(this.lEventType3);
-            this.groupBox5.Controls.Add(this.lEventType2);
-            this.groupBox5.Controls.Add(this.lEventType1);
-            this.groupBox5.Controls.Add(this._cbEventParametr4);
-            this.groupBox5.Controls.Add(this._cbEventParametr3);
-            this.groupBox5.Controls.Add(this._cbEventParametr1);
-            this.groupBox5.Controls.Add(this._cbEventParametr2);
-            this.groupBox5.Controls.Add(this._cbEventType);
-            this.groupBox5.Location = new System.Drawing.Point(7, 5);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(263, 245);
-            this.groupBox5.TabIndex = 29;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Тип события";
+            this._gbEventType.Controls.Add(this._bEventParam1);
+            this._gbEventType.Controls.Add(this._bEventParam2);
+            this._gbEventType.Controls.Add(this._bEventParam4);
+            this._gbEventType.Controls.Add(this._bEventParam3);
+            this._gbEventType.Controls.Add(this.lEventType4);
+            this._gbEventType.Controls.Add(this.lEventType3);
+            this._gbEventType.Controls.Add(this.lEventType2);
+            this._gbEventType.Controls.Add(this.lEventType1);
+            this._gbEventType.Controls.Add(this._cbEventParametr4);
+            this._gbEventType.Controls.Add(this._cbEventParametr3);
+            this._gbEventType.Controls.Add(this._cbEventParametr1);
+            this._gbEventType.Controls.Add(this._cbEventParametr2);
+            this._gbEventType.Controls.Add(this._cbEventType);
+            this._gbEventType.Location = new System.Drawing.Point(7, 5);
+            this._gbEventType.Name = "_gbEventType";
+            this._gbEventType.Size = new System.Drawing.Size(263, 245);
+            this._gbEventType.TabIndex = 29;
+            this._gbEventType.TabStop = false;
+            this._gbEventType.Text = "Тип события";
             // 
             // _bEventParam1
             // 
@@ -1030,9 +1030,9 @@
             // _bSow2_3
             // 
             this._bSow2_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow2_3.Location = new System.Drawing.Point(230, 146);
+            this._bSow2_3.Location = new System.Drawing.Point(187, 146);
             this._bSow2_3.Name = "_bSow2_3";
-            this._bSow2_3.Size = new System.Drawing.Size(14, 23);
+            this._bSow2_3.Size = new System.Drawing.Size(57, 23);
             this._bSow2_3.TabIndex = 58;
             this._bSow2_3.Text = ".";
             this._bSow2_3.UseVisualStyleBackColor = true;
@@ -1042,9 +1042,9 @@
             // _bSow2_2
             // 
             this._bSow2_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow2_2.Location = new System.Drawing.Point(230, 102);
+            this._bSow2_2.Location = new System.Drawing.Point(187, 102);
             this._bSow2_2.Name = "_bSow2_2";
-            this._bSow2_2.Size = new System.Drawing.Size(14, 23);
+            this._bSow2_2.Size = new System.Drawing.Size(57, 23);
             this._bSow2_2.TabIndex = 57;
             this._bSow2_2.Text = ".";
             this._bSow2_2.UseVisualStyleBackColor = true;
@@ -1054,9 +1054,9 @@
             // _bSow2_1
             // 
             this._bSow2_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow2_1.Location = new System.Drawing.Point(230, 58);
+            this._bSow2_1.Location = new System.Drawing.Point(187, 58);
             this._bSow2_1.Name = "_bSow2_1";
-            this._bSow2_1.Size = new System.Drawing.Size(14, 23);
+            this._bSow2_1.Size = new System.Drawing.Size(57, 23);
             this._bSow2_1.TabIndex = 56;
             this._bSow2_1.Text = ".";
             this._bSow2_1.UseVisualStyleBackColor = true;
@@ -1069,7 +1069,7 @@
             this._cbActionParam2_1.FormattingEnabled = true;
             this._cbActionParam2_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam2_1.Name = "_cbActionParam2_1";
-            this._cbActionParam2_1.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam2_1.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam2_1.TabIndex = 51;
             this._cbActionParam2_1.Visible = false;
             // 
@@ -1103,7 +1103,7 @@
             this._cbActionParam2_2.FormattingEnabled = true;
             this._cbActionParam2_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam2_2.Name = "_cbActionParam2_2";
-            this._cbActionParam2_2.Size = new System.Drawing.Size(225, 21);
+            this._cbActionParam2_2.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam2_2.TabIndex = 34;
             this._cbActionParam2_2.Visible = false;
             this._cbActionParam2_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
@@ -1114,7 +1114,7 @@
             this._cbActionParam2_3.FormattingEnabled = true;
             this._cbActionParam2_3.Location = new System.Drawing.Point(5, 148);
             this._cbActionParam2_3.Name = "_cbActionParam2_3";
-            this._cbActionParam2_3.Size = new System.Drawing.Size(225, 21);
+            this._cbActionParam2_3.Size = new System.Drawing.Size(176, 21);
             this._cbActionParam2_3.TabIndex = 33;
             this._cbActionParam2_3.Visible = false;
             this._cbActionParam2_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
@@ -1150,9 +1150,9 @@
             // _bSow1_3
             // 
             this._bSow1_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow1_3.Location = new System.Drawing.Point(230, 148);
+            this._bSow1_3.Location = new System.Drawing.Point(187, 148);
             this._bSow1_3.Name = "_bSow1_3";
-            this._bSow1_3.Size = new System.Drawing.Size(14, 23);
+            this._bSow1_3.Size = new System.Drawing.Size(57, 23);
             this._bSow1_3.TabIndex = 58;
             this._bSow1_3.Text = ".";
             this._bSow1_3.UseVisualStyleBackColor = true;
@@ -1162,9 +1162,9 @@
             // _bSow1_2
             // 
             this._bSow1_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow1_2.Location = new System.Drawing.Point(230, 102);
+            this._bSow1_2.Location = new System.Drawing.Point(187, 102);
             this._bSow1_2.Name = "_bSow1_2";
-            this._bSow1_2.Size = new System.Drawing.Size(14, 23);
+            this._bSow1_2.Size = new System.Drawing.Size(57, 23);
             this._bSow1_2.TabIndex = 57;
             this._bSow1_2.Text = ".";
             this._bSow1_2.UseVisualStyleBackColor = true;
@@ -1174,9 +1174,9 @@
             // _bSow1_1
             // 
             this._bSow1_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow1_1.Location = new System.Drawing.Point(230, 58);
+            this._bSow1_1.Location = new System.Drawing.Point(187, 58);
             this._bSow1_1.Name = "_bSow1_1";
-            this._bSow1_1.Size = new System.Drawing.Size(14, 23);
+            this._bSow1_1.Size = new System.Drawing.Size(57, 23);
             this._bSow1_1.TabIndex = 56;
             this._bSow1_1.Text = ".";
             this._bSow1_1.UseVisualStyleBackColor = true;
@@ -1190,7 +1190,7 @@
             this._cbActionParam1_1.FormattingEnabled = true;
             this._cbActionParam1_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam1_1.Name = "_cbActionParam1_1";
-            this._cbActionParam1_1.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam1_1.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam1_1.TabIndex = 50;
             this._cbActionParam1_1.Visible = false;
             // 
@@ -1223,10 +1223,8 @@
             this._cbActionParam1_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam1_3.FormattingEnabled = true;
             this._cbActionParam1_3.Location = new System.Drawing.Point(6, 148);
-            this._cbActionParam1_3.MaximumSize = new System.Drawing.Size(224, 0);
-            this._cbActionParam1_3.MinimumSize = new System.Drawing.Size(224, 0);
             this._cbActionParam1_3.Name = "_cbActionParam1_3";
-            this._cbActionParam1_3.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam1_3.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam1_3.TabIndex = 42;
             this._cbActionParam1_3.Visible = false;
             this._cbActionParam1_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
@@ -1237,7 +1235,7 @@
             this._cbActionParam1_2.FormattingEnabled = true;
             this._cbActionParam1_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam1_2.Name = "_cbActionParam1_2";
-            this._cbActionParam1_2.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam1_2.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam1_2.TabIndex = 37;
             this._cbActionParam1_2.Visible = false;
             // 
@@ -1263,9 +1261,9 @@
             // _bSow3_3
             // 
             this._bSow3_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow3_3.Location = new System.Drawing.Point(229, 146);
+            this._bSow3_3.Location = new System.Drawing.Point(187, 146);
             this._bSow3_3.Name = "_bSow3_3";
-            this._bSow3_3.Size = new System.Drawing.Size(14, 23);
+            this._bSow3_3.Size = new System.Drawing.Size(56, 23);
             this._bSow3_3.TabIndex = 57;
             this._bSow3_3.Text = ".";
             this._bSow3_3.UseVisualStyleBackColor = true;
@@ -1275,9 +1273,9 @@
             // _bSow3_2
             // 
             this._bSow3_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bSow3_2.Location = new System.Drawing.Point(229, 102);
+            this._bSow3_2.Location = new System.Drawing.Point(187, 102);
             this._bSow3_2.Name = "_bSow3_2";
-            this._bSow3_2.Size = new System.Drawing.Size(14, 23);
+            this._bSow3_2.Size = new System.Drawing.Size(56, 23);
             this._bSow3_2.TabIndex = 56;
             this._bSow3_2.Text = ".";
             this._bSow3_2.UseVisualStyleBackColor = true;
@@ -1286,9 +1284,9 @@
             // 
             // _bSow3_1
             // 
-            this._bSow3_1.Location = new System.Drawing.Point(229, 60);
+            this._bSow3_1.Location = new System.Drawing.Point(187, 60);
             this._bSow3_1.Name = "_bSow3_1";
-            this._bSow3_1.Size = new System.Drawing.Size(14, 23);
+            this._bSow3_1.Size = new System.Drawing.Size(56, 23);
             this._bSow3_1.TabIndex = 55;
             this._bSow3_1.Text = ".";
             this._bSow3_1.UseVisualStyleBackColor = true;
@@ -1300,7 +1298,7 @@
             this._cbActionParam3_1.FormattingEnabled = true;
             this._cbActionParam3_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam3_1.Name = "_cbActionParam3_1";
-            this._cbActionParam3_1.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam3_1.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam3_1.TabIndex = 53;
             this._cbActionParam3_1.Visible = false;
             // 
@@ -1334,7 +1332,7 @@
             this._cbActionParam3_3.FormattingEnabled = true;
             this._cbActionParam3_3.Location = new System.Drawing.Point(6, 148);
             this._cbActionParam3_3.Name = "_cbActionParam3_3";
-            this._cbActionParam3_3.Size = new System.Drawing.Size(224, 21);
+            this._cbActionParam3_3.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam3_3.TabIndex = 38;
             this._cbActionParam3_3.Visible = false;
             this._cbActionParam3_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
@@ -1345,7 +1343,7 @@
             this._cbActionParam3_2.FormattingEnabled = true;
             this._cbActionParam3_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam3_2.Name = "_cbActionParam3_2";
-            this._cbActionParam3_2.Size = new System.Drawing.Size(223, 21);
+            this._cbActionParam3_2.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam3_2.TabIndex = 37;
             this._cbActionParam3_2.Visible = false;
             this._cbActionParam3_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
@@ -1646,8 +1644,8 @@
             this.splitContainer1.ResumeLayout(false);
             this._gbPhase.ResumeLayout(false);
             this._gbEventFlag.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this._gbEventType.ResumeLayout(false);
+            this._gbEventType.PerformLayout();
             this._gbAction2.ResumeLayout(false);
             this._gbAction2.PerformLayout();
             this._gbAction1.ResumeLayout(false);
@@ -1685,7 +1683,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EntryNpc;
         private System.Windows.Forms.TextBox NumberScripts;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox _gbEventType;
         private System.Windows.Forms.ComboBox _cbEventType;
         private System.Windows.Forms.GroupBox _gbAction1;
         private System.Windows.Forms.ComboBox _cbActionType1;

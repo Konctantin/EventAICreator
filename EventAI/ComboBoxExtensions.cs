@@ -46,6 +46,29 @@ namespace EventAI
                     }
                     break;
             }
+
+            cb.Size = new System.Drawing.Size(238, 21);
+            cb.DataSource = dt;
+            cb.DisplayMember = "NAME";
+            cb.ValueMember = "ID";
+            cb.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        public static void SetDbcData<T>(this ComboBox cb, Dictionary<uint, T> dict) where T : struct
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+
+            foreach (var str in dict)
+            {
+                dt.Rows.Add(new Object[] 
+                { 
+                    str.Key,
+                    "(" + (str.Key).ToString("000") + ") " + str.Value.GetType().GetProperty("Name").GetValue(str,null).ToString()
+                });
+            }
+
             cb.DataSource = dt;
             cb.DisplayMember = "NAME";
             cb.ValueMember = "ID";

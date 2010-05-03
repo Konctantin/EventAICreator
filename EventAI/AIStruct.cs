@@ -37,7 +37,6 @@ namespace EventAI
         public int Action3Param2;
         public int Action3Param3;
 
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 255)]
         public string Comment;
     };
 
@@ -54,7 +53,6 @@ namespace EventAI
         public float PositionZ;
         public float Orientation;
         public int SpawnTimeSecs;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 255)]
         public string Comment;
     };
 

@@ -4,10 +4,10 @@ namespace EventAI
 {
     public static class Inscription
     {
-        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3, GroupBox gr)
+        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3, Button b1, Button b2, Button b3, GroupBox gr)
         {
-            Default.Reset(gr);
-
+            gr.Reset();
+          
             try
             {
                 switch ((ActionType)cb.SelectedValue.ToUInt32())
@@ -54,9 +54,6 @@ namespace EventAI
                             l1.Text = "ID эмоции 1";
                             l2.Text = "ID эмоции 2";
                             l3.Text = "ID эмоции 3";
-                            cb1.SetDbcData(DataSet.Emote);
-                            cb2.SetDbcData(DataSet.Emote);
-                            cb3.SetDbcData(DataSet.Emote);
                         }
                         break;
                     case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
@@ -64,6 +61,8 @@ namespace EventAI
                             l1.Text = "ID спелла";
                             l2.Text = "Цель";
                             l3.Text = "Флаг каста";
+                            b1.Visible = b3.Visible = true;
+                            cb2.SetEnumValues<CastTarget>();
                         }
                         break;
                     case ActionType.ПРИЗЫВ:
@@ -71,12 +70,14 @@ namespace EventAI
                             l1.Text = "ID существа";
                             l2.Text = "Цель";
                             l3.Text = "Продолжительность (мс)";
+                            cb2.SetEnumValues<CastTarget>();
                         }
                         break;
                     case ActionType.ИЗМЕНИТЬ_УГРОЗУ:
                         {
                             l1.Text = "Угроза %";
                             l2.Text = "Цель";
+                            cb2.SetEnumValues<CastTarget>();
                         }
                         break;
                     case ActionType.ИЗМЕНИТЬ_УГРОЗУ_ДЛЯ_ВСЕХ:
@@ -88,33 +89,40 @@ namespace EventAI
                         {
                             l1.Text = "ID квеста";
                             l2.Text = "Цель";
+                            cb2.SetEnumValues<CastTarget>();
                         } break;
                     case ActionType.ЗАСТАВИТЬ_ЧИТАТЬ_ЗАКЛИНАНИЕ:
                         {
                             l1.Text = "ID существа";
                             l2.Text = "ID спелла";
                             l3.Text = "Цель";
+                            cb3.SetEnumValues<CastTarget>();
                         }
                         break;
                     case ActionType.ИЗМЕНИТЬ_UNIT_FIELD:
                         l1.Text = "Номер поля Data";
                         l2.Text = "Значение";
                         l3.Text = "Цель";
+                        cb3.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.ИЗМЕНИТЬ_UNIT_FLAG:
                         l1.Text = "Флаг существа";
                         l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.УБРАТЬ_UNIT_FLAG:
                         l1.Text = "Флаг существа";
                         l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.АВТО_АТАКА_БЛИЖНЕГО_БОЯ:
                         l1.Text = "Разрешить атаку в ближнем бою";
+                        cb1.SetEnumValues<YesNO>();
                         break;
                     case ActionType.ДВИЖЕНИЕ_В_БОЮ:
                         l1.Text = "Разрешить движение в бою";
                         l2.Text = "Остановить, стартовать режим боя";
+                        cb1.SetEnumValues<YesNO>();
                         break;
                     case ActionType.УСТАНОВИТЬ_ФАЗУ:
                         l1.Text = "Фаза";
@@ -131,6 +139,7 @@ namespace EventAI
                         break;
                     case ActionType.УБРАТЬ_С_ЦЕЛИ_АУРУ:
                         l1.Text = "Цель";
+                        cb1.SetEnumValues<CastTarget>();
                         l2.Text = "ID спелла";
                          break;
                     case ActionType.УДАЛИТСЯ_ОТ_ЦЕЛИ:
@@ -149,11 +158,13 @@ namespace EventAI
                     case ActionType.ПРИЗЫВ_В_ОПРЕДЕЛЕННУЮ_ТОЧКУ:
                         l1.Text = "ID существа";
                         l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
                         l3.Text = "ID из creature_ai_summons";
                         break;
                     case ActionType.ЗАСЧИТАТЬ_УБИЙСТВО_СУЩЕСТВА:
                         l1.Text = "ID существа";
                         l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.SET_INST_DATA:
                         l1.Text = "Поле";
@@ -162,6 +173,7 @@ namespace EventAI
                     case ActionType.SET_INST_DATA64:
                         l1.Text = "Поле";
                         l2.Text = "Цель";
+                        cb2.SetEnumValues<CastTarget>();
                         break;
                     case ActionType.ИЗМЕНИТЬ_ПАРАМЕТРЫ_СУЩЕСТВА:
                         l1.Text = "Номер из creature_template";
@@ -190,107 +202,105 @@ namespace EventAI
          }
 
 
-        public static void ShowEventTypeInscription(ComboBox comboEventType, 
-            Label lEventType1, Label lEventType2, Label lEventType3, Label lEventType4,
-            ComboBox _cbEventParametr1, ComboBox _cbEventParametr2, ComboBox _cbEventParametr3, ComboBox _cbEventParametr4,
-            Button _bEventParam1, Button _bEventParam2, Button _bEventParam3, Button _bEventParam4)
+        public static void ShowEventTypeInscription(ComboBox cb, Label l1, Label l2, Label l3, Label l4,
+            ComboBox cb1, ComboBox cb2, ComboBox cb3, ComboBox cb4, Button b1, Button b2, Button b3, Button b4, GroupBox gr)
         {
-            lEventType1.Text = lEventType2.Text = lEventType3.Text = lEventType4.Text = "";
-            _bEventParam1.Visible = _bEventParam2.Visible = _bEventParam3.Visible = _bEventParam4.Visible = false;
+            l1.Text = l2.Text = l3.Text = l4.Text = "";
+            b1.Visible = b2.Visible = b3.Visible = b4.Visible = false;
 
             try
             {
-                switch ((EventType)comboEventType.SelectedValue.ToUInt32())
+                switch ((EventType)cb.SelectedValue.ToUInt32())
                 {
                     case EventType.ПО_ТАЙМЕРУ_В_БОЮ:
                     case EventType.ПО_ТАЙМЕРУ_В_НЕ_БОЯ:
-                        lEventType1.Text = "Минимальное время до срабатывания (мс)";
-                        lEventType2.Text = "Максимальное время до срабатывания (мс)";
-                        lEventType3.Text = "Минимальное время до повтора (мс)";
-                        lEventType4.Text = "Максимальное время до повтора (мс)";
+                        l1.Text = "Минимальное время до срабатывания (мс)";
+                        l2.Text = "Максимальное время до срабатывания (мс)";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_ЗНАЧЕНИИ_ЖИЗНИ:
                     case EventType.ПРИ_ЗНАЧЕНИИ_ЖИЗНИ_ЦЕЛИ:
-                        lEventType1.Text = "Максимальное значение жизни %";
-                        lEventType2.Text = "Минимальное значение жизни %";
-                        lEventType3.Text = "Минимальное время до повтора (мс)";
-                        lEventType4.Text = "Максимальное время до повтора (мс)";
+                        l1.Text = "Максимальное значение жизни %";
+                        l2.Text = "Минимальное значение жизни %";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_ЗНАЧЕНИИ_МАНЫ:
                     case EventType.ПРИ_ЗНАЧЕНИИ_МАННЫ_У_ЦЕЛИ:
-                        lEventType1.Text = "Максимальное значение маны %";
-                        lEventType2.Text = "Минимальное значение маны %";
-                        lEventType3.Text = "Минимальное время до повтора (мс)";
-                        lEventType4.Text = "Максимальное время до повтора (мс)";
+                        l1.Text = "Максимальное значение маны %";
+                        l2.Text = "Минимальное значение маны %";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_УБИЙСТВЕ_ЦЕЛИ:
                     case EventType.ЕСЛИ_ЦЕЛЬ_ЧИТАЕТ_ЗАКЛИНАНИЕ:
-                        lEventType1.Text = "Минимальное время до повтора (мс)";
-                        lEventType2.Text = "Максимальное время до повтора (мс)";
+                        l1.Text = "Минимальное время до повтора (мс)";
+                        l2.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_УРОНЕ_ЗАКЛИНАНИЕМ:
                         {
-                            lEventType1.Text = "Укажите ID спелла";
-                            lEventType2.Text = "Школа спелов";
-                            lEventType3.Text = "Минимальное время до повтора (мс)";
-                            lEventType4.Text = "Максимальное время до повтора (мс)";
-                            _bEventParam2.Visible = true;
+                            l1.Text = "Укажите ID спелла";
+                            l2.Text = "Школа спелов";
+                            l3.Text = "Минимальное время до повтора (мс)";
+                            l4.Text = "Максимальное время до повтора (мс)";
+                            b2.Visible = true;
                         }
                         break;
                     case EventType.ПРИ_ДИСТАНЦИИ:
-                        lEventType1.Text = "Минимальная дистанция до цели";
-                        lEventType2.Text = "Максимальная дистанция до цели";
-                        lEventType3.Text = "Минимальное время до повтора (мс)";
-                        lEventType4.Text = "Максимальное время до повтора (мс)";
+                        l1.Text = "Минимальная дистанция до цели";
+                        l2.Text = "Максимальная дистанция до цели";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_ПОЯВЛЕНИИ_В_ЗОНЕ_ВИДИМОСТИ:
-                        lEventType1.Text = "Дружественная цель:";
-                        lEventType2.Text = "Максимальная дистанция до цели";
-                        lEventType3.Text = "Минимальное время до повтора (мс)";
-                        lEventType4.Text = "Максимальное время до повтора (мс)";
+                        l1.Text = "Дружественная цель:";
+                        l2.Text = "Максимальная дистанция до цели";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ПРИ_ЗНАЧЕНИИ_ЖИЗНИ_ДРУЖЕСТВЕННОЙ_ЦЕЛИ:
-                        lEventType1.Text = "Дефицит жизни дружественной цели";
-                        lEventType2.Text = "В радиусе";
-                        lEventType3.Text = "Минимальное время до повтора (мс)";
-                        lEventType4.Text = "Максимальное время до повтора (мс)";
+                        l1.Text = "Дефицит жизни дружественной цели";
+                        l2.Text = "В радиусе";
+                        l3.Text = "Минимальное время до повтора (мс)";
+                        l4.Text = "Максимальное время до повтора (мс)";
                         break;
                     case EventType.ЕСЛИ_ДРУЖЕСТВЕННАЯ_ЦЕЛЬ_ПОД_КОНТРОЛЕМ:
                         {
-                            lEventType1.Text = "Тип диспелла";
-                            lEventType2.Text = "В радиусе";
-                            lEventType3.Text = "Минимальное время до повтора (мс)";
-                            lEventType4.Text = "Максимальное время до повтора (мс)";
+                            l1.Text = "Тип диспелла";
+                            l2.Text = "В радиусе";
+                            l3.Text = "Минимальное время до повтора (мс)";
+                            l4.Text = "Максимальное время до повтора (мс)";
                         }
                         break;
                     case EventType.ЕСЛИ_ТЕРЯЕТ_БАФФ:
                         {
-                            lEventType1.Text = "ID спелла (заклинания)";
-                            lEventType2.Text = "В радиусе";
-                            lEventType3.Text = "Минимальное время до повтора (мс)";
-                            lEventType4.Text = "Максимальное время до повтора (мс)";
+                            l1.Text = "ID спелла (заклинания)";
+                            l2.Text = "В радиусе";
+                            l3.Text = "Минимальное время до повтора (мс)";
+                            l4.Text = "Максимальное время до повтора (мс)";
                         }
                         break;
                     case EventType.ПРИ_СПАВНЕ_СУЩЕСТВА:
                         {
-                            lEventType1.Text = "ID существа";
-                            lEventType2.Text = "Минимальное время до повтора (мс)";
-                            lEventType3.Text = "Максимальное время до повтора (мс)";
+                            l1.Text = "ID существа";
+                            l2.Text = "Минимальное время до повтора (мс)";
+                            l3.Text = "Максимальное время до повтора (мс)";
                         }
                         break;
                     case EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ:
                         {
-                            lEventType1.Text = "ID эмоции";
-                            lEventType2.Text = "Условие";
+                            l1.Text = "ID эмоции";
+                            l2.Text = "Условие";
                         }
                         break;
                     case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА:
                     case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА_ЦЕЛИ:
                         {
-                            lEventType1.Text = "ID спелла";
-                            lEventType2.Text = "Количество";
-                            lEventType3.Text = "Минимальное время до повтора (мс)";
-                            lEventType4.Text = "Максимальное время до повтора (мс)";
+                            l1.Text = "ID спелла";
+                            l2.Text = "Количество";
+                            l3.Text = "Минимальное время до повтора (мс)";
+                            l4.Text = "Максимальное время до повтора (мс)";
                         }
                         break;
                 }
@@ -299,10 +309,10 @@ namespace EventAI
             {
                 return;
             }
-            _cbEventParametr1.Visible = lEventType1.Text != "";
-            _cbEventParametr2.Visible = lEventType2.Text != "";
-            _cbEventParametr3.Visible = lEventType3.Text != "";
-            _cbEventParametr4.Visible = lEventType4.Text != "";
+            cb1.Visible = l1.Text != "";
+            cb2.Visible = l2.Text != "";
+            cb3.Visible = l3.Text != "";
+            cb4.Visible = l4.Text != "";
          }
 
         public static void ShowActionTyteCondition(ComboBox cEventParamCondition, Label lEventType3, Label lEventType4, 

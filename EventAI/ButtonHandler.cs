@@ -8,7 +8,7 @@ namespace EventAI
 {
     class ButtonHandler
     {
-        public static void SetActionToButton(ComboBox cbAT, Button b, int index, ComboBox cb1, ComboBox cb2, ComboBox cb3)
+        public static void SetActionToButton(Form form, ComboBox cbAT, Button b, int index, ComboBox cb1, ComboBox cb2, ComboBox cb3)
         {
             int bindex = b.Name.Substring(b.Name.Length - 1, 1).ToInt32();
             try
@@ -57,7 +57,10 @@ namespace EventAI
                         break;
                     case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
                         {
-
+                            SearchSpell f = new SearchSpell();
+                            f.ShowDialog(form);
+                            cb1.Text = f.Spell.ID.ToString();
+                            f.Dispose();
                         }
                         break;
                     case ActionType.ПРИЗЫВ:
@@ -196,8 +199,9 @@ namespace EventAI
                         break;
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return;
             }
         }
