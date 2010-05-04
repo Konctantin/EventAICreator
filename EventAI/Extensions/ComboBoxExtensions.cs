@@ -123,7 +123,7 @@ namespace EventAI
 
         public static int GetVal(this ComboBox cb)
         {
-            return cb.ValueMember.ToInt32();
+            return cb.SelectedValue.ToInt32();
         }
 
         public static int GetVal(this TextBox tb)

@@ -38,6 +38,7 @@ namespace EventAI
                     break;
                 case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
                     l1.Text = "ID спелла";
+                    new BH(cb1, BType.SPELL, Pos.POSA1);
                     cb1.CreateSearchButton(BType.SPELL, Pos.POSA1);
                     l2.Text = "Цель";
                     cb2.SetEnumValues<CastTarget>();

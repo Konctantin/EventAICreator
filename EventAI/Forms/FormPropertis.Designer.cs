@@ -91,7 +91,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(117, 17);
             this.listBox1.TabIndex = 4;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -176,7 +175,7 @@
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Propertis
+            // FormPropertis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,7 +187,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Propertis";
+            this.Name = "FormPropertis";
             this.Text = "Настройки";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

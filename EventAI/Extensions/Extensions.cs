@@ -303,7 +303,6 @@ namespace EventAI
                 });
             }
 
-            cb.Size = new System.Drawing.Size(238, 21);
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.DataSource    = dt;
             cb.DisplayMember = "NAME";

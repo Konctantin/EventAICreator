@@ -14,10 +14,14 @@ namespace EventAI
         public FormMain()
         {
             InitializeComponent();
+
             _cbEventType.SetEnumValues<EventType>();
             _cbActionType1.SetEnumValues<ActionType>();
             _cbActionType2.SetEnumValues<ActionType>();
             _cbActionType3.SetEnumValues<ActionType>();
+
+            _cbFilteEventType.SetEnumValues(typeof(EventType), "Тип события", "");
+            _cbFilteActionType.SetEnumValues(typeof(ActionType), "Тип действия", "");
 
             _cbEventType.SelectedValue = 1;
         }
@@ -30,12 +34,12 @@ namespace EventAI
             CreateQueryScripts();
         }
 
-        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormAboutBox().ShowDialog();
         }
 
-        private void ActionParam1_1_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (((ComboBox)sender).Text.Contains('-'))
             {
@@ -76,7 +80,7 @@ namespace EventAI
                 _cbActionParam1_1, _cbActionParam1_2, _cbActionParam1_3, _gbAction1);
         }
 
-        private void ActionType2_SelectedIndexChanged(object sender, EventArgs e)
+        private void ActionType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType2, lActionParam2_1, lActionParam2_2, lActionParam2_3,
                 _cbActionParam2_1, _cbActionParam2_2, _cbActionParam2_3, _gbAction2);
@@ -313,5 +317,39 @@ namespace EventAI
         {
             _gbEventFlag.Text = "Флаг события " + ((CheckedListBox)sender).GetFlagsValue();
         }
+
+        private void CreateQuery()
+        {
+            int id = _tbFilterNum.GetVal();
+            int creature = _tbFilterCreat.GetVal();
+            int etype = _cbFilteEventType.GetVal();
+            int atype = _cbFilteActionType.GetVal();
+
+            string fquery = "SELECT * FROM `creature_ai_scripts` WHERE ";
+            string squery = "";
+            squery += (id > 0) ? String.Format("id = {0} || ", id) : "";
+            squery += (creature > 0) ? String.Format("creature_id = {0} || ", creature) : "";
+            squery += (etype > -1) ? String.Format("event_type = {0} || ", etype) : "";
+            squery += (atype > -1) ? String.Format("action1_type = {0} || action2_type = {0} || action3_type = {0} || ", atype) : "";
+
+            string query = (squery.Length == 0) ? fquery.Remove(fquery.Length - 6) : fquery + squery.Remove(squery.Length - 3);
+        }
+
+        private void _tbFilterNum_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                CreateQuery();
+        }
+
+        private void _cbFilteEventType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((ComboBox)sender).SelectedIndex > 0)
+                CreateQuery();
+        }
+
+        private void _bFind_Click(object sender, EventArgs e)
+        {
+            CreateQuery();
+        }    
     }
 }

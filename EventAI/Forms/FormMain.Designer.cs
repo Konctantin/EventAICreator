@@ -67,6 +67,13 @@
             this.Revert = new System.Windows.Forms.ToolStripMenuItem();
             this._tpScript = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this._bFind = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this._tbFilterCreat = new System.Windows.Forms.TextBox();
+            this._tbFilterNum = new System.Windows.Forms.TextBox();
+            this._cbFilteActionType = new System.Windows.Forms.ComboBox();
+            this._cbFilteEventType = new System.Windows.Forms.ComboBox();
             this._lvScripts = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -100,10 +107,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.WriteFiles = new System.Windows.Forms.Button();
             this._gbEventType = new System.Windows.Forms.GroupBox();
-            this._bParam1 = new System.Windows.Forms.Button();
-            this._bParam2 = new System.Windows.Forms.Button();
-            this._bParam4 = new System.Windows.Forms.Button();
-            this._bParam3 = new System.Windows.Forms.Button();
             this.lEventType4 = new System.Windows.Forms.Label();
             this.lEventType3 = new System.Windows.Forms.Label();
             this.lEventType2 = new System.Windows.Forms.Label();
@@ -241,7 +244,7 @@
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // HelpEntry
             // 
@@ -273,7 +276,7 @@
             this._cbActionType2.Size = new System.Drawing.Size(238, 21);
             this._cbActionType2.TabIndex = 18;
             this.HelpEntry.SetToolTip(this._cbActionType2, "Выбирите тип действия");
-            this._cbActionType2.SelectedIndexChanged += new System.EventHandler(this.ActionType2_SelectedIndexChanged);
+            this._cbActionType2.SelectedIndexChanged += new System.EventHandler(this.ActionType_SelectedIndexChanged);
             // 
             // _cbActionType3
             // 
@@ -625,6 +628,13 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.splitContainer1.Panel1.Controls.Add(this._bFind);
+            this.splitContainer1.Panel1.Controls.Add(this.label14);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            this.splitContainer1.Panel1.Controls.Add(this._tbFilterCreat);
+            this.splitContainer1.Panel1.Controls.Add(this._tbFilterNum);
+            this.splitContainer1.Panel1.Controls.Add(this._cbFilteActionType);
+            this.splitContainer1.Panel1.Controls.Add(this._cbFilteEventType);
             this.splitContainer1.Panel1.Controls.Add(this._lvScripts);
             // 
             // splitContainer1.Panel2
@@ -651,6 +661,75 @@
             this.splitContainer1.Size = new System.Drawing.Size(1042, 598);
             this.splitContainer1.SplitterDistance = 124;
             this.splitContainer1.TabIndex = 36;
+            // 
+            // _bFind
+            // 
+            this._bFind.Location = new System.Drawing.Point(3, 98);
+            this._bFind.Name = "_bFind";
+            this._bFind.Size = new System.Drawing.Size(158, 23);
+            this._bFind.TabIndex = 38;
+            this._bFind.Text = "Найти";
+            this._bFind.UseVisualStyleBackColor = true;
+            this._bFind.Click += new System.EventHandler(this._bFind_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label14.Location = new System.Drawing.Point(5, 6);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 13);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Скрипт";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label3.Location = new System.Drawing.Point(5, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Существо";
+            // 
+            // _tbFilterCreat
+            // 
+            this._tbFilterCreat.ForeColor = System.Drawing.Color.Black;
+            this._tbFilterCreat.Location = new System.Drawing.Point(74, 25);
+            this._tbFilterCreat.MaxLength = 5;
+            this._tbFilterCreat.Name = "_tbFilterCreat";
+            this._tbFilterCreat.Size = new System.Drawing.Size(87, 20);
+            this._tbFilterCreat.TabIndex = 2;
+            // 
+            // _tbFilterNum
+            // 
+            this._tbFilterNum.ForeColor = System.Drawing.Color.Red;
+            this._tbFilterNum.Location = new System.Drawing.Point(74, 3);
+            this._tbFilterNum.MaxLength = 5;
+            this._tbFilterNum.Name = "_tbFilterNum";
+            this._tbFilterNum.Size = new System.Drawing.Size(87, 20);
+            this._tbFilterNum.TabIndex = 2;
+            this._tbFilterNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this._tbFilterNum_KeyDown);
+            // 
+            // _cbFilteActionType
+            // 
+            this._cbFilteActionType.FormattingEnabled = true;
+            this._cbFilteActionType.Location = new System.Drawing.Point(3, 72);
+            this._cbFilteActionType.Name = "_cbFilteActionType";
+            this._cbFilteActionType.Size = new System.Drawing.Size(158, 21);
+            this._cbFilteActionType.TabIndex = 1;
+            this._cbFilteActionType.SelectedIndexChanged += new System.EventHandler(this._cbFilteEventType_SelectedIndexChanged);
+            // 
+            // _cbFilteEventType
+            // 
+            this._cbFilteEventType.FormattingEnabled = true;
+            this._cbFilteEventType.Location = new System.Drawing.Point(3, 48);
+            this._cbFilteEventType.Name = "_cbFilteEventType";
+            this._cbFilteEventType.Size = new System.Drawing.Size(158, 21);
+            this._cbFilteEventType.TabIndex = 1;
+            this._cbFilteEventType.SelectedIndexChanged += new System.EventHandler(this._cbFilteEventType_SelectedIndexChanged);
             // 
             // _lvScripts
             // 
@@ -681,9 +760,9 @@
             this.columnHeader23});
             this._lvScripts.FullRowSelect = true;
             this._lvScripts.GridLines = true;
-            this._lvScripts.Location = new System.Drawing.Point(0, 0);
+            this._lvScripts.Location = new System.Drawing.Point(167, 0);
             this._lvScripts.Name = "_lvScripts";
-            this._lvScripts.Size = new System.Drawing.Size(1042, 125);
+            this._lvScripts.Size = new System.Drawing.Size(875, 125);
             this._lvScripts.TabIndex = 0;
             this._lvScripts.UseCompatibleStateImageBehavior = false;
             this._lvScripts.View = System.Windows.Forms.View.Details;
@@ -863,10 +942,6 @@
             // 
             // _gbEventType
             // 
-            this._gbEventType.Controls.Add(this._bParam1);
-            this._gbEventType.Controls.Add(this._bParam2);
-            this._gbEventType.Controls.Add(this._bParam4);
-            this._gbEventType.Controls.Add(this._bParam3);
             this._gbEventType.Controls.Add(this.lEventType4);
             this._gbEventType.Controls.Add(this.lEventType3);
             this._gbEventType.Controls.Add(this.lEventType2);
@@ -882,49 +957,6 @@
             this._gbEventType.TabIndex = 29;
             this._gbEventType.TabStop = false;
             this._gbEventType.Text = "Тип события";
-            // 
-            // _bParam1
-            // 
-            this._bParam1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bParam1.Location = new System.Drawing.Point(186, 67);
-            this._bParam1.Name = "_bParam1";
-            this._bParam1.Size = new System.Drawing.Size(58, 23);
-            this._bParam1.TabIndex = 59;
-            this._bParam1.Text = "...";
-            this._bParam1.UseVisualStyleBackColor = true;
-            this._bParam1.Visible = false;
-            // 
-            // _bParam2
-            // 
-            this._bParam2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bParam2.Location = new System.Drawing.Point(186, 114);
-            this._bParam2.Name = "_bParam2";
-            this._bParam2.Size = new System.Drawing.Size(58, 23);
-            this._bParam2.TabIndex = 57;
-            this._bParam2.Text = "...";
-            this._bParam2.UseVisualStyleBackColor = true;
-            this._bParam2.Visible = false;
-            // 
-            // _bParam4
-            // 
-            this._bParam4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._bParam4.Location = new System.Drawing.Point(187, 209);
-            this._bParam4.Name = "_bParam4";
-            this._bParam4.Size = new System.Drawing.Size(57, 23);
-            this._bParam4.TabIndex = 33;
-            this._bParam4.Text = "...";
-            this._bParam4.UseVisualStyleBackColor = true;
-            this._bParam4.Visible = false;
-            // 
-            // _bParam3
-            // 
-            this._bParam3.Location = new System.Drawing.Point(186, 159);
-            this._bParam3.Name = "_bParam3";
-            this._bParam3.Size = new System.Drawing.Size(58, 23);
-            this._bParam3.TabIndex = 33;
-            this._bParam3.Text = "...";
-            this._bParam3.UseVisualStyleBackColor = true;
-            this._bParam3.Visible = false;
             // 
             // lEventType4
             // 
@@ -1057,7 +1089,7 @@
             this._cbActionParam2_2.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam2_2.TabIndex = 34;
             this._cbActionParam2_2.Visible = false;
-            this._cbActionParam2_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
+            this._cbActionParam2_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // _cbActionParam2_3
             // 
@@ -1068,7 +1100,7 @@
             this._cbActionParam2_3.Size = new System.Drawing.Size(176, 21);
             this._cbActionParam2_3.TabIndex = 33;
             this._cbActionParam2_3.Visible = false;
-            this._cbActionParam2_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
+            this._cbActionParam2_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // label5
             // 
@@ -1139,7 +1171,7 @@
             this._cbActionParam1_3.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam1_3.TabIndex = 42;
             this._cbActionParam1_3.Visible = false;
-            this._cbActionParam1_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
+            this._cbActionParam1_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // _cbActionParam1_2
             // 
@@ -1210,7 +1242,7 @@
             this._cbActionParam3_3.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam3_3.TabIndex = 38;
             this._cbActionParam3_3.Visible = false;
-            this._cbActionParam3_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
+            this._cbActionParam3_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // _cbActionParam3_2
             // 
@@ -1221,7 +1253,7 @@
             this._cbActionParam3_2.Size = new System.Drawing.Size(175, 21);
             this._cbActionParam3_2.TabIndex = 37;
             this._cbActionParam3_2.Visible = false;
-            this._cbActionParam3_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionParam1_1_KeyPress);
+            this._cbActionParam3_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // label4
             // 
@@ -1510,6 +1542,7 @@
             this._tpScript.ResumeLayout(false);
             this._tpScript.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
@@ -1619,9 +1652,6 @@
         private System.Windows.Forms.ComboBox _cbActionParam1_1;
         private System.Windows.Forms.ComboBox _cbActionParam3_1;
         private System.Windows.Forms.ComboBox _cbActionParam2_1;
-        private System.Windows.Forms.Button _bParam2;
-        private System.Windows.Forms.Button _bParam3;
-        private System.Windows.Forms.Button _bParam1;
         private System.Windows.Forms.CheckedListBox _clbEventFlag;
         private System.Windows.Forms.RichTextBox rtbScriptOut;
         private System.Windows.Forms.RichTextBox rtbTextOut;
@@ -1645,7 +1675,6 @@
         private System.Windows.Forms.GroupBox _gbEventFlag;
         private System.Windows.Forms.GroupBox _gbPhase;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button _bParam4;
         private System.Windows.Forms.ComboBox _cbEventParametr4;
         private System.Windows.Forms.ComboBox _cbEventParametr3;
         private System.Windows.Forms.ComboBox _cbEventParametr1;
@@ -1667,6 +1696,13 @@
         private System.Windows.Forms.ToolStripMenuItem SelectAll1;
         private System.Windows.Forms.ToolStripMenuItem Revert1;
         private System.Windows.Forms.TabPage _tpSummon;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox _tbFilterCreat;
+        private System.Windows.Forms.TextBox _tbFilterNum;
+        private System.Windows.Forms.ComboBox _cbFilteActionType;
+        private System.Windows.Forms.ComboBox _cbFilteEventType;
+        private System.Windows.Forms.Button _bFind;
     }
 }
 
