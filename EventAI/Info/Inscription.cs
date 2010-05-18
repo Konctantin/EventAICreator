@@ -26,7 +26,7 @@ namespace EventAI
                     break;
                 case ActionType.ИЗМЕНИТЬ_МОДЕЛЬ_СУЩЕСТВА:
                     l1.Text = "ID существа";
-                    cb1.CreateSearchButton(BType.CREATURE, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "ID модели";
                     break;
                 case ActionType.ЗВУК:
@@ -38,16 +38,15 @@ namespace EventAI
                     break;
                 case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
                     l1.Text = "ID спелла";
-                    new BH(cb1, BType.SPELL, Pos.POSA1);
-                    cb1.CreateSearchButton(BType.SPELL, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.SPELL);
                     l2.Text = "Цель";
                     cb2.SetEnumValues<CastTarget>();
                     l3.Text = "Флаг каста";
-                    cb3.CreateFlags<CastFlags>(Pos.POSA3);
+                    new ButtonHandler(cb3, typeof(CastFlags));
                     break;
                 case ActionType.ПРИЗЫВ:
                     l1.Text = "ID существа";
-                    cb1.CreateSearchButton(BType.CREATURE, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "Цель";
                     l3.Text = "Продолжительность (мс)";
                     cb2.SetEnumValues<CastTarget>();
@@ -62,15 +61,15 @@ namespace EventAI
                     break;
                 case ActionType.ВЫПОЛНИТЬ_УСЛОВИЕ_КВЕСТА:
                     l1.Text = "ID квеста";
-                    cb1.CreateSearchButton(BType.QUEST, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.QUEST);
                     l2.Text = "Цель";
                     cb2.SetEnumValues<CastTarget>();
                     break;
                 case ActionType.ЗАСТАВИТЬ_ЧИТАТЬ_ЗАКЛИНАНИЕ:
                     l1.Text = "ID существа";
-                    cb1.CreateSearchButton(BType.CREATURE, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "ID спелла";
-                    cb1.CreateSearchButton(BType.SPELL, Pos.POSA2);
+                    new ButtonHandler(cb2, BType.SPELL);
                     l3.Text = "Цель";
                     cb3.SetEnumValues<CastTarget>();
                     break;
@@ -108,19 +107,19 @@ namespace EventAI
                     break;
                 case ActionType.ЗАВЕРШИТЬ_КВЕСТ_ДЛЯ_ГРУППЫ:
                     l1.Text = "ID квеста";
-                    cb1.CreateSearchButton(BType.QUEST, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.QUEST);
                     break;
                 case ActionType.ЗАСЧИТАТЬ_ЧТЕНИЕ_ЗАКЛИНАНИЯ_ДЛЯ_ГРУППЫ:
                     l1.Text = "ID квеста";
-                    cb1.CreateSearchButton(BType.QUEST, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.QUEST);
                     l2.Text = "ID спелла";
-                    cb1.CreateSearchButton(BType.SPELL, Pos.POSA2);
+                    new ButtonHandler(cb2, BType.SPELL);
                     break;
                 case ActionType.УБРАТЬ_С_ЦЕЛИ_АУРУ:
                     l1.Text = "Цель";
                     cb1.SetEnumValues<CastTarget>();
                     l2.Text = "ID спелла";
-                    cb1.CreateSearchButton(BType.SPELL, Pos.POSA2);
+                    new ButtonHandler(cb1, BType.SPELL);
                     break;
                 case ActionType.УДАЛИТСЯ_ОТ_ЦЕЛИ:
                     l1.Text = "Дистанция";
@@ -137,14 +136,14 @@ namespace EventAI
                     break;
                 case ActionType.ПРИЗЫВ_В_ОПРЕДЕЛЕННУЮ_ТОЧКУ:
                     l1.Text = "ID существа";
-                    cb1.CreateSearchButton(BType.CREATURE, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "Цель";
                     cb2.SetEnumValues<CastTarget>();
                     l3.Text = "ID из creature_ai_summons";
                     break;
                 case ActionType.ЗАСЧИТАТЬ_УБИЙСТВО_СУЩЕСТВА:
                     l1.Text = "ID существа";
-                    cb1.CreateSearchButton(BType.CREATURE, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "Цель";
                     cb2.SetEnumValues<CastTarget>();
                     break;
@@ -159,7 +158,7 @@ namespace EventAI
                     break;
                 case ActionType.ИЗМЕНИТЬ_ПАРАМЕТРЫ_СУЩЕСТВА:
                     l1.Text = "Существо";
-                    cb1.CreateSearchButton(BType.CREATURE, Pos.POSA1);
+                    new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "Команда:";
                     cb2.SetEnumValues<Team>();
                     break;
@@ -219,9 +218,9 @@ namespace EventAI
                     break;
                 case EventType.ПРИ_УРОНЕ_ЗАКЛИНАНИЕМ:
                     l1.Text = "Укажите ID спелла";
-                    cb1.CreateSearchButton(BType.SPELL, Pos.POST1);
+                    new ButtonHandler(cb1, BType.SPELL);
                     l2.Text = "Школа спелов";
-                    cb2.CreateFlags<School>(Pos.POST2);
+                    new ButtonHandler(cb2, typeof(School));
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
@@ -252,14 +251,14 @@ namespace EventAI
                     break;
                 case EventType.ЕСЛИ_ТЕРЯЕТ_БАФФ:
                     l1.Text = "ID спелла (заклинания)";
-                    cb1.CreateSearchButton(BType.SPELL, Pos.POST1);
+                    new ButtonHandler(cb1, BType.SPELL);
                     l2.Text = "В радиусе";
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
                 case EventType.ПРИ_СПАВНЕ_СУЩЕСТВА:
                     l1.Text = "ID существа";
-                    cb1.CreateSearchButton(BType.CREATURE, Pos.POST1);
+                    new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "Минимальное время до повтора (мс)";
                     l3.Text = "Максимальное время до повтора (мс)";
                     break;
@@ -272,7 +271,7 @@ namespace EventAI
                 case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА:
                 case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА_ЦЕЛИ:
                     l1.Text = "ID спелла";
-                    cb1.CreateSearchButton(BType.SPELL, Pos.POST1);
+                    new ButtonHandler(cb1, BType.SPELL);
                     l2.Text = "Количество";
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
@@ -302,13 +301,13 @@ namespace EventAI
                 {
                     case ConditionType.ПРИ_НАЛИЧИИ_АУРЫ:
                         l3.Text = "ID спелла";
-                        cb3.CreateSearchButton(BType.SPELL, Pos.POST3);
+                        new ButtonHandler(cb3, BType.SPELL);
                         l4.Text = "Время до повтора (мс)";
                         break;
                     case ConditionType.ПРИ_НАЛИЧИИ_ПРЕЕДМЕТА:
                     case ConditionType.ЕСЛИ_ПРЕДМЕТ_НА_ПЕРСОНАЖЕ:
                         l3.Text = "ID предмета";
-                        cb3.CreateSearchButton(BType.ITEM, Pos.POST3); ;
+                        new ButtonHandler(cb3, BType.ITEM);
                         l4.Text = "Количество";
                         break;
                     case ConditionType.ЕСЛИ_НАХОДИТСЯ_В_ЗОНЕ:
@@ -332,11 +331,11 @@ namespace EventAI
                     case ConditionType.ЕСЛИ_КВЕСТ_СДАН:
                     case ConditionType.ЕСЛИ_КВЕСТ_НЕ_СДАН:
                         l3.Text = "ID квеста";
-                        cb3.CreateSearchButton(BType.QUEST, Pos.POST3);
+                        new ButtonHandler(cb3, BType.QUEST);
                         break;
                     case ConditionType.ПРИ_АКТИВНОМ_ЭВЕНТЕ:
                         l3.Text = "ID эвента";
-                        cb3.CreateSearchButton(BType.EVENT, Pos.POST3);
+                        new ButtonHandler(cb3, BType.EVENT);
                         break;
                 }
 
