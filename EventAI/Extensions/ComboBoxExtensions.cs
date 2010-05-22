@@ -55,12 +55,15 @@ namespace EventAI
             cb.ValueMember = "ID";
         }
 
-        public static int GetVal(this ComboBox cb)
+        public static int GetIntValue(this ComboBox cb)
         {
-            return cb.SelectedValue.ToInt32();
+            if (cb.Items.Count > 0)
+                return cb.SelectedValue.ToInt32();
+            else
+                return cb.Text.ToInt32();
         }
 
-        public static int GetVal(this TextBox tb)
+        public static int GetIntValue(this TextBox tb)
         {
             return tb.Text.ToInt32();
         }

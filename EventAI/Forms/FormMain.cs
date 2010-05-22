@@ -104,14 +104,40 @@ namespace EventAI
         {
             err = false;
             rtbScriptOut.ForeColor = Color.Blue;
-            int nNumberScripts = NumberScripts.Text.ToInt32();
-            int nIDCreature = EntryNpc.Text.ToInt32();
-            int nEventChance = _tbShance.Text.ToInt32();
-            int nEventType = 0;
+            
+            ScriptAI script = new ScriptAI();
+            script.ID = NumberScripts.Text.ToInt32();
+            script.NpcEntry = EntryNpc.Text.ToInt32();
+            script.EventType = _cbEventType.GetIntValue();
+            script.Phase = _clbPhase.GetFlagsValue();
+            script.Chance = _tbShance.Text.ToInt32();
+            script.Flags = _clbEventFlag.GetFlagsValue();
 
-            int nId = (nIDCreature * 100) + (50 + nNumberScripts);
+            script.EventParam[0] = _cbEventParametr1.GetIntValue();
+            script.EventParam[1] = _cbEventParametr2.GetIntValue();
+            script.EventParam[2] = _cbEventParametr3.GetIntValue();
+            script.EventParam[3] = _cbEventParametr4.GetIntValue();
+            
+            script.ActionType[0] = _cbActionType1.GetIntValue(); 
+            script.ActionParam[0, 0] = _cbActionParam1_1.GetIntValue();
+            script.ActionParam[0, 1] = _cbActionParam1_2.GetIntValue();
+            script.ActionParam[0, 2] = _cbActionParam1_3.GetIntValue();
 
-            //if (nNumberScripts<1)
+            script.ActionType[1] = _cbActionType2.GetIntValue();
+            script.ActionParam[1, 0] = _cbActionParam2_1.GetIntValue();
+            script.ActionParam[1, 1] = _cbActionParam2_2.GetIntValue();
+            script.ActionParam[1, 2] = _cbActionParam2_3.GetIntValue();
+
+            script.ActionType[2] = _cbActionType3.GetIntValue();
+            script.ActionParam[2, 0] = _cbActionParam3_1.GetIntValue();
+            script.ActionParam[2, 1] = _cbActionParam3_2.GetIntValue();
+            script.ActionParam[2, 2] = _cbActionParam3_3.GetIntValue();
+                
+            script.Comment = _tbComment.Text;
+
+            int nId = (script.NpcEntry * 100) + (50 + script.ID);
+
+            //if (script.ID < 1)
                  //ConsoleScritpOut("Номен скрипта должен быть больше 0!", MsgStatus.ERROR);
 
             //if (nEventChance == 0 || nEventChance > 100)
@@ -119,8 +145,8 @@ namespace EventAI
 
             //if (_clbEventFlag.SelectedIndex == 5 || _clbEventFlag.SelectedIndex == 6)
                 //ConsoleScritpOut("Вы питаетесь использовать зарезервированый флаг события!", MsgStatus.ERROR);
-
-            switch ((EventType)nEventType)
+            /*
+            switch ((EventType)script.EventType)
             {
                 case   EventType.ПО_ТАЙМЕРУ_В_БОЮ :
                 case   EventType.ПО_ТАЙМЕРУ_В_НЕ_БОЯ:
@@ -149,7 +175,7 @@ namespace EventAI
                 //case 21:// 
                     //if (nEventParam1_def != 0 || nEventParam2_def != 0 || nEventParam3_def != 0 || nEventParam4_def != 0)
                     //    ConsoleScritpOut("Этот тип действия не имеет параметров!");
-                    break;/*
+                    break;
                 case   7:// EVENT_T_RANGE:
                 case   8:// EVENT_T_OOC_LOS:
                 case   9:// EVENT_T_SPAWNED:
@@ -167,22 +193,28 @@ namespace EventAI
                 case   21:// EVENT_T_REACHED_HOME:
                 case   22:// EVENT_T_RECEIVE_EMOTE:
                 case   23:// EVENT_T_BUFFED:
-                case   24:// EVENT_T_TARGET_BUFFED:*/
+                case   24:// EVENT_T_TARGET_BUFFED:
                 default: break;
 			}
+        */
 
             if (err)
             {
                 //ConsoleScritpOut("Операция не выполнена", MsgStatus.ERROR);
-                return;
+                //return;
             }
-            ////Сформируем строку запроса
-            //var sQuery = (rbReplaceScript.Checked) ? "REPLACE INTO" : "INSERT IGNORE INTO";
-            //var scriptUpdate = String.Format("UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE `entry` = '{0}';");
-            //var script = String.Format("{0} `creature_ai_scripts` VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}');",
-            //    EAI.RegexReplace(_tbComment));
+            //Сформируем строку запроса
+            var scriptTextUpdate = String.Format("UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE `entry` = '{0}';", script.NpcEntry);
+            var scriptTextDelete = String.Format("DELETE `creature_ai_scripts` WHERE `id` IN ({0})", script.ID);
+            var scriptTextInsert = String.Format("INSERT INTO `creature_ai_scripts` VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}');",
+                script.ID, script.NpcEntry, script.EventType, script.Phase, script.Chance, script.Flags,
+                script.EventParam[0], script.EventParam[1], script.EventParam[2], script.EventParam[3],
+                script.ActionType[0], script.ActionParam[0, 0], script.ActionParam[0, 1], script.ActionParam[0, 2],
+                script.ActionType[1], script.ActionParam[1, 0], script.ActionParam[1, 1], script.ActionParam[1, 2],
+                script.ActionType[2], script.ActionParam[2, 0], script.ActionParam[2, 1], script.ActionParam[2, 2],
+                script.Comment.RemExc());
 
-            //rtbScriptOut.Text = script +"\r\n"+ scriptUpdate;
+            rtbScriptOut.Text = scriptTextDelete + "\r\n" + scriptTextInsert + "\r\n" + scriptTextUpdate;
 
         }
         
@@ -315,12 +347,12 @@ namespace EventAI
             _gbEventFlag.Text = "Флаг события " + ((CheckedListBox)sender).GetFlagsValue();
         }
 
-        private void CreateQuery()
+        private string CreateQuery()
         {
-            int id = _tbFilterNum.GetVal();
-            int creature = _tbFilterCreat.GetVal();
-            int etype = _cbFilteEventType.GetVal();
-            int atype = _cbFilteActionType.GetVal();
+            int id = _tbFilterNum.GetIntValue();
+            int creature = _tbFilterCreat.GetIntValue();
+            int etype = _cbFilteEventType.GetIntValue();
+            int atype = _cbFilteActionType.GetIntValue();
 
             string fquery = "SELECT * FROM `creature_ai_scripts` WHERE ";
             string squery = "";
@@ -329,24 +361,30 @@ namespace EventAI
             squery += (etype > -1) ? String.Format("event_type = {0} || ", etype) : "";
             squery += (atype > -1) ? String.Format("action1_type = {0} || action2_type = {0} || action3_type = {0} || ", atype) : "";
 
-            string query = (squery.Length == 0) ? fquery.Remove(fquery.Length - 6) : fquery + squery.Remove(squery.Length - 3);
+            return (squery.Length == 0) ? fquery.Remove(fquery.Length - 6) : fquery + squery.Remove(squery.Length - 3);
         }
 
         private void _tbFilterNum_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                CreateQuery();
+            {
+                string query = CreateQuery();
+            }
         }
 
         private void _cbFilteEventType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (((ComboBox)sender).SelectedIndex > 0)
-                CreateQuery();
+            {
+                string query = CreateQuery();
+            }
         }
 
         private void _bFind_Click(object sender, EventArgs e)
         {
-            CreateQuery();
+            {
+                string query = CreateQuery();
+            }
         }
 
         private void EventParametr_TextChanged(object sender, EventArgs e)
@@ -363,6 +401,10 @@ namespace EventAI
         private void _lvScripts_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
             e.Item = new ListViewItem(_scriptList[e.ItemIndex].ToString().Split(' '));
-        }    
+        }
+
+        private void LogOutError(string text, params object[] arg)
+        { 
+        }
     }
 }
