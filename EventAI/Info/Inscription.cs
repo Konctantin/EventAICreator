@@ -9,9 +9,9 @@ namespace EventAI
         private static Point coord2 = new Point(187, 102);
         private static Point coord3 = new Point(187, 148);
 
-        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3, GroupBox gr)
+        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3)
         {
-            gr.Reset();
+            ((GroupBox)cb.Parent).Reset();
             
             switch ((ActionType)cb.SelectedValue.ToUInt32())
             {
@@ -22,7 +22,7 @@ namespace EventAI
                     break;
                 case ActionType.УСТАНОВИТЬ_ФРАКЦИЮ:
                     l1.Text = "ID фракции";
-                    cb1.SetDbcData(DataSet.Fraction);
+                    cb1.SetDbcData(DBC.Faction);
                     break;
                 case ActionType.ИЗМЕНИТЬ_МОДЕЛЬ_СУЩЕСТВА:
                     l1.Text = "ID существа";
@@ -34,7 +34,7 @@ namespace EventAI
                     break;
                 case ActionType.ЭМОЦИЯ:
                     l1.Text = "ID эмоции";
-                    cb1.SetDbcData(DataSet.Emote);
+                    cb1.SetDbcData(DBC.Emotes);
                     break;
                 case ActionType.ЧТЕНИЕ_ЗАКЛИНАНИЯ:
                     l1.Text = "ID спелла";
@@ -183,10 +183,9 @@ namespace EventAI
             cb3.Visible = l3.Text != string.Empty;
          }
 
-        public static void ShowEventTypeInscription(ComboBox cb, Label l1, Label l2, Label l3, Label l4,
-            ComboBox cb1, ComboBox cb2, ComboBox cb3, ComboBox cb4, GroupBox gr)
+        public static void ShowEventTypeInscription(ComboBox cb, Label l1, Label l2, Label l3, Label l4, ComboBox cb1, ComboBox cb2, ComboBox cb3, ComboBox cb4)
         {
-            gr.Reset();
+            ((GroupBox)cb.Parent).Reset();
 
             switch ((EventType)cb.SelectedValue.ToUInt32())
             {
@@ -265,7 +264,7 @@ namespace EventAI
                 case EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ:
                     l1.Text = "ID эмоции";
                     l2.Text = "Условие";
-                    cb1.SetDbcData(DataSet.Emote);
+                    cb1.SetDbcData(DBC.Emotes);
                     cb2.SetEnumValues<ConditionType>();
                     break;
                 case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА:
@@ -290,7 +289,7 @@ namespace EventAI
             cb4.Visible = l4.Text != string.Empty;
          }
 
-        public static void ShowActionTyteCondition(ComboBox cb, Label l3, Label l4, ComboBox cb3, ComboBox cb4)//, GroupBox gr)
+        public static void ShowActionTyteCondition(ComboBox cb, Label l3, Label l4, ComboBox cb3, ComboBox cb4)
         {
             if ((EventType)cb.ValueMember.ToInt32() == EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ)
             {
@@ -312,11 +311,11 @@ namespace EventAI
                         break;
                     case ConditionType.ЕСЛИ_НАХОДИТСЯ_В_ЗОНЕ:
                         l3.Text = "ID зоны";
-                        cb3.SetDbcData(DataSet.Area);
+                        cb3.SetDbcData(DBC.AreaTable);
                         break;
                     case ConditionType.ПРИ_НАЛИЧИИ_РЕПУТАЦИИ:
                         l3.Text = "ID фракции";
-                        cb3.SetDbcData(DataSet.Fraction);
+                        cb3.SetDbcData(DBC.Faction);
                         l4.Text = "Минимальный ранг";
                         break;
                     case ConditionType.КОМАНДА:
@@ -325,7 +324,7 @@ namespace EventAI
                         break;
                     case ConditionType.ПРИ_НАЛИЧИИ_УМЕНИЯ:
                         l3.Text = "ID умения";
-                        cb3.SetDbcData(DataSet.Skill);
+                        cb3.SetDbcData(DBC.SkillLine);
                         l4.Text = "Минимальный уровень прокачки";
                         break;
                     case ConditionType.ЕСЛИ_КВЕСТ_СДАН:

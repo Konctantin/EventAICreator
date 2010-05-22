@@ -7,27 +7,30 @@ namespace EventAI
     {
         public static void Reset(this GroupBox gb)
         {
-            foreach (var ctrl in gb.Controls)
+            for (int i = 0; i < 4; i++)
             {
-                if (ctrl is Label)
+                foreach (var ctrl in gb.Controls)
                 {
-                    ((Label)ctrl).Text = String.Empty;
-                }
-                else if (ctrl is ComboBox)
-                {
-                    ComboBox cb = (ComboBox)ctrl;
-                    if (cb.Name.IndexOf("_cbActionType") == -1 && cb.Name.IndexOf("_cbEventType") == -1)
+                    if (ctrl is Label)
                     {
-                        cb.DropDownStyle = ComboBoxStyle.Simple;
-                        cb.DataSource = null;
-                        cb.Size = new System.Drawing.Size(180, 21);
+                        ((Label)ctrl).Text = String.Empty;
                     }
-                }
-                else if (ctrl is Button)
-                {
-                    Button b  = (Button)ctrl;
-                    if(b != null)
-                        b.Dispose();
+
+                    else if (ctrl is ComboBox)
+                    {
+                        ComboBox cb = (ComboBox)ctrl;
+                        if (cb.Name.IndexOf("_cbActionType") == -1 && cb.Name.IndexOf("_cbEventType") == -1)
+                        {
+                            cb.DropDownStyle = ComboBoxStyle.Simple;
+                            cb.DataSource = null;
+                            cb.Size = new System.Drawing.Size(238, 21);
+                        }
+                    }
+
+                    else if(ctrl is Button)
+                    {
+                        gb.Controls.Remove((Button)ctrl);
+                    }
                 }
             }
         }

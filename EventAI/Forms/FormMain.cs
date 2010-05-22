@@ -4,12 +4,15 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
 using System.Text;
+using System.Collections.Generic;
 
 namespace EventAI
 {
     public partial class FormMain : Form
     {
         private DataTable Scripts { get; set; }
+
+        private List<ScriptAI> _scriptList = new List<ScriptAI>();
 
         public FormMain()
         {
@@ -71,25 +74,25 @@ namespace EventAI
         private void comboEventType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Inscription.ShowEventTypeInscription(_cbEventType, lEventType1, lEventType2, lEventType3, lEventType4,
-                _cbEventParametr1, _cbEventParametr2, _cbEventParametr3, _cbEventParametr4, _gbEventType);
+                _cbEventParametr1, _cbEventParametr2, _cbEventParametr3, _cbEventParametr4);
         }       
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType1, lActionParam1_1, lActionParam1_2, lActionParam1_3,
-                _cbActionParam1_1, _cbActionParam1_2, _cbActionParam1_3, _gbAction1);
+                _cbActionParam1_1, _cbActionParam1_2, _cbActionParam1_3);
         }
 
         private void ActionType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType2, lActionParam2_1, lActionParam2_2, lActionParam2_3,
-                _cbActionParam2_1, _cbActionParam2_2, _cbActionParam2_3, _gbAction2);
+                _cbActionParam2_1, _cbActionParam2_2, _cbActionParam2_3);
          }
 
         private void comboBox1_SelectedIndexChanged_2(object sender, EventArgs e)
         {
             Inscription.ShowActionParametrInscription(_cbActionType3, lActionParam3_1, lActionParam3_2, lActionParam3_3,
-                _cbActionParam3_1, _cbActionParam3_2, _cbActionParam3_3, _gbAction3);
+                _cbActionParam3_1, _cbActionParam3_2, _cbActionParam3_3);
         }
 
         private void ActionTyteCondition_SelectedIndexChanged(object sender, EventArgs e)
@@ -241,49 +244,43 @@ namespace EventAI
 
         private void _lvScripts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (_lvScripts.SelectedItems.Count > 0)
+            if (_lvScripts.SelectedIndices.Count > 0)
             {
-                ParseScriptsData(_lvScripts.SelectedItems[0].SubItems[0].Text);
+                ParseScriptsData(_scriptList[_lvScripts.SelectedIndices[0]]);
             }
         }
 
-        private void ParseScriptsData(string ID)
+        private void ParseScriptsData(ScriptAI script)
         {
-            var query = from sounds in Scripts.AsEnumerable()
-                        where (sounds.Field<uint>("ID").ToString() == _lvScripts.SelectedItems[0].SubItems[0].Text)
-                        select sounds;
+            NumberScripts.Text = script.ID.ToString();
+            EntryNpc.Text = script.NpcEntry.ToString();
+            _tbShance.Text = script.Chance.ToString();
 
-            var row = query.CopyToDataTable<DataRow>().Select().First();
-
-            NumberScripts.Text = row[0].ToString();
-            EntryNpc.Text      = row[1].ToString();
-            _tbShance.Text     = row[4].ToString();
-
-            _clbEventFlag.SetCheckedItemFromFlag(row[5].ToUInt32());
-            _clbPhase.SetCheckedItemFromFlag(row[3].ToUInt32());
+            _clbEventFlag.SetCheckedItemFromFlag((uint)script.Flags);
+            _clbPhase.SetCheckedItemFromFlag((uint)script.Phase);
             
-            _cbEventType.SelectedValue = row[2];
-            _cbEventParametr1.Text = row[6].ToString();
-            _cbEventParametr2.Text = row[7].ToString();
-            _cbEventParametr3.Text = row[8].ToString();
-            _cbEventParametr4.Text = row[9].ToString();
+            _cbEventType.SelectedValue = script.EventType;
+            _cbEventParametr1.SelectedValue = script.EventParam[0];
+            _cbEventParametr2.SelectedValue = script.EventParam[1];
+            _cbEventParametr3.SelectedValue = script.EventParam[2];
+            _cbEventParametr4.SelectedValue = script.EventParam[3];
 
-            _cbActionType1.SelectedValue = row[10];
-            _cbActionParam1_1.Text = row[11].ToString();
-            _cbActionParam1_2.Text = row[12].ToString();
-            _cbActionParam1_3.Text = row[13].ToString();
+            _cbActionType1.SelectedValue = script.ActionType[0];
+            _cbActionParam1_1.SelectedValue = script.ActionParam[0, 0];
+            _cbActionParam1_2.SelectedValue = script.ActionParam[0, 1];
+            _cbActionParam1_3.SelectedValue = script.ActionParam[0, 2];
 
-            _cbActionType2.SelectedValue = row[14];
-            _cbActionParam2_1.Text = row[15].ToString();
-            _cbActionParam2_2.Text = row[16].ToString();
-            _cbActionParam2_3.Text = row[17].ToString();
+            _cbActionType2.SelectedValue = script.ActionType[1];
+            _cbActionParam2_1.SelectedValue = script.ActionParam[1, 0];
+            _cbActionParam2_2.SelectedValue = script.ActionParam[1, 1];
+            _cbActionParam2_3.SelectedValue = script.ActionParam[1, 2];
 
-            _cbActionType3.SelectedValue = row[18];
-            _cbActionParam3_1.Text = row[19].ToString();
-            _cbActionParam3_2.Text = row[20].ToString();
-            _cbActionParam3_3.Text = row[21].ToString();
+            _cbActionType3.SelectedValue = script.ActionType[2];
+            _cbActionParam3_1.SelectedValue = script.ActionParam[2, 0];
+            _cbActionParam3_2.SelectedValue = script.ActionParam[2, 1];
+            _cbActionParam3_3.SelectedValue = script.ActionParam[2, 2];
 
-            _tbComment.Text = row[22].ToString();
+            _tbComment.Text = script.Comment;
         }
 
         private void Revert1_Click(object sender, EventArgs e)
@@ -350,6 +347,22 @@ namespace EventAI
         private void _bFind_Click(object sender, EventArgs e)
         {
             CreateQuery();
+        }
+
+        private void EventParametr_TextChanged(object sender, EventArgs e)
+        {
+            //if ((EventType)_cbEventType.SelectedValue.ToInt32() == EventType.ПРИ_УРОНЕ_ЗАКЛИНАНИЕМ)
+            //{
+            //    if(((ComboBox)sender) == _cbEventParametr1)
+            //        _cbEventParametr2.Text = "-1";
+            //    else if(((ComboBox)sender) == _cbEventParametr2)
+            //        _cbEventParametr1.Text = "-1";
+            //}
+        }
+
+        private void _lvScripts_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        {
+            e.Item = new ListViewItem(_scriptList[e.ItemIndex].ToString().Split(' '));
         }    
     }
 }

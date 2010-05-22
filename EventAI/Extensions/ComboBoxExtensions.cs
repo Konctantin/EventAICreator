@@ -5,77 +5,11 @@ using System.Windows.Forms;
 
 namespace EventAI
 {
-    public enum DataSet
-    {
-        Emote,
-        Fraction,
-        Area,
-        Skill,
-    };
     public static class ComboBoxExtensions
     {
-        public static void SetDbcData(this ComboBox cb, DataSet ds)
+        private static System.Drawing.Size ComboboxSize
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
-            dt.Columns.Add("NAME");
-            switch(ds)
-            {
-                case DataSet.Emote:
-                    {
-                        foreach (var str in DBC.Emotes.Values)
-                        {
-                            dt.Rows.Add(new Object[] 
-                            { 
-                                str.ID,
-                                "(" + (str.ID).ToString("000") + ") " + str.Name
-                            });
-                        }
-                    }
-                    break;
-                case DataSet.Fraction:
-                    {
-                        foreach (var str in DBC.Faction.Values)
-                        {
-                            dt.Rows.Add(new Object[] 
-                            { 
-                                str.ID,
-                                "(" + (str.ID).ToString("0000") + ") " + str.Name
-                            });
-                        }
-                    }
-                    break;
-                case DataSet.Area:
-                    {
-                        foreach (var str in DBC.AreaTable.Values)
-                        {
-                            dt.Rows.Add(new Object[] 
-                            { 
-                                str.ID,
-                                "(" + (str.ID).ToString("0000") + ") " + str.Name
-                            });
-                        }
-                    }
-                    break;
-                case DataSet.Skill:
-                    {
-                        foreach (var str in DBC.SkillLine.Values)
-                        {
-                            dt.Rows.Add(new Object[] 
-                            { 
-                                str.ID,
-                                "(" + (str.ID).ToString("000") + ") " + str.Name
-                            });
-                        }
-                    }
-                    break;
-            }
-
-            cb.Size = new System.Drawing.Size(238, 21);
-            cb.DataSource = dt;
-            cb.DisplayMember = "NAME";
-            cb.ValueMember = "ID";
-            cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            get { return new System.Drawing.Size(238, 21); }
         }
 
         public static void SetDbcData<T>(this ComboBox cb, Dictionary<uint, T> dict) where T : struct
@@ -84,38 +18,38 @@ namespace EventAI
             dt.Columns.Add("ID");
             dt.Columns.Add("NAME");
 
-            foreach (var str in dict)
+            foreach (var str in dict.Values)
             {
-                dt.Rows.Add(new Object[] 
-                { 
-                    str.Key,
-                    "(" + (str.Key).ToString("000") + ") " + str.Value.GetType().GetProperty("Name").GetValue(str,null).ToString()
-                });
+                uint ID = str.GetType().GetField("ID").GetValue(str).ToUInt32();
+                var Name = str.GetType().GetProperty("Name").GetValue(str, null);
+               
+                dt.Rows.Add(new Object[] { ID, "(" + ID.ToString("000") + ") " + Name });
             }
 
             cb.DataSource = dt;
             cb.DisplayMember = "NAME";
             cb.ValueMember = "ID";
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb.Size = ComboboxSize;
         }
 
-        public static void SetVal(this ComboBox cb, Object val)
+        public static void SetVal(this ComboBox cb, Object value)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("NAME");
-            dt.Rows.Add(new Object[] { val.ToInt32(), val.ToString() });
+            dt.Rows.Add(new Object[] { value.ToInt32(), value.ToString() });
             cb.DataSource = dt;
             cb.DisplayMember = "NAME";
             cb.ValueMember = "ID";
         }
 
-        public static void SetVal(this ComboBox cb, Object menderval, Object visibleval)
+        public static void SetVal(this ComboBox cb, Object memberval, Object visibleval)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("NAME");
-            dt.Rows.Add(new Object[] { menderval.ToInt32(), visibleval.ToString() });
+            dt.Rows.Add(new Object[] { memberval.ToInt32(), visibleval.ToString() });
             cb.DataSource = dt;
             cb.DisplayMember = "NAME";
             cb.ValueMember = "ID";

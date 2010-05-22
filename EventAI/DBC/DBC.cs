@@ -35,17 +35,4 @@ namespace EventAI
         // Locale
         public static LocalesDBC Locale { get; set; }
     }
-
-    public enum LocalesDBC
-    {
-        enUS,
-        koKR,
-        frFR,
-        deDE,
-        zhCN,
-        zhTW,
-        esES,
-        esMX,
-        ruRU
-    };
 }

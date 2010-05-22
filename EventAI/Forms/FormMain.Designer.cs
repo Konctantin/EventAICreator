@@ -268,9 +268,11 @@
             // 
             // _cbActionType2
             // 
+            this._cbActionType2.DropDownHeight = 400;
             this._cbActionType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbActionType2.ForeColor = System.Drawing.Color.Blue;
             this._cbActionType2.FormattingEnabled = true;
+            this._cbActionType2.IntegralHeight = false;
             this._cbActionType2.Location = new System.Drawing.Point(6, 19);
             this._cbActionType2.Name = "_cbActionType2";
             this._cbActionType2.Size = new System.Drawing.Size(238, 21);
@@ -280,9 +282,11 @@
             // 
             // _cbActionType3
             // 
+            this._cbActionType3.DropDownHeight = 400;
             this._cbActionType3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbActionType3.ForeColor = System.Drawing.Color.Blue;
             this._cbActionType3.FormattingEnabled = true;
+            this._cbActionType3.IntegralHeight = false;
             this._cbActionType3.Location = new System.Drawing.Point(6, 18);
             this._cbActionType3.Name = "_cbActionType3";
             this._cbActionType3.Size = new System.Drawing.Size(238, 21);
@@ -292,9 +296,11 @@
             // 
             // _cbActionType1
             // 
+            this._cbActionType1.DropDownHeight = 400;
             this._cbActionType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbActionType1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionType1.FormattingEnabled = true;
+            this._cbActionType1.IntegralHeight = false;
             this._cbActionType1.Location = new System.Drawing.Point(6, 19);
             this._cbActionType1.Name = "_cbActionType1";
             this._cbActionType1.Size = new System.Drawing.Size(238, 21);
@@ -304,10 +310,12 @@
             // 
             // _cbEventType
             // 
+            this._cbEventType.DropDownHeight = 400;
             this._cbEventType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbEventType.DropDownWidth = 200;
             this._cbEventType.ForeColor = System.Drawing.Color.Blue;
             this._cbEventType.FormattingEnabled = true;
+            this._cbEventType.IntegralHeight = false;
             this._cbEventType.Location = new System.Drawing.Point(6, 18);
             this._cbEventType.Name = "_cbEventType";
             this._cbEventType.Size = new System.Drawing.Size(238, 21);
@@ -766,7 +774,9 @@
             this._lvScripts.TabIndex = 0;
             this._lvScripts.UseCompatibleStateImageBehavior = false;
             this._lvScripts.View = System.Windows.Forms.View.Details;
+            this._lvScripts.VirtualMode = true;
             this._lvScripts.SelectedIndexChanged += new System.EventHandler(this._lvScripts_SelectedIndexChanged);
+            this._lvScripts.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this._lvScripts_RetrieveVirtualItem);
             // 
             // columnHeader1
             // 
@@ -992,8 +1002,10 @@
             // 
             // _cbEventParametr4
             // 
+            this._cbEventParametr4.DropDownHeight = 400;
             this._cbEventParametr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr4.FormattingEnabled = true;
+            this._cbEventParametr4.IntegralHeight = false;
             this._cbEventParametr4.Location = new System.Drawing.Point(6, 210);
             this._cbEventParametr4.Name = "_cbEventParametr4";
             this._cbEventParametr4.Size = new System.Drawing.Size(175, 21);
@@ -1002,8 +1014,10 @@
             // 
             // _cbEventParametr3
             // 
+            this._cbEventParametr3.DropDownHeight = 400;
             this._cbEventParametr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr3.FormattingEnabled = true;
+            this._cbEventParametr3.IntegralHeight = false;
             this._cbEventParametr3.Location = new System.Drawing.Point(5, 161);
             this._cbEventParametr3.Name = "_cbEventParametr3";
             this._cbEventParametr3.Size = new System.Drawing.Size(175, 21);
@@ -1012,23 +1026,29 @@
             // 
             // _cbEventParametr1
             // 
+            this._cbEventParametr1.DropDownHeight = 400;
             this._cbEventParametr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr1.FormattingEnabled = true;
+            this._cbEventParametr1.IntegralHeight = false;
             this._cbEventParametr1.Location = new System.Drawing.Point(5, 68);
             this._cbEventParametr1.Name = "_cbEventParametr1";
             this._cbEventParametr1.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr1.TabIndex = 23;
             this._cbEventParametr1.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
+            this._cbEventParametr1.TextChanged += new System.EventHandler(this.EventParametr_TextChanged);
             // 
             // _cbEventParametr2
             // 
+            this._cbEventParametr2.DropDownHeight = 400;
             this._cbEventParametr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbEventParametr2.FormattingEnabled = true;
+            this._cbEventParametr2.IntegralHeight = false;
             this._cbEventParametr2.Location = new System.Drawing.Point(5, 115);
             this._cbEventParametr2.Name = "_cbEventParametr2";
             this._cbEventParametr2.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr2.TabIndex = 23;
             this._cbEventParametr2.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
+            this._cbEventParametr2.TextChanged += new System.EventHandler(this.EventParametr_TextChanged);
             // 
             // _gbAction2
             // 
@@ -1048,8 +1068,10 @@
             // 
             // _cbActionParam2_1
             // 
+            this._cbActionParam2_1.DropDownHeight = 400;
             this._cbActionParam2_1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionParam2_1.FormattingEnabled = true;
+            this._cbActionParam2_1.IntegralHeight = false;
             this._cbActionParam2_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam2_1.Name = "_cbActionParam2_1";
             this._cbActionParam2_1.Size = new System.Drawing.Size(175, 21);
@@ -1082,8 +1104,10 @@
             // 
             // _cbActionParam2_2
             // 
+            this._cbActionParam2_2.DropDownHeight = 400;
             this._cbActionParam2_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam2_2.FormattingEnabled = true;
+            this._cbActionParam2_2.IntegralHeight = false;
             this._cbActionParam2_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam2_2.Name = "_cbActionParam2_2";
             this._cbActionParam2_2.Size = new System.Drawing.Size(175, 21);
@@ -1093,8 +1117,10 @@
             // 
             // _cbActionParam2_3
             // 
+            this._cbActionParam2_3.DropDownHeight = 400;
             this._cbActionParam2_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam2_3.FormattingEnabled = true;
+            this._cbActionParam2_3.IntegralHeight = false;
             this._cbActionParam2_3.Location = new System.Drawing.Point(5, 148);
             this._cbActionParam2_3.Name = "_cbActionParam2_3";
             this._cbActionParam2_3.Size = new System.Drawing.Size(176, 21);
@@ -1129,9 +1155,11 @@
             // 
             // _cbActionParam1_1
             // 
+            this._cbActionParam1_1.DropDownHeight = 400;
             this._cbActionParam1_1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionParam1_1.FormatString = "N0";
             this._cbActionParam1_1.FormattingEnabled = true;
+            this._cbActionParam1_1.IntegralHeight = false;
             this._cbActionParam1_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam1_1.Name = "_cbActionParam1_1";
             this._cbActionParam1_1.Size = new System.Drawing.Size(175, 21);
@@ -1164,8 +1192,10 @@
             // 
             // _cbActionParam1_3
             // 
+            this._cbActionParam1_3.DropDownHeight = 400;
             this._cbActionParam1_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam1_3.FormattingEnabled = true;
+            this._cbActionParam1_3.IntegralHeight = false;
             this._cbActionParam1_3.Location = new System.Drawing.Point(6, 148);
             this._cbActionParam1_3.Name = "_cbActionParam1_3";
             this._cbActionParam1_3.Size = new System.Drawing.Size(175, 21);
@@ -1175,8 +1205,10 @@
             // 
             // _cbActionParam1_2
             // 
+            this._cbActionParam1_2.DropDownHeight = 400;
             this._cbActionParam1_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam1_2.FormattingEnabled = true;
+            this._cbActionParam1_2.IntegralHeight = false;
             this._cbActionParam1_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam1_2.Name = "_cbActionParam1_2";
             this._cbActionParam1_2.Size = new System.Drawing.Size(175, 21);
@@ -1201,8 +1233,10 @@
             // 
             // _cbActionParam3_1
             // 
+            this._cbActionParam3_1.DropDownHeight = 400;
             this._cbActionParam3_1.ForeColor = System.Drawing.Color.Blue;
             this._cbActionParam3_1.FormattingEnabled = true;
+            this._cbActionParam3_1.IntegralHeight = false;
             this._cbActionParam3_1.Location = new System.Drawing.Point(6, 60);
             this._cbActionParam3_1.Name = "_cbActionParam3_1";
             this._cbActionParam3_1.Size = new System.Drawing.Size(175, 21);
@@ -1235,8 +1269,10 @@
             // 
             // _cbActionParam3_3
             // 
+            this._cbActionParam3_3.DropDownHeight = 400;
             this._cbActionParam3_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam3_3.FormattingEnabled = true;
+            this._cbActionParam3_3.IntegralHeight = false;
             this._cbActionParam3_3.Location = new System.Drawing.Point(6, 148);
             this._cbActionParam3_3.Name = "_cbActionParam3_3";
             this._cbActionParam3_3.Size = new System.Drawing.Size(175, 21);
@@ -1246,8 +1282,10 @@
             // 
             // _cbActionParam3_2
             // 
+            this._cbActionParam3_2.DropDownHeight = 400;
             this._cbActionParam3_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this._cbActionParam3_2.FormattingEnabled = true;
+            this._cbActionParam3_2.IntegralHeight = false;
             this._cbActionParam3_2.Location = new System.Drawing.Point(6, 104);
             this._cbActionParam3_2.Name = "_cbActionParam3_2";
             this._cbActionParam3_2.Size = new System.Drawing.Size(175, 21);

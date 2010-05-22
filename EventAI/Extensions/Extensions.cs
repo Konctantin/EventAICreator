@@ -18,7 +18,7 @@ namespace EventAI
         public static string ReadCString(this BinaryReader reader)
         {
             byte num;
-            var temp = new List<byte>();
+            List<byte> temp = new List<byte>();
 
             while ((num = reader.ReadByte()) != 0)
             {
@@ -36,7 +36,7 @@ namespace EventAI
         /// <returns>Resulting struct.</returns>
         public static unsafe T ReadStruct<T>(this BinaryReader reader) where T : struct
         {
-            var rawData = reader.ReadBytes(Marshal.SizeOf(typeof(T)));
+            byte[] rawData = reader.ReadBytes(Marshal.SizeOf(typeof(T)));
 
             GCHandle handle = GCHandle.Alloc(rawData, GCHandleType.Pinned);
             T returnObject = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
@@ -167,17 +167,6 @@ namespace EventAI
             float num;
             float.TryParse(val.ToString().Replace(',', '.'), out num);
             return num;
-        }
-
-        // Time methods
-        public static Int32 MsDiff(DateTime time1, DateTime time2)
-        {
-            return (Int32)(time2 - time1).TotalMilliseconds;
-        }
-
-        public static UInt32 UnixTime()
-        {
-            return (UInt32)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
         }
 
         public static String NormaliseString(this String text, String remove)
@@ -314,7 +303,7 @@ namespace EventAI
             return str.Replace(@"'", @"\'").Replace("\"", "\\\"");
         }
 
-        public static bool ContainText(String text, String str)
+        public static bool ContainText(this String text, String str)
         {
             return (text.ToUpper().IndexOf(str.ToUpper(), StringComparison.CurrentCultureIgnoreCase) != -1);
         }

@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Text;
 
 namespace EventAI
 {
     class SpellInfo
     {
-        public static void ViewSpellInfo(RichTextBox sb, SpellEntry spell)
+        public SpellInfo(RichTextBox sb, SpellEntry spell)
         {
             sb.Clear();
             sb.SetBold();
@@ -20,7 +19,8 @@ namespace EventAI
             sb.AppendFormatLineIfNotNull("Description: {0}", spell.Description);
             sb.AppendFormatLineIfNotNull("ToolTip: {0}", spell.ToolTip);
             sb.AppendFormatLineIfNotNull("Modal Next Spell: {0}", spell.ModalNextSpell);
-            sb.AppendFormatLine("=================================================");
+            if (spell.Description != string.Empty && spell.ToolTip != string.Empty && spell.ModalNextSpell != 0)
+                sb.AppendFormatLine("=================================================");
 
             sb.AppendFormatLine("Category = {0}, SpellIconID = {1}, activeIconID = {2}, SpellVisual = ({3},{4})",
                 spell.Category, spell.SpellIconID, spell.ActiveIconID, spell.SpellVisual[0], spell.SpellVisual[1]);
@@ -33,6 +33,29 @@ namespace EventAI
             sb.AppendFormatLine("SpellSchoolMask = {0} ({1})", spell.SchoolMask, spell.School);
             sb.AppendFormatLine("DamageClass = {0} ({1})", spell.DmgClass, (SpellDmgClass)spell.DmgClass);
             sb.AppendFormatLine("PreventionType = {0} ({1})", spell.PreventionType, (SpellPreventionType)spell.PreventionType);
+
+            if (spell.Attributes != 0 || spell.AttributesEx != 0 || spell.AttributesEx2 != 0 || spell.AttributesEx3 != 0
+                || spell.AttributesEx4 != 0 || spell.AttributesEx5 != 0 || spell.AttributesEx6 != 0 || spell.AttributesExG != 0)
+                sb.AppendLine("=================================================");
+
+            if (spell.Attributes != 0)
+                sb.AppendFormatLine("Attributes: 0x{0:X8} ({1})", spell.Attributes, (SpellAtribute)spell.Attributes);
+            if (spell.AttributesEx != 0)
+                sb.AppendFormatLine("AttributesEx1: 0x{0:X8} ({1})", spell.AttributesEx, (SpellAtributeEx)spell.AttributesEx);
+            if (spell.AttributesEx2 != 0)
+                sb.AppendFormatLine("AttributesEx2: 0x{0:X8} ({1})", spell.AttributesEx2, (SpellAtributeEx2)spell.AttributesEx2);
+            if (spell.AttributesEx3 != 0)
+                sb.AppendFormatLine("AttributesEx3: 0x{0:X8} ({1})", spell.AttributesEx3, (SpellAtributeEx3)spell.AttributesEx3);
+            if (spell.AttributesEx4 != 0)
+                sb.AppendFormatLine("AttributesEx4: 0x{0:X8} ({1})", spell.AttributesEx4, (SpellAtributeEx4)spell.AttributesEx4);
+            if (spell.AttributesEx5 != 0)
+                sb.AppendFormatLine("AttributesEx5: 0x{0:X8} ({1})", spell.AttributesEx5, (SpellAtributeEx5)spell.AttributesEx5);
+            if (spell.AttributesEx6 != 0)
+                sb.AppendFormatLine("AttributesEx6: 0x{0:X8} ({1})", spell.AttributesEx6, (SpellAtributeEx6)spell.AttributesEx6);
+            if (spell.AttributesExG != 0)
+                sb.AppendFormatLine("AttributesExG: 0x{0:X8} ({1})", spell.AttributesExG, (SpellAtributeExG)spell.AttributesExG);
+
+            sb.AppendLine("=================================================");
 
             if (spell.Targets != 0)
                 sb.AppendFormatLine("Targets Mask = 0x{0:X8} ({1})", spell.Targets, (SpellCastTargetFlags)spell.Targets);
@@ -84,17 +107,12 @@ namespace EventAI
             sb.AppendFormatLine("Category = {0}", spell.Category);
             sb.AppendFormatLine("DispelType = {0} ({1})", spell.Dispel, (DispelType)spell.Dispel);
             sb.AppendFormatLine("Mechanic = {0} ({1})", spell.Mechanic, (Mechanics)spell.Mechanic);
+
             sb.AppendLine(spell.Range);
 
             sb.AppendFormatLineIfNotNull("Speed {0:F}", spell.Speed);
-
-            sb.SetBold();
-            sb.AppendFormatLine("Attributes 0x{0:X8}, Ex 0x{1:X8}, Ex2 0x{2:X8}, Ex3 0x{3:X8}, Ex4 0x{4:X8}, Ex5 0x{5:X8}, Ex6 0x{6:X8}, ExG 0x{7:X8}",
-                     spell.Attributes, spell.AttributesEx, spell.AttributesEx2, spell.AttributesEx3, spell.AttributesEx4,
-                     spell.AttributesEx5, spell.AttributesEx6, spell.AttributesExG);
-            sb.SetDefaultStyle();
-
             sb.AppendFormatLineIfNotNull("Stackable up to {0}", spell.StackAmount);
+
             sb.AppendLine(spell.CastTime);
 
             if (spell.RecoveryTime != 0 || spell.CategoryRecoveryTime != 0 || spell.StartRecoveryCategory != 0)
@@ -149,9 +167,10 @@ namespace EventAI
             }
 
             AppendSpellEffectInfo(sb, spell);
+            AppendItemInfo(sb, spell);
         }
 
-        static void AppendSkillLine(RichTextBox sb, uint entry)
+        private void AppendSkillLine(RichTextBox sb, uint entry)
         {
             var query = from skillLineAbility in DBC.SkillLineAbility
                         join skillLine in DBC.SkillLine
@@ -176,7 +195,7 @@ namespace EventAI
             sb.AppendFormat(", CharacterPoints ({0}, {1})", skill.CharacterPoints[0], skill.CharacterPoints[1]);
         }
 
-        static void AppendSpellEffectInfo(RichTextBox sb, SpellEntry spell)
+        private void AppendSpellEffectInfo(RichTextBox sb, SpellEntry spell)
         {
             sb.AppendLine("=================================================");
 
@@ -217,22 +236,10 @@ namespace EventAI
                     spell.EffectImplicitTargetA[i], spell.EffectImplicitTargetB[i],
                     (Targets)spell.EffectImplicitTargetA[i], (Targets)spell.EffectImplicitTargetB[i]);
 
-                if (spell.EffectApplyAuraName[i] != 0)
-                {
-                    sb.AppendFormatLine("Aura Id {0} ({1}), value = {2}, misc = {3}, miscB = {4}, periodic = {5}",
-                        spell.EffectApplyAuraName[i],
-                        (AuraType)spell.EffectApplyAuraName[i],
-                        spell.EffectBasePoints[i] + 1, spell.GetAuraModTypeName(i),
-                        spell.EffectMiscValueB[i], spell.EffectAmplitude[i]);
-                }
-                else
-                {
-                    sb.AppendFormatLineIfNotNull("EffectMiscValueA = {0}", spell.EffectMiscValue[i]);
-                    sb.AppendFormatLineIfNotNull("EffectMiscValueB = {0}", spell.EffectMiscValueB[i]);
-                    sb.AppendFormatLineIfNotNull("EffectAmplitude = {0}", spell.EffectAmplitude[i]);
-                }
+                sb.AppendText(AuraModTypeName(spell, i));
 
                 uint[] ClassMask = new uint[3];
+
                 switch (i)
                 {
                     case 0: ClassMask[0] = spell.EffectSpellClassMaskA[i]; break;
@@ -244,39 +251,33 @@ namespace EventAI
                 {
                     sb.AppendFormatLine("SpellClassMask = {0:X8} {1:X8} {2:X8}", ClassMask[2], ClassMask[1], ClassMask[0]);
 
-                    uint mask_0 = ClassMask[0];
-                    uint mask_1 = ClassMask[1];
-                    uint mask_2 = ClassMask[2];
-
-                    var query = from Spell in DBC.Spell
-                                where Spell.Value.SpellFamilyName == spell.SpellFamilyName
-                                join sk in DBC.SkillLineAbility on Spell.Key equals sk.Value.SpellId into temp
+                    var query = from Spell in DBC.Spell.Values
+                                where Spell.SpellFamilyName == spell.SpellFamilyName
+                                && ((Spell.SpellFamilyFlags1 & ClassMask[0]) != 0
+                                    || (Spell.SpellFamilyFlags2 & ClassMask[1]) != 0
+                                    || (Spell.SpellFamilyFlags3 & ClassMask[2]) != 0)
+                                join sk in DBC.SkillLineAbility on Spell.ID equals sk.Value.SpellId into temp
                                 from Skill in temp.DefaultIfEmpty()
                                 select new
                                 {
-                                    Spell,
-                                    SkillId = (Skill.Value.SkillId)
+                                    SpellID = Spell.ID,
+                                    SpellName = Spell.SpellNameRank,
+                                    SkillId = Skill.Value.SkillId
                                 };
 
                     foreach (var row in query)
                     {
-                        var s = row.Spell.Value;
-                        if ((s.SpellFamilyFlags1 & mask_0) != 0 ||
-                            (s.SpellFamilyFlags2 & mask_1) != 0 ||
-                            (s.SpellFamilyFlags3 & mask_2) != 0)
+                        if (row.SkillId > 0)
                         {
-                            if (row.SkillId > 0)
-                            {
-                                sb.SelectionColor = Color.Blue;
-                                sb.AppendFormatLine("\t+ {0} - {1}", s.ID, s.SpellNameRank);
-                            }
-                            else
-                            {
-                                sb.SelectionColor = Color.Red;
-                                sb.AppendFormatLine("\t- {0} - {1}", s.ID, s.SpellNameRank);
-                            }
-                            sb.SelectionColor = Color.Black;
+                            sb.SelectionColor = Color.Blue;
+                            sb.AppendFormatLine("\t+ {0} - {1}", row.SpellID, row.SpellName);
                         }
+                        else
+                        {
+                            sb.SelectionColor = Color.Red;
+                            sb.AppendFormatLine("\t- {0} - {1}", row.SpellID, row.SpellName);
+                        }
+                        sb.SelectionColor = Color.Black;
                     }
                 }
 
@@ -288,8 +289,8 @@ namespace EventAI
                 {
                     if (DBC.Spell.ContainsKey(tsId))
                     {
-                        var trigger = DBC.Spell[tsId];
-                        sb.SetStyle(Color.DarkGreen, FontStyle.Bold);
+                        SpellEntry trigger = DBC.Spell[tsId];
+                        sb.SetStyle(Color.Blue, FontStyle.Bold);
                         sb.AppendFormatLine("   Trigger spell ({0}) {1}. Chance = {2}", tsId, trigger.SpellNameRank, spell.ProcChance);
                         sb.SetStyle(FontStyle.Italic);
                         sb.AppendFormatLineIfNotNull("   Description: {0}", trigger.Description);
@@ -320,7 +321,7 @@ namespace EventAI
             }
         }
 
-        static void AppendSpellAura(RichTextBox sb, SpellEntry spell)
+        private void AppendSpellAura(RichTextBox sb, SpellEntry spell)
         {
             if (spell.CasterAuraSpell != 0)
             {
@@ -355,35 +356,70 @@ namespace EventAI
             }
         }
 
-        //static void AppendItemInfo(RichTextBox sb, SpellEntry spell)
-        //{
-        //    if (!MySQLConnenct.Connected)
-        //        return;
+        private string AuraModTypeName(SpellEntry spell, int index)
+        {
+            AuraType aura = (AuraType)spell.EffectApplyAuraName[index];
+            int mod = spell.EffectMiscValue[index];
+            StringBuilder sb = new StringBuilder();
 
-        //    var items = from i in DBC.ItemTemplate
-        //                where i.SpellID1 == spell.ID
-        //                    || i.SpellID2 == spell.ID
-        //                    || i.SpellID3 == spell.ID
-        //                    || i.SpellID4 == spell.ID
-        //                    || i.SpellID5 == spell.ID
-        //                select i;
+            if (spell.EffectApplyAuraName[index] == 0)
+            {
+                sb.AppendFormatLineIfNotNull("EffectMiscValueA = {0}", spell.EffectMiscValue[index]);
+                sb.AppendFormatLineIfNotNull("EffectMiscValueB = {0}", spell.EffectMiscValueB[index]);
+                sb.AppendFormatLineIfNotNull("EffectAmplitude = {0}", spell.EffectAmplitude[index]);
 
-        //    if (items.Count() == 0)
-        //        return;
+                return sb.ToString();
+            }
 
-        //    sb.AppendLine("=================================================");
-        //    sb.SetStyle(Color.Blue, FontStyle.Bold);
-        //    sb.AppendLine("Items used this spell:");
-        //    sb.SetDefaultStyle();
-        //    foreach (var item in items)
-        //    {
-        //        var name = item.LocalesName == string.Empty ? item.Name : item.LocalesName;
-        //        var desc = item.LocalesDescription == string.Empty ? item.Description : item.LocalesDescription;
-        //        desc = desc == string.Empty ? string.Empty : string.Format("({0})", desc);
+            sb.AppendFormat("Aura Id {0:D} ({0})", aura);
+            sb.AppendFormat(", value = {0}", spell.EffectBasePoints[index] + 1);
+            sb.AppendFormat(", misc = {0} (", mod);
 
-        //        sb.AppendFormatLine(@"   {0} - {1} {2} ", item.Entry, name, desc);
-        //    }
-        //}
-  
+            switch (aura)
+            {
+                case AuraType.SPELL_AURA_MOD_STAT: sb.Append((UnitMods)mod); break;
+                case AuraType.SPELL_AURA_MOD_RATING: sb.Append((CombatRating)mod); break;
+                case AuraType.SPELL_AURA_ADD_FLAT_MODIFIER:
+                case AuraType.SPELL_AURA_ADD_PCT_MODIFIER: sb.Append((SpellModOp)mod); break;
+
+                // todo: more case
+                default: sb.Append(mod); break;
+            }
+
+            sb.AppendFormat("), miscB = {0}", spell.EffectMiscValueB[index]);
+            sb.AppendFormatLine(", periodic = {0}", spell.EffectAmplitude[index]);
+
+            return sb.ToString();
+        }
+
+        private void AppendItemInfo(RichTextBox sb, SpellEntry spell)
+        {
+            //if (!MySQLConnenct.Connected)
+            //    return;
+
+            //var items = from i in DBC.ItemTemplate
+            //            where i.SpellID1 == spell.ID
+            //                || i.SpellID2 == spell.ID
+            //                || i.SpellID3 == spell.ID
+            //                || i.SpellID4 == spell.ID
+            //                || i.SpellID5 == spell.ID
+            //            select i;
+
+            //if (items.Count() == 0)
+            //    return;
+
+            //sb.AppendLine("=================================================");
+            //sb.SetStyle(Color.Blue, FontStyle.Bold);
+            //sb.AppendLine("Items used this spell:");
+            //sb.SetDefaultStyle();
+            //foreach (var item in items)
+            //{
+            //    var name = item.LocalesName == string.Empty ? item.Name : item.LocalesName;
+            //    var desc = item.LocalesDescription == string.Empty ? item.Description : item.LocalesDescription;
+            //    desc = desc == string.Empty ? string.Empty : string.Format("({0})", desc);
+
+            //    sb.AppendFormatLine(@"   {0} - {1} {2} ", item.Entry, name, desc);
+            //}
+        }
     }
 }

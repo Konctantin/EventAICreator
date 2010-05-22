@@ -14,6 +14,7 @@ namespace EventAI
         Spell,
         Skill,
     };
+
     public partial class FormSearchSpell : Form
     {
         public FormSearchSpell(Who who)
@@ -27,56 +28,51 @@ namespace EventAI
             _cbTarget2.SetEnumValues<Targets>("Target B");
         }
 
+        private List<SpellEntry> _spellList = new List<SpellEntry>();
+
         public SpellEntry Spell { get; set; }
 
-        private void _tbIdName_KeyDown(object sender, KeyEventArgs e)
+        private void IdName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _lvSpellList.Items.Clear();
+                _spellList.Clear();
 
                 string name = _tbIdName.Text;
                 uint id = name.ToUInt32();
                 uint ic = _tbIcon.Text.ToUInt32();
                 uint at = _tbAttribute.Text.ToUInt32();
 
-                var query = from spell in DBC.Spell
-                            where ((id == 0 || spell.Key == id)
+                _spellList = (from spell in DBC.Spell.Values
+                             where ((id == 0 || spell.ID == id)
 
-                                && (ic == 0 || spell.Value.SpellIconID == ic)
+                                 && (ic == 0 || spell.SpellIconID == ic)
 
-                                && (at == 0 || (spell.Value.Attributes    & at) != 0
-                                            || (spell.Value.AttributesEx  & at) != 0
-                                            || (spell.Value.AttributesEx2 & at) != 0
-                                            || (spell.Value.AttributesEx3 & at) != 0
-                                            || (spell.Value.AttributesEx4 & at) != 0
-                                            || (spell.Value.AttributesEx5 & at) != 0
-                                            || (spell.Value.AttributesEx6 & at) != 0
-                                            || (spell.Value.AttributesExG & at) != 0))
+                                 && (at == 0 || (spell.Attributes    & at) != 0
+                                             || (spell.AttributesEx  & at) != 0
+                                             || (spell.AttributesEx2 & at) != 0
+                                             || (spell.AttributesEx3 & at) != 0
+                                             || (spell.AttributesEx4 & at) != 0
+                                             || (spell.AttributesEx5 & at) != 0
+                                             || (spell.AttributesEx6 & at) != 0
+                                             || (spell.AttributesExG & at) != 0))
 
-                                && ((id != 0 || ic != 0 && at != 0) || Extensions.ContainText(spell.Value.SpellName, name))
+                                 && ((id != 0 || ic != 0 && at != 0) || spell.SpellName.ContainText(name))
 
-                            select spell;
+                             select spell).ToList();
 
-                if (query.Count() == 0) return;
-                groupBox1.Text = "Spell Search " + "count: " + query.Count();
-
-                foreach (var element in query)
-                {
-                    _lvSpellList.Items.Add(new ListViewItem(new String[] 
-                    { 
-                        element.Key.ToString(), 
-                        element.Value.SpellNameRank 
-                    }));
-                }
+                _lvSpellList.VirtualListSize = _spellList.Count;
+                groupBox2.Text = "Spell Filter " + "count: " + _spellList.Count;
+                if (_lvSpellList.SelectedIndices.Count > 0)
+                    _lvSpellList.Items[_lvSpellList.SelectedIndices[0]].Selected = false;
             }
         }
 
-        private void _cbSpellFamily_SelectedIndexChanged(object sender, EventArgs e)
+        private void SpellFamily_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (((ComboBox)sender).SelectedIndex != 0)
             {
-                _lvSpellList.Items.Clear();
+                _spellList.Clear();
 
                 var bFamilyNames = _cbSpellFamily.SelectedIndex != 0;
                 var fFamilyNames = _cbSpellFamily.SelectedValue.ToInt32();
@@ -93,57 +89,45 @@ namespace EventAI
                 var bTarget2 = _cbTarget2.SelectedIndex != 0;
                 var fTarget2 = _cbTarget2.SelectedValue.ToInt32();
 
-                var query = from spell in DBC.Spell
-                            where (!bFamilyNames || spell.Value.SpellFamilyName          == fFamilyNames)
+                _spellList = (from spell in DBC.Spell.Values
+                            where (!bFamilyNames || spell.SpellFamilyName          == fFamilyNames)
 
-                               && (!bSpellAura   || spell.Value.EffectApplyAuraName[0]   == fSpellAura
-                                                 || spell.Value.EffectApplyAuraName[1]   == fSpellAura
-                                                 || spell.Value.EffectApplyAuraName[2]   == fSpellAura)
+                               && (!bSpellAura   || spell.EffectApplyAuraName[0]   == fSpellAura
+                                                 || spell.EffectApplyAuraName[1]   == fSpellAura
+                                                 || spell.EffectApplyAuraName[2]   == fSpellAura)
 
-                               && (!bSpellEffect || spell.Value.Effect[0]                == fSpellEffect
-                                                 || spell.Value.Effect[1]                == fSpellEffect
-                                                 || spell.Value.Effect[2]                == fSpellEffect)
+                               && (!bSpellEffect || spell.Effect[0]                == fSpellEffect
+                                                 || spell.Effect[1]                == fSpellEffect
+                                                 || spell.Effect[2]                == fSpellEffect)
 
-                               && (!bTarget1     || spell.Value.EffectImplicitTargetA[0] == fTarget1
-                                                 || spell.Value.EffectImplicitTargetA[1] == fTarget1
-                                                 || spell.Value.EffectImplicitTargetA[2] == fTarget1)
+                               && (!bTarget1     || spell.EffectImplicitTargetA[0] == fTarget1
+                                                 || spell.EffectImplicitTargetA[1] == fTarget1
+                                                 || spell.EffectImplicitTargetA[2] == fTarget1)
 
-                               && (!bTarget2     || spell.Value.EffectImplicitTargetB[0] == fTarget2
-                                                 || spell.Value.EffectImplicitTargetB[1] == fTarget2
-                                                 || spell.Value.EffectImplicitTargetB[2] == fTarget2)
+                               && (!bTarget2     || spell.EffectImplicitTargetB[0] == fTarget2
+                                                 || spell.EffectImplicitTargetB[1] == fTarget2
+                                                 || spell.EffectImplicitTargetB[2] == fTarget2)
+                            select spell).ToList();
 
-                            select spell;
+                _lvSpellList.VirtualListSize = _spellList.Count;
+                groupBox2.Text = "Spell Filter " + "count: " + _spellList.Count;
+                if (_lvSpellList.SelectedIndices.Count > 0)
+                    _lvSpellList.Items[_lvSpellList.SelectedIndices[0]].Selected = false;
 
-                if (query.Count() == 0)
-                    return;
-                groupBox2.Text = "Spell Filter " + "count: " + query.Count();
-                foreach (var element in query)
-                {
-                    _lvSpellList.Items.Add(new ListViewItem(new String[] 
-                { 
-                    element.Key.ToString(), 
-                    element.Value.SpellNameRank
-                }));
-                }
             }
         }
 
-        private void _lvSpellList_SelectedIndexChanged(object sender, EventArgs e)
+        private void SpellList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var lv = (ListView)sender;
-            if (lv.SelectedItems.Count > 0)
-            {
-                var id = lv.SelectedItems[0].SubItems[0].Text.ToUInt32();
-                SpellInfo.ViewSpellInfo(_rtbSpellInfo, DBC.Spell[id]);
-            }
+            if (_lvSpellList.SelectedIndices.Count > 0)
+                new SpellInfo(_rtbSpellInfo, _spellList[_lvSpellList.SelectedIndices[0]]);
         }
 
-        private void _bOk_Click(object sender, EventArgs e)
+        private void Ok_Click(object sender, EventArgs e)
         {
-            if (_lvSpellList.SelectedItems.Count > 0)
+            if (_lvSpellList.SelectedIndices.Count > 0)
             {
-                uint index = _lvSpellList.SelectedItems[0].SubItems[0].Text.ToUInt32();
-                Spell = DBC.Spell[index];
+                Spell = _spellList[_lvSpellList.SelectedIndices[0]];
                 this.DialogResult = DialogResult.OK;
             }
             this.Close();
@@ -155,9 +139,14 @@ namespace EventAI
                 e.Handled = true;
         }
 
-        private void _bCencel_Click(object sender, EventArgs e)
+        private void Cencel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SpellList_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        {
+            e.Item = new ListViewItem(new[] { _spellList[e.ItemIndex].ID.ToString(), _spellList[e.ItemIndex].SpellNameRank });
         }
     }
 }
