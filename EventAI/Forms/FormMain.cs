@@ -194,8 +194,8 @@ namespace EventAI
             int ntNumberAIEmote = tNumberAIEmote.Text.ToInt32();
 
             var sCommentsAITexts = tCommentAITexts.Text.RemExc();
-            var stContentDefault = tContentDefault.Text.RemExc();
-            var sContentLocales = tContentLocales.Text.RemExc();
+            var stContentDefault = _tbTextContentDefault.Text.RemExc();
+            var sContentLocales = _tbTextContentLocales.Text.RemExc();
 
             var loc = new string[cLocalisationText.Items.Count];
             loc[cLocalisationText.SelectedIndex] = sContentLocales;
@@ -203,7 +203,7 @@ namespace EventAI
             int[] arr = { 0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 33, 35, 36, 37, 38 };
             int ncLenguageText = arr[cLenguageText.SelectedIndex];
 
-            if (tContentDefault.Text == "" && tContentLocales.Text == "") 
+            if (_tbTextContentDefault.Text == "" && _tbTextContentLocales.Text == "") 
                 return;
             StringBuilder sb = new StringBuilder();
             sb.AppendFormatLine("DELETE FROM `creature_ai_texts` WHERE entry IN (-{0});", ntNumberAITexts);
