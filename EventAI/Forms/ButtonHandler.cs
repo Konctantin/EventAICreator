@@ -17,6 +17,11 @@ namespace EventAI
         private Type     _type;
         private BType    _bType;
 
+        private uint ComboboxValue
+        {
+            get {return (uint)_combobox.GetIntValue(); }
+        }
+
         private Point ButtonLocation
         {
             get { return new Point(_combobox.Location.X + _combobox.Size.Width, _combobox.Location.Y - 1); }
@@ -41,6 +46,7 @@ namespace EventAI
         {
             _combobox = combobox;
             _combobox.Size = ComboboxSize;
+            _bType = btype;
 
             CreateButton("Поиск");
         }
@@ -75,55 +81,53 @@ namespace EventAI
 
         private void ShowForm(object sender, EventArgs e)
         {
-            uint val = _combobox.Text.ToUInt32();
-
             switch (_bType)
             {
                 case BType.SPELL:
                     {
-                        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
+                        FormSearchSpell _form = new FormSearchSpell(ComboboxValue);
                         _form.ShowDialog();
-                        _combobox.SetVal(_form.Spell.ID);
+                        _combobox.SetValue(_form.Spell.ID);
                         _form.Dispose();
                     }
                     break;
-                case BType.CREATURE:
-                    {
-                        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                        _form.ShowDialog();
-                        _combobox.SetVal(_form.Spell.ID);
-                        _form.Dispose();
-                    }
-                    break;
-                case BType.EVENT:
-                    {
-                        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                        _form.ShowDialog();
-                        _combobox.SetVal(_form.Spell.ID);
-                        _form.Dispose();
-                    }
-                    break;
-                case BType.ITEM:
-                    {
-                        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                        _form.ShowDialog();
-                        _combobox.SetVal(_form.Spell.ID);
-                        _form.Dispose();
-                    }
-                    break;
-                case BType.QUEST:
-                    {
-                        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                        _form.ShowDialog();
-                        _combobox.SetVal(_form.Spell.ID);
-                        _form.Dispose();
-                    }
-                    break;
+                //case BType.CREATURE:
+                //    {
+                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
+                //        _form.ShowDialog();
+                //        _combobox.SetVal(_form.Spell.ID);
+                //        _form.Dispose();
+                //    }
+                //    break;
+                //case BType.EVENT:
+                //    {
+                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
+                //        _form.ShowDialog();
+                //        _combobox.SetVal(_form.Spell.ID);
+                //        _form.Dispose();
+                //    }
+                //    break;
+                //case BType.ITEM:
+                //    {
+                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
+                //        _form.ShowDialog();
+                //        _combobox.SetVal(_form.Spell.ID);
+                //        _form.Dispose();
+                //    }
+                //    break;
+                //case BType.QUEST:
+                //    {
+                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
+                //        _form.ShowDialog();
+                //        _combobox.SetVal(_form.Spell.ID);
+                //        _form.Dispose();
+                //    }
+                //    break;
                 case BType.FLAG:
                     {
-                        FormCalculateFlags _form = new FormCalculateFlags(_type, val, String.Empty);
+                        FormCalculateFlags _form = new FormCalculateFlags(_type, ComboboxValue, String.Empty);
                         _form.ShowDialog();
-                        _combobox.SetVal(_form.Flags);
+                        _combobox.SetValue(_form.Flags);
                         _form.Dispose();
                     }
                     break;

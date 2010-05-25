@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace EventAI
 {

@@ -75,29 +75,29 @@
             this._cbFilteActionType = new System.Windows.Forms.ComboBox();
             this._cbFilteEventType = new System.Windows.Forms.ComboBox();
             this._lvScripts = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader23 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._gbPhase = new System.Windows.Forms.GroupBox();
             this._gbEventFlag = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -105,7 +105,7 @@
             this.rtbScriptOut = new System.Windows.Forms.RichTextBox();
             this.Create = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.WriteFiles = new System.Windows.Forms.Button();
+            this._bWriteFiles = new System.Windows.Forms.Button();
             this._gbEventType = new System.Windows.Forms.GroupBox();
             this.lEventType4 = new System.Windows.Forms.Label();
             this.lEventType3 = new System.Windows.Forms.Label();
@@ -220,7 +220,6 @@
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиToolStripMenuItem});
-            this.toolStripMenuItem2.Enabled = false;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(73, 20);
             this.toolStripMenuItem2.Text = "Настройки";
@@ -230,6 +229,7 @@
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.настройкиToolStripMenuItem.Text = "Параметры";
+            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // помощьToolStripMenuItem
             // 
@@ -657,7 +657,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.Create);
             this.splitContainer1.Panel2.Controls.Add(this.NumberScripts);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.WriteFiles);
+            this.splitContainer1.Panel2.Controls.Add(this._bWriteFiles);
             this.splitContainer1.Panel2.Controls.Add(this._gbEventType);
             this.splitContainer1.Panel2.Controls.Add(this._tbComment);
             this.splitContainer1.Panel2.Controls.Add(this._gbAction2);
@@ -768,6 +768,7 @@
             this.columnHeader23});
             this._lvScripts.FullRowSelect = true;
             this._lvScripts.GridLines = true;
+            this._lvScripts.HideSelection = false;
             this._lvScripts.Location = new System.Drawing.Point(167, 0);
             this._lvScripts.Name = "_lvScripts";
             this._lvScripts.Size = new System.Drawing.Size(875, 125);
@@ -775,8 +776,8 @@
             this._lvScripts.UseCompatibleStateImageBehavior = false;
             this._lvScripts.View = System.Windows.Forms.View.Details;
             this._lvScripts.VirtualMode = true;
-            this._lvScripts.SelectedIndexChanged += new System.EventHandler(this._lvScripts_SelectedIndexChanged);
             this._lvScripts.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this._lvScripts_RetrieveVirtualItem);
+            this._lvScripts.SelectedIndexChanged += new System.EventHandler(this._lvScripts_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -940,15 +941,17 @@
             this.button2.TabIndex = 29;
             this.button2.Text = "Очистить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // WriteFiles
+            // _bWriteFiles
             // 
-            this.WriteFiles.Location = new System.Drawing.Point(930, 405);
-            this.WriteFiles.Name = "WriteFiles";
-            this.WriteFiles.Size = new System.Drawing.Size(107, 25);
-            this.WriteFiles.TabIndex = 28;
-            this.WriteFiles.Text = "Записать в файл";
-            this.WriteFiles.UseVisualStyleBackColor = true;
+            this._bWriteFiles.Location = new System.Drawing.Point(930, 405);
+            this._bWriteFiles.Name = "_bWriteFiles";
+            this._bWriteFiles.Size = new System.Drawing.Size(107, 25);
+            this._bWriteFiles.TabIndex = 28;
+            this._bWriteFiles.Text = "Записать";
+            this._bWriteFiles.UseVisualStyleBackColor = true;
+            this._bWriteFiles.Click += new System.EventHandler(this.WriteFiles_Click);
             // 
             // _gbEventType
             // 
@@ -1618,7 +1621,7 @@
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolTip HelpEntry;
         private System.Windows.Forms.TabPage _tpScript;
-        private System.Windows.Forms.Button WriteFiles;
+        private System.Windows.Forms.Button _bWriteFiles;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox _tbShance;
         private System.Windows.Forms.Label label2;

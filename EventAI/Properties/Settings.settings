@@ -2,14 +2,23 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EventAI.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="user" Type="System.String" Scope="User">
+    <Setting Name="User" Type="System.String" Scope="User">
       <Value Profile="(Default)">root</Value>
     </Setting>
-    <Setting Name="pass" Type="System.String" Scope="User">
+    <Setting Name="Pass" Type="System.String" Scope="User">
       <Value Profile="(Default)">mangos</Value>
     </Setting>
-    <Setting Name="host" Type="System.String" Scope="User">
+    <Setting Name="Host" Type="System.String" Scope="User">
       <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="Db_mangos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mangos</Value>
+    </Setting>
+    <Setting Name="UseDbConnect" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

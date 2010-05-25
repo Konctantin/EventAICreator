@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
 using System.Text;
+using System.IO;
 using System.Collections.Generic;
 
 namespace EventAI
@@ -11,8 +12,6 @@ namespace EventAI
     public partial class FormMain : Form
     {
         private DataTable Scripts { get; set; }
-
-        private List<ScriptAI> _scriptList = new List<ScriptAI>();
 
         public FormMain()
         {
@@ -135,77 +134,47 @@ namespace EventAI
                 
             script.Comment = _tbComment.Text;
 
-            int nId = (script.NpcEntry * 100) + (50 + script.ID);
+#region Проверки
 
-            //if (script.ID < 1)
-                 //ConsoleScritpOut("Номен скрипта должен быть больше 0!", MsgStatus.ERROR);
+            if (script.ID < 1)
+                LogOut("Номен скрипта должен быть больше 0!");
 
-            //if (nEventChance == 0 || nEventChance > 100)
-                //ConsoleScritpOut("Шанс срабатывания должен быть 0 и не больше 100%!", MsgStatus.ERROR);
-
-            //if (_clbEventFlag.SelectedIndex == 5 || _clbEventFlag.SelectedIndex == 6)
-                //ConsoleScritpOut("Вы питаетесь использовать зарезервированый флаг события!", MsgStatus.ERROR);
-            /*
+            if (script.Chance == 0 || script.Chance > 100)
+                LogOut("Шанс срабатывания должен быть 0 и не больше 100%!");
+            
             switch ((EventType)script.EventType)
             {
                 case   EventType.ПО_ТАЙМЕРУ_В_БОЮ :
                 case   EventType.ПО_ТАЙМЕРУ_В_НЕ_БОЯ:
-                    //if (nEventParam1_def > nEventParam2_def)
-                    //    ConsoleScritpOut("Минимальное время до срабатывания не может быть больше максимального!");
-                    //if (nEventParam3_def > nEventParam4_def)
-                    //    ConsoleScritpOut("Минимальное время до повтора не может быть больше максимального!");
-                    //break;
+                    if (script.EventParam[0] > script.EventParam[1])
+                        LogOut("Минимальное время до срабатывания не может быть больше максимального!");
+                    if (script.EventParam[2] > script.EventParam[3])
+                        LogOut("Минимальное время до повтора не может быть больше максимального!");
+                    break;
                 case   EventType.ПРИ_ЗНАЧЕНИИ_ЖИЗНИ:
                 case   EventType.ПРИ_ЗНАЧЕНИИ_МАНЫ:
                 case   EventType.ПРИ_ЗНАЧЕНИИ_ЖИЗНИ_ЦЕЛИ:
                 case   EventType.ПРИ_ЗНАЧЕНИИ_МАННЫ_У_ЦЕЛИ:
-                    //if (nEventParam1_def > 100 || nEventParam2_def > 100)
-                    //    ConsoleScritpOut("Параметр 1 или 2 не могут быть болше 100%!");
-                    //if (nEventParam1_def > nEventParam2_def)
-                    //    ConsoleScritpOut("Минимальное значение жизни(маны) не может быть больше максимального!");
-                    //if (nEventParam3_def > nEventParam4_def)
-                    //    ConsoleScritpOut("Минимальное время до повтора не может быть больше максимального!");
-                //    break;
-                //case 4:
-                //case 6:
-                //case 7:
-                //case 11:
-                //case 19:
-                //case 20:
-                //case 21:// 
-                    //if (nEventParam1_def != 0 || nEventParam2_def != 0 || nEventParam3_def != 0 || nEventParam4_def != 0)
-                    //    ConsoleScritpOut("Этот тип действия не имеет параметров!");
+                    if (script.EventParam[0] > 100 || script.EventParam[1] > 100)
+                        LogOut("Параметр 1 или 2 не могут быть болше 100%!");
+                    if (script.EventParam[0] > script.EventParam[1])
+                        LogOut("Минимальное значение жизни(маны) не может быть больше максимального!");
+                    if (script.EventParam[2] > script.EventParam[3])
+                        LogOut("Минимальное время до повтора не может быть больше максимального!");
                     break;
-                case   7:// EVENT_T_RANGE:
-                case   8:// EVENT_T_OOC_LOS:
-                case   9:// EVENT_T_SPAWNED:
-                case   10:// EVENT_T_FRIENDLY_HP:
-                case   11:// EVENT_T_FRIENDLY_IS_CC:
-                case   12:// EVENT_T_FRIENDLY_MISSING_BUFF:
-                case   13:// EVENT_T_KILL:
-                case   14:// EVENT_T_TARGET_CASTING:
-                case   15:// EVENT_T_SUMMONED_UNIT:
-                case   16:// EVENT_T_QUEST_ACCEPT:
-                case   17:// EVENT_T_QUEST_COMPLETE:
-                case   18:// EVENT_T_AGGRO:
-                case   19:// EVENT_T_DEATH:
-                case   20:// EVENT_T_EVADE:
-                case   21:// EVENT_T_REACHED_HOME:
-                case   22:// EVENT_T_RECEIVE_EMOTE:
-                case   23:// EVENT_T_BUFFED:
-                case   24:// EVENT_T_TARGET_BUFFED:
-                default: break;
 			}
-        */
 
             if (err)
             {
-                //ConsoleScritpOut("Операция не выполнена", MsgStatus.ERROR);
-                //return;
+                _bWriteFiles.Enabled = false;
+                return;
             }
+
+#endregion
+
             //Сформируем строку запроса
             var scriptTextUpdate = String.Format("UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE `entry` = '{0}';", script.NpcEntry);
-            var scriptTextDelete = String.Format("DELETE `creature_ai_scripts` WHERE `id` IN ({0})", script.ID);
+            var scriptTextDelete = String.Format("DELETE FROM `creature_ai_scripts` WHERE (`id`='{0}');", script.ID);
             var scriptTextInsert = String.Format("INSERT INTO `creature_ai_scripts` VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}');",
                 script.ID, script.NpcEntry, script.EventType, script.Phase, script.Chance, script.Flags,
                 script.EventParam[0], script.EventParam[1], script.EventParam[2], script.EventParam[3],
@@ -214,8 +183,8 @@ namespace EventAI
                 script.ActionType[2], script.ActionParam[2, 0], script.ActionParam[2, 1], script.ActionParam[2, 2],
                 script.Comment.RemExc());
 
-            rtbScriptOut.Text = scriptTextDelete + "\r\n" + scriptTextInsert + "\r\n" + scriptTextUpdate;
-
+            rtbScriptOut.AppendLine(scriptTextDelete + "\r\n" + scriptTextInsert + "\r\n" + scriptTextUpdate+"\r\n");
+            _bWriteFiles.Enabled = true;
         }
         
         public void CreateQueryTetxs()
@@ -278,7 +247,7 @@ namespace EventAI
         {
             if (_lvScripts.SelectedIndices.Count > 0)
             {
-                ParseScriptsData(_scriptList[_lvScripts.SelectedIndices[0]]);
+                ParseScriptsData(MySQLConnenct.AIScript[_lvScripts.SelectedIndices[0]]);
             }
         }
 
@@ -292,25 +261,25 @@ namespace EventAI
             _clbPhase.SetCheckedItemFromFlag((uint)script.Phase);
             
             _cbEventType.SelectedValue = script.EventType;
-            _cbEventParametr1.SelectedValue = script.EventParam[0];
-            _cbEventParametr2.SelectedValue = script.EventParam[1];
-            _cbEventParametr3.SelectedValue = script.EventParam[2];
-            _cbEventParametr4.SelectedValue = script.EventParam[3];
+            _cbEventParametr1.SetValue(script.EventParam[0]);
+            _cbEventParametr2.SetValue(script.EventParam[1]);
+            _cbEventParametr3.SetValue(script.EventParam[2]);
+            _cbEventParametr4.SetValue(script.EventParam[3]);
 
-            _cbActionType1.SelectedValue = script.ActionType[0];
-            _cbActionParam1_1.SelectedValue = script.ActionParam[0, 0];
-            _cbActionParam1_2.SelectedValue = script.ActionParam[0, 1];
-            _cbActionParam1_3.SelectedValue = script.ActionParam[0, 2];
+            _cbActionType1.SetValue(script.ActionType[0]);
+            _cbActionParam1_1.SetValue(script.ActionParam[0, 0]);
+            _cbActionParam1_2.SetValue(script.ActionParam[0, 1]);
+            _cbActionParam1_3.SetValue(script.ActionParam[0, 2]);
 
-            _cbActionType2.SelectedValue = script.ActionType[1];
-            _cbActionParam2_1.SelectedValue = script.ActionParam[1, 0];
-            _cbActionParam2_2.SelectedValue = script.ActionParam[1, 1];
-            _cbActionParam2_3.SelectedValue = script.ActionParam[1, 2];
+            _cbActionType2.SetValue(script.ActionType[1]);
+            _cbActionParam2_1.SetValue(script.ActionParam[1, 0]);
+            _cbActionParam2_2.SetValue(script.ActionParam[1, 1]);
+            _cbActionParam2_3.SetValue(script.ActionParam[1, 2]);
 
-            _cbActionType3.SelectedValue = script.ActionType[2];
-            _cbActionParam3_1.SelectedValue = script.ActionParam[2, 0];
-            _cbActionParam3_2.SelectedValue = script.ActionParam[2, 1];
-            _cbActionParam3_3.SelectedValue = script.ActionParam[2, 2];
+            _cbActionType3.SetValue(script.ActionType[2]);
+            _cbActionParam3_1.SetValue(script.ActionParam[2, 0]);
+            _cbActionParam3_2.SetValue(script.ActionParam[2, 1]);
+            _cbActionParam3_3.SetValue(script.ActionParam[2, 2]);
 
             _tbComment.Text = script.Comment;
         }
@@ -347,7 +316,7 @@ namespace EventAI
             _gbEventFlag.Text = "Флаг события " + ((CheckedListBox)sender).GetFlagsValue();
         }
 
-        private string CreateQuery()
+        private void CreateQuery()
         {
             int id = _tbFilterNum.GetIntValue();
             int creature = _tbFilterCreat.GetIntValue();
@@ -361,14 +330,18 @@ namespace EventAI
             squery += (etype > -1) ? String.Format("event_type = {0} || ", etype) : "";
             squery += (atype > -1) ? String.Format("action1_type = {0} || action2_type = {0} || action3_type = {0} || ", atype) : "";
 
-            return (squery.Length == 0) ? fquery.Remove(fquery.Length - 6) : fquery + squery.Remove(squery.Length - 3);
+            string q = (squery.Length == 0) ? fquery.Remove(fquery.Length - 6) : fquery + squery.Remove(squery.Length - 3);
+
+            MySQLConnenct.SelectProc(q);
+            _lvScripts.VirtualListSize = MySQLConnenct.AIScript.Count;
+
         }
 
         private void _tbFilterNum_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string query = CreateQuery();
+                CreateQuery();
             }
         }
 
@@ -376,14 +349,14 @@ namespace EventAI
         {
             if (((ComboBox)sender).SelectedIndex > 0)
             {
-                string query = CreateQuery();
+                CreateQuery();
             }
         }
 
         private void _bFind_Click(object sender, EventArgs e)
         {
             {
-                string query = CreateQuery();
+                CreateQuery();
             }
         }
 
@@ -400,11 +373,34 @@ namespace EventAI
 
         private void _lvScripts_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            e.Item = new ListViewItem(_scriptList[e.ItemIndex].ToString().Split(' '));
+            e.Item = new ListViewItem(MySQLConnenct.AIScript[e.ItemIndex].ToString().Split('^'));
         }
 
-        private void LogOutError(string text, params object[] arg)
-        { 
+        private void LogOut(string text, params object[] arg)
+        {
+            rtbScriptOut.AppendFormatLine(text, arg);
+            err = true;
+        }
+
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPropertis form = new FormPropertis();
+            form.ShowDialog(this);
+        }
+
+        private void WriteFiles_Click(object sender, EventArgs e)
+        {
+            MySQLConnenct.Insert(rtbScriptOut.Text);
+
+            using (StreamWriter sw = new StreamWriter("log.sql", true, Encoding.UTF8))
+            {
+                sw.WriteLine(rtbScriptOut.Text);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rtbScriptOut.Clear();
         }
     }
 }

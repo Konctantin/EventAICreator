@@ -66,7 +66,7 @@ namespace EventAI
         /// <returns></returns>
         public override string ToString()
         {
-            return String.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13} {14} {15} {16} {17} {18} {19} {20} {21} {22}",
+            return String.Format("{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}^{18}^{19}^{20}^{21}^{22}",
                 ID, NpcEntry, EventType, Phase, Chance, Flags,
                 EventParam[0], EventParam[1], EventParam[2], EventParam[3],
                 ActionType[0], ActionParam[0, 0], ActionParam[0, 1], ActionParam[0, 2],

@@ -255,7 +255,7 @@ namespace EventAI
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
-                case EventType.ПРИ_СПАВНЕ_СУЩЕСТВА:
+                case EventType.ПРИ_ВЫЗОВЕ_СУЩЕСТВА:
                     l1.Text = "ID существа";
                     new ButtonHandler(cb1, BType.CREATURE);
                     l2.Text = "Минимальное время до повтора (мс)";
@@ -275,12 +275,12 @@ namespace EventAI
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
-                case EventType.SUMMONED_JUST_DIED:
-                case EventType.SUMMONED_JUST_DESPAWN:
-                    l1.Text = "Параметр 1";
-                    l2.Text = "Параметр 2";
-                    l3.Text = "Параметр 3";
-                    l4.Text = "Параметр 4";
+                case EventType.ПРИ_СМЕРТИ_ВЫЗВАННОГО_СУЩЕСТВА:
+                case EventType.ПРИ_ИСЧЕЗНОВЕНИИ_ВЫЗВАННОГО_СУЩЕСТВА:
+                    l1.Text = "ID существа";
+                    new ButtonHandler(cb1, BType.CREATURE);
+                    l2.Text = "Минимальное время до повтора (мс)";
+                    l3.Text = "Максимальное время до повтора (мс)";
                     break;
             }
             cb1.Visible = l1.Text != string.Empty;

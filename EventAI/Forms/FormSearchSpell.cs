@@ -17,7 +17,7 @@ namespace EventAI
 
     public partial class FormSearchSpell : Form
     {
-        public FormSearchSpell(Who who)
+        public FormSearchSpell(uint value = 0)
         {
             InitializeComponent();
             // load items to control's
@@ -26,6 +26,8 @@ namespace EventAI
             _cbSpellEffect.SetEnumValues<SpellEffects>("Effect");
             _cbTarget1.SetEnumValues<Targets>("Target A");
             _cbTarget2.SetEnumValues<Targets>("Target B");
+
+            SearchSpell(value);
         }
 
         private List<SpellEntry> _spellList = new List<SpellEntry>();
@@ -36,36 +38,43 @@ namespace EventAI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _spellList.Clear();
-
-                string name = _tbIdName.Text;
-                uint id = name.ToUInt32();
-                uint ic = _tbIcon.Text.ToUInt32();
-                uint at = _tbAttribute.Text.ToUInt32();
-
-                _spellList = (from spell in DBC.Spell.Values
-                             where ((id == 0 || spell.ID == id)
-
-                                 && (ic == 0 || spell.SpellIconID == ic)
-
-                                 && (at == 0 || (spell.Attributes    & at) != 0
-                                             || (spell.AttributesEx  & at) != 0
-                                             || (spell.AttributesEx2 & at) != 0
-                                             || (spell.AttributesEx3 & at) != 0
-                                             || (spell.AttributesEx4 & at) != 0
-                                             || (spell.AttributesEx5 & at) != 0
-                                             || (spell.AttributesEx6 & at) != 0
-                                             || (spell.AttributesExG & at) != 0))
-
-                                 && ((id != 0 || ic != 0 && at != 0) || spell.SpellName.ContainText(name))
-
-                             select spell).ToList();
-
-                _lvSpellList.VirtualListSize = _spellList.Count;
-                groupBox2.Text = "Spell Filter " + "count: " + _spellList.Count;
-                if (_lvSpellList.SelectedIndices.Count > 0)
-                    _lvSpellList.Items[_lvSpellList.SelectedIndices[0]].Selected = false;
+                SearchSpell();
             }
+        }
+
+        private void SearchSpell(uint spellId = 0)
+        {
+            _spellList.Clear();
+
+            string name = _tbIdName.Text;
+            uint id = spellId > 0 ? spellId : name.ToUInt32();
+            uint ic = _tbIcon.Text.ToUInt32();
+            uint at = _tbAttribute.Text.ToUInt32();
+
+            _spellList = (from spell in DBC.Spell.Values
+                          where ((id == 0 || spell.ID == id)
+
+                              && (ic == 0 || spell.SpellIconID == ic)
+
+                              && (at == 0 || (spell.Attributes    & at) != 0
+                                          || (spell.AttributesEx  & at) != 0
+                                          || (spell.AttributesEx2 & at) != 0
+                                          || (spell.AttributesEx3 & at) != 0
+                                          || (spell.AttributesEx4 & at) != 0
+                                          || (spell.AttributesEx5 & at) != 0
+                                          || (spell.AttributesEx6 & at) != 0
+                                          || (spell.AttributesExG & at) != 0))
+
+                              && ((id != 0 || ic != 0 && at != 0) || spell.SpellName.ContainText(name))
+
+                          select spell).ToList();
+
+            _lvSpellList.VirtualListSize = _spellList.Count;
+
+            groupBox2.Text = "Spell Filter " + "count: " + _spellList.Count;
+
+            if (_lvSpellList.SelectedIndices.Count > 0)
+                _lvSpellList.Items[_lvSpellList.SelectedIndices[0]].Selected = false;
         }
 
         private void SpellFamily_SelectedIndexChanged(object sender, EventArgs e)

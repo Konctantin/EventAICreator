@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormDbSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDbSearch.Designer.cs">
+      <DependentUpon>FormDbSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ButtonHandler.cs" />
     <Compile Include="Forms\FormAboutBox.cs">
       <SubType>Form</SubType>
@@ -109,7 +115,7 @@
     </Compile>
     <Compile Include="Info\Inscription.cs">
     </Compile>
-    <Compile Include="DataBase\MySQLClass.cs" />
+    <Compile Include="DataBase\MySQLConnenct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormAboutBox.resx">
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCalculateFlags.resx">
       <DependentUpon>FormCalculateFlags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDbSearch.resx">
+      <DependentUpon>FormDbSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
