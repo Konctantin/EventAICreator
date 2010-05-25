@@ -2,7 +2,7 @@
 *.suo
 *.user
 EventAI/obj/*
-EventAI/bin/*
+EventAI/bin/Release/*
 *.orig
 *.rej
 *.patch

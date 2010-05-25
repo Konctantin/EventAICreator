@@ -1,0 +1,6 @@
+
+dbc/*
+*.sql
+*.vshost.exe
+*.config
+*.pdb
