@@ -325,7 +325,7 @@ namespace EventAI
                         break;
                     case ConditionType.КОМАНДА:
                         l3.Text = "Команда";
-                        cb3.SetEnumValues<Team>();
+                        cb3.SetEnumValues<ConditionTeam>();
                         break;
                     case ConditionType.ПРИ_НАЛИЧИИ_УМЕНИЯ:
                         l3.Text = "ID умения";

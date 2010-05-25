@@ -93,10 +93,16 @@ namespace EventAI
         ПРИ_АКТИВНОМ_ЭВЕНТЕ         = 12
     };
 
-    public enum Team
+    public enum ConditionTeam
     {
         АЛЬЯНС = 469,
         ОРДА   =  67,
+    };
+
+    public enum Team
+    {
+        АЛЬЯНС = 0,
+        ОРДА   = 1,
     };
 
     public enum ValueType
