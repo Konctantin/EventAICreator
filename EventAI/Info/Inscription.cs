@@ -283,20 +283,27 @@ namespace EventAI
                     l3.Text = "Максимальное время до повтора (мс)";
                     break;
             }
+
             cb1.Visible = l1.Text != string.Empty;
             cb2.Visible = l2.Text != string.Empty;
             cb3.Visible = l3.Text != string.Empty;
             cb4.Visible = l4.Text != string.Empty;
          }
 
-        public static void ShowActionTyteCondition(ComboBox cb, Label l3, Label l4, ComboBox cb3, ComboBox cb4)
+        public static void ShowActionTyteCondition(ComboBox cb, ComboBox cb2, ComboBox cb3, ComboBox cb4, Label l3, Label l4)
         {
-            if ((EventType)cb.ValueMember.ToInt32() == EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ)
+            if ((EventType)cb.SelectedValue.ToInt32() == EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ)
             {
+                ((GroupBox)cb.Parent).ResetButton();
+                
                 l3.Text = l4.Text = string.Empty;
-                cb3.DataSource = cb4.DataSource = null;
-
-                switch ((ConditionType)cb.SelectedValue.ToUInt32())
+                
+                cb3.DataSource = null;
+                cb4.DataSource = null;
+                cb3.DropDownStyle = ComboBoxStyle.Simple;
+                cb4.DropDownStyle = ComboBoxStyle.Simple;
+                
+                switch ((ConditionType)cb2.SelectedValue.ToUInt32())
                 {
                     case ConditionType.ПРИ_НАЛИЧИИ_АУРЫ:
                         l3.Text = "ID спелла";

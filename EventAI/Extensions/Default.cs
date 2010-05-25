@@ -34,5 +34,19 @@ namespace EventAI
                 }
             }
         }
+
+        public static void ResetButton(this GroupBox gb)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                foreach (var ctrl in gb.Controls)
+                {
+                    if (ctrl is Button)
+                    {
+                        gb.Controls.Remove((Button)ctrl);
+                    }
+                }
+            }
+        }
     }
 }

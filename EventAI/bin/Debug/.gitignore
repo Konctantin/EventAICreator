@@ -4,3 +4,4 @@ dbc/*
 *.vshost.exe
 *.config
 *.pdb
+*.manifest

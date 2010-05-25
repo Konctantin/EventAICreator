@@ -28,6 +28,10 @@ namespace EventAI
             _cbTarget2.SetEnumValues<Targets>("Target B");
 
             SearchSpell(value);
+            
+            if(DBC.Spell.ContainsKey(value))
+                new SpellInfo(_rtbSpellInfo, DBC.Spell[value]);
+
         }
 
         private List<SpellEntry> _spellList = new List<SpellEntry>();

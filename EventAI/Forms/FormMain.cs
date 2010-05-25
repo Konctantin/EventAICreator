@@ -96,7 +96,7 @@ namespace EventAI
 
         private void ActionTyteCondition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Inscription.ShowActionTyteCondition(_cbEventParametr2, lEventType3, lEventType4, _cbEventParametr3, _cbEventParametr4);
+            Inscription.ShowActionTyteCondition(_cbEventType, _cbEventParametr2, _cbEventParametr3, _cbEventParametr4, lEventType3, lEventType4);
         }
 
         public void CreateQueryScripts()
