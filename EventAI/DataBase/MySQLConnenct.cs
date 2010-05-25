@@ -30,7 +30,7 @@ namespace EventAI
             }
         }
 
-        public static void SelectProc(string query)
+        public static void SelectAIScript(string query)
         {
             TestConnect();
             if (!Connected) 

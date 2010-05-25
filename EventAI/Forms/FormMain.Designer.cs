@@ -48,18 +48,19 @@
             this.EntryNpc = new System.Windows.Forms.TextBox();
             this._tbShance = new System.Windows.Forms.TextBox();
             this._tbTextContentDefault = new System.Windows.Forms.TextBox();
-            this.cLocalisationText = new System.Windows.Forms.ComboBox();
+            this._cbLocale = new System.Windows.Forms.ComboBox();
             this.tNumberAITexts = new System.Windows.Forms.TextBox();
-            this.tNumberAISound = new System.Windows.Forms.TextBox();
-            this.cLenguageText = new System.Windows.Forms.ComboBox();
-            this.tNumberAIEmote = new System.Windows.Forms.TextBox();
-            this.tCommentAITexts = new System.Windows.Forms.TextBox();
+            this._cbLenguage = new System.Windows.Forms.ComboBox();
+            this._tbCommentAITexts = new System.Windows.Forms.TextBox();
             this._tbTextContentLocales = new System.Windows.Forms.TextBox();
             this._clbEventFlag = new System.Windows.Forms.CheckedListBox();
             this._cmFlag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UnselectALL1 = new System.Windows.Forms.ToolStripMenuItem();
             this.SelectAll1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Revert1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this._clbPhase = new System.Windows.Forms.CheckedListBox();
             this._cmPhase = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UnselectALL = new System.Windows.Forms.ToolStripMenuItem();
@@ -140,43 +141,43 @@
             this.lDateTime = new System.Windows.Forms.Label();
             this.Panel = new System.Windows.Forms.TabControl();
             this._tpText = new System.Windows.Forms.TabPage();
+            this._bTextSearch = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.rtbTextOut = new System.Windows.Forms.RichTextBox();
             this.lDateTime2 = new System.Windows.Forms.Label();
             this.bCreateTextQuery = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cTypeText = new System.Windows.Forms.ComboBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this._cbMessageType = new System.Windows.Forms.ComboBox();
             this._tpSummon = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this._bSummonSearch = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this._bTextSearch = new System.Windows.Forms.Button();
+            this._bSummonSearch = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this._cbSoundEntry = new System.Windows.Forms.ComboBox();
+            this._cbTextEmote = new System.Windows.Forms.ComboBox();
+            this._bSoundSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this._cmFlag.SuspendLayout();
             this._cmPhase.SuspendLayout();
@@ -387,16 +388,16 @@
             this._tbTextContentDefault.TabIndex = 3;
             this.HelpEntry.SetToolTip(this._tbTextContentDefault, "Здесь надо вводить\r\nоригинальный текст сообщения\r\nна английском");
             // 
-            // cLocalisationText
+            // _cbLocale
             // 
-            this.cLocalisationText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cLocalisationText.ForeColor = System.Drawing.Color.Navy;
-            this.cLocalisationText.FormattingEnabled = true;
-            this.cLocalisationText.Location = new System.Drawing.Point(417, 121);
-            this.cLocalisationText.Name = "cLocalisationText";
-            this.cLocalisationText.Size = new System.Drawing.Size(216, 21);
-            this.cLocalisationText.TabIndex = 6;
-            this.HelpEntry.SetToolTip(this.cLocalisationText, "Укажите язык локализации,\r\nпо умолчанию русский (8)");
+            this._cbLocale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._cbLocale.ForeColor = System.Drawing.Color.Navy;
+            this._cbLocale.FormattingEnabled = true;
+            this._cbLocale.Location = new System.Drawing.Point(417, 121);
+            this._cbLocale.Name = "_cbLocale";
+            this._cbLocale.Size = new System.Drawing.Size(216, 21);
+            this._cbLocale.TabIndex = 6;
+            this.HelpEntry.SetToolTip(this._cbLocale, "Укажите язык локализации,\r\nпо умолчанию русский (8)");
             // 
             // tNumberAITexts
             // 
@@ -410,50 +411,26 @@
             this.HelpEntry.SetToolTip(this.tNumberAITexts, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
             this.tNumberAITexts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
-            // tNumberAISound
+            // _cbLenguage
             // 
-            this.tNumberAISound.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.tNumberAISound.Location = new System.Drawing.Point(85, 55);
-            this.tNumberAISound.MaxLength = 5;
-            this.tNumberAISound.Name = "tNumberAISound";
-            this.tNumberAISound.Size = new System.Drawing.Size(99, 20);
-            this.tNumberAISound.TabIndex = 5;
-            this.tNumberAISound.Text = "0";
-            this.HelpEntry.SetToolTip(this.tNumberAISound, "Данные из DBC\r\n");
-            this.tNumberAISound.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
+            this._cbLenguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._cbLenguage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._cbLenguage.FormattingEnabled = true;
+            this._cbLenguage.Location = new System.Drawing.Point(6, 202);
+            this._cbLenguage.Name = "_cbLenguage";
+            this._cbLenguage.Size = new System.Drawing.Size(254, 21);
+            this._cbLenguage.TabIndex = 7;
+            this.HelpEntry.SetToolTip(this._cbLenguage, "Укажите на каком языке \r\nбудет понятно сообщение");
             // 
-            // cLenguageText
+            // _tbCommentAITexts
             // 
-            this.cLenguageText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cLenguageText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.cLenguageText.FormattingEnabled = true;
-            this.cLenguageText.Location = new System.Drawing.Point(6, 185);
-            this.cLenguageText.Name = "cLenguageText";
-            this.cLenguageText.Size = new System.Drawing.Size(254, 21);
-            this.cLenguageText.TabIndex = 7;
-            this.HelpEntry.SetToolTip(this.cLenguageText, "Укажите на каком языке \r\nбудет понятно сообщение");
-            // 
-            // tNumberAIEmote
-            // 
-            this.tNumberAIEmote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.tNumberAIEmote.Location = new System.Drawing.Point(85, 88);
-            this.tNumberAIEmote.MaxLength = 3;
-            this.tNumberAIEmote.Name = "tNumberAIEmote";
-            this.tNumberAIEmote.Size = new System.Drawing.Size(99, 20);
-            this.tNumberAIEmote.TabIndex = 8;
-            this.tNumberAIEmote.Text = "0";
-            this.HelpEntry.SetToolTip(this.tNumberAIEmote, "Данные из DBC");
-            this.tNumberAIEmote.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
-            // 
-            // tCommentAITexts
-            // 
-            this.tCommentAITexts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tCommentAITexts.Location = new System.Drawing.Point(92, 255);
-            this.tCommentAITexts.Name = "tCommentAITexts";
-            this.tCommentAITexts.Size = new System.Drawing.Size(938, 20);
-            this.tCommentAITexts.TabIndex = 13;
-            this.tCommentAITexts.Text = "ytdb";
-            this.HelpEntry.SetToolTip(this.tCommentAITexts, "Не забываем про комментарий");
+            this._tbCommentAITexts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this._tbCommentAITexts.Location = new System.Drawing.Point(92, 255);
+            this._tbCommentAITexts.Name = "_tbCommentAITexts";
+            this._tbCommentAITexts.Size = new System.Drawing.Size(938, 20);
+            this._tbCommentAITexts.TabIndex = 13;
+            this._tbCommentAITexts.Text = "ytdb";
+            this.HelpEntry.SetToolTip(this._tbCommentAITexts, "Не забываем про комментарий");
             // 
             // _tbTextContentLocales
             // 
@@ -520,6 +497,39 @@
             this.Revert1.Size = new System.Drawing.Size(208, 22);
             this.Revert1.Text = "Инвертировать";
             this.Revert1.Click += new System.EventHandler(this.Revert1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.textBox1.Location = new System.Drawing.Point(89, 52);
+            this.textBox1.MaxLength = 3;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(186, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.Text = "0";
+            this.HelpEntry.SetToolTip(this.textBox1, "Данные из DBC");
+            // 
+            // textBox2
+            // 
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.textBox2.Location = new System.Drawing.Point(89, 19);
+            this.textBox2.MaxLength = 5;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(186, 20);
+            this.textBox2.TabIndex = 15;
+            this.textBox2.Text = "0";
+            this.HelpEntry.SetToolTip(this.textBox2, "Данные из DBC\r\n");
+            // 
+            // textBox3
+            // 
+            this.textBox3.ForeColor = System.Drawing.Color.Red;
+            this.textBox3.Location = new System.Drawing.Point(99, 25);
+            this.textBox3.MaxLength = 6;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(185, 20);
+            this.textBox3.TabIndex = 14;
+            this.textBox3.Text = "1";
+            this.HelpEntry.SetToolTip(this.textBox3, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
             // 
             // _clbPhase
             // 
@@ -1319,6 +1329,24 @@
             this._tpText.TabIndex = 1;
             this._tpText.Text = "Тексты";
             // 
+            // _bTextSearch
+            // 
+            this._bTextSearch.Location = new System.Drawing.Point(6, 6);
+            this._bTextSearch.Name = "_bTextSearch";
+            this._bTextSearch.Size = new System.Drawing.Size(133, 23);
+            this._bTextSearch.TabIndex = 36;
+            this._bTextSearch.Text = "Найти";
+            this._bTextSearch.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.listView1.Location = new System.Drawing.Point(145, 6);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(897, 207);
+            this.listView1.TabIndex = 35;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // rtbTextOut
             // 
             this.rtbTextOut.Location = new System.Drawing.Point(3, 509);
@@ -1354,81 +1382,25 @@
             this.button5.Text = "Записать";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label12.Location = new System.Drawing.Point(9, 23);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "ID текста";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 58);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "ID звука";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 91);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "ID эмоции";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "От какого лица:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 167);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Язык";
-            // 
-            // cTypeText
-            // 
-            this.cTypeText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cTypeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.cTypeText.FormattingEnabled = true;
-            this.cTypeText.Location = new System.Drawing.Point(6, 141);
-            this.cTypeText.Name = "cTypeText";
-            this.cTypeText.Size = new System.Drawing.Size(254, 21);
-            this.cTypeText.TabIndex = 6;
-            // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this._bSoundSearch);
+            this.groupBox9.Controls.Add(this._cbTextEmote);
+            this.groupBox9.Controls.Add(this._cbSoundEntry);
             this.groupBox9.Controls.Add(this._tbTextContentLocales);
-            this.groupBox9.Controls.Add(this.tCommentAITexts);
+            this.groupBox9.Controls.Add(this._tbCommentAITexts);
             this.groupBox9.Controls.Add(this.label13);
-            this.groupBox9.Controls.Add(this.cLocalisationText);
+            this.groupBox9.Controls.Add(this._cbLocale);
             this.groupBox9.Controls.Add(this.label12);
             this.groupBox9.Controls.Add(this.label7);
             this.groupBox9.Controls.Add(this.label11);
             this.groupBox9.Controls.Add(this.label8);
             this.groupBox9.Controls.Add(this._tbTextContentDefault);
-            this.groupBox9.Controls.Add(this.tNumberAIEmote);
             this.groupBox9.Controls.Add(this.label10);
-            this.groupBox9.Controls.Add(this.tNumberAISound);
             this.groupBox9.Controls.Add(this.label9);
             this.groupBox9.Controls.Add(this.tNumberAITexts);
-            this.groupBox9.Controls.Add(this.cTypeText);
-            this.groupBox9.Controls.Add(this.cLenguageText);
+            this.groupBox9.Controls.Add(this._cbMessageType);
+            this.groupBox9.Controls.Add(this._cbLenguage);
             this.groupBox9.Location = new System.Drawing.Point(6, 219);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(1036, 282);
@@ -1445,6 +1417,17 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Комментарий";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label12.Location = new System.Drawing.Point(9, 23);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "ID текста";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -1453,6 +1436,52 @@
             this.label7.Size = new System.Drawing.Size(135, 13);
             this.label7.TabIndex = 5;
             this.label7.Text = "Локализированый текст:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 61);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "ID звука";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 101);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "ID эмоции";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 146);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Тип сообщения:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 186);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Язык";
+            // 
+            // _cbMessageType
+            // 
+            this._cbMessageType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._cbMessageType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._cbMessageType.FormattingEnabled = true;
+            this._cbMessageType.Location = new System.Drawing.Point(6, 162);
+            this._cbMessageType.Name = "_cbMessageType";
+            this._cbMessageType.Size = new System.Drawing.Size(254, 21);
+            this._cbMessageType.TabIndex = 6;
             // 
             // _tpSummon
             // 
@@ -1469,212 +1498,6 @@
             this._tpSummon.Size = new System.Drawing.Size(1048, 604);
             this._tpSummon.TabIndex = 2;
             this._tpSummon.Text = "Призыв";
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.listView1.Location = new System.Drawing.Point(145, 6);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(897, 207);
-            this.listView1.TabIndex = 35;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.listView2.Location = new System.Drawing.Point(145, 6);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(897, 181);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 509);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(917, 87);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Location = new System.Drawing.Point(8, 193);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(554, 287);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "creature_ai_summon";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(6, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "ID";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 22);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 13);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "Х";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 55);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(14, 13);
-            this.label16.TabIndex = 17;
-            this.label16.Text = "Y";
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox1.Location = new System.Drawing.Point(89, 52);
-            this.textBox1.MaxLength = 3;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "0";
-            this.HelpEntry.SetToolTip(this.textBox1, "Данные из DBC");
-            // 
-            // textBox2
-            // 
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox2.Location = new System.Drawing.Point(89, 19);
-            this.textBox2.MaxLength = 5;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 20);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.Text = "0";
-            this.HelpEntry.SetToolTip(this.textBox2, "Данные из DBC\r\n");
-            // 
-            // textBox3
-            // 
-            this.textBox3.ForeColor = System.Drawing.Color.Red;
-            this.textBox3.Location = new System.Drawing.Point(99, 25);
-            this.textBox3.MaxLength = 6;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 20);
-            this.textBox3.TabIndex = 14;
-            this.textBox3.Text = "1";
-            this.HelpEntry.SetToolTip(this.textBox3, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
-            // 
-            // textBox4
-            // 
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox4.Location = new System.Drawing.Point(89, 90);
-            this.textBox4.MaxLength = 5;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(186, 20);
-            this.textBox4.TabIndex = 15;
-            this.textBox4.Text = "0";
-            // 
-            // textBox5
-            // 
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox5.Location = new System.Drawing.Point(99, 57);
-            this.textBox5.MaxLength = 3;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(185, 20);
-            this.textBox5.TabIndex = 16;
-            this.textBox5.Text = "0";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 60);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(79, 13);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "spawntimesecs";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 93);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(14, 13);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "Z";
-            // 
-            // textBox6
-            // 
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox6.Location = new System.Drawing.Point(99, 261);
-            this.textBox6.MaxLength = 3;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(442, 20);
-            this.textBox6.TabIndex = 16;
-            this.textBox6.Text = "0";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 264);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 13);
-            this.label19.TabIndex = 17;
-            this.label19.Text = "Комментарий";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(9, 83);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(294, 158);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Координаты";
-            // 
-            // textBox7
-            // 
-            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox7.Location = new System.Drawing.Point(89, 127);
-            this.textBox7.MaxLength = 5;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(186, 20);
-            this.textBox7.TabIndex = 15;
-            this.textBox7.Text = "0";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(13, 130);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 13);
-            this.label20.TabIndex = 18;
-            this.label20.Text = "Orientation";
-            // 
-            // _bSummonSearch
-            // 
-            this._bSummonSearch.Location = new System.Drawing.Point(6, 6);
-            this._bSummonSearch.Name = "_bSummonSearch";
-            this._bSummonSearch.Size = new System.Drawing.Size(133, 23);
-            this._bSummonSearch.TabIndex = 3;
-            this._bSummonSearch.Text = "Найти";
-            this._bSummonSearch.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -1695,14 +1518,198 @@
             this.button3.Text = "Записать";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // _bTextSearch
+            // _bSummonSearch
             // 
-            this._bTextSearch.Location = new System.Drawing.Point(6, 6);
-            this._bTextSearch.Name = "_bTextSearch";
-            this._bTextSearch.Size = new System.Drawing.Size(133, 23);
-            this._bTextSearch.TabIndex = 36;
-            this._bTextSearch.Text = "Найти";
-            this._bTextSearch.UseVisualStyleBackColor = true;
+            this._bSummonSearch.Location = new System.Drawing.Point(6, 6);
+            this._bSummonSearch.Name = "_bSummonSearch";
+            this._bSummonSearch.Size = new System.Drawing.Size(133, 23);
+            this._bSummonSearch.TabIndex = 3;
+            this._bSummonSearch.Text = "Найти";
+            this._bSummonSearch.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Location = new System.Drawing.Point(8, 193);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(554, 287);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "creature_ai_summon";
+            // 
+            // textBox5
+            // 
+            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.textBox5.Location = new System.Drawing.Point(99, 57);
+            this.textBox5.MaxLength = 3;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(185, 20);
+            this.textBox5.TabIndex = 16;
+            this.textBox5.Text = "0";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Location = new System.Drawing.Point(9, 83);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(294, 158);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Координаты";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(13, 130);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(58, 13);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "Orientation";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(13, 93);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(14, 13);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Z";
+            // 
+            // textBox7
+            // 
+            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.textBox7.Location = new System.Drawing.Point(89, 127);
+            this.textBox7.MaxLength = 5;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(186, 20);
+            this.textBox7.TabIndex = 15;
+            this.textBox7.Text = "0";
+            // 
+            // textBox4
+            // 
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.textBox4.Location = new System.Drawing.Point(89, 90);
+            this.textBox4.MaxLength = 5;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(186, 20);
+            this.textBox4.TabIndex = 15;
+            this.textBox4.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 22);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(14, 13);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "Х";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(13, 55);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(14, 13);
+            this.label16.TabIndex = 17;
+            this.label16.Text = "Y";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(6, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "ID";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 264);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 13);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Комментарий";
+            // 
+            // textBox6
+            // 
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.textBox6.Location = new System.Drawing.Point(99, 261);
+            this.textBox6.MaxLength = 3;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(442, 20);
+            this.textBox6.TabIndex = 16;
+            this.textBox6.Text = "0";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 60);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(79, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "spawntimesecs";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(6, 509);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(917, 87);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
+            // 
+            // listView2
+            // 
+            this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.listView2.Location = new System.Drawing.Point(145, 6);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(897, 181);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // _cbSoundEntry
+            // 
+            this._cbSoundEntry.DropDownHeight = 1;
+            this._cbSoundEntry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this._cbSoundEntry.FormattingEnabled = true;
+            this._cbSoundEntry.IntegralHeight = false;
+            this._cbSoundEntry.Location = new System.Drawing.Point(6, 77);
+            this._cbSoundEntry.MaxDropDownItems = 1;
+            this._cbSoundEntry.Name = "_cbSoundEntry";
+            this._cbSoundEntry.Size = new System.Drawing.Size(188, 21);
+            this._cbSoundEntry.TabIndex = 15;
+            // 
+            // _cbTextEmote
+            // 
+            this._cbTextEmote.FormattingEnabled = true;
+            this._cbTextEmote.Location = new System.Drawing.Point(6, 117);
+            this._cbTextEmote.Name = "_cbTextEmote";
+            this._cbTextEmote.Size = new System.Drawing.Size(254, 21);
+            this._cbTextEmote.TabIndex = 15;
+            // 
+            // _bSoundSearch
+            // 
+            this._bSoundSearch.Location = new System.Drawing.Point(200, 77);
+            this._bSoundSearch.Name = "_bSoundSearch";
+            this._bSoundSearch.Size = new System.Drawing.Size(60, 22);
+            this._bSoundSearch.TabIndex = 16;
+            this._bSoundSearch.Text = "Найти";
+            this._bSoundSearch.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -1810,12 +1817,10 @@
         private System.Windows.Forms.TabPage _tpText;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TextBox _tbTextContentDefault;
-        private System.Windows.Forms.ComboBox cLocalisationText;
+        private System.Windows.Forms.ComboBox _cbLocale;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tNumberAIEmote;
-        private System.Windows.Forms.ComboBox cLenguageText;
-        private System.Windows.Forms.ComboBox cTypeText;
-        private System.Windows.Forms.TextBox tNumberAISound;
+        private System.Windows.Forms.ComboBox _cbLenguage;
+        private System.Windows.Forms.ComboBox _cbMessageType;
         private System.Windows.Forms.TextBox tNumberAITexts;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -1823,7 +1828,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox _tbTextContentLocales;
-        private System.Windows.Forms.TextBox tCommentAITexts;
+        private System.Windows.Forms.TextBox _tbCommentAITexts;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button bCreateTextQuery;
         private System.Windows.Forms.Button button5;
@@ -1904,6 +1909,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Button _bSoundSearch;
+        private System.Windows.Forms.ComboBox _cbTextEmote;
+        private System.Windows.Forms.ComboBox _cbSoundEntry;
     }
 }
 

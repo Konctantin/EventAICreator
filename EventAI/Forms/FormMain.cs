@@ -16,7 +16,7 @@ namespace EventAI
         public FormMain()
         {
             InitializeComponent();
-
+             // 1 page
             _cbEventType.SetEnumValues<EventType>();
             _cbActionType1.SetEnumValues<ActionType>();
             _cbActionType2.SetEnumValues<ActionType>();
@@ -24,7 +24,14 @@ namespace EventAI
 
             _cbFilteEventType.SetEnumValues(typeof(EventType), "Тип события", "");
             _cbFilteActionType.SetEnumValues(typeof(ActionType), "Тип действия", "");
+             // 2 page
+            _cbTextEmote.SetDbcData<EmotesEntry>(DBC.Emotes);
+            _cbMessageType.SetEnumValues<MessageType>();
+            _cbLenguage.SetEnumValues<Lenguage>();
+            _cbLocale.DataSource = Enum.GetValues(typeof(Locales));
+             // 3 page
 
+             // def
             _cbEventType.SelectedValue = 1;
         }
 
@@ -189,27 +196,24 @@ namespace EventAI
         
         public void CreateQueryTetxs()
         {
-            int ntNumberAITexts = tNumberAITexts.Text.ToInt32();
-            int ntNumberAISound = tNumberAISound.Text.ToInt32();
-            int ntNumberAIEmote = tNumberAIEmote.Text.ToInt32();
-
-            var sCommentsAITexts = tCommentAITexts.Text.RemExc();
-            var stContentDefault = _tbTextContentDefault.Text.RemExc();
-            var sContentLocales = _tbTextContentLocales.Text.RemExc();
-
-            var loc = new string[cLocalisationText.Items.Count];
-            loc[cLocalisationText.SelectedIndex] = sContentLocales;
+            int AITexts  = tNumberAITexts.Text.ToInt32();
+            string[] loc = new string[_cbLocale.Items.Count];
+            loc[_cbLocale.SelectedIndex] = _tbTextContentLocales.Text.RemExc();
        
-            int[] arr = { 0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 33, 35, 36, 37, 38 };
-            int ncLenguageText = arr[cLenguageText.SelectedIndex];
-
             if (_tbTextContentDefault.Text == "" && _tbTextContentLocales.Text == "") 
                 return;
+
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormatLine("DELETE FROM `creature_ai_texts` WHERE entry IN (-{0});", ntNumberAITexts);
-            sb.AppendFormatLine("INSERT INTO `creature_ai_texts` VALUES ('-{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}');",
-                ntNumberAITexts, stContentDefault, loc[0], loc[1], loc[2], loc[3], loc[4], loc[5], loc[6], loc[7],
-                ntNumberAISound, cTypeText.SelectedIndex, ncLenguageText, ntNumberAIEmote, sCommentsAITexts);
+            sb.AppendFormatLine("DELETE FROM `creature_ai_texts` WHERE entry IN (-{0});", AITexts);
+            sb.AppendFormatLine("INSERT INTO `creature_ai_texts` VALUES ('-{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}');",
+                AITexts, 
+                _tbTextContentDefault.Text.RemExc(), 
+                loc[0], loc[1], loc[2], loc[3], loc[4], loc[5], loc[6], loc[7],
+                _cbSoundEntry.GetIntValue(),
+                _cbMessageType.GetIntValue(), 
+                _cbLenguage.GetIntValue(), 
+                _cbTextEmote.GetIntValue(), 
+                _tbCommentAITexts.Text.RemExc());
 
             rtbTextOut.Text = sb.ToString();
         }
@@ -332,7 +336,7 @@ namespace EventAI
 
             string q = (squery.Length == 0) ? fquery.Remove(fquery.Length - 6) : fquery + squery.Remove(squery.Length - 3);
 
-            MySQLConnenct.SelectProc(q);
+            MySQLConnenct.SelectAIScript(q);
             _lvScripts.VirtualListSize = MySQLConnenct.AIScript.Count;
 
         }
