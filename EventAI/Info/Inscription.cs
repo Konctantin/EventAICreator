@@ -170,6 +170,7 @@ namespace EventAI
                     cb1.SetEnumValues<SheathState>();
                      break;
                 case ActionType.ПРИНУДИТЕЛЬНО_ДЕСПАВНИТЬ:
+                     l1.Text = "Задержка (мс)";
                     break;
                 case ActionType.НЕВОЗМОЖНОСТЬ_АТАКОВАТЬ:
                     l1.Text = "Тип значения";

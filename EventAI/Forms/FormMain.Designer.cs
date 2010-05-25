@@ -798,7 +798,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Chanse";
+            this.columnHeader5.Text = "Chanсe";
             this.columnHeader5.Width = 52;
             // 
             // columnHeader6
