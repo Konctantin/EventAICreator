@@ -113,8 +113,7 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Info\Inscription.cs">
-    </Compile>
+    <Compile Include="Info\Inscription.cs" />
     <Compile Include="DataBase\MySQLConnenct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

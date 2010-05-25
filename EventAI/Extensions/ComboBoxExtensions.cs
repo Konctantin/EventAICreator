@@ -45,17 +45,6 @@ namespace EventAI
             }
         }
 
-        public static void SetVal(this ComboBox cb, Object memberval, Object visibleval)
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
-            dt.Columns.Add("NAME");
-            dt.Rows.Add(new Object[] { memberval.ToInt32(), visibleval.ToString() });
-            cb.DataSource = dt;
-            cb.DisplayMember = "NAME";
-            cb.ValueMember = "ID";
-        }
-
         public static int GetIntValue(this ComboBox cb)
         {
             if (cb.Items.Count > 0)

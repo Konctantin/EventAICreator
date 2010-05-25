@@ -24,6 +24,7 @@ namespace EventAI
                             cb.DropDownStyle = ComboBoxStyle.Simple;
                             cb.DataSource = null;
                             cb.Size = new System.Drawing.Size(238, 21);
+                            cb.Text = String.Empty;
                         }
                     }
 

@@ -3,12 +3,8 @@ using System.Drawing;
 
 namespace EventAI
 {
-    public static class Inscription
+    public class Inscription
     {
-        private static Point coord1 = new Point(187, 58);
-        private static Point coord2 = new Point(187, 102);
-        private static Point coord3 = new Point(187, 148);
-
         public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3)
         {
             ((GroupBox)cb.Parent).Reset();
@@ -301,6 +297,7 @@ namespace EventAI
                 
                 cb3.DataSource = null;
                 cb4.DataSource = null;
+                cb3.Text = cb4.Text = string.Empty; 
                 cb3.DropDownStyle = ComboBoxStyle.Simple;
                 cb4.DropDownStyle = ComboBoxStyle.Simple;
                 
