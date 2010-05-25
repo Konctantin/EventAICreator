@@ -392,15 +392,6 @@
             this.cLocalisationText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cLocalisationText.ForeColor = System.Drawing.Color.Navy;
             this.cLocalisationText.FormattingEnabled = true;
-            this.cLocalisationText.Items.AddRange(new object[] {
-            "1-Корейский",
-            "2-Французкий",
-            "3-Немецкий",
-            "4-Китайский",
-            "5-Тайванский",
-            "6-Испанский",
-            "7-Испанский (Мексика)",
-            "8-Русский"});
             this.cLocalisationText.Location = new System.Drawing.Point(417, 121);
             this.cLocalisationText.Name = "cLocalisationText";
             this.cLocalisationText.Size = new System.Drawing.Size(216, 21);
@@ -436,25 +427,6 @@
             this.cLenguageText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cLenguageText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.cLenguageText.FormattingEnabled = true;
-            this.cLenguageText.Items.AddRange(new object[] {
-            "0-Универсальный",
-            "1-Язык Орков (для всей Орды)",
-            "2-Язык Ночных Эльфов",
-            "3-Язык Тауренов",
-            "6-Язык Дворфов",
-            "7-Язык Людей (для всего Альянса)",
-            "8-Язык Демонов",
-            "9-Язык Титанов",
-            "10-Язык Кровавых Эльфов",
-            "11-Язык Драконов",
-            "12-Язык Элементалов",
-            "13-Язык Гномов",
-            "14-Язык Тролей",
-            "33-Язык Нежити",
-            "35-Язык Дреней",
-            "36-Язык Зомби",
-            "37-Язык Гномов (Бинарный)",
-            "38-Язык Гоблинов (Бинарный)"});
             this.cLenguageText.Location = new System.Drawing.Point(6, 185);
             this.cLenguageText.Name = "cLenguageText";
             this.cLenguageText.Size = new System.Drawing.Size(254, 21);
@@ -1512,7 +1484,7 @@
             this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.listView2.Location = new System.Drawing.Point(145, 6);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(897, 146);
+            this.listView2.Size = new System.Drawing.Size(897, 181);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
