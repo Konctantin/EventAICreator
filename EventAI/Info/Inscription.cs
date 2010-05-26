@@ -187,7 +187,7 @@ namespace EventAI
             switch ((EventType)cb.SelectedValue.ToUInt32())
             {
                 case EventType.ПО_ТАЙМЕРУ_В_БОЮ:
-                case EventType.ПО_ТАЙМЕРУ_В_НЕ_БОЯ:
+                case EventType.ПО_ТАЙМЕРУ_ВНЕ_БОЯ:
                     l1.Text = "Минимальное время до срабатывания (мс)";
                     l2.Text = "Максимальное время до срабатывания (мс)";
                     l3.Text = "Минимальное время до повтора (мс)";
@@ -201,7 +201,7 @@ namespace EventAI
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
                 case EventType.ПРИ_ЗНАЧЕНИИ_МАНЫ:
-                case EventType.ПРИ_ЗНАЧЕНИИ_МАННЫ_У_ЦЕЛИ:
+                case EventType.ПРИ_ЗНАЧЕНИИ_МАНЫ_У_ЦЕЛИ:
                     l1.Text = "Максимальное значение маны %";
                     l2.Text = "Минимальное значение маны %";
                     l3.Text = "Минимальное время до повтора (мс)";

@@ -152,7 +152,7 @@ namespace EventAI
             switch ((EventType)script.EventType)
             {
                 case   EventType.ПО_ТАЙМЕРУ_В_БОЮ :
-                case   EventType.ПО_ТАЙМЕРУ_В_НЕ_БОЯ:
+                case   EventType.ПО_ТАЙМЕРУ_ВНЕ_БОЯ:
                     if (script.EventParam[0] > script.EventParam[1])
                         LogOut("Минимальное время до срабатывания не может быть больше максимального!");
                     if (script.EventParam[2] > script.EventParam[3])
@@ -161,7 +161,7 @@ namespace EventAI
                 case   EventType.ПРИ_ЗНАЧЕНИИ_ЖИЗНИ:
                 case   EventType.ПРИ_ЗНАЧЕНИИ_МАНЫ:
                 case   EventType.ПРИ_ЗНАЧЕНИИ_ЖИЗНИ_ЦЕЛИ:
-                case   EventType.ПРИ_ЗНАЧЕНИИ_МАННЫ_У_ЦЕЛИ:
+                case   EventType.ПРИ_ЗНАЧЕНИИ_МАНЫ_У_ЦЕЛИ:
                     if (script.EventParam[0] > 100 || script.EventParam[1] > 100)
                         LogOut("Параметр 1 или 2 не могут быть болше 100%!");
                     if (script.EventParam[0] > script.EventParam[1])

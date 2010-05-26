@@ -87,7 +87,8 @@ namespace EventAI
                     {
                         FormSearchSpell _form = new FormSearchSpell(ComboboxValue);
                         _form.ShowDialog();
-                        _combobox.SetValue(_form.Spell.ID);
+                        if(_form.DialogResult == DialogResult.OK)
+                            _combobox.SetValue(_form.Spell.ID);
                         _form.Dispose();
                     }
                     break;
@@ -127,7 +128,8 @@ namespace EventAI
                     {
                         FormCalculateFlags _form = new FormCalculateFlags(_type, ComboboxValue, String.Empty);
                         _form.ShowDialog();
-                        _combobox.SetValue(_form.Flags);
+                        if (_form.DialogResult == DialogResult.OK)
+                            _combobox.SetValue(_form.Flags);
                         _form.Dispose();
                     }
                     break;
