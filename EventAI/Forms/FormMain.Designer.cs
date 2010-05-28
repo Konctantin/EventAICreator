@@ -148,6 +148,9 @@
             this.bCreateTextQuery = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this._bSoundSearch = new System.Windows.Forms.Button();
+            this._cbTextEmote = new System.Windows.Forms.ComboBox();
+            this._cbSoundEntry = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -175,9 +178,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.listView2 = new System.Windows.Forms.ListView();
-            this._cbSoundEntry = new System.Windows.Forms.ComboBox();
-            this._cbTextEmote = new System.Windows.Forms.ComboBox();
-            this._bSoundSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this._cmFlag.SuspendLayout();
             this._cmPhase.SuspendLayout();
@@ -244,7 +244,7 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.настройкиToolStripMenuItem.Text = "Параметры";
             this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -259,7 +259,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -345,13 +345,11 @@
             // 
             this.NumberScripts.ForeColor = System.Drawing.Color.Red;
             this.NumberScripts.Location = new System.Drawing.Point(151, 265);
-            this.NumberScripts.MaxLength = 5;
+            this.NumberScripts.MaxLength = 11;
             this.NumberScripts.Name = "NumberScripts";
             this.NumberScripts.Size = new System.Drawing.Size(114, 20);
             this.NumberScripts.TabIndex = 1;
             this.NumberScripts.Text = "1";
-            this.HelpEntry.SetToolTip(this.NumberScripts, "Введите номер скрипта \r\nВ запросе ID сформируеться исходя из\r\nID существа * 100 +" +
-                    " 50 + номер скрипта");
             this.NumberScripts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // EntryNpc
@@ -1408,6 +1406,35 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Текст";
             // 
+            // _bSoundSearch
+            // 
+            this._bSoundSearch.Location = new System.Drawing.Point(200, 77);
+            this._bSoundSearch.Name = "_bSoundSearch";
+            this._bSoundSearch.Size = new System.Drawing.Size(60, 22);
+            this._bSoundSearch.TabIndex = 16;
+            this._bSoundSearch.Text = "Найти";
+            this._bSoundSearch.UseVisualStyleBackColor = true;
+            // 
+            // _cbTextEmote
+            // 
+            this._cbTextEmote.FormattingEnabled = true;
+            this._cbTextEmote.Location = new System.Drawing.Point(6, 117);
+            this._cbTextEmote.Name = "_cbTextEmote";
+            this._cbTextEmote.Size = new System.Drawing.Size(254, 21);
+            this._cbTextEmote.TabIndex = 15;
+            // 
+            // _cbSoundEntry
+            // 
+            this._cbSoundEntry.DropDownHeight = 1;
+            this._cbSoundEntry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this._cbSoundEntry.FormattingEnabled = true;
+            this._cbSoundEntry.IntegralHeight = false;
+            this._cbSoundEntry.Location = new System.Drawing.Point(6, 77);
+            this._cbSoundEntry.MaxDropDownItems = 1;
+            this._cbSoundEntry.Name = "_cbSoundEntry";
+            this._cbSoundEntry.Size = new System.Drawing.Size(188, 21);
+            this._cbSoundEntry.TabIndex = 15;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -1682,35 +1709,6 @@
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // _cbSoundEntry
-            // 
-            this._cbSoundEntry.DropDownHeight = 1;
-            this._cbSoundEntry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this._cbSoundEntry.FormattingEnabled = true;
-            this._cbSoundEntry.IntegralHeight = false;
-            this._cbSoundEntry.Location = new System.Drawing.Point(6, 77);
-            this._cbSoundEntry.MaxDropDownItems = 1;
-            this._cbSoundEntry.Name = "_cbSoundEntry";
-            this._cbSoundEntry.Size = new System.Drawing.Size(188, 21);
-            this._cbSoundEntry.TabIndex = 15;
-            // 
-            // _cbTextEmote
-            // 
-            this._cbTextEmote.FormattingEnabled = true;
-            this._cbTextEmote.Location = new System.Drawing.Point(6, 117);
-            this._cbTextEmote.Name = "_cbTextEmote";
-            this._cbTextEmote.Size = new System.Drawing.Size(254, 21);
-            this._cbTextEmote.TabIndex = 15;
-            // 
-            // _bSoundSearch
-            // 
-            this._bSoundSearch.Location = new System.Drawing.Point(200, 77);
-            this._bSoundSearch.Name = "_bSoundSearch";
-            this._bSoundSearch.Size = new System.Drawing.Size(60, 22);
-            this._bSoundSearch.TabIndex = 16;
-            this._bSoundSearch.Text = "Найти";
-            this._bSoundSearch.UseVisualStyleBackColor = true;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1724,7 +1722,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FormMain";
-            this.ShowIcon = false;
             this.Text = "EventAI Конструктор";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
