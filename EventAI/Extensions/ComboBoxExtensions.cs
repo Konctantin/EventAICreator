@@ -57,5 +57,72 @@ namespace EventAI
         {
             return tb.Text.ToInt32();
         }
+
+        public static void SetEnumValues<T>(this ComboBox cb) where T : struct
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+
+            foreach (var str in Enum.GetValues(typeof(T)))
+            {
+                dt.Rows.Add(new Object[] 
+                { 
+                    (int)str, 
+                    "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(String.Empty) 
+                });
+            }
+
+            cb.Size = new System.Drawing.Size(238, 21);
+            cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb.DataSource = dt;
+            cb.DisplayMember = "NAME";
+            cb.ValueMember = "ID";
+        }
+
+        public static void SetEnumValues<T>(this ComboBox cb, string remove) where T : struct
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+
+            foreach (var str in Enum.GetValues(typeof(T)))
+            {
+                dt.Rows.Add(new Object[] 
+                { 
+                    (int)str, 
+                    "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
+                });
+            }
+
+            cb.Size = new System.Drawing.Size(238, 21);
+            cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb.DataSource = dt;
+            cb.DisplayMember = "NAME";
+            cb.ValueMember = "ID";
+        }
+
+        public static void SetEnumValues(this ComboBox cb, Type enums, string NoValue, string remove)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+
+            dt.Rows.Add(new Object[] { -1, NoValue });
+
+            foreach (var str in Enum.GetValues(enums))
+            {
+                dt.Rows.Add(new Object[] 
+                { 
+                    (int)str, 
+                    "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
+                });
+            }
+
+            cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb.DataSource = dt;
+            cb.DisplayMember = "NAME";
+            cb.ValueMember = "ID";
+        }
     }
 }

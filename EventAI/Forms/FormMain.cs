@@ -373,5 +373,61 @@ namespace EventAI
             using (StreamWriter sw = new StreamWriter("log.sql", true, Encoding.UTF8))
                 sw.WriteLine(rtbScriptOut.Text);
         }
+
+        private void _lvText_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        {
+            e.Item = new ListViewItem(MySQLConnenct.AIText[e.ItemIndex].ToString().Split('^'));
+        }
+
+        private void _bTextSearch_Click(object sender, EventArgs e)
+        {
+            MySQLConnenct.SelectAIText();
+            _lvText.VirtualListSize = MySQLConnenct.AIText.Count;
+        }
+
+        private void _lvText_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_lvText.SelectedIndices.Count > 0)
+            {
+                TextAI text = MySQLConnenct.AIText[_lvText.SelectedIndices[0]];
+                int loc = _cbLocale.SelectedIndex;
+
+                _tbTextID.Text = text.ID.ToString();
+                _tbTextContentDefault.Text = text.ContentDefault;
+                _tbTextContentLocales.Text = text.ContentLocale[loc];
+                _cbSoundEntry.SetValue(text.Sound);
+                _cbMessageType.SetValue(text.Type);
+                _cbLenguage.SetValue(text.Lenguage);
+                _cbTextEmote.SetValue(text.Emote);
+                _tbCommentAITexts.Text = text.Comment;
+            }
+        }
+
+        private void _lvSummon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_lvSummon.SelectedIndices.Count > 0)
+            {
+                SummonAI summon = MySQLConnenct.AISummon[_lvSummon.SelectedIndices[0]];
+
+                _tbSummonID.Text        = summon.ID.ToString();
+                _tbSummonX.Text         = summon.PositionX.ToString();
+                _tbSummonY.Text         = summon.PositionY.ToString();
+                _tbSummonZ.Text         = summon.PositionZ.ToString();
+                _tbSummonO.Text         = summon.Orientation.ToString();
+                _tbSummonSps.Text       = summon.SpawnTimeSecs.ToString();
+                _tbSummonComment.Text   = summon.Comment;
+            }
+        }
+
+        private void _lvSummon_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        {
+            e.Item = new ListViewItem(MySQLConnenct.AISummon[e.ItemIndex].ToString().Split('^'));
+        }
+
+        private void _bSummonSearch_Click(object sender, EventArgs e)
+        {
+            MySQLConnenct.SelectAISummon();
+            _lvSummon.VirtualListSize = MySQLConnenct.AISummon.Count;
+        }
     }
 }

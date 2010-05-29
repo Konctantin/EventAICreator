@@ -57,9 +57,9 @@
             this.UnselectALL1 = new System.Windows.Forms.ToolStripMenuItem();
             this.SelectAll1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Revert1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this._tbSummonY = new System.Windows.Forms.TextBox();
+            this._tbSummonX = new System.Windows.Forms.TextBox();
+            this._tbSummonID = new System.Windows.Forms.TextBox();
             this._tbScriptID = new System.Windows.Forms.TextBox();
             this._clbPhase = new System.Windows.Forms.CheckedListBox();
             this._cmPhase = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -142,7 +142,7 @@
             this.Panel = new System.Windows.Forms.TabControl();
             this._tpText = new System.Windows.Forms.TabPage();
             this._bTextSearch = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this._lvText = new System.Windows.Forms.ListView();
             this.rtbTextOut = new System.Windows.Forms.RichTextBox();
             this.lDateTime2 = new System.Windows.Forms.Label();
             this.bCreateTextQuery = new System.Windows.Forms.Button();
@@ -160,24 +160,46 @@
             this.label9 = new System.Windows.Forms.Label();
             this._cbMessageType = new System.Windows.Forms.ComboBox();
             this._tpSummon = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this._bCreateSummon = new System.Windows.Forms.Button();
+            this._bWriteSummon = new System.Windows.Forms.Button();
             this._bSummonSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this._tbSummonSps = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this._tbSummonO = new System.Windows.Forms.TextBox();
+            this._tbSummonZ = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this._tbSummonComment = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this._rtbSummon = new System.Windows.Forms.RichTextBox();
+            this._lvSummon = new System.Windows.Forms.ListView();
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this._cmFlag.SuspendLayout();
             this._cmPhase.SuspendLayout();
@@ -485,38 +507,38 @@
             this.Revert1.Text = "Инвертировать";
             this.Revert1.Click += new System.EventHandler(this.Revert1_Click);
             // 
-            // textBox1
+            // _tbSummonY
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox1.Location = new System.Drawing.Point(89, 52);
-            this.textBox1.MaxLength = 3;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "0";
-            this.HelpEntry.SetToolTip(this.textBox1, "Данные из DBC");
+            this._tbSummonY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._tbSummonY.Location = new System.Drawing.Point(89, 52);
+            this._tbSummonY.MaxLength = 3;
+            this._tbSummonY.Name = "_tbSummonY";
+            this._tbSummonY.Size = new System.Drawing.Size(186, 20);
+            this._tbSummonY.TabIndex = 16;
+            this._tbSummonY.Text = "0";
+            this.HelpEntry.SetToolTip(this._tbSummonY, "Данные из DBC");
             // 
-            // textBox2
+            // _tbSummonX
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox2.Location = new System.Drawing.Point(89, 19);
-            this.textBox2.MaxLength = 5;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 20);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.Text = "0";
-            this.HelpEntry.SetToolTip(this.textBox2, "Данные из DBC\r\n");
+            this._tbSummonX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._tbSummonX.Location = new System.Drawing.Point(89, 19);
+            this._tbSummonX.MaxLength = 5;
+            this._tbSummonX.Name = "_tbSummonX";
+            this._tbSummonX.Size = new System.Drawing.Size(186, 20);
+            this._tbSummonX.TabIndex = 15;
+            this._tbSummonX.Text = "0";
+            this.HelpEntry.SetToolTip(this._tbSummonX, "Данные из DBC\r\n");
             // 
-            // textBox3
+            // _tbSummonID
             // 
-            this.textBox3.ForeColor = System.Drawing.Color.Red;
-            this.textBox3.Location = new System.Drawing.Point(99, 25);
-            this.textBox3.MaxLength = 6;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 20);
-            this.textBox3.TabIndex = 14;
-            this.textBox3.Text = "1";
-            this.HelpEntry.SetToolTip(this.textBox3, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
+            this._tbSummonID.ForeColor = System.Drawing.Color.Red;
+            this._tbSummonID.Location = new System.Drawing.Point(99, 25);
+            this._tbSummonID.MaxLength = 6;
+            this._tbSummonID.Name = "_tbSummonID";
+            this._tbSummonID.Size = new System.Drawing.Size(185, 20);
+            this._tbSummonID.TabIndex = 14;
+            this._tbSummonID.Text = "1";
+            this.HelpEntry.SetToolTip(this._tbSummonID, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
             // 
             // _tbScriptID
             // 
@@ -765,6 +787,7 @@
             this._lvScripts.GridLines = true;
             this._lvScripts.HideSelection = false;
             this._lvScripts.Location = new System.Drawing.Point(167, 0);
+            this._lvScripts.MultiSelect = false;
             this._lvScripts.Name = "_lvScripts";
             this._lvScripts.Size = new System.Drawing.Size(875, 125);
             this._lvScripts.TabIndex = 0;
@@ -1312,7 +1335,7 @@
             // 
             this._tpText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this._tpText.Controls.Add(this._bTextSearch);
-            this._tpText.Controls.Add(this.listView1);
+            this._tpText.Controls.Add(this._lvText);
             this._tpText.Controls.Add(this.rtbTextOut);
             this._tpText.Controls.Add(this.lDateTime2);
             this._tpText.Controls.Add(this.bCreateTextQuery);
@@ -1333,15 +1356,40 @@
             this._bTextSearch.TabIndex = 36;
             this._bTextSearch.Text = "Найти";
             this._bTextSearch.UseVisualStyleBackColor = true;
+            this._bTextSearch.Click += new System.EventHandler(this._bTextSearch_Click);
             // 
-            // listView1
+            // _lvText
             // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.listView1.Location = new System.Drawing.Point(145, 6);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(897, 207);
-            this.listView1.TabIndex = 35;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this._lvText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this._lvText.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26,
+            this.columnHeader27,
+            this.columnHeader28,
+            this.columnHeader29,
+            this.columnHeader30,
+            this.columnHeader31,
+            this.columnHeader32,
+            this.columnHeader33,
+            this.columnHeader34,
+            this.columnHeader35,
+            this.columnHeader36,
+            this.columnHeader37,
+            this.columnHeader38});
+            this._lvText.FullRowSelect = true;
+            this._lvText.GridLines = true;
+            this._lvText.HideSelection = false;
+            this._lvText.Location = new System.Drawing.Point(145, 6);
+            this._lvText.MultiSelect = false;
+            this._lvText.Name = "_lvText";
+            this._lvText.Size = new System.Drawing.Size(897, 207);
+            this._lvText.TabIndex = 35;
+            this._lvText.UseCompatibleStateImageBehavior = false;
+            this._lvText.View = System.Windows.Forms.View.Details;
+            this._lvText.VirtualMode = true;
+            this._lvText.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this._lvText_RetrieveVirtualItem);
+            this._lvText.SelectedIndexChanged += new System.EventHandler(this._lvText_SelectedIndexChanged);
             // 
             // rtbTextOut
             // 
@@ -1511,12 +1559,12 @@
             // _tpSummon
             // 
             this._tpSummon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this._tpSummon.Controls.Add(this.button2);
-            this._tpSummon.Controls.Add(this.button3);
+            this._tpSummon.Controls.Add(this._bCreateSummon);
+            this._tpSummon.Controls.Add(this._bWriteSummon);
             this._tpSummon.Controls.Add(this._bSummonSearch);
             this._tpSummon.Controls.Add(this.groupBox1);
-            this._tpSummon.Controls.Add(this.richTextBox1);
-            this._tpSummon.Controls.Add(this.listView2);
+            this._tpSummon.Controls.Add(this._rtbSummon);
+            this._tpSummon.Controls.Add(this._lvSummon);
             this._tpSummon.Location = new System.Drawing.Point(4, 22);
             this._tpSummon.Name = "_tpSummon";
             this._tpSummon.Padding = new System.Windows.Forms.Padding(3);
@@ -1524,24 +1572,24 @@
             this._tpSummon.TabIndex = 2;
             this._tpSummon.Text = "Призыв";
             // 
-            // button2
+            // _bCreateSummon
             // 
-            this.button2.AutoEllipsis = true;
-            this.button2.Location = new System.Drawing.Point(929, 509);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 25);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Создать";
-            this.button2.UseVisualStyleBackColor = true;
+            this._bCreateSummon.AutoEllipsis = true;
+            this._bCreateSummon.Location = new System.Drawing.Point(929, 509);
+            this._bCreateSummon.Name = "_bCreateSummon";
+            this._bCreateSummon.Size = new System.Drawing.Size(107, 25);
+            this._bCreateSummon.TabIndex = 29;
+            this._bCreateSummon.Text = "Создать";
+            this._bCreateSummon.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // _bWriteSummon
             // 
-            this.button3.Location = new System.Drawing.Point(929, 540);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 25);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Записать";
-            this.button3.UseVisualStyleBackColor = true;
+            this._bWriteSummon.Location = new System.Drawing.Point(929, 540);
+            this._bWriteSummon.Name = "_bWriteSummon";
+            this._bWriteSummon.Size = new System.Drawing.Size(107, 25);
+            this._bWriteSummon.TabIndex = 30;
+            this._bWriteSummon.Text = "Записать";
+            this._bWriteSummon.UseVisualStyleBackColor = true;
             // 
             // _bSummonSearch
             // 
@@ -1551,15 +1599,16 @@
             this._bSummonSearch.TabIndex = 3;
             this._bSummonSearch.Text = "Найти";
             this._bSummonSearch.UseVisualStyleBackColor = true;
+            this._bSummonSearch.Click += new System.EventHandler(this._bSummonSearch_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this._tbSummonSps);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this._tbSummonComment);
+            this.groupBox1.Controls.Add(this._tbSummonID);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Location = new System.Drawing.Point(8, 193);
             this.groupBox1.Name = "groupBox1";
@@ -1568,25 +1617,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "creature_ai_summon";
             // 
-            // textBox5
+            // _tbSummonSps
             // 
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox5.Location = new System.Drawing.Point(99, 57);
-            this.textBox5.MaxLength = 3;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(185, 20);
-            this.textBox5.TabIndex = 16;
-            this.textBox5.Text = "0";
+            this._tbSummonSps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._tbSummonSps.Location = new System.Drawing.Point(99, 57);
+            this._tbSummonSps.MaxLength = 3;
+            this._tbSummonSps.Name = "_tbSummonSps";
+            this._tbSummonSps.Size = new System.Drawing.Size(185, 20);
+            this._tbSummonSps.TabIndex = 16;
+            this._tbSummonSps.Text = "0";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this._tbSummonX);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this._tbSummonO);
+            this.groupBox2.Controls.Add(this._tbSummonZ);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this._tbSummonY);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Location = new System.Drawing.Point(9, 83);
             this.groupBox2.Name = "groupBox2";
@@ -1613,25 +1662,25 @@
             this.label18.TabIndex = 18;
             this.label18.Text = "Z";
             // 
-            // textBox7
+            // _tbSummonO
             // 
-            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox7.Location = new System.Drawing.Point(89, 127);
-            this.textBox7.MaxLength = 5;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(186, 20);
-            this.textBox7.TabIndex = 15;
-            this.textBox7.Text = "0";
+            this._tbSummonO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._tbSummonO.Location = new System.Drawing.Point(89, 127);
+            this._tbSummonO.MaxLength = 5;
+            this._tbSummonO.Name = "_tbSummonO";
+            this._tbSummonO.Size = new System.Drawing.Size(186, 20);
+            this._tbSummonO.TabIndex = 15;
+            this._tbSummonO.Text = "0";
             // 
-            // textBox4
+            // _tbSummonZ
             // 
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox4.Location = new System.Drawing.Point(89, 90);
-            this.textBox4.MaxLength = 5;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(186, 20);
-            this.textBox4.TabIndex = 15;
-            this.textBox4.Text = "0";
+            this._tbSummonZ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._tbSummonZ.Location = new System.Drawing.Point(89, 90);
+            this._tbSummonZ.MaxLength = 5;
+            this._tbSummonZ.Name = "_tbSummonZ";
+            this._tbSummonZ.Size = new System.Drawing.Size(186, 20);
+            this._tbSummonZ.TabIndex = 15;
+            this._tbSummonZ.Text = "0";
             // 
             // label15
             // 
@@ -1671,15 +1720,15 @@
             this.label19.TabIndex = 17;
             this.label19.Text = "Комментарий";
             // 
-            // textBox6
+            // _tbSummonComment
             // 
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox6.Location = new System.Drawing.Point(99, 261);
-            this.textBox6.MaxLength = 3;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(442, 20);
-            this.textBox6.TabIndex = 16;
-            this.textBox6.Text = "0";
+            this._tbSummonComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this._tbSummonComment.Location = new System.Drawing.Point(99, 261);
+            this._tbSummonComment.MaxLength = 3;
+            this._tbSummonComment.Name = "_tbSummonComment";
+            this._tbSummonComment.Size = new System.Drawing.Size(442, 20);
+            this._tbSummonComment.TabIndex = 16;
+            this._tbSummonComment.Text = "0";
             // 
             // label17
             // 
@@ -1690,22 +1739,133 @@
             this.label17.TabIndex = 17;
             this.label17.Text = "spawntimesecs";
             // 
-            // richTextBox1
+            // _rtbSummon
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 509);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(917, 87);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this._rtbSummon.Location = new System.Drawing.Point(6, 509);
+            this._rtbSummon.Name = "_rtbSummon";
+            this._rtbSummon.Size = new System.Drawing.Size(917, 87);
+            this._rtbSummon.TabIndex = 1;
+            this._rtbSummon.Text = "";
             // 
-            // listView2
+            // _lvSummon
             // 
-            this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.listView2.Location = new System.Drawing.Point(145, 6);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(897, 181);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this._lvSummon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this._lvSummon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader39,
+            this.columnHeader40,
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43,
+            this.columnHeader44,
+            this.columnHeader45});
+            this._lvSummon.FullRowSelect = true;
+            this._lvSummon.GridLines = true;
+            this._lvSummon.HideSelection = false;
+            this._lvSummon.Location = new System.Drawing.Point(145, 6);
+            this._lvSummon.MultiSelect = false;
+            this._lvSummon.Name = "_lvSummon";
+            this._lvSummon.Size = new System.Drawing.Size(897, 181);
+            this._lvSummon.TabIndex = 0;
+            this._lvSummon.UseCompatibleStateImageBehavior = false;
+            this._lvSummon.View = System.Windows.Forms.View.Details;
+            this._lvSummon.VirtualMode = true;
+            this._lvSummon.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this._lvSummon_RetrieveVirtualItem);
+            this._lvSummon.SelectedIndexChanged += new System.EventHandler(this._lvSummon_SelectedIndexChanged);
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "ID";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Content_def";
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Content_loc1";
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "Content_loc2";
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "Content_loc3";
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "Content_loc4";
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "Content_loc5";
+            // 
+            // columnHeader31
+            // 
+            this.columnHeader31.Text = "Content_loc6";
+            // 
+            // columnHeader32
+            // 
+            this.columnHeader32.Text = "Content_loc7";
+            // 
+            // columnHeader33
+            // 
+            this.columnHeader33.Text = "Content_loc8";
+            // 
+            // columnHeader34
+            // 
+            this.columnHeader34.Text = "Sound";
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "Type";
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Text = "Lenguage";
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "Emote";
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "Comment";
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "ID";
+            this.columnHeader39.Width = 87;
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Text = "X";
+            this.columnHeader40.Width = 103;
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "Y";
+            this.columnHeader41.Width = 108;
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "Z";
+            this.columnHeader42.Width = 122;
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "Orientation";
+            this.columnHeader43.Width = 115;
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Text = "SpawnTimeSecs";
+            this.columnHeader44.Width = 109;
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "Comment";
+            this.columnHeader45.Width = 240;
             // 
             // FormMain
             // 
@@ -1882,31 +2042,53 @@
         private System.Windows.Forms.ComboBox _cbFilteEventType;
         private System.Windows.Forms.Button _bFind;
         private System.Windows.Forms.Button _bTextSearch;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListView _lvText;
+        private System.Windows.Forms.Button _bCreateSummon;
+        private System.Windows.Forms.Button _bWriteSummon;
         private System.Windows.Forms.Button _bSummonSearch;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox _tbSummonSps;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox _tbSummonX;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox _tbSummonO;
+        private System.Windows.Forms.TextBox _tbSummonZ;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox _tbSummonY;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox _tbSummonComment;
+        private System.Windows.Forms.TextBox _tbSummonID;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.RichTextBox _rtbSummon;
+        private System.Windows.Forms.ListView _lvSummon;
         private System.Windows.Forms.Button _bSoundSearch;
         private System.Windows.Forms.ComboBox _cbTextEmote;
         private System.Windows.Forms.ComboBox _cbSoundEntry;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
+        private System.Windows.Forms.ColumnHeader columnHeader27;
+        private System.Windows.Forms.ColumnHeader columnHeader28;
+        private System.Windows.Forms.ColumnHeader columnHeader29;
+        private System.Windows.Forms.ColumnHeader columnHeader30;
+        private System.Windows.Forms.ColumnHeader columnHeader31;
+        private System.Windows.Forms.ColumnHeader columnHeader32;
+        private System.Windows.Forms.ColumnHeader columnHeader33;
+        private System.Windows.Forms.ColumnHeader columnHeader34;
+        private System.Windows.Forms.ColumnHeader columnHeader35;
+        private System.Windows.Forms.ColumnHeader columnHeader36;
+        private System.Windows.Forms.ColumnHeader columnHeader37;
+        private System.Windows.Forms.ColumnHeader columnHeader38;
+        private System.Windows.Forms.ColumnHeader columnHeader39;
+        private System.Windows.Forms.ColumnHeader columnHeader40;
+        private System.Windows.Forms.ColumnHeader columnHeader41;
+        private System.Windows.Forms.ColumnHeader columnHeader42;
+        private System.Windows.Forms.ColumnHeader columnHeader43;
+        private System.Windows.Forms.ColumnHeader columnHeader44;
+        private System.Windows.Forms.ColumnHeader columnHeader45;
     }
 }
 

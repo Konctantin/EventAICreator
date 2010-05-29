@@ -78,20 +78,45 @@ namespace EventAI
     };
 
 
-    public struct TextAI
+    public class TextAI
     {
-        //public int Entry;
+        public int      ID;
+        public string   ContentDefault;
+        public string[] ContentLocale;
+        public int      Sound;
+        public int      Type;
+        public int      Lenguage;
+        public int      Emote;
+        public string   Comment;
+
+        public TextAI()
+        {
+            ContentLocale = new string[8];
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}",
+                ID, ContentDefault,
+                ContentLocale[0], ContentLocale[1], ContentLocale[2], ContentLocale[3], ContentLocale[4], ContentLocale[5], ContentLocale[6], ContentLocale[7],
+                Sound, Type, Lenguage, Emote, Comment);
+        }
     };
 
-    public struct SummonIA
+    public struct SummonAI
     {
-        public int ID;
-        public float PositionX;
-        public float PositionY;
-        public float PositionZ;
-        public float Orientation;
-        public int SpawnTimeSecs;
-        public string Comment;
+        public int      ID;
+        public float    PositionX;
+        public float    PositionY;
+        public float    PositionZ;
+        public float    Orientation;
+        public int      SpawnTimeSecs;
+        public string   Comment;
+
+        public override string ToString()
+        {
+            return String.Format("{0}^{1}^{2}^{3}^{4}^{5}^{6}", ID, PositionX, PositionY, PositionZ, Orientation, SpawnTimeSecs, Comment);
+        }
     };
 
     public struct Creature

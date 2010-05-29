@@ -71,17 +71,20 @@ namespace EventAI
                     break;
                 case ActionType.ИЗМЕНИТЬ_UNIT_FIELD:
                     l1.Text = "Номер поля Data";
+                    cb1.SetEnumValues<EUnitFields>("UNIT_FIELD_");
                     l2.Text = "Значение";
                     l3.Text = "Цель";
                     cb3.SetEnumValues<CastTarget>();
                     break;
                 case ActionType.ИЗМЕНИТЬ_UNIT_FLAG:
                     l1.Text = "Флаг существа";
+                    new ButtonHandler(cb1, typeof(UnitFlags));
                     l2.Text = "Цель";
                     cb2.SetEnumValues<CastTarget>();
                     break;
                 case ActionType.УБРАТЬ_UNIT_FLAG:
                     l1.Text = "Флаг существа";
+                    new ButtonHandler(cb1, typeof(UnitFlags));
                     l2.Text = "Цель";
                     cb2.SetEnumValues<CastTarget>();
                     break;
@@ -115,7 +118,7 @@ namespace EventAI
                     l1.Text = "Цель";
                     cb1.SetEnumValues<CastTarget>();
                     l2.Text = "ID спелла";
-                    new ButtonHandler(cb1, BType.SPELL);
+                    new ButtonHandler(cb2, BType.SPELL);
                     break;
                 case ActionType.УДАЛИТСЯ_ОТ_ЦЕЛИ:
                     l1.Text = "Дистанция";

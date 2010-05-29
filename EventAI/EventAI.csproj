@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\ObjectEnums.cs" />
     <Compile Include="Forms\FormDbSearch.cs">
       <SubType>Form</SubType>
     </Compile>

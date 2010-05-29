@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -16,6 +15,8 @@ namespace EventAI
         public static bool Connected { get; private set; }
 
         public static List<ScriptAI> AIScript = new List<ScriptAI>();
+        public static List<TextAI> AIText = new List<TextAI>();
+        public static List<SummonAI> AISummon = new List<SummonAI>();
 
         private static String ConnectionString
         {
@@ -78,6 +79,81 @@ namespace EventAI
                         script.Comment           = reader[22].ToString();
 
                         AIScript.Add(script);
+                    }
+                }
+            }
+        }
+
+        public static void SelectAIText()
+        {
+            TestConnect();
+            if (!Connected)
+                return;
+            string query = "SELECT * FROM creature_ai_texts;";
+            using (_conn = new MySqlConnection(ConnectionString))
+            {
+                _command = new MySqlCommand(query, _conn);
+                _conn.Open();
+                AIText.Clear();
+
+                using (var reader = _command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        TextAI script = new TextAI();
+
+                        script.ID               = reader[0].ToInt32();
+                        script.ContentDefault   = reader[1].ToString();
+
+                        script.ContentLocale[0] = reader[2].ToString();
+                        script.ContentLocale[1] = reader[3].ToString();
+                        script.ContentLocale[2] = reader[4].ToString();
+                        script.ContentLocale[3] = reader[5].ToString();
+                        script.ContentLocale[4] = reader[6].ToString();
+                        script.ContentLocale[5] = reader[7].ToString();
+                        script.ContentLocale[6] = reader[8].ToString();
+                        script.ContentLocale[7] = reader[9].ToString();
+
+                        script.Sound            = reader[10].ToInt32();
+                        script.Type             = reader[11].ToInt32();
+                        script.Lenguage         = reader[12].ToInt32();
+                        script.Emote            = reader[13].ToInt32();
+
+                        script.Comment          = reader[14].ToString();
+
+                        AIText.Add(script);
+                    }
+                }
+            }
+        }
+
+        public static void SelectAISummon()
+        {
+            TestConnect();
+            if (!Connected)
+                return;
+            string query = "SELECT * FROM creature_ai_summons;";
+            using (_conn = new MySqlConnection(ConnectionString))
+            {
+                _command = new MySqlCommand(query, _conn);
+                _conn.Open();
+                AISummon.Clear();
+
+                using (var reader = _command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        SummonAI script;
+
+                        script.ID               = reader[0].ToInt32();
+                        script.PositionX        = reader.GetFloat(1);
+                        script.PositionY        = reader.GetFloat(2);
+                        script.PositionZ        = reader.GetFloat(3);
+                        script.Orientation      = reader.GetFloat(4);
+                        script.SpawnTimeSecs    = reader[5].ToInt32();
+                        script.Comment          = reader[6].ToString();
+
+                        AISummon.Add(script);
                     }
                 }
             }
