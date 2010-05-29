@@ -5,11 +5,11 @@ namespace EventAI
 {
     public class Inscription
     {
-        public static void ShowActionParametrInscription(ComboBox cb, Label l1, Label l2, Label l3, ComboBox cb1, ComboBox cb2, ComboBox cb3)
+        public static void ShowActionParametr(ComboBox combobox, ComboBox cb1, ComboBox cb2, ComboBox cb3, Label l1, Label l2, Label l3)
         {
-            ((GroupBox)cb.Parent).Reset();
+            ((GroupBox)combobox.Parent).Reset();
             
-            switch ((ActionType)cb.SelectedValue.ToUInt32())
+            switch ((ActionType)combobox.SelectedValue.ToUInt32())
             {
                 case ActionType.ТЕКСТ:
                     l1.Text = "ID текста 1";
@@ -180,11 +180,11 @@ namespace EventAI
             cb3.Visible = l3.Text != string.Empty;
          }
 
-        public static void ShowEventTypeInscription(ComboBox cb, Label l1, Label l2, Label l3, Label l4, ComboBox cb1, ComboBox cb2, ComboBox cb3, ComboBox cb4)
+        public static void ShowEventType(ComboBox combobox, ComboBox cb1, ComboBox cb2, ComboBox cb3, ComboBox cb4, Label l1, Label l2, Label l3, Label l4)
         {
-            ((GroupBox)cb.Parent).Reset();
+            ((GroupBox)combobox.Parent).Reset();
 
-            switch ((EventType)cb.SelectedValue.ToUInt32())
+            switch ((EventType)combobox.SelectedValue.ToUInt32())
             {
                 case EventType.ПО_ТАЙМЕРУ_В_БОЮ:
                 case EventType.ПО_ТАЙМЕРУ_ВНЕ_БОЯ:
@@ -227,7 +227,8 @@ namespace EventAI
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
                 case EventType.ПРИ_ПОЯВЛЕНИИ_В_ЗОНЕ_ВИДИМОСТИ:
-                    l1.Text = "Дружественная цель:";
+                    l1.Text = "Тип цели:";
+                    cb1.SetEnumValues<TargetFrends>();
                     l2.Text = "Максимальная дистанция до цели";
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
@@ -287,14 +288,12 @@ namespace EventAI
             cb4.Visible = l4.Text != string.Empty;
          }
 
-        public static void ShowActionTyteCondition(ComboBox cb, ComboBox cb2, ComboBox cb3, ComboBox cb4, Label l3, Label l4)
+        public static void ShowActionTyteCondition(ComboBox combobox, ComboBox cb2, ComboBox cb3, ComboBox cb4, Label l3, Label l4)
         {
-            if ((EventType)cb.SelectedValue.ToInt32() == EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ)
+            if ((EventType)combobox.SelectedValue.ToInt32() == EventType.ПРИ_ПОЛУЧЕНИИ_ЭМОЦИИ)
             {
-                ((GroupBox)cb.Parent).ResetButton();
-                
+                ((GroupBox)combobox.Parent).ResetButton();
                 l3.Text = l4.Text = string.Empty;
-
                 cb3.Reset();
                 cb4.Reset();
                 

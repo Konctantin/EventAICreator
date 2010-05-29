@@ -44,12 +44,11 @@
             this._cbActionType3 = new System.Windows.Forms.ComboBox();
             this._cbActionType1 = new System.Windows.Forms.ComboBox();
             this._cbEventType = new System.Windows.Forms.ComboBox();
-            this.NumberScripts = new System.Windows.Forms.TextBox();
-            this.EntryNpc = new System.Windows.Forms.TextBox();
+            this._tbEntryNpc = new System.Windows.Forms.TextBox();
             this._tbShance = new System.Windows.Forms.TextBox();
             this._tbTextContentDefault = new System.Windows.Forms.TextBox();
             this._cbLocale = new System.Windows.Forms.ComboBox();
-            this.tNumberAITexts = new System.Windows.Forms.TextBox();
+            this._tbTextID = new System.Windows.Forms.TextBox();
             this._cbLenguage = new System.Windows.Forms.ComboBox();
             this._tbCommentAITexts = new System.Windows.Forms.TextBox();
             this._tbTextContentLocales = new System.Windows.Forms.TextBox();
@@ -61,6 +60,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this._tbScriptID = new System.Windows.Forms.TextBox();
             this._clbPhase = new System.Windows.Forms.CheckedListBox();
             this._cmPhase = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UnselectALL = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,7 +104,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rtbScriptOut = new System.Windows.Forms.RichTextBox();
-            this.Create = new System.Windows.Forms.Button();
+            this._bCreateAIScript = new System.Windows.Forms.Button();
             this._bWriteFiles = new System.Windows.Forms.Button();
             this._gbEventType = new System.Windows.Forms.GroupBox();
             this.lEventType4 = new System.Windows.Forms.Label();
@@ -244,7 +244,7 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.настройкиToolStripMenuItem.Text = "Параметры";
             this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -259,7 +259,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -295,7 +295,7 @@
             this._cbActionType2.Size = new System.Drawing.Size(238, 21);
             this._cbActionType2.TabIndex = 18;
             this.HelpEntry.SetToolTip(this._cbActionType2, "Выбирите тип действия");
-            this._cbActionType2.SelectedIndexChanged += new System.EventHandler(this.ActionType_SelectedIndexChanged);
+            this._cbActionType2.SelectedIndexChanged += new System.EventHandler(this.ActionType_SelectedIndexChanged_2);
             // 
             // _cbActionType3
             // 
@@ -309,7 +309,7 @@
             this._cbActionType3.Size = new System.Drawing.Size(238, 21);
             this._cbActionType3.TabIndex = 22;
             this.HelpEntry.SetToolTip(this._cbActionType3, "Выбирите тип действия");
-            this._cbActionType3.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_2);
+            this._cbActionType3.SelectedIndexChanged += new System.EventHandler(this.ActionType_SelectedIndexChanged_3);
             // 
             // _cbActionType1
             // 
@@ -323,7 +323,7 @@
             this._cbActionType1.Size = new System.Drawing.Size(238, 21);
             this._cbActionType1.TabIndex = 14;
             this.HelpEntry.SetToolTip(this._cbActionType1, "Выбирите тип действия");
-            this._cbActionType1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this._cbActionType1.SelectedIndexChanged += new System.EventHandler(this.ActionType_SelectedIndexChanged_1);
             // 
             // _cbEventType
             // 
@@ -339,29 +339,18 @@
             this._cbEventType.TabIndex = 9;
             this._cbEventType.Tag = "0-TIMER";
             this.HelpEntry.SetToolTip(this._cbEventType, "Укажите тип события");
-            this._cbEventType.SelectedIndexChanged += new System.EventHandler(this.comboEventType_SelectedIndexChanged);
+            this._cbEventType.SelectedIndexChanged += new System.EventHandler(this.EventType_SelectedIndexChanged);
             // 
-            // NumberScripts
+            // _tbEntryNpc
             // 
-            this.NumberScripts.ForeColor = System.Drawing.Color.Red;
-            this.NumberScripts.Location = new System.Drawing.Point(151, 265);
-            this.NumberScripts.MaxLength = 11;
-            this.NumberScripts.Name = "NumberScripts";
-            this.NumberScripts.Size = new System.Drawing.Size(114, 20);
-            this.NumberScripts.TabIndex = 1;
-            this.NumberScripts.Text = "1";
-            this.NumberScripts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
-            // 
-            // EntryNpc
-            // 
-            this.EntryNpc.Location = new System.Drawing.Point(151, 291);
-            this.EntryNpc.MaxLength = 10;
-            this.EntryNpc.Name = "EntryNpc";
-            this.EntryNpc.Size = new System.Drawing.Size(114, 20);
-            this.EntryNpc.TabIndex = 2;
-            this.EntryNpc.Text = "1";
-            this.HelpEntry.SetToolTip(this.EntryNpc, "Введите ID существа используя \r\nтаблицу creature_template");
-            this.EntryNpc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
+            this._tbEntryNpc.Location = new System.Drawing.Point(151, 291);
+            this._tbEntryNpc.MaxLength = 10;
+            this._tbEntryNpc.Name = "_tbEntryNpc";
+            this._tbEntryNpc.Size = new System.Drawing.Size(114, 20);
+            this._tbEntryNpc.TabIndex = 2;
+            this._tbEntryNpc.Text = "1";
+            this.HelpEntry.SetToolTip(this._tbEntryNpc, "Введите ID существа используя \r\nтаблицу creature_template");
+            this._tbEntryNpc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // _tbShance
             // 
@@ -397,17 +386,17 @@
             this._cbLocale.TabIndex = 6;
             this.HelpEntry.SetToolTip(this._cbLocale, "Укажите язык локализации,\r\nпо умолчанию русский (8)");
             // 
-            // tNumberAITexts
+            // _tbTextID
             // 
-            this.tNumberAITexts.ForeColor = System.Drawing.Color.Red;
-            this.tNumberAITexts.Location = new System.Drawing.Point(85, 20);
-            this.tNumberAITexts.MaxLength = 6;
-            this.tNumberAITexts.Name = "tNumberAITexts";
-            this.tNumberAITexts.Size = new System.Drawing.Size(99, 20);
-            this.tNumberAITexts.TabIndex = 4;
-            this.tNumberAITexts.Text = "1";
-            this.HelpEntry.SetToolTip(this.tNumberAITexts, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
-            this.tNumberAITexts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
+            this._tbTextID.ForeColor = System.Drawing.Color.Red;
+            this._tbTextID.Location = new System.Drawing.Point(85, 20);
+            this._tbTextID.MaxLength = 6;
+            this._tbTextID.Name = "_tbTextID";
+            this._tbTextID.Size = new System.Drawing.Size(99, 20);
+            this._tbTextID.TabIndex = 4;
+            this._tbTextID.Text = "1";
+            this.HelpEntry.SetToolTip(this._tbTextID, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
+            this._tbTextID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
             // 
             // _cbLenguage
             // 
@@ -529,6 +518,17 @@
             this.textBox3.Text = "1";
             this.HelpEntry.SetToolTip(this.textBox3, "ID который укзыветься в скриптах\r\n\"-\" ставиться автоматически");
             // 
+            // _tbScriptID
+            // 
+            this._tbScriptID.ForeColor = System.Drawing.Color.Red;
+            this._tbScriptID.Location = new System.Drawing.Point(151, 265);
+            this._tbScriptID.MaxLength = 11;
+            this._tbScriptID.Name = "_tbScriptID";
+            this._tbScriptID.Size = new System.Drawing.Size(114, 20);
+            this._tbScriptID.TabIndex = 1;
+            this._tbScriptID.Text = "1";
+            this._tbScriptID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberScripts_KeyPress);
+            // 
             // _clbPhase
             // 
             this._clbPhase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -649,9 +649,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.rtbScriptOut);
-            this.splitContainer1.Panel2.Controls.Add(this.EntryNpc);
-            this.splitContainer1.Panel2.Controls.Add(this.Create);
-            this.splitContainer1.Panel2.Controls.Add(this.NumberScripts);
+            this.splitContainer1.Panel2.Controls.Add(this._tbEntryNpc);
+            this.splitContainer1.Panel2.Controls.Add(this._bCreateAIScript);
+            this.splitContainer1.Panel2.Controls.Add(this._tbScriptID);
             this.splitContainer1.Panel2.Controls.Add(this._bWriteFiles);
             this.splitContainer1.Panel2.Controls.Add(this._gbEventType);
             this.splitContainer1.Panel2.Controls.Add(this._tbComment);
@@ -917,16 +917,16 @@
             this.rtbScriptOut.TabIndex = 35;
             this.rtbScriptOut.Text = "";
             // 
-            // Create
+            // _bCreateAIScript
             // 
-            this.Create.AutoEllipsis = true;
-            this.Create.Location = new System.Drawing.Point(930, 374);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(107, 25);
-            this.Create.TabIndex = 27;
-            this.Create.Text = "Создать";
-            this.Create.UseVisualStyleBackColor = true;
-            this.Create.Click += new System.EventHandler(this.button1_Click);
+            this._bCreateAIScript.AutoEllipsis = true;
+            this._bCreateAIScript.Location = new System.Drawing.Point(930, 374);
+            this._bCreateAIScript.Name = "_bCreateAIScript";
+            this._bCreateAIScript.Size = new System.Drawing.Size(107, 25);
+            this._bCreateAIScript.TabIndex = 27;
+            this._bCreateAIScript.Text = "Создать";
+            this._bCreateAIScript.UseVisualStyleBackColor = true;
+            this._bCreateAIScript.Click += new System.EventHandler(this.CreateAIScript_Click);
             // 
             // _bWriteFiles
             // 
@@ -1023,7 +1023,6 @@
             this._cbEventParametr1.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr1.TabIndex = 23;
             this._cbEventParametr1.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
-            this._cbEventParametr1.TextChanged += new System.EventHandler(this.EventParametr_TextChanged);
             // 
             // _cbEventParametr2
             // 
@@ -1036,7 +1035,6 @@
             this._cbEventParametr2.Size = new System.Drawing.Size(175, 21);
             this._cbEventParametr2.TabIndex = 23;
             this._cbEventParametr2.SelectedIndexChanged += new System.EventHandler(this.ActionTyteCondition_SelectedIndexChanged);
-            this._cbEventParametr2.TextChanged += new System.EventHandler(this.EventParametr_TextChanged);
             // 
             // _gbAction2
             // 
@@ -1369,7 +1367,7 @@
             this.bCreateTextQuery.TabIndex = 16;
             this.bCreateTextQuery.Text = "Создать";
             this.bCreateTextQuery.UseVisualStyleBackColor = true;
-            this.bCreateTextQuery.Click += new System.EventHandler(this.bCreateTextQuery_Click);
+            this.bCreateTextQuery.Click += new System.EventHandler(this.CreateTextQuery_Click);
             // 
             // button5
             // 
@@ -1396,7 +1394,7 @@
             this.groupBox9.Controls.Add(this._tbTextContentDefault);
             this.groupBox9.Controls.Add(this.label10);
             this.groupBox9.Controls.Add(this.label9);
-            this.groupBox9.Controls.Add(this.tNumberAITexts);
+            this.groupBox9.Controls.Add(this._tbTextID);
             this.groupBox9.Controls.Add(this._cbMessageType);
             this.groupBox9.Controls.Add(this._cbLenguage);
             this.groupBox9.Location = new System.Drawing.Point(6, 219);
@@ -1776,8 +1774,8 @@
         private System.Windows.Forms.TextBox _tbShance;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox EntryNpc;
-        private System.Windows.Forms.TextBox NumberScripts;
+        private System.Windows.Forms.TextBox _tbEntryNpc;
+        private System.Windows.Forms.TextBox _tbScriptID;
         private System.Windows.Forms.GroupBox _gbEventType;
         private System.Windows.Forms.ComboBox _cbEventType;
         private System.Windows.Forms.GroupBox _gbAction1;
@@ -1788,7 +1786,7 @@
         private System.Windows.Forms.ComboBox _cbActionType2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox _tbComment;
-        private System.Windows.Forms.Button Create;
+        private System.Windows.Forms.Button _bCreateAIScript;
         private System.Windows.Forms.TabControl Panel;
         private System.Windows.Forms.ComboBox _cbActionParam2_3;
         private System.Windows.Forms.ComboBox _cbActionParam2_2;
@@ -1818,7 +1816,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox _cbLenguage;
         private System.Windows.Forms.ComboBox _cbMessageType;
-        private System.Windows.Forms.TextBox tNumberAITexts;
+        private System.Windows.Forms.TextBox _tbTextID;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

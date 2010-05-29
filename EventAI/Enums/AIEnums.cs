@@ -111,6 +111,18 @@ namespace EventAI
         ПРОЦЕНТ  = 1,
     };
 
+    public enum YesNO
+    {
+        НЕТ = 0,
+        ДА = 1,
+    };
+
+    public enum TargetFrends
+    {
+        ВРАЖДЕБНАЯ_ЦЕЛЬ    = 0,
+        ДРУЖЕСТВЕННАЯ_ЦЕЛЬ = 1,
+    }
+
     public enum SheathState
     {
         БЕЗ_ОРУЖИЯ      = 0,
@@ -168,12 +180,6 @@ namespace EventAI
         СЛУЧАЙНАЯ_ЦЕЛЬ_ИЗ_АГРОЛИСТА         = 4,
         СЛУЧАЙНАЯ_НЕ_ПЕРВАЯ_ПО_АГРО_ЦЕЛЬ    = 5,
         ВЫЗВАВШИЙ_СОБЫТИЕ                   = 6,
-    };
-
-    public enum YesNO
-    {
-        НЕТ = 0,
-        ДА = 1,
     };
 
     public enum MessageType
