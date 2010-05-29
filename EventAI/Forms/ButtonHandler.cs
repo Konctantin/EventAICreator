@@ -19,7 +19,7 @@ namespace EventAI
 
         private uint ComboboxValue
         {
-            get {return (uint)_combobox.GetIntValue(); }
+            get { return (uint)_combobox.GetIntValue(); }
         }
 
         private Point ButtonLocation
@@ -44,9 +44,9 @@ namespace EventAI
         /// <param name="btype">Тип кнопки</param>
         public ButtonHandler(ComboBox combobox, BType btype)
         {
-            _combobox = combobox;
-            _combobox.Size = ComboboxSize;
-            _bType = btype;
+            _combobox       = combobox;
+            _combobox.Size  = ComboboxSize;
+            _bType          = btype;
 
             CreateButton("Поиск");
         }
@@ -58,23 +58,22 @@ namespace EventAI
         /// <param name="combobox">Елемент возле которого необходимо создать кнопку</param>
         public ButtonHandler(ComboBox combobox, Type type)
         {
-            _type = type;
-            _combobox = combobox;
+            _type          = type;
+            _combobox      = combobox;
             _combobox.Size = ComboboxSize;
-            _bType = BType.FLAG;
+            _bType         = BType.FLAG;
 
             CreateButton("Флаг");
         }
 
         private void CreateButton(string text)
         {
-            _button = new Button();
-            _button.ImeMode = ImeMode.NoControl;
-            _button.Size = ButtonSize;
-            _button.Location = ButtonLocation;
-            _button.Text = text;
+            _button             = new Button();
+            _button.Size        = ButtonSize;
+            _button.Location    = ButtonLocation;
+            _button.Text        = text;
+            _button.Click      += new System.EventHandler(ShowForm);
             _button.UseVisualStyleBackColor = true;
-            _button.Click += new System.EventHandler(ShowForm);
 
             ((GroupBox)_combobox.Parent).Controls.Add(_button);
         }
@@ -133,6 +132,18 @@ namespace EventAI
                         _form.Dispose();
                     }
                     break;
+            }
+        }
+
+        ~ButtonHandler()
+        {
+            try
+            {
+                if (_button != null)
+                    _button.Dispose();
+            }
+            catch 
+            { 
             }
         }
     }

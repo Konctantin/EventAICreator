@@ -63,7 +63,7 @@
             this._gbDbSetting.Size = new System.Drawing.Size(217, 158);
             this._gbDbSetting.TabIndex = 0;
             this._gbDbSetting.TabStop = false;
-            this._gbDbSetting.Text = "Date Base Connect Settings";
+            this._gbDbSetting.Text = "Параметры соединения с базой ";
             // 
             // _tbBase
             // 
@@ -126,9 +126,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Port";
+            this.label2.Text = "Порт";
             // 
             // _tbHost
             // 
@@ -142,18 +142,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Host";
+            this.label1.Text = "Хост";
             // 
             // _cbUseDBConnect
             // 
             this._cbUseDBConnect.AutoSize = true;
             this._cbUseDBConnect.Location = new System.Drawing.Point(21, 176);
             this._cbUseDBConnect.Name = "_cbUseDBConnect";
-            this._cbUseDBConnect.Size = new System.Drawing.Size(106, 17);
+            this._cbUseDBConnect.Size = new System.Drawing.Size(204, 17);
             this._cbUseDBConnect.TabIndex = 5;
-            this._cbUseDBConnect.Text = "Use DB Connect";
+            this._cbUseDBConnect.Text = "Использовать соединение с базой";
             this._cbUseDBConnect.UseVisualStyleBackColor = true;
             this._cbUseDBConnect.CheckedChanged += new System.EventHandler(this._cbUseDBConnect_CheckedChanged);
             // 
@@ -163,7 +163,7 @@
             this._bTestConnect.Name = "_bTestConnect";
             this._bTestConnect.Size = new System.Drawing.Size(95, 23);
             this._bTestConnect.TabIndex = 6;
-            this._bTestConnect.Text = "Test connect";
+            this._bTestConnect.Text = "Тест";
             this._bTestConnect.UseVisualStyleBackColor = true;
             this._bTestConnect.Click += new System.EventHandler(this._bSaveSettings_Click);
             // 
@@ -173,11 +173,11 @@
             this._bSaveSettings.Name = "_bSaveSettings";
             this._bSaveSettings.Size = new System.Drawing.Size(95, 23);
             this._bSaveSettings.TabIndex = 7;
-            this._bSaveSettings.Text = "Save";
+            this._bSaveSettings.Text = "Сохранить";
             this._bSaveSettings.UseVisualStyleBackColor = true;
             this._bSaveSettings.Click += new System.EventHandler(this._bSaveSettings_Click);
             // 
-            // FormSettings
+            // FormPropertis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,10 +191,10 @@
             this.MaximumSize = new System.Drawing.Size(250, 268);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(250, 268);
-            this.Name = "FormSettings";
+            this.Name = "FormPropertis";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SpellWork Settings";
+            this.Text = "EventAI Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this._gbDbSetting.ResumeLayout(false);
             this._gbDbSetting.PerformLayout();

@@ -294,12 +294,9 @@ namespace EventAI
                 ((GroupBox)cb.Parent).ResetButton();
                 
                 l3.Text = l4.Text = string.Empty;
-                
-                cb3.DataSource = null;
-                cb4.DataSource = null;
-                cb3.Text = cb4.Text = string.Empty; 
-                cb3.DropDownStyle = ComboBoxStyle.Simple;
-                cb4.DropDownStyle = ComboBoxStyle.Simple;
+
+                cb3.Reset();
+                cb4.Reset();
                 
                 switch ((ConditionType)cb2.SelectedValue.ToUInt32())
                 {

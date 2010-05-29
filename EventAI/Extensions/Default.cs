@@ -21,10 +21,7 @@ namespace EventAI
                         ComboBox cb = (ComboBox)ctrl;
                         if (cb.Name.IndexOf("_cbActionType") == -1 && cb.Name.IndexOf("_cbEventType") == -1)
                         {
-                            cb.DropDownStyle = ComboBoxStyle.Simple;
-                            cb.DataSource = null;
-                            cb.Size = new System.Drawing.Size(238, 21);
-                            cb.Text = String.Empty;
+                            cb.Reset();
                         }
                     }
 
@@ -48,6 +45,14 @@ namespace EventAI
                     }
                 }
             }
+        }
+
+        public static void Reset(this ComboBox cb)
+        {
+            cb.DropDownStyle = ComboBoxStyle.Simple;
+            cb.DataSource = null;
+            cb.Size = new System.Drawing.Size(238, 21);
+            cb.Text = String.Empty;
         }
     }
 }
