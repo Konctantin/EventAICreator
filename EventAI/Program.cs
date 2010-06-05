@@ -17,24 +17,10 @@ namespace EventAI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            if (!File.Exists(DBC.DBC_PATH + "Spell.dbc") ||
-                !File.Exists(DBC.DBC_PATH + "SpellRadius.dbc") ||
-                !File.Exists(DBC.DBC_PATH + "SpellRange.dbc") ||
-                !File.Exists(DBC.DBC_PATH + "SpellDuration.dbc") ||
-                !File.Exists(DBC.DBC_PATH + "SkillLineAbility.dbc") ||
-                !File.Exists(DBC.DBC_PATH + "SkillLine.dbc") ||
-                !File.Exists(DBC.DBC_PATH + "SpellCastTimes.dbc"))
+            if (!Directory.Exists(DBC.DBC_PATH))
             {
-                MessageBox.Show(String.Format("Files not found:\r\n"
-                    + "{0}Spell.dbc\r\n"
-                    + "{0}SpellRadius.dbc\r\n"
-                    + "{0}SpellRange.dbc\r\n"
-                    + "{0}SpellDuration.dbc\r\n"
-                    + "{0}SkillLineAbility.dbc\r\n"
-                    + "{0}SkillLine.dbc\r\n"
-                    + "{0}SpellCastTimes.dbc\r\n",
-                    DBC.DBC_PATH),
-                "SpellWork ERROR",
+                MessageBox.Show("dbc directiry not exist",
+                "EventAI ERROR",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
                 Application.Exit();
@@ -55,11 +41,14 @@ namespace EventAI
             DBC.Emotes              = DBCReader.ReadDBC<EmotesEntry>(DBC._EmotesStrings);
             DBC.Faction             = DBCReader.ReadDBC<FactionEntry>(DBC._FactionStrings);
             DBC.AreaTable           = DBCReader.ReadDBC<AreaTableEntry>(DBC._AreaTableStrings);
+            DBC.HolidayNames        = DBCReader.ReadDBC<HolidayNamesEntry>(DBC._HolidayNamesStrings);
+            DBC.CreatureFamily      = DBCReader.ReadDBC<CreatureFamilyEntry>(DBC._CreatureFamilyStrings);
+            DBC.CreatureType        = DBCReader.ReadDBC<CreatureTypeEntry>(DBC._CreatureTypeStrings);
 
-            DBC.SpellDuration       = DBCReader.ReadDBC<SpellDurationEntry>(null);
-            DBC.SkillLineAbility    = DBCReader.ReadDBC<SkillLineAbilityEntry>(null);
-            DBC.SpellRadius         = DBCReader.ReadDBC<SpellRadiusEntry>(null);
-            DBC.SpellCastTimes      = DBCReader.ReadDBC<SpellCastTimesEntry>(null);
+            DBC.SpellDuration       = DBCReader.ReadDBC<SpellDurationEntry>();
+            DBC.SkillLineAbility    = DBCReader.ReadDBC<SkillLineAbilityEntry>();
+            DBC.SpellRadius         = DBCReader.ReadDBC<SpellRadiusEntry>();
+            DBC.SpellCastTimes      = DBCReader.ReadDBC<SpellCastTimesEntry>();
         }
 
         private static LocalesDBC DetectedLocale

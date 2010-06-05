@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -37,6 +34,11 @@ namespace EventAI
             get { return new Size(180, 21); }
         }
 
+        private FormMain MatherForm
+        {
+            get { return (FormMain)_combobox.FindForm(); }
+        }
+
         /// <summary>
         /// Создает кнопку для поиска значения в какой-то коллекции
         /// </summary>
@@ -52,6 +54,21 @@ namespace EventAI
         }
 
         /// <summary>
+        /// Создает кнопку для поиска значения в какой-то коллекции
+        /// </summary>
+        /// <param name="combobox">Елемент возле которого необходимо создать кнопку</param>
+        /// <param name="btype">Тип кнопки</param>
+        /// <param name="buttonText">Надпись на кнопке</param>
+        public ButtonHandler(ComboBox combobox, BType btype, string buttonText)
+        {
+            _combobox       = combobox;
+            _combobox.Size  = ComboboxSize;
+            _bType          = btype;
+
+            CreateButton(buttonText);
+        }
+
+        /// <summary>
         /// Создает кнопку для вызова формы подсчета флагов 
         /// </summary>
         /// <typeparam name="T">Тип флага</typeparam>
@@ -64,6 +81,22 @@ namespace EventAI
             _bType         = BType.FLAG;
 
             CreateButton("Флаг");
+        }
+
+        /// <summary>
+        /// Создает кнопку для вызова формы подсчета флагов
+        /// </summary>
+        /// <param name="combobox">Елемент возле которого необходимо создать кнопку</param>
+        /// <param name="type">Тип флага</param>
+        /// <param name="buttonText">Надпись на кнопке</param>
+        public ButtonHandler(ComboBox combobox, Type type, string buttonText)
+        {
+            _type           = type;
+            _combobox       = combobox;
+            _combobox.Size  = ComboboxSize;
+            _bType          = BType.FLAG;
+
+            CreateButton(buttonText);
         }
 
         private void CreateButton(string text)
@@ -91,44 +124,27 @@ namespace EventAI
                         _form.Dispose();
                     }
                     break;
-                //case BType.CREATURE:
-                //    {
-                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                //        _form.ShowDialog();
-                //        _combobox.SetVal(_form.Spell.ID);
-                //        _form.Dispose();
-                //    }
-                //    break;
-                //case BType.EVENT:
-                //    {
-                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                //        _form.ShowDialog();
-                //        _combobox.SetVal(_form.Spell.ID);
-                //        _form.Dispose();
-                //    }
-                //    break;
-                //case BType.ITEM:
-                //    {
-                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                //        _form.ShowDialog();
-                //        _combobox.SetVal(_form.Spell.ID);
-                //        _form.Dispose();
-                //    }
-                //    break;
-                //case BType.QUEST:
-                //    {
-                //        FormSearchSpell _form = new FormSearchSpell(Who.Spell);
-                //        _form.ShowDialog();
-                //        _combobox.SetVal(_form.Spell.ID);
-                //        _form.Dispose();
-                //    }
-                //    break;
                 case BType.FLAG:
                     {
                         FormCalculateFlags _form = new FormCalculateFlags(_type, ComboboxValue, String.Empty);
                         _form.ShowDialog();
                         if (_form.DialogResult == DialogResult.OK)
                             _combobox.SetValue(_form.Flags);
+                        _form.Dispose();
+                    }
+                    break;
+                case BType.TEXT:
+                    {
+                        MySQLConnenct.SelectAIText();
+                        MatherForm._tPanel.SelectedIndex = 1;
+                    }
+                    break;
+                default:
+                    {
+                        FormDbSearch _form = new FormDbSearch(_bType, ComboboxValue);
+                        _form.ShowDialog();
+                        if (_form.DialogResult == DialogResult.OK)
+                            _combobox.SetValue(_form.Value);
                         _form.Dispose();
                     }
                     break;
@@ -170,12 +186,16 @@ namespace EventAI
         /// </summary>
         QUEST,
         /// <summary>
-        /// Форма поиска событий
-        /// </summary>
-        EVENT,
-        /// <summary>
         /// Форма поиска флага
         /// </summary>
         FLAG,
+        /// <summary>
+        /// Открывает вкладку с текстами
+        /// </summary>
+        TEXT,
+        /// <summary>
+        /// 
+        /// </summary>
+        SUMMON,
     };
 }

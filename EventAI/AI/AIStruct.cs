@@ -120,10 +120,26 @@ namespace EventAI
     };
 
     public struct Creature
-    { };
+    {
+        public uint   ID;
+        public string Name;
+        public string SubName;
+        public uint   Type;
+        public uint   NpcFlag;
+        public uint   Rank;
+        public uint   Family;
+    };
 
     public struct Quest
-    { };
+    {
+        public uint   ID;
+        public string Name;
+    };
 
-    // todo:
+    public struct ItemTemplate
+    {
+        public uint ID;
+        public string Name;
+        public string Description;
+    };
 }

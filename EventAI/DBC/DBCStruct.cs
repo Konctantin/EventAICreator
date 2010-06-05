@@ -484,9 +484,9 @@ namespace EventAI
     public struct EmotesEntry
     {
         public uint ID;
-        private uint _name;
+        public uint _name;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
-        private uint[] field;
+        public uint[] field;
         
         public string Name
         {
@@ -503,17 +503,19 @@ namespace EventAI
     {
         public uint ID;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 22)]
-        private uint[] fields1;
-        private uint _name;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 33)]
-        private uint[] fields2;
+        public uint[] fields1;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public uint[] _name;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 18)]
+        public uint[] fields2;
 
         public string Name
         {
             get
             {
                 string s;
-                DBC._FactionStrings.TryGetValue(_name, out s);
+                uint offset = _name[(uint)DBC.Locale];
+                DBC._FactionStrings.TryGetValue(offset, out s);
                 return s;
             }
         }
@@ -523,35 +525,83 @@ namespace EventAI
     {
         public uint ID;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
-        private uint[] fields1;
-        private uint _name;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 24)]
-        private uint[] fields2;
+        public uint[] fields1;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public uint[] _name;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 9)]
+        public uint[] fields2;
 
         public string Name
         {
             get
             {
                 string s;
-                DBC._AreaTableStrings.TryGetValue(_name, out s);
+                uint offset = _name[(uint)DBC.Locale];
+                DBC._AreaTableStrings.TryGetValue(offset, out s);
                 return s;
             }
         }
     };
 
-    //=============== DateBase =================\\
-
-    public struct Item
+    public struct HolidayNamesEntry
     {
-        public uint     Entry;
-        public String   Name;
-        public String   Description;
-        public String   LocalesName;
-        public String   LocalesDescription;
-        public uint     SpellID1;
-        public uint     SpellID2;
-        public uint     SpellID3;
-        public uint     SpellID4;
-        public uint     SpellID5;
+        public uint ID;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public uint[] _name;
+        public uint unk;
+
+        public string Name
+        {
+            get
+            {
+                string s;
+                uint offset = _name[(uint)DBC.Locale];
+                DBC._HolidayNamesStrings.TryGetValue(offset, out s);
+                return s;
+            }
+        }
+
+    };
+
+    public struct CreatureFamilyEntry
+    {
+        public uint   ID;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 9)]
+        public uint[] unk1;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public uint[] _name;
+        public uint   unk2;
+        public uint   unk3;
+
+        public string Name
+        {
+            get
+            {
+                string s;
+                uint offset = _name[(uint)DBC.Locale];
+                DBC._CreatureFamilyStrings.TryGetValue(offset, out s);
+                return s;
+            }
+        }
+    };
+
+    public struct CreatureTypeEntry
+    {
+        public uint   ID;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public uint[] _name;
+        public uint   unk1;
+        public uint   unk2;
+
+        public string Name
+        {
+            get
+            {
+                string s;
+                uint offset = _name[(uint)DBC.Locale];
+                DBC._CreatureTypeStrings.TryGetValue(offset, out s);
+                return s;
+            }
+        }
     };
 }

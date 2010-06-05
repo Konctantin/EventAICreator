@@ -12,11 +12,13 @@ namespace EventAI
             get { return new System.Drawing.Size(238, 21); }
         }
 
-        public static void SetDbcData<T>(this ComboBox cb, Dictionary<uint, T> dict) where T : struct
+        public static void SetDbcData<T>(this ComboBox cb, Dictionary<uint, T> dict, string noValue = null) where T : struct
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("NAME");
+            if (noValue != null)
+                dt.Rows.Add(new Object[] { -1, noValue });
 
             foreach (var str in dict.Values)
             {

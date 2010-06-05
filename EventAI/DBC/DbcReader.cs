@@ -8,10 +8,13 @@ namespace EventAI
 {
     static class DBCReader
     {
-        public static unsafe Dictionary<uint, T> ReadDBC<T>(Dictionary<uint, string> strDict) where T : struct
+        public static unsafe Dictionary<uint, T> ReadDBC<T>(Dictionary<uint, string> strDict = null) where T : struct
         {
             Dictionary<uint, T> dict = new Dictionary<uint, T>();
-            String fileName = String.Format(@"{0}\{1}.dbc", DBC.DBC_PATH, typeof(T).Name).Replace("Entry", String.Empty);
+            string fileName = Path.Combine(DBC.DBC_PATH, (typeof(T).Name).Replace("Entry", String.Empty) + ".dbc");
+
+            if (!File.Exists(fileName))
+                throw new FileNotFoundException("Not found", fileName);
 
             using (BinaryReader reader = new BinaryReader(new FileStream(fileName, FileMode.Open, FileAccess.Read), Encoding.UTF8))
             {
@@ -20,7 +23,7 @@ namespace EventAI
                 int size = Marshal.SizeOf(typeof(T));
 
                 if (!header.IsDBC)
-                    throw new AIException("{0} is not DBC files", fileName);
+                    throw new FileNotFoundException("Is not DBC files", fileName);
                 if (header.RecordSize != size)
                     throw new AIException("Size of row in DBC file ({0}) != size of DBC struct ({1}) in DBC: {2}", header.RecordSize, size, fileName);
 

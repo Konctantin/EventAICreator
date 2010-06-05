@@ -9,12 +9,6 @@ using System.Windows.Forms;
 
 namespace EventAI
 {
-    public enum Who
-    {
-        Spell,
-        Skill,
-    };
-
     public partial class FormSearchSpell : Form
     {
         public FormSearchSpell(uint value = 0)

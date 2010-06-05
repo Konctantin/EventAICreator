@@ -54,5 +54,12 @@ namespace EventAI
             cb.Size = new System.Drawing.Size(238, 21);
             cb.Text = String.Empty;
         }
+
+        public static void ResetS(this ComboBox cb)
+        {
+            cb.DropDownStyle = ComboBoxStyle.Simple;
+            cb.DataSource = null;
+            cb.Text = String.Empty;
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace EventAI
             {
                 case ActionType.ТЕКСТ:
                     l1.Text = "ID текста 1";
+                    //new ButtonHandler(cb1, BType.TEXT);
                     l2.Text = "ID текста 2";
                     l3.Text = "ID текста 3";
                     break;
@@ -100,6 +101,7 @@ namespace EventAI
                     break;
                 case ActionType.УСТАНОВИТЬ_ФАЗУ:
                     l1.Text = "Фаза";
+                    new ButtonHandler(cb1, typeof(Phase));
                      break;
                 case ActionType.ПОВЫСИТЬ_ФАЗУ:
                     l1.Text = "Значение";
@@ -126,12 +128,17 @@ namespace EventAI
                     break;
                 case ActionType.СЛУЧАЙНАЯ_ФРАЗА:
                     l1.Text = "ID фазы 1";
+                    new ButtonHandler(cb1, typeof(Phase));
                     l2.Text = "ID фазы 2";
+                    new ButtonHandler(cb2, typeof(Phase));
                     l3.Text = "ID фазы 3";
+                    new ButtonHandler(cb3, typeof(Phase));
                     break;
                 case ActionType.СЛУЧАЙНАЯ_ФАЗА_С_ПАРАМЕТРОМ:
                     l1.Text = "Минимальный номер фазы";
+                    new ButtonHandler(cb1, typeof(Phase));
                     l2.Text = "Максимальный номер фазы";
+                    new ButtonHandler(cb2, typeof(Phase));
                     break;
                 case ActionType.ПРИЗЫВ_В_ОПРЕДЕЛЕННУЮ_ТОЧКУ:
                     l1.Text = "ID существа";
@@ -149,6 +156,7 @@ namespace EventAI
                 case ActionType.SET_INST_DATA:
                     l1.Text = "Поле";
                     l2.Text = "Значение";
+                    cb2.SetEnumValues<InstantData>();
                     break;
                 case ActionType.SET_INST_DATA64:
                     l1.Text = "Поле";
@@ -338,7 +346,7 @@ namespace EventAI
                         break;
                     case ConditionType.ПРИ_АКТИВНОМ_ЭВЕНТЕ:
                         l3.Text = "ID эвента";
-                        new ButtonHandler(cb3, BType.EVENT);
+                        cb3.SetDbcData(DBC.HolidayNames);
                         break;
                 }
 
