@@ -105,7 +105,9 @@ namespace EventAI
 
         private void LogOut(string text, params object[] arg)
         {
+            rtbScriptOut.ForeColor = Color.Red;
             rtbScriptOut.AppendFormatLine(text, arg);
+            rtbScriptOut.ForeColor = rtbScriptOut.ForeColor;
             err = true;
         }
 
@@ -212,6 +214,8 @@ namespace EventAI
                 case EventType.ПРИ_УРОНЕ_ЗАКЛИНАНИЕМ:
                     if (script.EventParam[2] > script.EventParam[3])
                         LogOut("Минимальное время до повтора не может быть больше максимального!");
+                    if (script.EventParam[0] > 0 && script.EventParam[1] > -1)
+                        LogOut("Если указано значение \"ID Заклинания\", тогда значение \"Школа\" должно быть (-1), иначе \"ИД заклинания\" должно быть (0)");
                     break;
                 case EventType.ПРИ_ДИСТАНЦИИ:
                     if (script.EventParam[0] > script.EventParam[1])

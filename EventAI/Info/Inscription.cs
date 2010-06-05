@@ -224,10 +224,10 @@ namespace EventAI
                     l2.Text = "Максимальное время до повтора (мс)";
                     break;
                 case EventType.ПРИ_УРОНЕ_ЗАКЛИНАНИЕМ:
-                    l1.Text = "Укажите ID спелла";
-                    new ButtonHandler(cb1, BType.SPELL);
-                    l2.Text = "Школа спелов";
-                    new ButtonHandler(cb2, typeof(School));
+                    l1.Text = "ID Заклинания";
+                    new ButtonHandler(cb1, BType.SPELL, cb2, -1);
+                    l2.Text = "Школа";
+                    new ButtonHandler(cb2, typeof(School), cb1, 0);
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
