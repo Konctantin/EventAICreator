@@ -100,7 +100,7 @@ namespace EventAI
 
         private void _lvScripts_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            e.Item = new ListViewItem(MySQLConnenct.AIScript[e.ItemIndex].ToString().Split('^'));
+            e.Item = new ListViewItem(MySQLConnenct.AIScript[e.ItemIndex].ToArray());
         }
 
         private void LogOut(string text, params object[] arg)
@@ -380,7 +380,7 @@ namespace EventAI
 
         private void _lvText_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            e.Item = new ListViewItem(MySQLConnenct.AIText[e.ItemIndex].ToString().Split('^'));
+            e.Item = new ListViewItem(MySQLConnenct.AIText[e.ItemIndex].ToArray());
         }
 
         private void _bTextSearch_Click(object sender, EventArgs e)
@@ -425,7 +425,7 @@ namespace EventAI
 
         private void _lvSummon_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            e.Item = new ListViewItem(MySQLConnenct.AISummon[e.ItemIndex].ToString().Split('^'));
+            e.Item = new ListViewItem(MySQLConnenct.AISummon[e.ItemIndex].ToArray());
         }
 
         private void _bSummonSearch_Click(object sender, EventArgs e)

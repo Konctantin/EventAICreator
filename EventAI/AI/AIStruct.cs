@@ -61,19 +61,37 @@ namespace EventAI
             ActionParam = new int[3, 3];
         }
         /// <summary>
-        /// Представляет члены класса в виде строки разделенной пробелами
+        /// Представляет члены класса в виде массива строк
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
+        public string[] ToArray()
         {
-            return String.Format("{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}^{18}^{19}^{20}^{21}^{22}",
-                ID, NpcEntry, EventType, Phase, Chance, Flags,
-                EventParam[0], EventParam[1], EventParam[2], EventParam[3],
-                ActionType[0], ActionParam[0, 0], ActionParam[0, 1], ActionParam[0, 2],
-                ActionType[1], ActionParam[1, 0], ActionParam[1, 1], ActionParam[1, 2],
-                ActionType[2], ActionParam[2, 0], ActionParam[1, 1], ActionParam[2, 2],
+            return new[]
+            {
+                ID.ToString(), 
+                NpcEntry.ToString(), 
+                EventType.ToString(), 
+                Phase.ToString(), 
+                Chance.ToString(), 
+                Flags.ToString(),
+                EventParam[0].ToString(), 
+                EventParam[1].ToString(), 
+                EventParam[2].ToString(), 
+                EventParam[3].ToString(),
+                ActionType[0].ToString(), 
+                ActionParam[0, 0].ToString(), 
+                ActionParam[0, 1].ToString(), 
+                ActionParam[0, 2].ToString(),
+                ActionType[1].ToString(), 
+                ActionParam[1, 0].ToString(), 
+                ActionParam[1, 1].ToString(), 
+                ActionParam[1, 2].ToString(),
+                ActionType[2].ToString(),
+                ActionParam[2, 0].ToString(), 
+                ActionParam[1, 1].ToString(), 
+                ActionParam[2, 2].ToString(),
                 Comment
-            );
+            };            
         }
     };
 
@@ -94,12 +112,26 @@ namespace EventAI
             ContentLocale = new string[8];
         }
 
-        public override string ToString()
+        public string[] ToArray()
         {
-            return String.Format("{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}",
-                ID, ContentDefault,
-                ContentLocale[0], ContentLocale[1], ContentLocale[2], ContentLocale[3], ContentLocale[4], ContentLocale[5], ContentLocale[6], ContentLocale[7],
-                Sound, Type, Lenguage, Emote, Comment);
+            return new[]
+            {
+                ID.ToString(), 
+                ContentDefault,
+                ContentLocale[0], 
+                ContentLocale[1], 
+                ContentLocale[2], 
+                ContentLocale[3], 
+                ContentLocale[4], 
+                ContentLocale[5], 
+                ContentLocale[6], 
+                ContentLocale[7],
+                Sound.ToString(), 
+                Type.ToString(), 
+                Lenguage.ToString(), 
+                Emote.ToString(), 
+                Comment
+            };
         }
     };
 
@@ -113,9 +145,18 @@ namespace EventAI
         public int      SpawnTimeSecs;
         public string   Comment;
 
-        public override string ToString()
+        public string[] ToArray()
         {
-            return String.Format("{0}^{1}^{2}^{3}^{4}^{5}^{6}", ID, PositionX, PositionY, PositionZ, Orientation, SpawnTimeSecs, Comment);
+            return new[] 
+            { 
+                ID.ToString(), 
+                PositionX.ToString(), 
+                PositionY.ToString(), 
+                PositionZ.ToString(), 
+                Orientation.ToString(), 
+                SpawnTimeSecs.ToString(), 
+                Comment 
+            };
         }
     };
 

@@ -25,7 +25,6 @@ namespace EventAI
             
             if(DBC.Spell.ContainsKey(value))
                 new SpellInfo(_rtbSpellInfo, DBC.Spell[value]);
-
         }
 
         private List<SpellEntry> _spellList = new List<SpellEntry>();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDbSearch));
             this._lvData = new System.Windows.Forms.ListView();
             this._bCansel = new System.Windows.Forms.Button();
             this._bOk = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             this._bCansel.TabIndex = 1;
             this._bCansel.Text = "Отмена";
             this._bCansel.UseVisualStyleBackColor = true;
+            this._bCansel.Click += new System.EventHandler(this._bCansel_Click);
             // 
             // _bOk
             // 
@@ -82,6 +84,7 @@
             this._bOk.TabIndex = 2;
             this._bOk.Text = "Да";
             this._bOk.UseVisualStyleBackColor = true;
+            this._bOk.Click += new System.EventHandler(this._bOk_Click);
             // 
             // groupBox1
             // 
@@ -184,66 +187,82 @@
             // 
             // _cbParam4
             // 
+            this._cbParam4.DropDownHeight = 400;
             this._cbParam4.FormattingEnabled = true;
+            this._cbParam4.IntegralHeight = false;
             this._cbParam4.Location = new System.Drawing.Point(93, 84);
             this._cbParam4.Name = "_cbParam4";
-            this._cbParam4.Size = new System.Drawing.Size(193, 21);
+            this._cbParam4.Size = new System.Drawing.Size(238, 21);
             this._cbParam4.TabIndex = 2;
             // 
             // _cbParam3
             // 
+            this._cbParam3.DropDownHeight = 400;
             this._cbParam3.FormattingEnabled = true;
+            this._cbParam3.IntegralHeight = false;
             this._cbParam3.Location = new System.Drawing.Point(93, 60);
             this._cbParam3.Name = "_cbParam3";
-            this._cbParam3.Size = new System.Drawing.Size(193, 21);
+            this._cbParam3.Size = new System.Drawing.Size(238, 21);
             this._cbParam3.TabIndex = 2;
             // 
             // _cbParam8
             // 
+            this._cbParam8.DropDownHeight = 400;
             this._cbParam8.FormattingEnabled = true;
-            this._cbParam8.Location = new System.Drawing.Point(486, 84);
+            this._cbParam8.IntegralHeight = false;
+            this._cbParam8.Location = new System.Drawing.Point(469, 84);
             this._cbParam8.Name = "_cbParam8";
-            this._cbParam8.Size = new System.Drawing.Size(231, 21);
+            this._cbParam8.Size = new System.Drawing.Size(238, 21);
             this._cbParam8.TabIndex = 2;
             // 
             // _cbParam2
             // 
+            this._cbParam2.DropDownHeight = 400;
             this._cbParam2.FormattingEnabled = true;
+            this._cbParam2.IntegralHeight = false;
             this._cbParam2.Location = new System.Drawing.Point(93, 36);
             this._cbParam2.Name = "_cbParam2";
-            this._cbParam2.Size = new System.Drawing.Size(193, 21);
+            this._cbParam2.Size = new System.Drawing.Size(238, 21);
             this._cbParam2.TabIndex = 1;
             // 
             // _cbParam7
             // 
+            this._cbParam7.DropDownHeight = 400;
             this._cbParam7.FormattingEnabled = true;
-            this._cbParam7.Location = new System.Drawing.Point(486, 60);
+            this._cbParam7.IntegralHeight = false;
+            this._cbParam7.Location = new System.Drawing.Point(469, 60);
             this._cbParam7.Name = "_cbParam7";
-            this._cbParam7.Size = new System.Drawing.Size(231, 21);
+            this._cbParam7.Size = new System.Drawing.Size(238, 21);
             this._cbParam7.TabIndex = 2;
             // 
             // _cbID
             // 
+            this._cbID.DropDownHeight = 400;
             this._cbID.FormattingEnabled = true;
+            this._cbID.IntegralHeight = false;
             this._cbID.Location = new System.Drawing.Point(93, 12);
             this._cbID.Name = "_cbID";
-            this._cbID.Size = new System.Drawing.Size(193, 21);
+            this._cbID.Size = new System.Drawing.Size(238, 21);
             this._cbID.TabIndex = 0;
             // 
             // _cbParam6
             // 
+            this._cbParam6.DropDownHeight = 400;
             this._cbParam6.FormattingEnabled = true;
-            this._cbParam6.Location = new System.Drawing.Point(486, 36);
+            this._cbParam6.IntegralHeight = false;
+            this._cbParam6.Location = new System.Drawing.Point(469, 36);
             this._cbParam6.Name = "_cbParam6";
-            this._cbParam6.Size = new System.Drawing.Size(231, 21);
+            this._cbParam6.Size = new System.Drawing.Size(238, 21);
             this._cbParam6.TabIndex = 1;
             // 
             // _cbParam5
             // 
+            this._cbParam5.DropDownHeight = 400;
             this._cbParam5.FormattingEnabled = true;
-            this._cbParam5.Location = new System.Drawing.Point(486, 12);
+            this._cbParam5.IntegralHeight = false;
+            this._cbParam5.Location = new System.Drawing.Point(469, 12);
             this._cbParam5.Name = "_cbParam5";
-            this._cbParam5.Size = new System.Drawing.Size(231, 21);
+            this._cbParam5.Size = new System.Drawing.Size(238, 21);
             this._cbParam5.TabIndex = 0;
             // 
             // FormDbSearch
@@ -255,6 +274,7 @@
             this.Controls.Add(this._bOk);
             this.Controls.Add(this._bCansel);
             this.Controls.Add(this._lvData);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDbSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDbSearch";

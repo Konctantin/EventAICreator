@@ -11,7 +11,11 @@ namespace EventAI
 {
     public partial class FormDbSearch : Form
     {
-        public uint Value { get; private set; }
+        public uint Value 
+        { 
+            get { return  _val; } 
+            private set { value = _val; } 
+        }
 
         private BType _type;
         private uint  _val;
@@ -29,14 +33,9 @@ namespace EventAI
 
         private void Init()
         {
-            _cbID.ResetS();
-            _cbParam2.ResetS();
-            _cbParam3.ResetS();
-            _cbParam4.ResetS();
-            _cbParam5.ResetS();
-            _cbParam6.ResetS();
-            _cbParam7.ResetS();
-            _cbParam8.ResetS();
+            foreach (object ctrl in groupBox1.Controls)
+                if (ctrl is ComboBox) 
+                    ((ComboBox)ctrl).ResetS();
 
             switch (_type)
             {
@@ -44,14 +43,16 @@ namespace EventAI
                     {
                         this.Text = "Форма поиска существ";
                         _lvData.SetColumns<Creature>();
+
                         label1.Text = "Номер";
                         label2.Text = "Название";
                         label3.Text = "Тип";
                         label4.Text = "Семейство";
-                        label5.Text = "Номер";
-                        label6.Text = "Номер";
-                        label7.Text = "Номер";
-                        label8.Text = "Номер";
+                        label5.Text = "";
+                        label6.Text = "";
+                        label7.Text = "";
+                        label8.Text = "";
+
                         _cbParam3.SetDbcData(DBC.CreatureType, "Тип существа");
                         _cbParam4.SetDbcData(DBC.CreatureFamily, "Семейство существа");
                     }
@@ -73,5 +74,37 @@ namespace EventAI
         }
 
         #endregion
+
+        private void _bOk_Click(object sender, EventArgs e)
+        {
+            StringBuilder query = new StringBuilder();
+
+            switch (_type)
+            {
+                case BType.CREATURE:
+                    {
+
+                    }
+                    break;
+                case BType.ITEM:
+                    {
+
+                    }
+                    break;
+                case BType.QUEST:
+                    {
+
+                    }
+                    break;
+                default:
+                    this.Close();
+                    break;
+            }
+        }
+
+        private void _bCansel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

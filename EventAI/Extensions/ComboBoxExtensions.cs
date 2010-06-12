@@ -12,11 +12,12 @@ namespace EventAI
             get { return new System.Drawing.Size(238, 21); }
         }
 
-        public static void SetDbcData<T>(this ComboBox cb, Dictionary<uint, T> dict, string noValue = null) where T : struct
+        public static void SetDbcData<T>(this ComboBox cb, Dictionary<uint, T> dict, string noValue = null)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("NAME");
+            
             if (noValue != null)
                 dt.Rows.Add(new Object[] { -1, noValue });
 
@@ -28,11 +29,11 @@ namespace EventAI
                 dt.Rows.Add(new Object[] { ID, "(" + ID.ToString("000") + ") " + Name });
             }
 
-            cb.DataSource = dt;
-            cb.DisplayMember = "NAME";
-            cb.ValueMember = "ID";
-            cb.DropDownStyle = ComboBoxStyle.DropDownList;
-            cb.Size = ComboboxSize;
+            cb.DataSource       = dt;
+            cb.DisplayMember    = "NAME";
+            cb.ValueMember      = "ID";
+            cb.DropDownStyle    = ComboBoxStyle.DropDownList;
+            cb.Size             = ComboboxSize;
         }
 
         public static void SetValue(this ComboBox cb, Object value)
@@ -60,7 +61,7 @@ namespace EventAI
             return tb.Text.ToInt32();
         }
 
-        public static void SetEnumValues<T>(this ComboBox cb) where T : struct
+        public static void SetEnumValues<T>(this ComboBox cb)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
@@ -82,7 +83,7 @@ namespace EventAI
             cb.ValueMember = "ID";
         }
 
-        public static void SetEnumValues<T>(this ComboBox cb, string remove) where T : struct
+        public static void SetEnumValues<T>(this ComboBox cb, string remove)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
