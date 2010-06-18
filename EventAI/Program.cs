@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace EventAI
 {
@@ -27,15 +26,15 @@ namespace EventAI
                 return;
             }
 
-            DBC.Spell = DBCReader.ReadDBC<SpellEntry>(DBC._SpellStrings);
-            new Thread(RunOther).Start();
-            DBC.Locale = DetectedLocale;
+            new Thread(LoadDBC).Start();
             
             Application.Run(new FormMain());
         }
 
-        private static void RunOther()
+        private static void LoadDBC()
         {
+            DBC.Spell               = DBCReader.ReadDBC<SpellEntry>(DBC._SpellStrings);
+
             DBC.SkillLine           = DBCReader.ReadDBC<SkillLineEntry>(DBC._SkillLineStrings);
             DBC.SpellRange          = DBCReader.ReadDBC<SpellRangeEntry>(DBC._SpellRangeStrings);
             DBC.Emotes              = DBCReader.ReadDBC<EmotesEntry>(DBC._EmotesStrings);
@@ -49,6 +48,8 @@ namespace EventAI
             DBC.SkillLineAbility    = DBCReader.ReadDBC<SkillLineAbilityEntry>();
             DBC.SpellRadius         = DBCReader.ReadDBC<SpellRadiusEntry>();
             DBC.SpellCastTimes      = DBCReader.ReadDBC<SpellCastTimesEntry>();
+
+            DBC.Locale = DetectedLocale;
         }
 
         private static LocalesDBC DetectedLocale

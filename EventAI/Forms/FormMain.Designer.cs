@@ -1334,6 +1334,7 @@
             this._tPanel.SelectedIndex = 0;
             this._tPanel.Size = new System.Drawing.Size(1056, 630);
             this._tPanel.TabIndex = 0;
+            this._tPanel.SelectedIndexChanged += new System.EventHandler(this._tPanel_SelectedIndexChanged);
             // 
             // _tpText
             // 

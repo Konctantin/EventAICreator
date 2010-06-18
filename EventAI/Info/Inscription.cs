@@ -72,7 +72,7 @@ namespace EventAI
                     break;
                 case ActionType.ИЗМЕНИТЬ_UNIT_FIELD:
                     l1.Text = "Номер поля Data";
-                    cb1.SetEnumValues<EUnitFields>("UNIT_FIELD_");
+                    cb1.SetEnumValues<EUnitFields>("", "UNIT_FIELD_");
                     l2.Text = "Значение";
                     l3.Text = "Цель";
                     cb3.SetEnumValues<CastTarget>();
@@ -252,7 +252,7 @@ namespace EventAI
                     break;
                 case EventType.ЕСЛИ_ДРУЖЕСТВЕННАЯ_ЦЕЛЬ_ПОД_КОНТРОЛЕМ:
                     l1.Text = "Тип диспелла";
-                    cb1.SetEnumValues<DispelType>("DISPEL_");
+                    cb1.SetEnumValues<DispelType>("", "DISPEL_");
                     l2.Text = "В радиусе";
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";

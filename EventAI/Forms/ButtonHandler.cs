@@ -114,6 +114,12 @@ namespace EventAI
                         MatherForm._tPanel.SelectedIndex = 1;
                     }
                     break;
+                case BType.SUMMON:
+                    {
+                        MySQLConnenct.SelectAIText();
+                        MatherForm._tPanel.SelectedIndex = 2;
+                    }
+                    break;
                 default:
                     {
                         FormDbSearch _form = new FormDbSearch(_bType, ComboboxValue);
@@ -134,8 +140,7 @@ namespace EventAI
         {
             try
             {
-                if (_button != null)
-                    _button.Dispose();
+                _button.Dispose();
             }
             catch 
             { 

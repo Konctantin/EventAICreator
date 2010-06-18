@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase\MySQLQueryBuilder.cs" />
     <Compile Include="Enums\ObjectEnums.cs" />
     <Compile Include="Extensions\ListViewException.cs" />
     <Compile Include="Forms\FormDbSearch.cs">

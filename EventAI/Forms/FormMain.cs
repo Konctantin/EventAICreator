@@ -18,10 +18,9 @@ namespace EventAI
             _cbActionType2.SetEnumValues<ActionType>();
             _cbActionType3.SetEnumValues<ActionType>();
 
-            _cbFilteEventType.SetEnumValues(typeof(EventType), "Тип события", "");
-            _cbFilteActionType.SetEnumValues(typeof(ActionType), "Тип действия", "");
+            _cbFilteEventType.SetEnumValues<EventType>("Тип события", "", false);
+            _cbFilteActionType.SetEnumValues<ActionType>("Тип действия", "", false);
              // 2 page
-            _cbTextEmote.SetDbcData<EmotesEntry>(DBC.Emotes);
             _cbMessageType.SetEnumValues<MessageType>();
             _cbLenguage.SetEnumValues<Lenguage>();
             _cbLocale.DataSource = Enum.GetValues(typeof(Locales));
@@ -432,6 +431,12 @@ namespace EventAI
         {
             MySQLConnenct.SelectAISummon();
             _lvSummon.VirtualListSize = MySQLConnenct.AISummon.Count;
+        }
+
+        private void _tPanel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(((TabControl)sender).SelectedIndex == 1)
+                _cbTextEmote.SetDbcData<EmotesEntry>(DBC.Emotes);
         }
     }
 }
