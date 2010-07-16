@@ -604,4 +604,23 @@ namespace EventAI
             }
         }
     };
+
+    public struct QuestInfoEntry
+    {
+        public uint ID;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public uint[] _name;
+        public uint unk;
+
+        public string Name
+        {
+            get
+            {
+                string s;
+                uint offset = _name[(uint)DBC.Locale];
+                DBC._QuestInfoStrings.TryGetValue(offset, out s);
+                return s;
+            }
+        }
+    }
 }

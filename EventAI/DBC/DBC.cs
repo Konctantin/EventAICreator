@@ -7,7 +7,7 @@ namespace EventAI
 {
     static class DBC
     {
-        public const string VERSION = "EventAI Constructor 3.3.3a (11723)";
+        public const string VERSION = "EventAI Constructor 3.3.5a (12340)";
         public const int MAX_DBC_LOCALE = 16;
         public const string DBC_PATH = @"dbc\";
 
@@ -23,6 +23,7 @@ namespace EventAI
         public static Dictionary<uint, HolidayNamesEntry> HolidayNames;
         public static Dictionary<uint, CreatureFamilyEntry> CreatureFamily;
         public static Dictionary<uint, CreatureTypeEntry> CreatureType;
+        public static Dictionary<uint, QuestInfoEntry> QuestType;
 
         public static Dictionary<uint, string> _SpellStrings            = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _SkillLineStrings        = new Dictionary<uint, string>();
@@ -33,6 +34,7 @@ namespace EventAI
         public static Dictionary<uint, string> _HolidayNamesStrings     = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _CreatureFamilyStrings   = new Dictionary<uint, string>();
         public static Dictionary<uint, string> _CreatureTypeStrings     = new Dictionary<uint, string>();
+        public static Dictionary<uint, string> _QuestInfoStrings        = new Dictionary<uint, string>();
         // 
         public static Dictionary<uint, EmotesEntry> Emotes;
         public static Dictionary<uint, FactionEntry> Faction;

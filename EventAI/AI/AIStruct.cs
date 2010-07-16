@@ -36,7 +36,7 @@ namespace EventAI
         /// </summary>
         public int Flags;
         /// <summary>
-        /// Прпметр для србытия, массив [4]
+        /// Парметр для србытия, массив [4]
         /// </summary>
         public int[] EventParam;
         /// <summary>
@@ -56,8 +56,8 @@ namespace EventAI
         /// </summary>
         public ScriptAI()
         {
-            EventParam = new int[4];
-            ActionType = new int[3];
+            EventParam  = new int[4];
+            ActionType  = new int[3];
             ActionParam = new int[3, 3];
         }
         /// <summary>
@@ -94,8 +94,7 @@ namespace EventAI
             };            
         }
     };
-
-
+    
     public class TextAI
     {
         public int      ID;
@@ -174,7 +173,10 @@ namespace EventAI
     public struct Quest
     {
         public uint   ID;
-        public string Name;
+        public string Title;
+        public uint   Flag;
+        public int    MinLevel;
+        public int    Type;
     };
 
     public struct ItemTemplate

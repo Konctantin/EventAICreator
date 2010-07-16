@@ -64,7 +64,20 @@ namespace EventAI
                     break;
                 case BType.QUEST:
                     {
+                        this.Text = "Форма поиска заданий";
                         _lvData.SetColumns<Quest>();
+
+                        label1.Text = "Номер";
+                        label2.Text = "Название";
+                        label3.Text = "Флаг";
+                        label4.Text = "Мин. уровень";
+                        label5.Text = "Тип";
+                        label6.Text = "";
+                        label7.Text = "";
+                        label8.Text = "";
+
+                        new ButtonHandler(_cbParam3, typeof(QuestFlags));
+                        _cbParam5.SetDbcData(DBC.QuestType, "Тип");
                     }
                     break;
                 default: 

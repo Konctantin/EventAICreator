@@ -276,6 +276,7 @@
             this.Controls.Add(this._lvData);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDbSearch";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDbSearch";
             this.groupBox1.ResumeLayout(false);

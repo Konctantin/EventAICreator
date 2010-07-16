@@ -43,6 +43,7 @@ namespace EventAI
             DBC.HolidayNames        = DBCReader.ReadDBC<HolidayNamesEntry>(DBC._HolidayNamesStrings);
             DBC.CreatureFamily      = DBCReader.ReadDBC<CreatureFamilyEntry>(DBC._CreatureFamilyStrings);
             DBC.CreatureType        = DBCReader.ReadDBC<CreatureTypeEntry>(DBC._CreatureTypeStrings);
+            DBC.QuestType           = DBCReader.ReadDBC<QuestInfoEntry>(DBC._QuestInfoStrings);
 
             DBC.SpellDuration       = DBCReader.ReadDBC<SpellDurationEntry>();
             DBC.SkillLineAbility    = DBCReader.ReadDBC<SkillLineAbilityEntry>();
