@@ -51,8 +51,14 @@ namespace EventAI
 
         private void NumberScripts_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-                e.Handled = true;
+            if (((TextBox)sender).Text.Contains('-'))
+            {
+                if (!((Char.IsDigit(e.KeyChar) && ((TextBox)sender).SelectionStart > 0) || e.KeyChar == (char)Keys.Back))
+                    e.Handled = true;
+            }
+            else
+                if (!(Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || (e.KeyChar == '-' && ((TextBox)sender).SelectionStart == 0)))
+                    e.Handled = true;
         }
 
         private void EventType_SelectedIndexChanged(object sender, EventArgs e)
