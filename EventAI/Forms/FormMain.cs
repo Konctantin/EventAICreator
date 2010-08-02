@@ -257,13 +257,21 @@ namespace EventAI
 
         private void CreateTextQuery_Click(object sender, EventArgs e)
         {
+            int entry;
+            if ((entry = _tbTextID.Text.ToInt32()) > -1)
+            {
+                MessageBox.Show("ID текста должно быть отрицательным числом!");
+                return;
+            }
+
             string[] loc = new string[_cbLocale.Items.Count];
-            loc[_cbLocale.SelectedIndex] = _tbTextContentLocales.Text.RemExc();
+            if (_cbLocale.SelectedIndex > 0)
+                loc[_cbLocale.SelectedIndex] = _tbTextContentLocales.Text.RemExc();
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormatLine("DELETE FROM `creature_ai_texts` WHERE entry IN (-{0});", _tbTextID.Text.ToInt32());
-            sb.AppendFormatLine("INSERT INTO `creature_ai_texts` VALUES ('-{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}');",
-                _tbTextID.Text.ToInt32(),
+            sb.AppendFormatLine("DELETE FROM `creature_ai_texts` WHERE entry IN ('{0}');", entry);
+            sb.AppendFormatLine("INSERT INTO `creature_ai_texts` VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}');",
+                entry,
                 _tbTextContentDefault.Text.RemExc(),
                 loc[1], loc[2], loc[3], loc[4], loc[5], loc[6], loc[7], loc[8],
                 _cbSoundEntry.GetIntValue(),
@@ -372,9 +380,9 @@ namespace EventAI
 
         private void WriteFiles_Click(object sender, EventArgs e)
         {
-            MySQLConnenct.Insert(rtbScriptOut.Text);
             using (StreamWriter sw = new StreamWriter("log.sql", true, Encoding.UTF8))
                 sw.WriteLine(rtbScriptOut.Text);
+            MySQLConnenct.Insert(rtbScriptOut.Text);
         }
 
         private void _lvText_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
@@ -393,7 +401,7 @@ namespace EventAI
             if (_lvText.SelectedIndices.Count > 0)
             {
                 TextAI text = MySQLConnenct.AIText[_lvText.SelectedIndices[0]];
-                int loc = _cbLocale.SelectedIndex;
+                int loc = _cbLocale.SelectedIndex == 0 ? 0 : _cbLocale.SelectedIndex - 1;
 
                 _tbTextID.Text = text.ID.ToString();
                 _tbTextContentDefault.Text = text.ContentDefault;
@@ -437,6 +445,13 @@ namespace EventAI
         {
             if(((TabControl)sender).SelectedIndex == 1)
                 _cbTextEmote.SetDbcData<EmotesEntry>(DBC.Emotes);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter("log.sql", true, Encoding.UTF8))
+                sw.WriteLine(rtbTextOut.Text);
+            MySQLConnenct.Insert(rtbTextOut.Text);
         }
     }
 }

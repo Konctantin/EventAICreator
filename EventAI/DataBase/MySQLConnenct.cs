@@ -173,9 +173,9 @@ namespace EventAI
                 _command.ExecuteNonQuery();
                 _command.Connection.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Данные не записаны", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Данные не записаны " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
