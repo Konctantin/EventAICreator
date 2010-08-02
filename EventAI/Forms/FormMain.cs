@@ -265,7 +265,7 @@ namespace EventAI
             sb.AppendFormatLine("INSERT INTO `creature_ai_texts` VALUES ('-{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}');",
                 _tbTextID.Text.ToInt32(),
                 _tbTextContentDefault.Text.RemExc(),
-                loc[0], loc[1], loc[2], loc[3], loc[4], loc[5], loc[6], loc[7],
+                loc[1], loc[2], loc[3], loc[4], loc[5], loc[6], loc[7], loc[8],
                 _cbSoundEntry.GetIntValue(),
                 _cbMessageType.GetIntValue(),
                 _cbLenguage.GetIntValue(),

@@ -665,13 +665,14 @@ namespace EventAI
 
     public enum Locales
     {
-        koKR,
-        frFR,
-        deDE,
-        zhCN,
-        zhTW,
-        esES,
-        esMX,
-        ruRU
+        enUS = 0,
+        koKR = 1,
+        frFR = 2,
+        deDE = 3,
+        zhCN = 4,
+        zhTW = 5,
+        esES = 6,
+        esMX = 7,
+        ruRU = 8,
     };
 }
