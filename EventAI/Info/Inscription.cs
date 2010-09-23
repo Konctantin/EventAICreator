@@ -184,6 +184,11 @@ namespace EventAI
                     l2.Text = "При значении жизни";
                     cb1.SetEnumValues<ValueType>();
                     break;
+                case ActionType.ОСЕДЛАТЬ_МАУНТА_ПО_ENTRY_ИЛИ_ИД_МОДЕЛИ:
+                    l1.Text = "Существо";
+                    l2.Text = "Модель";
+                    new ButtonHandler(cb1, BType.CREATURE);
+                    break;
             }
 
             cb1.Visible = l1.Text != string.Empty;
@@ -257,7 +262,7 @@ namespace EventAI
                     l3.Text = "Минимальное время до повтора (мс)";
                     l4.Text = "Максимальное время до повтора (мс)";
                     break;
-                case EventType.ЕСЛИ_ТЕРЯЕТ_БАФФ:
+                case EventType.ЕСЛИ_ДРУЖЕСТВЕННАЯ_ЦЕЛЬ_ТЕРЯЕТ_БАФФ:
                     l1.Text = "ID спелла (заклинания)";
                     new ButtonHandler(cb1, BType.SPELL);
                     l2.Text = "В радиусе";
@@ -276,8 +281,10 @@ namespace EventAI
                     cb1.SetDbcData(DBC.Emotes);
                     cb2.SetEnumValues<ConditionType>();
                     break;
-                case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА:
-                case EventType.ПРИ_ЗНАЧЕНИИ_БАФФА_ЦЕЛИ:
+                case EventType.ПРИ_ЗНАЧЕНИИ_АУРЫ:
+                case EventType.ПРИ_ЗНАЧЕНИИ_АУРЫ_ЦЕЛИ:
+                case EventType.ПРИ_ОТСУТСТВИИ_АУРЫ:
+                case EventType.ПРИ_ОТСУТСТВИИ_АУРЫ_ЦЕЛИ:
                     l1.Text = "ID спелла";
                     new ButtonHandler(cb1, BType.SPELL);
                     l2.Text = "Количество";

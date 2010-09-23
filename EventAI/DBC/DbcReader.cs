@@ -14,7 +14,7 @@ namespace EventAI
             string fileName = Path.Combine(DBC.DBC_PATH, (typeof(T).Name).Replace("Entry", String.Empty) + ".dbc");
 
             if (!File.Exists(fileName))
-                throw new FileNotFoundException("Not found", fileName);
+                throw new FileNotFoundException("File not found: " + fileName);
 
             using (BinaryReader reader = new BinaryReader(new FileStream(fileName, FileMode.Open, FileAccess.Read), Encoding.UTF8))
             {
@@ -23,9 +23,9 @@ namespace EventAI
                 int size = Marshal.SizeOf(typeof(T));
 
                 if (!header.IsDBC)
-                    throw new FileNotFoundException("Is not DBC files", fileName);
+                    throw new Exception("Is not DBC files " + fileName);
                 if (header.RecordSize != size)
-                    throw new AIException("Size of row in DBC file ({0}) != size of DBC struct ({1}) in DBC: {2}", header.RecordSize, size, fileName);
+                    throw new Exception(string.Format("Size of row in DBC file ({0}) != size of DBC struct ({1}) in DBC: {2}", header.RecordSize, size, fileName));
 
                 // read dbc data
                 for (int r = 0; r < header.RecordsCount; ++r)

@@ -36,7 +36,7 @@ namespace EventAI
             get { return new Size(180, 21); }
         }
 
-        private FormMain MatherForm
+        private FormMain ParentForm
         {
             get { return (FormMain)_combobox.FindForm(); }
         }
@@ -111,13 +111,13 @@ namespace EventAI
                 case BType.TEXT:
                     {
                         MySQLConnenct.SelectAIText();
-                        MatherForm._tPanel.SelectedIndex = 1;
+                        ParentForm._tPanel.SelectedIndex = 1;
                     }
                     break;
                 case BType.SUMMON:
                     {
                         MySQLConnenct.SelectAIText();
-                        MatherForm._tPanel.SelectedIndex = 2;
+                        ParentForm._tPanel.SelectedIndex = 2;
                     }
                     break;
                 default:

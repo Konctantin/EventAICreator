@@ -96,7 +96,6 @@
       <DependentUpon>FormAboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums\AIEnums.cs" />
-    <Compile Include="Extensions\AIException.cs" />
     <Compile Include="AI\AIStruct.cs" />
     <Compile Include="Extensions\ComboBoxExtensions.cs" />
     <Compile Include="Info\CreatureInfo.cs" />

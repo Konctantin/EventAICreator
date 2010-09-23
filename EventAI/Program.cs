@@ -25,16 +25,21 @@ namespace EventAI
                 Application.Exit();
                 return;
             }
-
-            new Thread(LoadDBC).Start();
-            
-            Application.Run(new FormMain());
+            try
+            {
+                LoadDBC();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            Application.Run(new FormMain());            
         }
 
         private static void LoadDBC()
         {
             DBC.Spell               = DBCReader.ReadDBC<SpellEntry>(DBC._SpellStrings);
-
             DBC.SkillLine           = DBCReader.ReadDBC<SkillLineEntry>(DBC._SkillLineStrings);
             DBC.SpellRange          = DBCReader.ReadDBC<SpellRangeEntry>(DBC._SpellRangeStrings);
             DBC.Emotes              = DBCReader.ReadDBC<EmotesEntry>(DBC._EmotesStrings);
@@ -44,29 +49,24 @@ namespace EventAI
             DBC.CreatureFamily      = DBCReader.ReadDBC<CreatureFamilyEntry>(DBC._CreatureFamilyStrings);
             DBC.CreatureType        = DBCReader.ReadDBC<CreatureTypeEntry>(DBC._CreatureTypeStrings);
             DBC.QuestType           = DBCReader.ReadDBC<QuestInfoEntry>(DBC._QuestInfoStrings);
-
             DBC.SpellDuration       = DBCReader.ReadDBC<SpellDurationEntry>();
             DBC.SkillLineAbility    = DBCReader.ReadDBC<SkillLineAbilityEntry>();
             DBC.SpellRadius         = DBCReader.ReadDBC<SpellRadiusEntry>();
             DBC.SpellCastTimes      = DBCReader.ReadDBC<SpellCastTimesEntry>();
 
-            DBC.Locale = DetectedLocale;
+            DBC.Locale = DetectedLocale();
         }
 
-        private static LocalesDBC DetectedLocale
+        private static LocalesDBC DetectedLocale()
         {
-            get
+            byte locale = 0;
+            while (DBC.Spell[1].GetName(locale) == String.Empty)
             {
-                byte locale = 0;
-                while (DBC.Spell[1].GetName(locale) == String.Empty)
-                {
-                    ++locale;
-
-                    if (locale >= DBC.MAX_DBC_LOCALE)
-                        throw new AIException("Detected unknown locale index {0}", locale);
-                }
-                return (LocalesDBC)locale;
+                ++locale;
+                if (locale >= DBC.MAX_DBC_LOCALE)
+                    throw new Exception("Detected unknown locale index " + locale);
             }
+            return (LocalesDBC)locale;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -34,58 +35,54 @@ namespace EventAI
             return tb.Text.ToInt32();
         }
 
-        public static void SetEnumValues<T>(this ComboBox cb, string NoValue="", string remove="", bool size = true)
+        public static void SetEnumValues<T>(this ComboBox cb, string noValue = "", string remove = "", bool size = true)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
-            dt.Columns.Add("NAME");
+            if (!typeof(T).IsEnum)
+                throw new ArgumentException("enumeratedType must be an enum");
+
+            Array enumeratedType = Enum.GetValues(typeof(T));
             
-            if(NoValue!="")
-                dt.Rows.Add(new Object[] { -1, NoValue });
+            if (enumeratedType == null)
+                throw new NullReferenceException();
 
-            foreach (var str in Enum.GetValues(typeof(T)))
-            {
-                dt.Rows.Add(new Object[] 
-                { 
-                    (int)str, 
-                    "(" + ((int)str).ToString("00") + ") " + str.ToString().NormaliseString(remove) 
-                });
-            }
+            var list = new List<KeyValuePair<int, string>>();
+            if (noValue != "")
+                list.Add(new KeyValuePair<int, string>(-1, noValue));
 
-            if(size)
-                cb.Size = new System.Drawing.Size(238, 21);
+            foreach (var value in enumeratedType)
+                list.Add(new KeyValuePair<int, string>((int)value, 
+                    "(" + ((int)value).ToString("00") + ") " + value.ToString().NormaliseString(remove)));
 
-            cb.DropDownStyle = ComboBoxStyle.DropDownList;
-            cb.DataSource = dt;
-            cb.DisplayMember = "NAME";
-            cb.ValueMember = "ID";
+            if (size) cb.Size = new System.Drawing.Size(238, 21);
+            cb.DropDownStyle  = ComboBoxStyle.DropDownList;
+            cb.DataSource     = list;
+            cb.ValueMember    = "Key";
+            cb.DisplayMember  = "Value";
         }
 
         public static void SetDbcData<T>(this ComboBox cb, Dictionary<uint, T> dict, string noValue = null)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
-            dt.Columns.Add("NAME");
-
             if (dict == null)
                 return;
+            
+            var list = new List<KeyValuePair<int, string>>();
 
             if (noValue != null)
-                dt.Rows.Add(new Object[] { -1, noValue });
+                list.Add(new KeyValuePair<int, string>(-1, noValue));
 
             foreach (var str in dict.Values)
             {
-                uint ID = str.GetType().GetField("ID").GetValue(str).ToUInt32();
-                var Name = str.GetType().GetProperty("Name").GetValue(str, null);
+                int ID = str.GetType().GetField("ID").GetValue(str).ToInt32();
+                var Name = str.GetType().GetProperty("Name").GetValue(str, null).ToString();
 
-                dt.Rows.Add(new Object[] { ID, "(" + ID.ToString("000") + ") " + Name });
+                list.Add(new KeyValuePair<int, string>(ID, string.Format("({0:000}) {1}", ID, Name)));
             }
 
-            cb.DataSource = dt;
-            cb.DisplayMember = "NAME";
-            cb.ValueMember = "ID";
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.Size = ComboboxSize;
+            cb.DataSource = list;
+            cb.ValueMember = "Key";
+            cb.DisplayMember = "Value";
         }
     }
 }

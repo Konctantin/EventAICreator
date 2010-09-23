@@ -128,9 +128,8 @@ namespace EventAI
 
         private void clbEventFlag_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (_clbEventFlag.SelectedIndex == 5 || _clbEventFlag.SelectedIndex == 6)
+            if (_clbEventFlag.SelectedIndex == 6)
             {
-                _clbEventFlag.SetItemChecked(5, false);
                 _clbEventFlag.SetItemChecked(6, false);
                 MessageBox.Show("Нельзя использовать зарезирвированые флаги!");
             }
