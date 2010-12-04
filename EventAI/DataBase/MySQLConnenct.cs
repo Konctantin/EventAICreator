@@ -12,36 +12,20 @@ namespace EventAI
         private static MySqlConnection _conn;
         private static MySqlCommand _command;
 
-        public static bool Connected { get; private set; }
-
-        public static List<ScriptAI> AIScript = new List<ScriptAI>();
-        public static List<TextAI> AIText = new List<TextAI>();
-        public static List<SummonAI> AISummon = new List<SummonAI>();
-
-        private static String ConnectionString
-        {
-            get
-            {
-                return String.Format("Server={0};Port={1};Uid={2};Pwd={3};Database={4};character set=utf8;Connection Timeout=10",
-                    Settings.Default.Host,
-                    Settings.Default.Port,
-                    Settings.Default.User,
-                    Settings.Default.Pass,
-                    Settings.Default.Db_mangos);
-            }
-        }
+        private static List<ScriptAI> _AIScript = new List<ScriptAI>();
+        private static List<TextAI>   _AIText   = new List<TextAI>();
+        private static List<SummonAI> _AISummon = new List<SummonAI>();
 
         public static void SelectAIScript(string query)
         {
-            TestConnect();
-            if (!Connected) 
+            if (!IsConnected) 
                 return;
 
             using (_conn = new MySqlConnection(ConnectionString))
             {
                 _command = new MySqlCommand(query, _conn);
                 _conn.Open();
-                AIScript.Clear();
+                _AIScript.Clear();
 
                 using (var reader = _command.ExecuteReader())
                 {
@@ -78,7 +62,7 @@ namespace EventAI
 
                         script.Comment           = reader[22].ToString();
 
-                        AIScript.Add(script);
+                        _AIScript.Add(script);
                     }
                 }
             }
@@ -86,15 +70,14 @@ namespace EventAI
 
         public static void SelectAIText()
         {
-            TestConnect();
-            if (!Connected)
+            if (!IsConnected)
                 return;
             string query = "SELECT * FROM creature_ai_texts;";
             using (_conn = new MySqlConnection(ConnectionString))
             {
                 _command = new MySqlCommand(query, _conn);
                 _conn.Open();
-                AIText.Clear();
+                _AIText.Clear();
 
                 using (var reader = _command.ExecuteReader())
                 {
@@ -121,7 +104,7 @@ namespace EventAI
 
                         script.Comment          = reader[14].ToString();
 
-                        AIText.Add(script);
+                        _AIText.Add(script);
                     }
                 }
             }
@@ -129,15 +112,14 @@ namespace EventAI
 
         public static void SelectAISummon()
         {
-            TestConnect();
-            if (!Connected)
+            if (!IsConnected)
                 return;
             string query = "SELECT * FROM creature_ai_summons;";
             using (_conn = new MySqlConnection(ConnectionString))
             {
                 _command = new MySqlCommand(query, _conn);
                 _conn.Open();
-                AISummon.Clear();
+                _AISummon.Clear();
 
                 using (var reader = _command.ExecuteReader())
                 {
@@ -153,7 +135,7 @@ namespace EventAI
                         script.SpawnTimeSecs    = reader[5].ToInt32();
                         script.Comment          = reader[6].ToString();
 
-                        AISummon.Add(script);
+                        _AISummon.Add(script);
                     }
                 }
             }
@@ -161,8 +143,7 @@ namespace EventAI
 
         public static void Insert(string query)
         {
-            TestConnect();
-            if (!Connected) 
+            if (!IsConnected) 
                 return;
 
             try
@@ -179,25 +160,57 @@ namespace EventAI
             }
         }
 
-        public static void TestConnect()
-        {
-            if (!Settings.Default.UseDbConnect)
-            {
-                Connected = false;
-                return;
-            }
+        #region Properties
 
-            try
+        public static List<ScriptAI> AIScript
+        {
+            get { return _AIScript; }
+        }
+
+        public static List<TextAI> AIText
+        {
+            get { return _AIText; }
+        }
+
+        public static List<SummonAI> AISummon
+        {
+            get { return _AISummon; }
+        }
+
+        private static String ConnectionString
+        {
+            get
             {
-                _conn = new MySqlConnection(ConnectionString);
-                _conn.Open();
-                _conn.Close();
-                Connected = true;
-            }
-            catch
-            {
-                Connected = false;
+                return String.Format("Server={0};Port={1};Uid={2};Pwd={3};Database={4};character set=utf8;Connection Timeout=10",
+                    Settings.Default.Host,
+                    Settings.Default.Port,
+                    Settings.Default.User,
+                    Settings.Default.Pass,
+                    Settings.Default.Db_mangos);
             }
         }
+
+        public static bool IsConnected
+        {
+            get
+            {
+                if (!Settings.Default.UseDbConnect)
+                    return false;
+
+                try
+                {
+                    _conn = new MySqlConnection(ConnectionString);
+                    _conn.Open();
+                    _conn.Close();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        #endregion
     }
 }
